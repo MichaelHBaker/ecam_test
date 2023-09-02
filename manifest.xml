@@ -71,6 +71,48 @@
                 </Control>
               </Group>
             </OfficeTab>
+            <CustomTab id="TabECAM_JS">
+              <Group id="CommandsGroupECAM">
+                <Label resid="CommandsGroup.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                <Control xsi:type="Button" id="TaskpaneButtonECAM">
+                  <Label resid="TaskpaneButton.Label"/>
+                  <Supertip>
+                    <Title resid="TaskpaneButton.Label"/>
+                    <Description resid="TaskpaneButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>ButtonId1</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="ToggleProtectionECAM">
+                  <Label resid="ProtectionButtonLabel" />
+                  <Supertip>
+                    <Title resid="ProtectionButtonLabel" />
+                    <Description resid="ProtectionButtonToolTip" />
+                  </Supertip>
+                  <Icon>
+                      <bt:Image size="16" resid="Icon.16x16"/>
+                      <bt:Image size="32" resid="Icon.32x32"/>
+                      <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                      <FunctionName>toggleProtection</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+              <Label resid="customTabLabel1" />
+            </CustomTab>
           </ExtensionPoint>
         </DesktopFormFactor>
       </Host>
@@ -91,6 +133,8 @@
         <bt:String id="CommandsGroup.Label" DefaultValue="Commands Group"/>
         <bt:String id="TaskpaneButton.Label" DefaultValue="Show Taskpane"/>
         <bt:String id="ProtectionButtonLabel" DefaultValue="Toggle Worksheet Protection" />
+        <bt:String id="customTabLabel1" DefaultValue="ECAM_JS" />
+
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded succesfully. Go to the HOME tab and click the 'Show Taskpane' button to get started."/>
