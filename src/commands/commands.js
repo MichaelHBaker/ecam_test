@@ -68,3 +68,13 @@ const g = getGlobal();
 
 // The add-in command functions need to be available in global scope
 g.action = action;
+
+// Probably will need to async and have try/catch logic when further developed
+function OnAction_ECAM(args) {
+  // Your function logic here
+  
+  // Display a message after executing the function
+  window.alert('Function executed successfully!');
+  
+  args.completed();
+}

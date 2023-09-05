@@ -1,1 +1,20 @@
-https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache
+Visible and enabled
+    controlled via javascript, not part of manifest
+
+    chatgpt snippet -- 
+    Office.ribbon.requestUpdate({
+        tabs: [{
+            id: "OfficeTab1", // The ID of the tab that contains your control
+            groups: [{
+                id: "MyCustomGroup", // The ID of your custom group
+                controls: [{
+                    id: "MyButtonID", // The ID of your button
+                    enabled: true, // Determines whether the button is clickable
+                    label: "My Button", // The label text of the button
+                    imageMso: "ImageName", // The image name if you're using an MSO icon
+                    visible: true // Determines the visibility of the button
+                }]
+            }]
+        }]
+    });
+
