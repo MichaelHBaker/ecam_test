@@ -1,0 +1,7 @@
+              <Label resid="tbECAM_JS.label"/>
+            </CustomTab>
+
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>

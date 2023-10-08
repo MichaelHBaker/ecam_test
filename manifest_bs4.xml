@@ -1,150 +1,238 @@
-<?xml version="1.0" encoding="utf-8"?>
-<customUI onLoad="OnLoad_ECAM" xmlns="http://schemas.microsoft.com/office/2006/01/customui">
-<ribbon startFromScratch="false">
-<tabs>
-<tab id="tbECAM" label="ECAM">
-<group id="gpDataInputs" label="Data Inputs">
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnSelectIntervalData1" imageMso="IconSelectArea" label="Interval Data" onAction="OnAction_ECAM" screentip="Select Interval Data" size="large"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnSelectBillingData1" imageMso="CalendarToolSelectDate" label="Monthly Billing" onAction="OnAction_ECAM" screentip="Select Monthly Billing Data" size="large"/>
-</group>
-<group id="gpGeneralInputs" label="General Inputs">
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnDefinePoints1" imageMso="Legend" label="Define Points" onAction="OnAction_ECAM" screentip="Map Points to Allow Automation of Metrics and Re-tuning Charts" size="large"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnCreateSchedules1" imageMso="DataTypeTime" label="Create Schedules" onAction="OnAction_ECAM" screentip="Input General Building Schedules Based on Data" size="large"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnCreatePrePostDates1" imageMso="CalendarMonthDetailsSplitButton" label="Input Dates" onAction="OnAction_ECAM" screentip="Input Dates for Comparison of Pre and Post" size="large"/>
-<menu getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="mnuWeather1" imageMso="CreateQuickStep" label="Weather" screentip="Download Weather or Input Station Name for Reports" size="large">
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnInputSiteWeatherName1" imageMso="CreateQuickStep" label="Historical Weather Station" onAction="OnAction_ECAM" screentip="Input Historical Weather Station Name for Reports"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnInputTMYWeatherName1" imageMso="ShapeLightningBolt" label="Typical Weather Station" onAction="OnAction_ECAM" screentip="Input Typical Long-Term Weather Station Name for Reports"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnDownloadData1" imageMso="TableAutoFormat" label="Download Weather Data" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnCheckWthrCoverageBase1" imageMso="DatabaseServerCompatibilityCheckDatabase" label="Check Baseline Weather Coverage" onAction="OnAction_ECAM" screentip="Checks Actual Baseline Weather relative to Long Term Average Weather"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnCheckWthrCoveragePost1" imageMso="DatabaseServerCompatibilityCheckDatabase" label="Check Post Period Weather Coverage" onAction="OnAction_ECAM" screentip="Checks Actual Post Period Weather relative to Long Term Average Weather"/>
-</menu>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnCustomizeHolidays1" imageMso="CalendarConfigure" label="Holidays" onAction="OnAction_ECAM" screentip="Customize List of Holidays" size="large"/>
-</group>
-<group id="gpCharts" label="Charts and Metrics">
-<menu getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="mnuTimeSeriesCharts1" imageMso="ChartTypeLineInsertGallery" label="Time Series" size="large">
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnCreateHistoryChart1" imageMso="ChartTypeLineInsertGallery" label="Point(s) History Chart" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnCreateLPbyDaytype1" imageMso="ChartTypeLineInsertGallery" label="Load Profile by Daytype" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnCreateLPbyDayOfWeek1" imageMso="ChartTypeLineInsertGallery" label="Load Profile by Day of Week" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnCreateLPbyMonthYr1" imageMso="ChartTypeLineInsertGallery" label="Load Profile by Month-Year" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnCreateLPbyDateRng1" imageMso="ChartTypeLineInsertGallery" label="Load Profile by Date Range (Pre/Post)" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnCreateLPbyYear1" imageMso="ChartTypeLineInsertGallery" label="Load Profile by Year" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnCreateLPbyDay1" imageMso="ChartTypeLineInsertGallery" label="Load Profile by Day" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnChart3dColoredDaytypes1" imageMso="ChartAreaChart" label="Create 3d Load Profile" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnContourChart1" imageMso="ConditionalFormattingColorScalesGallery" label="Create Energy Colors (surface chart)" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnCreateCalendarLP1" imageMso="CalendarMonthDetailsSplitButton" label="Load Profile Calendar" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnBoxPlotLP1" imageMso="ChartErrorBars" label="Load Profile as Box Plots" onAction="OnAction_ECAM"/>
-</menu>
-<menu getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="mnuScatterCharts1" imageMso="ChartTypeXYScatterInsertGallery" label="Scatter Charts" size="large">
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnCreateScatterChartByOcc1" imageMso="ChartTypeXYScatterInsertGallery" label="Scatter Chart by Occupancy" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnCreateScatterChartByDateRng1" imageMso="ChartTypeXYScatterInsertGallery" label="Scatter Chart by Date Range (Pre/Post)" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnPureScatter1" imageMso="ChartTypeXYScatterInsertGallery" label="Toggle Scatter between all timestamps and aggregated values" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnShowHighlightForm1" imageMso="SmartArtChangeColorsGallery" label="Pick a number of days and highlight those points on the selected chart" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnUnHiLiteDays1" imageMso="ChartResetToMatchStyle" label="Remove highlighting of recent days" onAction="OnAction_ECAM"/>
-</menu>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnCreateLoadDurationChart1" imageMso="ChartInsert" label="Load Duration" onAction="OnAction_ECAM" screentip="Load Duration Chart (Point Frequency Distribution)" size="large"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnScheduleChart1" imageMso="ChartEditDataSource" label="Check Input Schedule" onAction="OnAction_ECAM" screentip="Chart to Check Input Schedule" size="large"/>
-<menu getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="mnuMatrixCharts1" imageMso="PivotChartMultiplePlots" label="Matrix Charts" size="large">
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnMatrixSelectedChartsInfo1" imageMso="ZoomOnePage" label="Information about Matrix Charts" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnMatrixSelectedCharts1" imageMso="IconsOnly" label="Matrix Selected Charts" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnMatrixAllCharts1" imageMso="IconsOnly" label="Matrix All Charts" onAction="OnAction_ECAM"/>
-</menu>
-<menu getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="mnuChartUtilities1" imageMso="ChartFormatAxis" label="Chart Utilities" size="large">
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnSetScalesSelectedCharts1" imageMso="ChartPrimaryHorizontalGridlines" label="Set Scales the Same for a Group of Charts" onAction="OnAction_ECAM"/>
-</menu>
-<menu getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="mnuMetricsandDataSummaries1" imageMso="PageWidthGuideShowHide" label="Metrics and Data" screentip="Metrics and Data Summaries" size="large">
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnMetricsDaytypeOccupancySF1" imageMso="DesignTemplate" label="Metrics for Points Normalized per Sq. Foot" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnMetricsDaytypeOccupancyR21" imageMso="DesignAForm" label="Daytype and Occupancy Metrics" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnMetricsOccupancyMonthYrB1" imageMso="DesignAForm" label="Occupancy and Month-Year Combined Metrics" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnMetricsDaytypeMonthYrB1" imageMso="DesignAForm" label="Daytype and Month-Year Combined Metrics" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnDataSummaryInfo1" imageMso="ZoomOnePage" label="Information about Data Summary" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnDataSummaryRawData1" imageMso="CreateFormMoreFormsGallery" label="Summarize Data" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnDataSummaryPivotTable1" imageMso="CreateFormMoreFormsGallery" label="Summarize Data from PivotTable" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnBenchmarks1" imageMso="RulerShowHide" label="EUI Benchmarks and Model Metrics" onAction="OnAction_ECAM"/>
-</menu>
-</group>
-<group id="gpAnalysis" label="Analyses">
-<menu getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="mnuMeasurementandVerification1" imageMso="DesignChecker" label="M and V Utilities" screentip="Measurement and Verification General Inputs and Tasks" size="large">
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnInputExpectedSavings1" imageMso="ControlLayoutRemove" label="Input the planned savings for the project" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnInputConfLevel1" label="Input Desired Model and Savings Confidence Level" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnFracSvgsInputs1" label="Input Values For ASHRAE Fractional Savings Uncertainty" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnCombineCategories1" label="Define New Model Categorical Variables" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnSetNegativeEnergy1" label="Set Flag to Allow Negative Model Energy" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnInputConfLevelOutlier1" label="Input Desired Model Confidence Level for Identifying Outliers" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnOutliersHighlight1" label="Highlight Outliers" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnOutliersNoHighlight1" label="Remove Outlier Highlighting" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnOutliersEliminate1" label="Eliminate Outliers" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnMAPEbase1" label="Calculate Baseline MAPE" onAction="OnAction_ECAM" screentip="Calculate Mean Annual Percentage Error for Baseline Model"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnMAPEpost1" label="Calculate Post MAPE" onAction="OnAction_ECAM" screentip="Calculate Mean Annual Percentage Error for Reporting Period Model"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnMatrixModelCharts1" imageMso="IconsOnly" label="Create Matrix of Scatter Charts with Models" onAction="OnAction_ECAM" screentip="Thumbnails of Data with Models for Baseline or Post Period"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnChartsWithBaseAndPost1" imageMso="IconsOnly" label="Create Chart Matrix of Base and Post Models" onAction="OnAction_ECAM" screentip="Thumbnails of Baseline and Post Models without Data"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnReadFilesForAutomation1" imageMso="CreateListWorkflowGallery" label="Automated M and V Modeling" onAction="OnAction_ECAM" screentip="Read M and V TemplateFiles from Folder and Create Models"/>
-</menu>
-<menu getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="mnuIntervalDataDrivenModelsandMandV1" imageMso="CalendarHorizontal" label="Interval Models" screentip="Interval Data-Driven Models and M and V" size="large">
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnDaytypingControl1" label="Create Load Profile by Day of Week and Evaluate Daytypes" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnDaytypingSemiAuto1" label="Create Load Profile by DOW with Automatic Daytyping" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnCheckBoxesCreation_a1" label="Evaluate Daytypes (active sheet has LP by Day of Week)" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnMVbaseline1" label="Create Baseline Models Only" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnBaseSumry1" label="Summarize Baseline" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnMVpost1" label="Create Post Models Only" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnPostSumry1" label="Summarize Post" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnMVbaseAndPost1" label="Create Baseline and Post Models" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnSavings1" label="Evaluate Savings for Post Period" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnPrepTMY3data1" label="Bring in TMY3 Weather for Annualization" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnBaselineAnnual1" label="Annualize Baseline Using TMY3 Weather" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnPostAnnual1" label="Annualize Post Using TMY3 Weather" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnSavingsAnnual1" label="Annualize Pre, Post, and Savings Using TMY3" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnGenerateModelXML1" imageMso="SaveObjectAs" label="Export XML of Models" onAction="OnAction_ECAM"/>
-</menu>
-<menu getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="mnuMonthlyBillingDataModelsandMandV1" imageMso="CalendarInsert" label="Monthly Models" screentip="Monthly Billing Data Models and M and V" size="large">
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnMVbaselineMonthly1" label="Create Baseline Monthly Models Only" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnBaseSumry2" label="Summarize Baseline" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnMVpostMonthly1" label="Create Post Monthly Models Only" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnPostSumry2" label="Summarize Post" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnMVcontrolMonthly1" label="Create Baseline and Post Monthly Models" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnSavingsMonthly1" label="Evaluate Savings for Post Period Using Monthly Model" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnTMY3monthlySheet1" label="Bring in Monthly TMY3 Weather for Annualization" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnBaselineAnnualMonthly1" label="Annualize Baseline Using Monthly TMY3 Weather" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnPostAnnualMonthly1" label="Annualize Post Using Monthly TMY3 Weather" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnSavingsAnnualMonthly1" label="Annualize Pre, Post, and Savings Using Monthly TMY3" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnGenerateModelXML2" imageMso="SaveObjectAs" label="Export XML of Models" onAction="OnAction_ECAM"/>
-</menu>
-<menu getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="mnuStrategicEnergyManagementandMTR1" imageMso="StyleExplorer" label="SEM" screentip="Strategic Energy Management and Monitoring, Targeting, and Reporting" size="large">
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnSEMinterval1" label="SEM-MTR with Interval Data" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnSEMmonthly1" label="SEM-MTR with Monthly Billing Data" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnSEMtracking1" label="Heat Map for Tracking Performance" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnSaveModelsAndSavings1" label="Models and Savings Report" onAction="OnAction_ECAM"/>
-</menu>
-<separator id="sep001"/>
-<menu getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="mnuPNNLReTuning1" imageMso="ChartTypeLineInsertGallery" label="PNNL Re-Tuning" screentip="Automated Charting for PNNL Re-Tuning" size="large">
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnReTuningCP1" imageMso="ChartTypeLineInsertGallery" label="Central Plant Charts" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnReTuningPNNLAirHandler1" imageMso="ChartTypeLineInsertGallery" label="AHU Charts" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnReTuningPNNLZone1" imageMso="ChartTypeLineInsertGallery" label="Zone Charts" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnReTuningAHUxy1" imageMso="ChartTypeXYScatterInsertGallery" label="AHU Scatter Charts" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnReTuningEcon1" imageMso="ChartTypeLineInsertGallery" label="Economizers for All AHUs" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnReTuningChartSummary1" imageMso="ZoomOnePage" label="Information about Re-tuning Charts" onAction="OnAction_ECAM"/>
-</menu>
-</group>
-<group id="gpUtilities" label="Utilities">
-<menu getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="mnuResampling1" imageMso="TracePrecedentsRemoveArrows" label="Resample Data" screentip="Resample Data to Common Timestamps" size="large">
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnResampleStart1" imageMso="SynchronizeAll" label="Resample Data" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnResampleMonthlyStart1" imageMso="SynchronizeAll" label="Resample To Get Avg Temp for Billing Data " onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnCombineTableIntoList1" imageMso="ExportSharePointList" label="Convert Table Format to ECAM List Format" onAction="OnAction_ECAM"/>
-</menu>
-<menu getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="mnuECAMUtilities1" imageMso="ToolboxGallery" label="ECAM Utilities" size="large">
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnAddBinTemps1" imageMso="FacilitiesAssignCategory" label="Create Bin Data from Temperatures" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnAddNewData1" imageMso="CompareAndCombine" label="Data worksheet was changed" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnCopySheetAndUpdateChartSource1" imageMso="ExportSharePointList" label="Copy Worksheet and Update ECAM Chart Source" onAction="OnAction_ECAM"/>
-</menu>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnDeleteGroupOfSheets1" imageMso="FileDiscardCachedChanges" label="Delete Sheet(s)" onAction="OnAction_ECAM" screentip="Delete Selected Sheet(s) and Clean Names" size="large"/>
-</group>
-<group id="gpECAM" label="ECAM">
-<menu getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="mnuECAMHelp1" imageMso="Help" label="ECAM Help" size="large">
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnOpenOnlineHelp1" imageMso="HyperlinkControl" label="Online help" onAction="OnAction_ECAM"/>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnShowHelp1" imageMso="Help" label="In Tool help (no longer updated)" onAction="OnAction_ECAM"/>
-</menu>
-<button getEnabled="GetEnabled_ECAM" getVisible="GetVisible_ECAM" id="btnAboutECAM1" imageMso="ZoomOnePage" label="About ECAM" onAction="OnAction_ECAM" size="large"/>
-</group>
-</tab>
-</tabs>
-</ribbon>
-</customUI>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <Id>b4fb2a24-691a-4783-bc9f-117caf4a365d</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Contoso</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="ECAM JS"/>
+  <Description DefaultValue="Office.js version of ECAM."/>
+  <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-64.png"/>
+  <SupportUrl DefaultValue="https://www.contoso.com/help"/>
+  <AppDomains>
+    <AppDomain>https://www.contoso.com</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Workbook"/>
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://localhost:3000/taskpane.html"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <DesktopFormFactor>
+          <FunctionFile resid="Commands.Url"/>
+
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+					
+<Group id="gpDataInputs">
+						<Label resid="gpDataInputs.label"/>
+						<Icon>
+		<bt:Image size="16" resid="Icon.16x16"/>
+		<bt:Image size="32" resid="Icon.32x32"/>
+		<bt:Image size="80" resid="Icon.80x80"/>
+	</Icon>
+						<Control xsi:type="Button" id="btnSelectIntervalData1">
+							<Label resid="btnSelectIntervalData1.label"/>
+							<Supertip>
+								<Title resid="btnSelectIntervalData1.Title"/>
+								<Description resid="btnSelectIntervalData1.Desc"/>
+							</Supertip>
+						<Control xsi:type="Button" id="btnSelectBillingData1">
+							<Label resid="btnSelectBillingData1.label"/>
+							<Supertip>
+								<Title resid="btnSelectBillingData1.Title"/>
+								<Description resid="btnSelectBillingData1.Desc"/>
+							</Supertip>
+					</Group>					
+<Group id="gpGeneralInputs">
+						<Label resid="gpGeneralInputs.label"/>
+						<Icon>
+		<bt:Image size="16" resid="Icon.16x16"/>
+		<bt:Image size="32" resid="Icon.32x32"/>
+		<bt:Image size="80" resid="Icon.80x80"/>
+	</Icon>
+						<Control xsi:type="Button" id="btnDefinePoints1">
+							<Label resid="btnDefinePoints1.label"/>
+							<Supertip>
+								<Title resid="btnDefinePoints1.Title"/>
+								<Description resid="btnDefinePoints1.Desc"/>
+							</Supertip>
+						<Control xsi:type="Button" id="btnCreateSchedules1">
+							<Label resid="btnCreateSchedules1.label"/>
+							<Supertip>
+								<Title resid="btnCreateSchedules1.Title"/>
+								<Description resid="btnCreateSchedules1.Desc"/>
+							</Supertip>
+						<Control xsi:type="Button" id="btnCreatePrePostDates1">
+							<Label resid="btnCreatePrePostDates1.label"/>
+							<Supertip>
+								<Title resid="btnCreatePrePostDates1.Title"/>
+								<Description resid="btnCreatePrePostDates1.Desc"/>
+							</Supertip>
+						<Control xsi:type="Button" id="mnuWeather1">
+							<Label resid="mnuWeather1.label"/>
+							<Supertip>
+								<Title resid="mnuWeather1.Title"/>
+								<Description resid="mnuWeather1.Desc"/>
+							</Supertip>
+						<Control xsi:type="Button" id="btnCustomizeHolidays1">
+							<Label resid="btnCustomizeHolidays1.label"/>
+							<Supertip>
+								<Title resid="btnCustomizeHolidays1.Title"/>
+								<Description resid="btnCustomizeHolidays1.Desc"/>
+							</Supertip>
+					</Group>					
+<Group id="gpCharts">
+						<Label resid="gpCharts.label"/>
+						<Icon>
+		<bt:Image size="16" resid="Icon.16x16"/>
+		<bt:Image size="32" resid="Icon.32x32"/>
+		<bt:Image size="80" resid="Icon.80x80"/>
+	</Icon>
+						<Control xsi:type="Button" id="mnuTimeSeriesCharts1">
+							<Label resid="mnuTimeSeriesCharts1.label"/>
+							<Supertip>
+								<Title resid="mnuTimeSeriesCharts1.Title"/>
+								<Description resid="mnuTimeSeriesCharts1.Desc"/>
+							</Supertip>
+						<Control xsi:type="Button" id="mnuScatterCharts1">
+							<Label resid="mnuScatterCharts1.label"/>
+							<Supertip>
+								<Title resid="mnuScatterCharts1.Title"/>
+								<Description resid="mnuScatterCharts1.Desc"/>
+							</Supertip>
+						<Control xsi:type="Button" id="btnCreateLoadDurationChart1">
+							<Label resid="btnCreateLoadDurationChart1.label"/>
+							<Supertip>
+								<Title resid="btnCreateLoadDurationChart1.Title"/>
+								<Description resid="btnCreateLoadDurationChart1.Desc"/>
+							</Supertip>
+						<Control xsi:type="Button" id="btnScheduleChart1">
+							<Label resid="btnScheduleChart1.label"/>
+							<Supertip>
+								<Title resid="btnScheduleChart1.Title"/>
+								<Description resid="btnScheduleChart1.Desc"/>
+							</Supertip>
+						<Control xsi:type="Button" id="mnuMatrixCharts1">
+							<Label resid="mnuMatrixCharts1.label"/>
+							<Supertip>
+								<Title resid="mnuMatrixCharts1.Title"/>
+								<Description resid="mnuMatrixCharts1.Desc"/>
+							</Supertip>
+						<Control xsi:type="Button" id="mnuChartUtilities1">
+							<Label resid="mnuChartUtilities1.label"/>
+							<Supertip>
+								<Title resid="mnuChartUtilities1.Title"/>
+								<Description resid="mnuChartUtilities1.Desc"/>
+							</Supertip>
+						<Control xsi:type="Button" id="mnuMetricsandDataSummaries1">
+							<Label resid="mnuMetricsandDataSummaries1.label"/>
+							<Supertip>
+								<Title resid="mnuMetricsandDataSummaries1.Title"/>
+								<Description resid="mnuMetricsandDataSummaries1.Desc"/>
+							</Supertip>
+					</Group>					
+<Group id="gpAnalysis">
+						<Label resid="gpAnalysis.label"/>
+						<Icon>
+		<bt:Image size="16" resid="Icon.16x16"/>
+		<bt:Image size="32" resid="Icon.32x32"/>
+		<bt:Image size="80" resid="Icon.80x80"/>
+	</Icon>
+						<Control xsi:type="Button" id="mnuMeasurementandVerification1">
+							<Label resid="mnuMeasurementandVerification1.label"/>
+							<Supertip>
+								<Title resid="mnuMeasurementandVerification1.Title"/>
+								<Description resid="mnuMeasurementandVerification1.Desc"/>
+							</Supertip>
+						<Control xsi:type="Button" id="mnuIntervalDataDrivenModelsandMandV1">
+							<Label resid="mnuIntervalDataDrivenModelsandMandV1.label"/>
+							<Supertip>
+								<Title resid="mnuIntervalDataDrivenModelsandMandV1.Title"/>
+								<Description resid="mnuIntervalDataDrivenModelsandMandV1.Desc"/>
+							</Supertip>
+						<Control xsi:type="Button" id="mnuMonthlyBillingDataModelsandMandV1">
+							<Label resid="mnuMonthlyBillingDataModelsandMandV1.label"/>
+							<Supertip>
+								<Title resid="mnuMonthlyBillingDataModelsandMandV1.Title"/>
+								<Description resid="mnuMonthlyBillingDataModelsandMandV1.Desc"/>
+							</Supertip>
+						<Control xsi:type="Button" id="mnuStrategicEnergyManagementandMTR1">
+							<Label resid="mnuStrategicEnergyManagementandMTR1.label"/>
+							<Supertip>
+								<Title resid="mnuStrategicEnergyManagementandMTR1.Title"/>
+								<Description resid="mnuStrategicEnergyManagementandMTR1.Desc"/>
+							</Supertip>
+						<Control xsi:type="Button" id="sep001">
+							<Label resid="sep001.label"/>
+							<Supertip>
+								<Title resid="sep001.Title"/>
+								<Description resid="sep001.Desc"/>
+							</Supertip>
+						<Control xsi:type="Button" id="mnuPNNLReTuning1">
+							<Label resid="mnuPNNLReTuning1.label"/>
+							<Supertip>
+								<Title resid="mnuPNNLReTuning1.Title"/>
+								<Description resid="mnuPNNLReTuning1.Desc"/>
+							</Supertip>
+					</Group>					
+<Group id="gpUtilities">
+						<Label resid="gpUtilities.label"/>
+						<Icon>
+		<bt:Image size="16" resid="Icon.16x16"/>
+		<bt:Image size="32" resid="Icon.32x32"/>
+		<bt:Image size="80" resid="Icon.80x80"/>
+	</Icon>
+						<Control xsi:type="Button" id="mnuResampling1">
+							<Label resid="mnuResampling1.label"/>
+							<Supertip>
+								<Title resid="mnuResampling1.Title"/>
+								<Description resid="mnuResampling1.Desc"/>
+							</Supertip>
+						<Control xsi:type="Button" id="mnuECAMUtilities1">
+							<Label resid="mnuECAMUtilities1.label"/>
+							<Supertip>
+								<Title resid="mnuECAMUtilities1.Title"/>
+								<Description resid="mnuECAMUtilities1.Desc"/>
+							</Supertip>
+						<Control xsi:type="Button" id="btnDeleteGroupOfSheets1">
+							<Label resid="btnDeleteGroupOfSheets1.label"/>
+							<Supertip>
+								<Title resid="btnDeleteGroupOfSheets1.Title"/>
+								<Description resid="btnDeleteGroupOfSheets1.Desc"/>
+							</Supertip>
+					</Group>					
+<Group id="gpECAM">
+						<Label resid="gpECAM.label"/>
+						<Icon>
+		<bt:Image size="16" resid="Icon.16x16"/>
+		<bt:Image size="32" resid="Icon.32x32"/>
+		<bt:Image size="80" resid="Icon.80x80"/>
+	</Icon>
+						<Control xsi:type="Button" id="mnuECAMHelp1">
+							<Label resid="mnuECAMHelp1.label"/>
+							<Supertip>
+								<Title resid="mnuECAMHelp1.Title"/>
+								<Description resid="mnuECAMHelp1.Desc"/>
+							</Supertip>
+						<Control xsi:type="Button" id="btnAboutECAM1">
+							<Label resid="btnAboutECAM1.label"/>
+							<Supertip>
+								<Title resid="btnAboutECAM1.Title"/>
+								<Description resid="btnAboutECAM1.Desc"/>
+							</Supertip>
+					</Group>              <Label resid="tbECAM_JS.label"/>
+            </CustomTab>
+
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+			<Resources>
+			</Resources>  </VersionOverrides>
+
+</OfficeApp>
