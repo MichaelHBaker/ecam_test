@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
   <Id>b4fb2a24-691a-4783-bc9f-117caf4a365d</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
@@ -26,205 +26,430 @@
           <FunctionFile resid="Commands.Url"/>
 
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
-					
-<Group id="gpDataInputs">
-						<Label resid="gpDataInputs.label"/>
-						<Icon>
-		<bt:Image size="16" resid="Icon.16x16"/>
-		<bt:Image size="32" resid="Icon.32x32"/>
-		<bt:Image size="80" resid="Icon.80x80"/>
-	</Icon>
-						<Control xsi:type="Button" id="btnSelectIntervalData1">
-							<Label resid="btnSelectIntervalData1.label"/>
-							<Supertip>
-								<Title resid="btnSelectIntervalData1.Title"/>
-								<Description resid="btnSelectIntervalData1.Desc"/>
-							</Supertip>
-						<Control xsi:type="Button" id="btnSelectBillingData1">
-							<Label resid="btnSelectBillingData1.label"/>
-							<Supertip>
-								<Title resid="btnSelectBillingData1.Title"/>
-								<Description resid="btnSelectBillingData1.Desc"/>
-							</Supertip>
-					</Group>					
-<Group id="gpGeneralInputs">
-						<Label resid="gpGeneralInputs.label"/>
-						<Icon>
-		<bt:Image size="16" resid="Icon.16x16"/>
-		<bt:Image size="32" resid="Icon.32x32"/>
-		<bt:Image size="80" resid="Icon.80x80"/>
-	</Icon>
-						<Control xsi:type="Button" id="btnDefinePoints1">
-							<Label resid="btnDefinePoints1.label"/>
-							<Supertip>
-								<Title resid="btnDefinePoints1.Title"/>
-								<Description resid="btnDefinePoints1.Desc"/>
-							</Supertip>
-						<Control xsi:type="Button" id="btnCreateSchedules1">
-							<Label resid="btnCreateSchedules1.label"/>
-							<Supertip>
-								<Title resid="btnCreateSchedules1.Title"/>
-								<Description resid="btnCreateSchedules1.Desc"/>
-							</Supertip>
-						<Control xsi:type="Button" id="btnCreatePrePostDates1">
-							<Label resid="btnCreatePrePostDates1.label"/>
-							<Supertip>
-								<Title resid="btnCreatePrePostDates1.Title"/>
-								<Description resid="btnCreatePrePostDates1.Desc"/>
-							</Supertip>
-						<Control xsi:type="Button" id="mnuWeather1">
-							<Label resid="mnuWeather1.label"/>
-							<Supertip>
-								<Title resid="mnuWeather1.Title"/>
-								<Description resid="mnuWeather1.Desc"/>
-							</Supertip>
-						<Control xsi:type="Button" id="btnCustomizeHolidays1">
-							<Label resid="btnCustomizeHolidays1.label"/>
-							<Supertip>
-								<Title resid="btnCustomizeHolidays1.Title"/>
-								<Description resid="btnCustomizeHolidays1.Desc"/>
-							</Supertip>
-					</Group>					
-<Group id="gpCharts">
-						<Label resid="gpCharts.label"/>
-						<Icon>
-		<bt:Image size="16" resid="Icon.16x16"/>
-		<bt:Image size="32" resid="Icon.32x32"/>
-		<bt:Image size="80" resid="Icon.80x80"/>
-	</Icon>
-						<Control xsi:type="Button" id="mnuTimeSeriesCharts1">
-							<Label resid="mnuTimeSeriesCharts1.label"/>
-							<Supertip>
-								<Title resid="mnuTimeSeriesCharts1.Title"/>
-								<Description resid="mnuTimeSeriesCharts1.Desc"/>
-							</Supertip>
-						<Control xsi:type="Button" id="mnuScatterCharts1">
-							<Label resid="mnuScatterCharts1.label"/>
-							<Supertip>
-								<Title resid="mnuScatterCharts1.Title"/>
-								<Description resid="mnuScatterCharts1.Desc"/>
-							</Supertip>
-						<Control xsi:type="Button" id="btnCreateLoadDurationChart1">
-							<Label resid="btnCreateLoadDurationChart1.label"/>
-							<Supertip>
-								<Title resid="btnCreateLoadDurationChart1.Title"/>
-								<Description resid="btnCreateLoadDurationChart1.Desc"/>
-							</Supertip>
-						<Control xsi:type="Button" id="btnScheduleChart1">
-							<Label resid="btnScheduleChart1.label"/>
-							<Supertip>
-								<Title resid="btnScheduleChart1.Title"/>
-								<Description resid="btnScheduleChart1.Desc"/>
-							</Supertip>
-						<Control xsi:type="Button" id="mnuMatrixCharts1">
-							<Label resid="mnuMatrixCharts1.label"/>
-							<Supertip>
-								<Title resid="mnuMatrixCharts1.Title"/>
-								<Description resid="mnuMatrixCharts1.Desc"/>
-							</Supertip>
-						<Control xsi:type="Button" id="mnuChartUtilities1">
-							<Label resid="mnuChartUtilities1.label"/>
-							<Supertip>
-								<Title resid="mnuChartUtilities1.Title"/>
-								<Description resid="mnuChartUtilities1.Desc"/>
-							</Supertip>
-						<Control xsi:type="Button" id="mnuMetricsandDataSummaries1">
-							<Label resid="mnuMetricsandDataSummaries1.label"/>
-							<Supertip>
-								<Title resid="mnuMetricsandDataSummaries1.Title"/>
-								<Description resid="mnuMetricsandDataSummaries1.Desc"/>
-							</Supertip>
-					</Group>					
-<Group id="gpAnalysis">
-						<Label resid="gpAnalysis.label"/>
-						<Icon>
-		<bt:Image size="16" resid="Icon.16x16"/>
-		<bt:Image size="32" resid="Icon.32x32"/>
-		<bt:Image size="80" resid="Icon.80x80"/>
-	</Icon>
-						<Control xsi:type="Button" id="mnuMeasurementandVerification1">
-							<Label resid="mnuMeasurementandVerification1.label"/>
-							<Supertip>
-								<Title resid="mnuMeasurementandVerification1.Title"/>
-								<Description resid="mnuMeasurementandVerification1.Desc"/>
-							</Supertip>
-						<Control xsi:type="Button" id="mnuIntervalDataDrivenModelsandMandV1">
-							<Label resid="mnuIntervalDataDrivenModelsandMandV1.label"/>
-							<Supertip>
-								<Title resid="mnuIntervalDataDrivenModelsandMandV1.Title"/>
-								<Description resid="mnuIntervalDataDrivenModelsandMandV1.Desc"/>
-							</Supertip>
-						<Control xsi:type="Button" id="mnuMonthlyBillingDataModelsandMandV1">
-							<Label resid="mnuMonthlyBillingDataModelsandMandV1.label"/>
-							<Supertip>
-								<Title resid="mnuMonthlyBillingDataModelsandMandV1.Title"/>
-								<Description resid="mnuMonthlyBillingDataModelsandMandV1.Desc"/>
-							</Supertip>
-						<Control xsi:type="Button" id="mnuStrategicEnergyManagementandMTR1">
-							<Label resid="mnuStrategicEnergyManagementandMTR1.label"/>
-							<Supertip>
-								<Title resid="mnuStrategicEnergyManagementandMTR1.Title"/>
-								<Description resid="mnuStrategicEnergyManagementandMTR1.Desc"/>
-							</Supertip>
-						<Control xsi:type="Button" id="sep001">
-							<Label resid="sep001.label"/>
-							<Supertip>
-								<Title resid="sep001.Title"/>
-								<Description resid="sep001.Desc"/>
-							</Supertip>
-						<Control xsi:type="Button" id="mnuPNNLReTuning1">
-							<Label resid="mnuPNNLReTuning1.label"/>
-							<Supertip>
-								<Title resid="mnuPNNLReTuning1.Title"/>
-								<Description resid="mnuPNNLReTuning1.Desc"/>
-							</Supertip>
-					</Group>					
-<Group id="gpUtilities">
-						<Label resid="gpUtilities.label"/>
-						<Icon>
-		<bt:Image size="16" resid="Icon.16x16"/>
-		<bt:Image size="32" resid="Icon.32x32"/>
-		<bt:Image size="80" resid="Icon.80x80"/>
-	</Icon>
-						<Control xsi:type="Button" id="mnuResampling1">
-							<Label resid="mnuResampling1.label"/>
-							<Supertip>
-								<Title resid="mnuResampling1.Title"/>
-								<Description resid="mnuResampling1.Desc"/>
-							</Supertip>
-						<Control xsi:type="Button" id="mnuECAMUtilities1">
-							<Label resid="mnuECAMUtilities1.label"/>
-							<Supertip>
-								<Title resid="mnuECAMUtilities1.Title"/>
-								<Description resid="mnuECAMUtilities1.Desc"/>
-							</Supertip>
-						<Control xsi:type="Button" id="btnDeleteGroupOfSheets1">
-							<Label resid="btnDeleteGroupOfSheets1.label"/>
-							<Supertip>
-								<Title resid="btnDeleteGroupOfSheets1.Title"/>
-								<Description resid="btnDeleteGroupOfSheets1.Desc"/>
-							</Supertip>
-					</Group>					
-<Group id="gpECAM">
-						<Label resid="gpECAM.label"/>
-						<Icon>
-		<bt:Image size="16" resid="Icon.16x16"/>
-		<bt:Image size="32" resid="Icon.32x32"/>
-		<bt:Image size="80" resid="Icon.80x80"/>
-	</Icon>
-						<Control xsi:type="Button" id="mnuECAMHelp1">
-							<Label resid="mnuECAMHelp1.label"/>
-							<Supertip>
-								<Title resid="mnuECAMHelp1.Title"/>
-								<Description resid="mnuECAMHelp1.Desc"/>
-							</Supertip>
-						<Control xsi:type="Button" id="btnAboutECAM1">
-							<Label resid="btnAboutECAM1.label"/>
-							<Supertip>
-								<Title resid="btnAboutECAM1.Title"/>
-								<Description resid="btnAboutECAM1.Desc"/>
-							</Supertip>
-					</Group>              <Label resid="tbECAM_JS.label"/>
+            <Group id="gpDataInputs">
+              <Label resid="gpDataInputs.label"/>
+              <Icon>
+                <bt:Image size="16" resid="Icon.16x16"/>
+                <bt:Image size="32" resid="Icon.32x32"/>
+                <bt:Image size="80" resid="Icon.80x80"/>
+              </Icon>
+              <Control xsi:type="Button" id="btnSelectIntervalData1">
+                <Label resid="btnSelectIntervalData1.label"/>
+                <Supertip>
+                  <Title resid="btnSelectIntervalData1.Title"/>
+                  <Description resid="btnSelectIntervalData1.Desc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                </Icon>
+                <Action>
+                  <FunctionName>OnAction_ECAM</FunctionName>
+                </Action>
+              </Control>
+              <Control xsi:type="Button" id="btnSelectBillingData1">
+                <Label resid="btnSelectBillingData1.label"/>
+                <Supertip>
+                  <Title resid="btnSelectBillingData1.Title"/>
+                  <Description resid="btnSelectBillingData1.Desc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                </Icon>
+                <Action>
+                  <FunctionName>OnAction_ECAM</FunctionName>
+                </Action>
+              </Control>
+            </Group>
+            <Group id="gpGeneralInputs">
+              <Label resid="gpGeneralInputs.label"/>
+              <Icon>
+                <bt:Image size="16" resid="Icon.16x16"/>
+                <bt:Image size="32" resid="Icon.32x32"/>
+                <bt:Image size="80" resid="Icon.80x80"/>
+              </Icon>
+              <Control xsi:type="Button" id="btnDefinePoints1">
+                <Label resid="btnDefinePoints1.label"/>
+                <Supertip>
+                  <Title resid="btnDefinePoints1.Title"/>
+                  <Description resid="btnDefinePoints1.Desc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                </Icon>
+                <Action>
+                  <FunctionName>OnAction_ECAM</FunctionName>
+                </Action>
+              </Control>
+              <Control xsi:type="Button" id="btnCreateSchedules1">
+                <Label resid="btnCreateSchedules1.label"/>
+                <Supertip>
+                  <Title resid="btnCreateSchedules1.Title"/>
+                  <Description resid="btnCreateSchedules1.Desc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                </Icon>
+                <Action>
+                  <FunctionName>OnAction_ECAM</FunctionName>
+                </Action>
+              </Control>
+              <Control xsi:type="Button" id="btnCreatePrePostDates1">
+                <Label resid="btnCreatePrePostDates1.label"/>
+                <Supertip>
+                  <Title resid="btnCreatePrePostDates1.Title"/>
+                  <Description resid="btnCreatePrePostDates1.Desc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                </Icon>
+                <Action>
+                  <FunctionName>OnAction_ECAM</FunctionName>
+                </Action>
+              </Control>
+              <Control xsi:type="Button" id="mnuWeather1">
+                <Label resid="mnuWeather1.label"/>
+                <Supertip>
+                  <Title resid="mnuWeather1.Title"/>
+                  <Description resid="mnuWeather1.Desc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                </Icon>
+                <Action>
+                  <FunctionName>OnAction_ECAM</FunctionName>
+                </Action>
+              </Control>
+              <Control xsi:type="Button" id="btnCustomizeHolidays1">
+                <Label resid="btnCustomizeHolidays1.label"/>
+                <Supertip>
+                  <Title resid="btnCustomizeHolidays1.Title"/>
+                  <Description resid="btnCustomizeHolidays1.Desc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                </Icon>
+                <Action>
+                  <FunctionName>OnAction_ECAM</FunctionName>
+                </Action>
+              </Control>
+            </Group>
+            <Group id="gpCharts">
+              <Label resid="gpCharts.label"/>
+              <Icon>
+                <bt:Image size="16" resid="Icon.16x16"/>
+                <bt:Image size="32" resid="Icon.32x32"/>
+                <bt:Image size="80" resid="Icon.80x80"/>
+              </Icon>
+              <Control xsi:type="Button" id="mnuTimeSeriesCharts1">
+                <Label resid="mnuTimeSeriesCharts1.label"/>
+                <Supertip>
+                  <Title resid="mnuTimeSeriesCharts1.Title"/>
+                  <Description resid="mnuTimeSeriesCharts1.Desc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                </Icon>
+                <Action>
+                  <FunctionName>OnAction_ECAM</FunctionName>
+                </Action>
+              </Control>
+              <Control xsi:type="Button" id="mnuScatterCharts1">
+                <Label resid="mnuScatterCharts1.label"/>
+                <Supertip>
+                  <Title resid="mnuScatterCharts1.Title"/>
+                  <Description resid="mnuScatterCharts1.Desc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                </Icon>
+                <Action>
+                  <FunctionName>OnAction_ECAM</FunctionName>
+                </Action>
+              </Control>
+              <Control xsi:type="Button" id="btnCreateLoadDurationChart1">
+                <Label resid="btnCreateLoadDurationChart1.label"/>
+                <Supertip>
+                  <Title resid="btnCreateLoadDurationChart1.Title"/>
+                  <Description resid="btnCreateLoadDurationChart1.Desc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                </Icon>
+                <Action>
+                  <FunctionName>OnAction_ECAM</FunctionName>
+                </Action>
+              </Control>
+              <Control xsi:type="Button" id="btnScheduleChart1">
+                <Label resid="btnScheduleChart1.label"/>
+                <Supertip>
+                  <Title resid="btnScheduleChart1.Title"/>
+                  <Description resid="btnScheduleChart1.Desc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                </Icon>
+                <Action>
+                  <FunctionName>OnAction_ECAM</FunctionName>
+                </Action>
+              </Control>
+              <Control xsi:type="Button" id="mnuMatrixCharts1">
+                <Label resid="mnuMatrixCharts1.label"/>
+                <Supertip>
+                  <Title resid="mnuMatrixCharts1.Title"/>
+                  <Description resid="mnuMatrixCharts1.Desc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                </Icon>
+                <Action>
+                  <FunctionName>OnAction_ECAM</FunctionName>
+                </Action>
+              </Control>
+              <Control xsi:type="Button" id="mnuChartUtilities1">
+                <Label resid="mnuChartUtilities1.label"/>
+                <Supertip>
+                  <Title resid="mnuChartUtilities1.Title"/>
+                  <Description resid="mnuChartUtilities1.Desc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                </Icon>
+                <Action>
+                  <FunctionName>OnAction_ECAM</FunctionName>
+                </Action>
+              </Control>
+              <Control xsi:type="Button" id="mnuMetricsandDataSummaries1">
+                <Label resid="mnuMetricsandDataSummaries1.label"/>
+                <Supertip>
+                  <Title resid="mnuMetricsandDataSummaries1.Title"/>
+                  <Description resid="mnuMetricsandDataSummaries1.Desc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                </Icon>
+                <Action>
+                  <FunctionName>OnAction_ECAM</FunctionName>
+                </Action>
+              </Control>
+            </Group>
+            <Group id="gpAnalysis">
+              <Label resid="gpAnalysis.label"/>
+              <Icon>
+                <bt:Image size="16" resid="Icon.16x16"/>
+                <bt:Image size="32" resid="Icon.32x32"/>
+                <bt:Image size="80" resid="Icon.80x80"/>
+              </Icon>
+              <Control xsi:type="Button" id="mnuMeasurementandVerification1">
+                <Label resid="mnuMeasurementandVerification1.label"/>
+                <Supertip>
+                  <Title resid="mnuMeasurementandVerification1.Title"/>
+                  <Description resid="mnuMeasurementandVerification1.Desc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                </Icon>
+                <Action>
+                  <FunctionName>OnAction_ECAM</FunctionName>
+                </Action>
+              </Control>
+              <Control xsi:type="Button" id="mnuIntervalDataDrivenModelsandMandV1">
+                <Label resid="mnuIntervalDataDrivenModelsandMandV1.label"/>
+                <Supertip>
+                  <Title resid="mnuIntervalDataDrivenModelsandMandV1.Title"/>
+                  <Description resid="mnuIntervalDataDrivenModelsandMandV1.Desc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                </Icon>
+                <Action>
+                  <FunctionName>OnAction_ECAM</FunctionName>
+                </Action>
+              </Control>
+              <Control xsi:type="Button" id="mnuMonthlyBillingDataModelsandMandV1">
+                <Label resid="mnuMonthlyBillingDataModelsandMandV1.label"/>
+                <Supertip>
+                  <Title resid="mnuMonthlyBillingDataModelsandMandV1.Title"/>
+                  <Description resid="mnuMonthlyBillingDataModelsandMandV1.Desc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                </Icon>
+                <Action>
+                  <FunctionName>OnAction_ECAM</FunctionName>
+                </Action>
+              </Control>
+              <Control xsi:type="Button" id="mnuStrategicEnergyManagementandMTR1">
+                <Label resid="mnuStrategicEnergyManagementandMTR1.label"/>
+                <Supertip>
+                  <Title resid="mnuStrategicEnergyManagementandMTR1.Title"/>
+                  <Description resid="mnuStrategicEnergyManagementandMTR1.Desc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                </Icon>
+                <Action>
+                  <FunctionName>OnAction_ECAM</FunctionName>
+                </Action>
+              </Control>
+              <Control xsi:type="Button" id="sep001">
+                <Label resid="sep001.label"/>
+                <Supertip>
+                  <Title resid="sep001.Title"/>
+                  <Description resid="sep001.Desc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                </Icon>
+                <Action>
+                  <FunctionName>OnAction_ECAM</FunctionName>
+                </Action>
+              </Control>
+              <Control xsi:type="Button" id="mnuPNNLReTuning1">
+                <Label resid="mnuPNNLReTuning1.label"/>
+                <Supertip>
+                  <Title resid="mnuPNNLReTuning1.Title"/>
+                  <Description resid="mnuPNNLReTuning1.Desc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                </Icon>
+                <Action>
+                  <FunctionName>OnAction_ECAM</FunctionName>
+                </Action>
+              </Control>
+            </Group>
+            <Group id="gpUtilities">
+              <Label resid="gpUtilities.label"/>
+              <Icon>
+                <bt:Image size="16" resid="Icon.16x16"/>
+                <bt:Image size="32" resid="Icon.32x32"/>
+                <bt:Image size="80" resid="Icon.80x80"/>
+              </Icon>
+              <Control xsi:type="Button" id="mnuResampling1">
+                <Label resid="mnuResampling1.label"/>
+                <Supertip>
+                  <Title resid="mnuResampling1.Title"/>
+                  <Description resid="mnuResampling1.Desc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                </Icon>
+                <Action>
+                  <FunctionName>OnAction_ECAM</FunctionName>
+                </Action>
+              </Control>
+              <Control xsi:type="Button" id="mnuECAMUtilities1">
+                <Label resid="mnuECAMUtilities1.label"/>
+                <Supertip>
+                  <Title resid="mnuECAMUtilities1.Title"/>
+                  <Description resid="mnuECAMUtilities1.Desc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                </Icon>
+                <Action>
+                  <FunctionName>OnAction_ECAM</FunctionName>
+                </Action>
+              </Control>
+              <Control xsi:type="Button" id="btnDeleteGroupOfSheets1">
+                <Label resid="btnDeleteGroupOfSheets1.label"/>
+                <Supertip>
+                  <Title resid="btnDeleteGroupOfSheets1.Title"/>
+                  <Description resid="btnDeleteGroupOfSheets1.Desc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                </Icon>
+                <Action>
+                  <FunctionName>OnAction_ECAM</FunctionName>
+                </Action>
+              </Control>
+            </Group>
+            <Group id="gpECAM">
+              <Label resid="gpECAM.label"/>
+              <Icon>
+                <bt:Image size="16" resid="Icon.16x16"/>
+                <bt:Image size="32" resid="Icon.32x32"/>
+                <bt:Image size="80" resid="Icon.80x80"/>
+              </Icon>
+              <Control xsi:type="Button" id="mnuECAMHelp1">
+                <Label resid="mnuECAMHelp1.label"/>
+                <Supertip>
+                  <Title resid="mnuECAMHelp1.Title"/>
+                  <Description resid="mnuECAMHelp1.Desc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                </Icon>
+                <Action>
+                  <FunctionName>OnAction_ECAM</FunctionName>
+                </Action>
+              </Control>
+              <Control xsi:type="Button" id="btnAboutECAM1">
+                <Label resid="btnAboutECAM1.label"/>
+                <Supertip>
+                  <Title resid="btnAboutECAM1.Title"/>
+                  <Description resid="btnAboutECAM1.Desc"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                </Icon>
+                <Action>
+                  <FunctionName>OnAction_ECAM</FunctionName>
+                </Action>
+              </Control>
+            </Group>
+              <Label resid="tbECAM_JS.label"/>
             </CustomTab>
 
           </ExtensionPoint>
@@ -232,7 +457,22 @@
       </Host>
     </Hosts>
 
-			<Resources>
-			</Resources>  </VersionOverrides>
+    <Resources>
+      <bt:Images>
+      </bt:Images>
+      <bt:Urls>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="gpDataInputs.label" DefaultValue="Data Inputs"/>
+        <bt:String id="gpGeneralInputs.label" DefaultValue="General Inputs"/>
+        <bt:String id="gpCharts.label" DefaultValue="Charts and Metrics"/>
+        <bt:String id="gpAnalysis.label" DefaultValue="Analyses"/>
+        <bt:String id="gpUtilities.label" DefaultValue="Utilities"/>
+        <bt:String id="gpECAM.label" DefaultValue="ECAM"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
 
 </OfficeApp>

@@ -15,27 +15,46 @@ with open("ecam_vba_ribbon.xml", "r") as f:
 with open("manifest_bs4.xml", "w") as f:
     f.write(new_manifest_begin)
 
-    template_begin_last_tab_position = '\t\t\t\t\t'
+    template_begin_last_tab_position = '  ' * 6
+
     for group in soup.tab.contents:
         if type(group) == Tag:      
             
             group_xml = []
 
-            group_xml.append(f'''\n<Group id="{group['id']}">''')
-            group_xml.append(f'''\t<Label resid="{group['id']}.label"/>''')       
-            group_xml.append( '''\t<Icon>\n\t\t<bt:Image size="16" resid="Icon.16x16"/>\n\t\t<bt:Image size="32" resid="Icon.32x32"/>\n\t\t<bt:Image size="80" resid="Icon.80x80"/>\n\t</Icon>''')
+            group_xml.append(f'''<Group id="{group['id']}">''')
+            group_xml.append(f'''  <Label resid="{group['id']}.label"/>''')       
+            group_xml.append( '''  <Icon>''')
+            group_xml.append( '''    <bt:Image size="16" resid="Icon.16x16"/>''')
+            group_xml.append( '''    <bt:Image size="32" resid="Icon.32x32"/>''')
+            group_xml.append( '''    <bt:Image size="80" resid="Icon.80x80"/>''')
+            group_xml.append( '''  </Icon>''')
             
-            for button in group.contents:
-                if type(button) == Tag:      
-                    group_xml.append(f'''\t<Control xsi:type="Button" id="{button['id']}">''')
-                    group_xml.append(f'''\t\t<Label resid="{button['id']}.label"/>''')       
-                    group_xml.append( '''\t\t<Supertip>''')
-                    group_xml.append(f'''\t\t\t<Title resid="{button['id']}.Title"/>''')       
-                    group_xml.append(f'''\t\t\t<Description resid="{button['id']}.Desc"/>''')       
-                    group_xml.append( '''\t\t</Supertip>''')
+            for line in group.contents:
+                if type(line) == Tag:
+                    # button_tag
+                    # menu_open_tag
+                    # menu_close_tag
+                    # menu_button_tag
+                    print(dir(line))
+                    group_xml.append(f'''  <Control xsi:type="Button" id="{line['id']}">''')
+                    group_xml.append(f'''    <Label resid="{line['id']}.label"/>''')       
+                    group_xml.append( '''    <Supertip>''')
+                    group_xml.append(f'''      <Title resid="{line['id']}.Title"/>''')       
+                    group_xml.append(f'''      <Description resid="{line['id']}.Desc"/>''')       
+                    group_xml.append( '''    </Supertip>''')
+                    group_xml.append( '''    <Icon>''')
+                    group_xml.append(f'''      <bt:Image size="16" resid="IconSelectArea.16x16"/>''')
+                    group_xml.append(f'''      <bt:Image size="32" resid="IconSelectArea.32x32"/>''')
+                    group_xml.append(f'''      <bt:Image size="80" resid="IconSelectArea.80x80"/>''')
+                    group_xml.append( '''    </Icon>''')
+                    group_xml.append( '''    <Action>''')
+                    group_xml.append( '''      <FunctionName>OnAction_ECAM</FunctionName>''')
+                    group_xml.append( '''    </Action>''')
+                    group_xml.append( '''  </Control>''')
+                
 
-
-            group_xml.append('</Group>')  
+            group_xml.append('</Group>\n')  
             group_xml = [template_begin_last_tab_position + group for group in group_xml]
             f.write('\n'.join(group_xml))
 
@@ -43,9 +62,14 @@ with open("manifest_bs4.xml", "w") as f:
         
     f.write(new_manifest_middle)
 
-    f.write('\n\t\t\t<Resources>')
+    f.write('\n    <Resources>')
+    for res_type in res_xml:
+        f.write(f'\n      <bt:{res_type}>')
+        for res in res_xml[res_type]:
+            f.write(f'\n        {res}')    
+        f.write(f'\n      </bt:{res_type}>')
 
-    f.write('\n\t\t\t</Resources>')
+    f.write('\n    </Resources>\n')
 
     f.write(new_manifest_end)
 
