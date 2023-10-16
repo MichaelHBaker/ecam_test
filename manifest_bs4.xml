@@ -116,7 +116,7 @@
                   <FunctionName>OnAction_ECAM</FunctionName>
                 </Action>
               </Control>
-              <Control xsi:type="Button" id="mnuWeather1">
+              <Control xsi:type="Menu" id="mnuWeather1">
                 <Label resid="mnuWeather1.label"/>
                 <Supertip>
                   <Title resid="mnuWeather1.Title"/>
@@ -127,9 +127,83 @@
                   <bt:Image size="32" resid="IconSelectArea.32x32"/>
                   <bt:Image size="80" resid="IconSelectArea.80x80"/>
                 </Icon>
-                <Action>
-                  <FunctionName>OnAction_ECAM</FunctionName>
-                </Action>
+                </Items>
+                  <Item id="btnInputSiteWeatherName1">
+                    <Label resid="btnInputSiteWeatherName1.label"/>
+                    <Supertip>
+                      <Title resid="btnInputSiteWeatherName1.Title"/>
+                      <Description resid="btnInputSiteWeatherName1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnInputTMYWeatherName1">
+                    <Label resid="btnInputTMYWeatherName1.label"/>
+                    <Supertip>
+                      <Title resid="btnInputTMYWeatherName1.Title"/>
+                      <Description resid="btnInputTMYWeatherName1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnDownloadData1">
+                    <Label resid="btnDownloadData1.label"/>
+                    <Supertip>
+                      <Title resid="btnDownloadData1.Title"/>
+                      <Description resid="btnDownloadData1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnCheckWthrCoverageBase1">
+                    <Label resid="btnCheckWthrCoverageBase1.label"/>
+                    <Supertip>
+                      <Title resid="btnCheckWthrCoverageBase1.Title"/>
+                      <Description resid="btnCheckWthrCoverageBase1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnCheckWthrCoveragePost1">
+                    <Label resid="btnCheckWthrCoveragePost1.label"/>
+                    <Supertip>
+                      <Title resid="btnCheckWthrCoveragePost1.Title"/>
+                      <Description resid="btnCheckWthrCoveragePost1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                    </Items>
               </Control>
               <Control xsi:type="Button" id="btnCustomizeHolidays1">
                 <Label resid="btnCustomizeHolidays1.label"/>
@@ -154,7 +228,7 @@
                 <bt:Image size="32" resid="Icon.32x32"/>
                 <bt:Image size="80" resid="Icon.80x80"/>
               </Icon>
-              <Control xsi:type="Button" id="mnuTimeSeriesCharts1">
+              <Control xsi:type="Menu" id="mnuTimeSeriesCharts1">
                 <Label resid="mnuTimeSeriesCharts1.label"/>
                 <Supertip>
                   <Title resid="mnuTimeSeriesCharts1.Title"/>
@@ -165,11 +239,175 @@
                   <bt:Image size="32" resid="IconSelectArea.32x32"/>
                   <bt:Image size="80" resid="IconSelectArea.80x80"/>
                 </Icon>
-                <Action>
-                  <FunctionName>OnAction_ECAM</FunctionName>
-                </Action>
+                </Items>
+                  <Item id="btnCreateHistoryChart1">
+                    <Label resid="btnCreateHistoryChart1.label"/>
+                    <Supertip>
+                      <Title resid="btnCreateHistoryChart1.Title"/>
+                      <Description resid="btnCreateHistoryChart1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnCreateLPbyDaytype1">
+                    <Label resid="btnCreateLPbyDaytype1.label"/>
+                    <Supertip>
+                      <Title resid="btnCreateLPbyDaytype1.Title"/>
+                      <Description resid="btnCreateLPbyDaytype1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnCreateLPbyDayOfWeek1">
+                    <Label resid="btnCreateLPbyDayOfWeek1.label"/>
+                    <Supertip>
+                      <Title resid="btnCreateLPbyDayOfWeek1.Title"/>
+                      <Description resid="btnCreateLPbyDayOfWeek1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnCreateLPbyMonthYr1">
+                    <Label resid="btnCreateLPbyMonthYr1.label"/>
+                    <Supertip>
+                      <Title resid="btnCreateLPbyMonthYr1.Title"/>
+                      <Description resid="btnCreateLPbyMonthYr1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnCreateLPbyDateRng1">
+                    <Label resid="btnCreateLPbyDateRng1.label"/>
+                    <Supertip>
+                      <Title resid="btnCreateLPbyDateRng1.Title"/>
+                      <Description resid="btnCreateLPbyDateRng1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnCreateLPbyYear1">
+                    <Label resid="btnCreateLPbyYear1.label"/>
+                    <Supertip>
+                      <Title resid="btnCreateLPbyYear1.Title"/>
+                      <Description resid="btnCreateLPbyYear1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnCreateLPbyDay1">
+                    <Label resid="btnCreateLPbyDay1.label"/>
+                    <Supertip>
+                      <Title resid="btnCreateLPbyDay1.Title"/>
+                      <Description resid="btnCreateLPbyDay1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnChart3dColoredDaytypes1">
+                    <Label resid="btnChart3dColoredDaytypes1.label"/>
+                    <Supertip>
+                      <Title resid="btnChart3dColoredDaytypes1.Title"/>
+                      <Description resid="btnChart3dColoredDaytypes1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnContourChart1">
+                    <Label resid="btnContourChart1.label"/>
+                    <Supertip>
+                      <Title resid="btnContourChart1.Title"/>
+                      <Description resid="btnContourChart1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnCreateCalendarLP1">
+                    <Label resid="btnCreateCalendarLP1.label"/>
+                    <Supertip>
+                      <Title resid="btnCreateCalendarLP1.Title"/>
+                      <Description resid="btnCreateCalendarLP1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnBoxPlotLP1">
+                    <Label resid="btnBoxPlotLP1.label"/>
+                    <Supertip>
+                      <Title resid="btnBoxPlotLP1.Title"/>
+                      <Description resid="btnBoxPlotLP1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                    </Items>
               </Control>
-              <Control xsi:type="Button" id="mnuScatterCharts1">
+              <Control xsi:type="Menu" id="mnuScatterCharts1">
                 <Label resid="mnuScatterCharts1.label"/>
                 <Supertip>
                   <Title resid="mnuScatterCharts1.Title"/>
@@ -180,9 +418,83 @@
                   <bt:Image size="32" resid="IconSelectArea.32x32"/>
                   <bt:Image size="80" resid="IconSelectArea.80x80"/>
                 </Icon>
-                <Action>
-                  <FunctionName>OnAction_ECAM</FunctionName>
-                </Action>
+                </Items>
+                  <Item id="btnCreateScatterChartByOcc1">
+                    <Label resid="btnCreateScatterChartByOcc1.label"/>
+                    <Supertip>
+                      <Title resid="btnCreateScatterChartByOcc1.Title"/>
+                      <Description resid="btnCreateScatterChartByOcc1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnCreateScatterChartByDateRng1">
+                    <Label resid="btnCreateScatterChartByDateRng1.label"/>
+                    <Supertip>
+                      <Title resid="btnCreateScatterChartByDateRng1.Title"/>
+                      <Description resid="btnCreateScatterChartByDateRng1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnPureScatter1">
+                    <Label resid="btnPureScatter1.label"/>
+                    <Supertip>
+                      <Title resid="btnPureScatter1.Title"/>
+                      <Description resid="btnPureScatter1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnShowHighlightForm1">
+                    <Label resid="btnShowHighlightForm1.label"/>
+                    <Supertip>
+                      <Title resid="btnShowHighlightForm1.Title"/>
+                      <Description resid="btnShowHighlightForm1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnUnHiLiteDays1">
+                    <Label resid="btnUnHiLiteDays1.label"/>
+                    <Supertip>
+                      <Title resid="btnUnHiLiteDays1.Title"/>
+                      <Description resid="btnUnHiLiteDays1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                    </Items>
               </Control>
               <Control xsi:type="Button" id="btnCreateLoadDurationChart1">
                 <Label resid="btnCreateLoadDurationChart1.label"/>
@@ -214,7 +526,7 @@
                   <FunctionName>OnAction_ECAM</FunctionName>
                 </Action>
               </Control>
-              <Control xsi:type="Button" id="mnuMatrixCharts1">
+              <Control xsi:type="Menu" id="mnuMatrixCharts1">
                 <Label resid="mnuMatrixCharts1.label"/>
                 <Supertip>
                   <Title resid="mnuMatrixCharts1.Title"/>
@@ -225,11 +537,55 @@
                   <bt:Image size="32" resid="IconSelectArea.32x32"/>
                   <bt:Image size="80" resid="IconSelectArea.80x80"/>
                 </Icon>
-                <Action>
-                  <FunctionName>OnAction_ECAM</FunctionName>
-                </Action>
+                </Items>
+                  <Item id="btnMatrixSelectedChartsInfo1">
+                    <Label resid="btnMatrixSelectedChartsInfo1.label"/>
+                    <Supertip>
+                      <Title resid="btnMatrixSelectedChartsInfo1.Title"/>
+                      <Description resid="btnMatrixSelectedChartsInfo1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnMatrixSelectedCharts1">
+                    <Label resid="btnMatrixSelectedCharts1.label"/>
+                    <Supertip>
+                      <Title resid="btnMatrixSelectedCharts1.Title"/>
+                      <Description resid="btnMatrixSelectedCharts1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnMatrixAllCharts1">
+                    <Label resid="btnMatrixAllCharts1.label"/>
+                    <Supertip>
+                      <Title resid="btnMatrixAllCharts1.Title"/>
+                      <Description resid="btnMatrixAllCharts1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                    </Items>
               </Control>
-              <Control xsi:type="Button" id="mnuChartUtilities1">
+              <Control xsi:type="Menu" id="mnuChartUtilities1">
                 <Label resid="mnuChartUtilities1.label"/>
                 <Supertip>
                   <Title resid="mnuChartUtilities1.Title"/>
@@ -240,11 +596,25 @@
                   <bt:Image size="32" resid="IconSelectArea.32x32"/>
                   <bt:Image size="80" resid="IconSelectArea.80x80"/>
                 </Icon>
-                <Action>
-                  <FunctionName>OnAction_ECAM</FunctionName>
-                </Action>
+                </Items>
+                  <Item id="btnSetScalesSelectedCharts1">
+                    <Label resid="btnSetScalesSelectedCharts1.label"/>
+                    <Supertip>
+                      <Title resid="btnSetScalesSelectedCharts1.Title"/>
+                      <Description resid="btnSetScalesSelectedCharts1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                    </Items>
               </Control>
-              <Control xsi:type="Button" id="mnuMetricsandDataSummaries1">
+              <Control xsi:type="Menu" id="mnuMetricsandDataSummaries1">
                 <Label resid="mnuMetricsandDataSummaries1.label"/>
                 <Supertip>
                   <Title resid="mnuMetricsandDataSummaries1.Title"/>
@@ -255,9 +625,128 @@
                   <bt:Image size="32" resid="IconSelectArea.32x32"/>
                   <bt:Image size="80" resid="IconSelectArea.80x80"/>
                 </Icon>
-                <Action>
-                  <FunctionName>OnAction_ECAM</FunctionName>
-                </Action>
+                </Items>
+                  <Item id="btnMetricsDaytypeOccupancySF1">
+                    <Label resid="btnMetricsDaytypeOccupancySF1.label"/>
+                    <Supertip>
+                      <Title resid="btnMetricsDaytypeOccupancySF1.Title"/>
+                      <Description resid="btnMetricsDaytypeOccupancySF1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnMetricsDaytypeOccupancyR21">
+                    <Label resid="btnMetricsDaytypeOccupancyR21.label"/>
+                    <Supertip>
+                      <Title resid="btnMetricsDaytypeOccupancyR21.Title"/>
+                      <Description resid="btnMetricsDaytypeOccupancyR21.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnMetricsOccupancyMonthYrB1">
+                    <Label resid="btnMetricsOccupancyMonthYrB1.label"/>
+                    <Supertip>
+                      <Title resid="btnMetricsOccupancyMonthYrB1.Title"/>
+                      <Description resid="btnMetricsOccupancyMonthYrB1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnMetricsDaytypeMonthYrB1">
+                    <Label resid="btnMetricsDaytypeMonthYrB1.label"/>
+                    <Supertip>
+                      <Title resid="btnMetricsDaytypeMonthYrB1.Title"/>
+                      <Description resid="btnMetricsDaytypeMonthYrB1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnDataSummaryInfo1">
+                    <Label resid="btnDataSummaryInfo1.label"/>
+                    <Supertip>
+                      <Title resid="btnDataSummaryInfo1.Title"/>
+                      <Description resid="btnDataSummaryInfo1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnDataSummaryRawData1">
+                    <Label resid="btnDataSummaryRawData1.label"/>
+                    <Supertip>
+                      <Title resid="btnDataSummaryRawData1.Title"/>
+                      <Description resid="btnDataSummaryRawData1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnDataSummaryPivotTable1">
+                    <Label resid="btnDataSummaryPivotTable1.label"/>
+                    <Supertip>
+                      <Title resid="btnDataSummaryPivotTable1.Title"/>
+                      <Description resid="btnDataSummaryPivotTable1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnBenchmarks1">
+                    <Label resid="btnBenchmarks1.label"/>
+                    <Supertip>
+                      <Title resid="btnBenchmarks1.Title"/>
+                      <Description resid="btnBenchmarks1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                    </Items>
               </Control>
             </Group>
             <Group id="gpAnalysis">
@@ -267,7 +756,7 @@
                 <bt:Image size="32" resid="Icon.32x32"/>
                 <bt:Image size="80" resid="Icon.80x80"/>
               </Icon>
-              <Control xsi:type="Button" id="mnuMeasurementandVerification1">
+              <Control xsi:type="Menu" id="mnuMeasurementandVerification1">
                 <Label resid="mnuMeasurementandVerification1.label"/>
                 <Supertip>
                   <Title resid="mnuMeasurementandVerification1.Title"/>
@@ -278,11 +767,220 @@
                   <bt:Image size="32" resid="IconSelectArea.32x32"/>
                   <bt:Image size="80" resid="IconSelectArea.80x80"/>
                 </Icon>
-                <Action>
-                  <FunctionName>OnAction_ECAM</FunctionName>
-                </Action>
+                </Items>
+                  <Item id="btnInputExpectedSavings1">
+                    <Label resid="btnInputExpectedSavings1.label"/>
+                    <Supertip>
+                      <Title resid="btnInputExpectedSavings1.Title"/>
+                      <Description resid="btnInputExpectedSavings1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnInputConfLevel1">
+                    <Label resid="btnInputConfLevel1.label"/>
+                    <Supertip>
+                      <Title resid="btnInputConfLevel1.Title"/>
+                      <Description resid="btnInputConfLevel1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnFracSvgsInputs1">
+                    <Label resid="btnFracSvgsInputs1.label"/>
+                    <Supertip>
+                      <Title resid="btnFracSvgsInputs1.Title"/>
+                      <Description resid="btnFracSvgsInputs1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnCombineCategories1">
+                    <Label resid="btnCombineCategories1.label"/>
+                    <Supertip>
+                      <Title resid="btnCombineCategories1.Title"/>
+                      <Description resid="btnCombineCategories1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnSetNegativeEnergy1">
+                    <Label resid="btnSetNegativeEnergy1.label"/>
+                    <Supertip>
+                      <Title resid="btnSetNegativeEnergy1.Title"/>
+                      <Description resid="btnSetNegativeEnergy1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnInputConfLevelOutlier1">
+                    <Label resid="btnInputConfLevelOutlier1.label"/>
+                    <Supertip>
+                      <Title resid="btnInputConfLevelOutlier1.Title"/>
+                      <Description resid="btnInputConfLevelOutlier1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnOutliersHighlight1">
+                    <Label resid="btnOutliersHighlight1.label"/>
+                    <Supertip>
+                      <Title resid="btnOutliersHighlight1.Title"/>
+                      <Description resid="btnOutliersHighlight1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnOutliersNoHighlight1">
+                    <Label resid="btnOutliersNoHighlight1.label"/>
+                    <Supertip>
+                      <Title resid="btnOutliersNoHighlight1.Title"/>
+                      <Description resid="btnOutliersNoHighlight1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnOutliersEliminate1">
+                    <Label resid="btnOutliersEliminate1.label"/>
+                    <Supertip>
+                      <Title resid="btnOutliersEliminate1.Title"/>
+                      <Description resid="btnOutliersEliminate1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnMAPEbase1">
+                    <Label resid="btnMAPEbase1.label"/>
+                    <Supertip>
+                      <Title resid="btnMAPEbase1.Title"/>
+                      <Description resid="btnMAPEbase1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnMAPEpost1">
+                    <Label resid="btnMAPEpost1.label"/>
+                    <Supertip>
+                      <Title resid="btnMAPEpost1.Title"/>
+                      <Description resid="btnMAPEpost1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnMatrixModelCharts1">
+                    <Label resid="btnMatrixModelCharts1.label"/>
+                    <Supertip>
+                      <Title resid="btnMatrixModelCharts1.Title"/>
+                      <Description resid="btnMatrixModelCharts1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnChartsWithBaseAndPost1">
+                    <Label resid="btnChartsWithBaseAndPost1.label"/>
+                    <Supertip>
+                      <Title resid="btnChartsWithBaseAndPost1.Title"/>
+                      <Description resid="btnChartsWithBaseAndPost1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnReadFilesForAutomation1">
+                    <Label resid="btnReadFilesForAutomation1.label"/>
+                    <Supertip>
+                      <Title resid="btnReadFilesForAutomation1.Title"/>
+                      <Description resid="btnReadFilesForAutomation1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                    </Items>
               </Control>
-              <Control xsi:type="Button" id="mnuIntervalDataDrivenModelsandMandV1">
+              <Control xsi:type="Menu" id="mnuIntervalDataDrivenModelsandMandV1">
                 <Label resid="mnuIntervalDataDrivenModelsandMandV1.label"/>
                 <Supertip>
                   <Title resid="mnuIntervalDataDrivenModelsandMandV1.Title"/>
@@ -293,11 +991,220 @@
                   <bt:Image size="32" resid="IconSelectArea.32x32"/>
                   <bt:Image size="80" resid="IconSelectArea.80x80"/>
                 </Icon>
-                <Action>
-                  <FunctionName>OnAction_ECAM</FunctionName>
-                </Action>
+                </Items>
+                  <Item id="btnDaytypingControl1">
+                    <Label resid="btnDaytypingControl1.label"/>
+                    <Supertip>
+                      <Title resid="btnDaytypingControl1.Title"/>
+                      <Description resid="btnDaytypingControl1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnDaytypingSemiAuto1">
+                    <Label resid="btnDaytypingSemiAuto1.label"/>
+                    <Supertip>
+                      <Title resid="btnDaytypingSemiAuto1.Title"/>
+                      <Description resid="btnDaytypingSemiAuto1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnCheckBoxesCreation_a1">
+                    <Label resid="btnCheckBoxesCreation_a1.label"/>
+                    <Supertip>
+                      <Title resid="btnCheckBoxesCreation_a1.Title"/>
+                      <Description resid="btnCheckBoxesCreation_a1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnMVbaseline1">
+                    <Label resid="btnMVbaseline1.label"/>
+                    <Supertip>
+                      <Title resid="btnMVbaseline1.Title"/>
+                      <Description resid="btnMVbaseline1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnBaseSumry1">
+                    <Label resid="btnBaseSumry1.label"/>
+                    <Supertip>
+                      <Title resid="btnBaseSumry1.Title"/>
+                      <Description resid="btnBaseSumry1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnMVpost1">
+                    <Label resid="btnMVpost1.label"/>
+                    <Supertip>
+                      <Title resid="btnMVpost1.Title"/>
+                      <Description resid="btnMVpost1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnPostSumry1">
+                    <Label resid="btnPostSumry1.label"/>
+                    <Supertip>
+                      <Title resid="btnPostSumry1.Title"/>
+                      <Description resid="btnPostSumry1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnMVbaseAndPost1">
+                    <Label resid="btnMVbaseAndPost1.label"/>
+                    <Supertip>
+                      <Title resid="btnMVbaseAndPost1.Title"/>
+                      <Description resid="btnMVbaseAndPost1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnSavings1">
+                    <Label resid="btnSavings1.label"/>
+                    <Supertip>
+                      <Title resid="btnSavings1.Title"/>
+                      <Description resid="btnSavings1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnPrepTMY3data1">
+                    <Label resid="btnPrepTMY3data1.label"/>
+                    <Supertip>
+                      <Title resid="btnPrepTMY3data1.Title"/>
+                      <Description resid="btnPrepTMY3data1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnBaselineAnnual1">
+                    <Label resid="btnBaselineAnnual1.label"/>
+                    <Supertip>
+                      <Title resid="btnBaselineAnnual1.Title"/>
+                      <Description resid="btnBaselineAnnual1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnPostAnnual1">
+                    <Label resid="btnPostAnnual1.label"/>
+                    <Supertip>
+                      <Title resid="btnPostAnnual1.Title"/>
+                      <Description resid="btnPostAnnual1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnSavingsAnnual1">
+                    <Label resid="btnSavingsAnnual1.label"/>
+                    <Supertip>
+                      <Title resid="btnSavingsAnnual1.Title"/>
+                      <Description resid="btnSavingsAnnual1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnGenerateModelXML1">
+                    <Label resid="btnGenerateModelXML1.label"/>
+                    <Supertip>
+                      <Title resid="btnGenerateModelXML1.Title"/>
+                      <Description resid="btnGenerateModelXML1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                    </Items>
               </Control>
-              <Control xsi:type="Button" id="mnuMonthlyBillingDataModelsandMandV1">
+              <Control xsi:type="Menu" id="mnuMonthlyBillingDataModelsandMandV1">
                 <Label resid="mnuMonthlyBillingDataModelsandMandV1.label"/>
                 <Supertip>
                   <Title resid="mnuMonthlyBillingDataModelsandMandV1.Title"/>
@@ -308,11 +1215,175 @@
                   <bt:Image size="32" resid="IconSelectArea.32x32"/>
                   <bt:Image size="80" resid="IconSelectArea.80x80"/>
                 </Icon>
-                <Action>
-                  <FunctionName>OnAction_ECAM</FunctionName>
-                </Action>
+                </Items>
+                  <Item id="btnMVbaselineMonthly1">
+                    <Label resid="btnMVbaselineMonthly1.label"/>
+                    <Supertip>
+                      <Title resid="btnMVbaselineMonthly1.Title"/>
+                      <Description resid="btnMVbaselineMonthly1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnBaseSumry2">
+                    <Label resid="btnBaseSumry2.label"/>
+                    <Supertip>
+                      <Title resid="btnBaseSumry2.Title"/>
+                      <Description resid="btnBaseSumry2.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnMVpostMonthly1">
+                    <Label resid="btnMVpostMonthly1.label"/>
+                    <Supertip>
+                      <Title resid="btnMVpostMonthly1.Title"/>
+                      <Description resid="btnMVpostMonthly1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnPostSumry2">
+                    <Label resid="btnPostSumry2.label"/>
+                    <Supertip>
+                      <Title resid="btnPostSumry2.Title"/>
+                      <Description resid="btnPostSumry2.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnMVcontrolMonthly1">
+                    <Label resid="btnMVcontrolMonthly1.label"/>
+                    <Supertip>
+                      <Title resid="btnMVcontrolMonthly1.Title"/>
+                      <Description resid="btnMVcontrolMonthly1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnSavingsMonthly1">
+                    <Label resid="btnSavingsMonthly1.label"/>
+                    <Supertip>
+                      <Title resid="btnSavingsMonthly1.Title"/>
+                      <Description resid="btnSavingsMonthly1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnTMY3monthlySheet1">
+                    <Label resid="btnTMY3monthlySheet1.label"/>
+                    <Supertip>
+                      <Title resid="btnTMY3monthlySheet1.Title"/>
+                      <Description resid="btnTMY3monthlySheet1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnBaselineAnnualMonthly1">
+                    <Label resid="btnBaselineAnnualMonthly1.label"/>
+                    <Supertip>
+                      <Title resid="btnBaselineAnnualMonthly1.Title"/>
+                      <Description resid="btnBaselineAnnualMonthly1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnPostAnnualMonthly1">
+                    <Label resid="btnPostAnnualMonthly1.label"/>
+                    <Supertip>
+                      <Title resid="btnPostAnnualMonthly1.Title"/>
+                      <Description resid="btnPostAnnualMonthly1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnSavingsAnnualMonthly1">
+                    <Label resid="btnSavingsAnnualMonthly1.label"/>
+                    <Supertip>
+                      <Title resid="btnSavingsAnnualMonthly1.Title"/>
+                      <Description resid="btnSavingsAnnualMonthly1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnGenerateModelXML2">
+                    <Label resid="btnGenerateModelXML2.label"/>
+                    <Supertip>
+                      <Title resid="btnGenerateModelXML2.Title"/>
+                      <Description resid="btnGenerateModelXML2.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                    </Items>
               </Control>
-              <Control xsi:type="Button" id="mnuStrategicEnergyManagementandMTR1">
+              <Control xsi:type="Menu" id="mnuStrategicEnergyManagementandMTR1">
                 <Label resid="mnuStrategicEnergyManagementandMTR1.label"/>
                 <Supertip>
                   <Title resid="mnuStrategicEnergyManagementandMTR1.Title"/>
@@ -323,26 +1394,70 @@
                   <bt:Image size="32" resid="IconSelectArea.32x32"/>
                   <bt:Image size="80" resid="IconSelectArea.80x80"/>
                 </Icon>
-                <Action>
-                  <FunctionName>OnAction_ECAM</FunctionName>
-                </Action>
+                </Items>
+                  <Item id="btnSEMinterval1">
+                    <Label resid="btnSEMinterval1.label"/>
+                    <Supertip>
+                      <Title resid="btnSEMinterval1.Title"/>
+                      <Description resid="btnSEMinterval1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnSEMmonthly1">
+                    <Label resid="btnSEMmonthly1.label"/>
+                    <Supertip>
+                      <Title resid="btnSEMmonthly1.Title"/>
+                      <Description resid="btnSEMmonthly1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnSEMtracking1">
+                    <Label resid="btnSEMtracking1.label"/>
+                    <Supertip>
+                      <Title resid="btnSEMtracking1.Title"/>
+                      <Description resid="btnSEMtracking1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnSaveModelsAndSavings1">
+                    <Label resid="btnSaveModelsAndSavings1.label"/>
+                    <Supertip>
+                      <Title resid="btnSaveModelsAndSavings1.Title"/>
+                      <Description resid="btnSaveModelsAndSavings1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                    </Items>
               </Control>
-              <Control xsi:type="Button" id="sep001">
-                <Label resid="sep001.label"/>
-                <Supertip>
-                  <Title resid="sep001.Title"/>
-                  <Description resid="sep001.Desc"/>
-                </Supertip>
-                <Icon>
-                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                </Icon>
-                <Action>
-                  <FunctionName>OnAction_ECAM</FunctionName>
-                </Action>
-              </Control>
-              <Control xsi:type="Button" id="mnuPNNLReTuning1">
+              <Control xsi:type="Menu" id="mnuPNNLReTuning1">
                 <Label resid="mnuPNNLReTuning1.label"/>
                 <Supertip>
                   <Title resid="mnuPNNLReTuning1.Title"/>
@@ -353,9 +1468,98 @@
                   <bt:Image size="32" resid="IconSelectArea.32x32"/>
                   <bt:Image size="80" resid="IconSelectArea.80x80"/>
                 </Icon>
-                <Action>
-                  <FunctionName>OnAction_ECAM</FunctionName>
-                </Action>
+                </Items>
+                  <Item id="btnReTuningCP1">
+                    <Label resid="btnReTuningCP1.label"/>
+                    <Supertip>
+                      <Title resid="btnReTuningCP1.Title"/>
+                      <Description resid="btnReTuningCP1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnReTuningPNNLAirHandler1">
+                    <Label resid="btnReTuningPNNLAirHandler1.label"/>
+                    <Supertip>
+                      <Title resid="btnReTuningPNNLAirHandler1.Title"/>
+                      <Description resid="btnReTuningPNNLAirHandler1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnReTuningPNNLZone1">
+                    <Label resid="btnReTuningPNNLZone1.label"/>
+                    <Supertip>
+                      <Title resid="btnReTuningPNNLZone1.Title"/>
+                      <Description resid="btnReTuningPNNLZone1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnReTuningAHUxy1">
+                    <Label resid="btnReTuningAHUxy1.label"/>
+                    <Supertip>
+                      <Title resid="btnReTuningAHUxy1.Title"/>
+                      <Description resid="btnReTuningAHUxy1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnReTuningEcon1">
+                    <Label resid="btnReTuningEcon1.label"/>
+                    <Supertip>
+                      <Title resid="btnReTuningEcon1.Title"/>
+                      <Description resid="btnReTuningEcon1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnReTuningChartSummary1">
+                    <Label resid="btnReTuningChartSummary1.label"/>
+                    <Supertip>
+                      <Title resid="btnReTuningChartSummary1.Title"/>
+                      <Description resid="btnReTuningChartSummary1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                    </Items>
               </Control>
             </Group>
             <Group id="gpUtilities">
@@ -365,7 +1569,7 @@
                 <bt:Image size="32" resid="Icon.32x32"/>
                 <bt:Image size="80" resid="Icon.80x80"/>
               </Icon>
-              <Control xsi:type="Button" id="mnuResampling1">
+              <Control xsi:type="Menu" id="mnuResampling1">
                 <Label resid="mnuResampling1.label"/>
                 <Supertip>
                   <Title resid="mnuResampling1.Title"/>
@@ -376,11 +1580,55 @@
                   <bt:Image size="32" resid="IconSelectArea.32x32"/>
                   <bt:Image size="80" resid="IconSelectArea.80x80"/>
                 </Icon>
-                <Action>
-                  <FunctionName>OnAction_ECAM</FunctionName>
-                </Action>
+                </Items>
+                  <Item id="btnResampleStart1">
+                    <Label resid="btnResampleStart1.label"/>
+                    <Supertip>
+                      <Title resid="btnResampleStart1.Title"/>
+                      <Description resid="btnResampleStart1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnResampleMonthlyStart1">
+                    <Label resid="btnResampleMonthlyStart1.label"/>
+                    <Supertip>
+                      <Title resid="btnResampleMonthlyStart1.Title"/>
+                      <Description resid="btnResampleMonthlyStart1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnCombineTableIntoList1">
+                    <Label resid="btnCombineTableIntoList1.label"/>
+                    <Supertip>
+                      <Title resid="btnCombineTableIntoList1.Title"/>
+                      <Description resid="btnCombineTableIntoList1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                    </Items>
               </Control>
-              <Control xsi:type="Button" id="mnuECAMUtilities1">
+              <Control xsi:type="Menu" id="mnuECAMUtilities1">
                 <Label resid="mnuECAMUtilities1.label"/>
                 <Supertip>
                   <Title resid="mnuECAMUtilities1.Title"/>
@@ -391,9 +1639,53 @@
                   <bt:Image size="32" resid="IconSelectArea.32x32"/>
                   <bt:Image size="80" resid="IconSelectArea.80x80"/>
                 </Icon>
-                <Action>
-                  <FunctionName>OnAction_ECAM</FunctionName>
-                </Action>
+                </Items>
+                  <Item id="btnAddBinTemps1">
+                    <Label resid="btnAddBinTemps1.label"/>
+                    <Supertip>
+                      <Title resid="btnAddBinTemps1.Title"/>
+                      <Description resid="btnAddBinTemps1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnAddNewData1">
+                    <Label resid="btnAddNewData1.label"/>
+                    <Supertip>
+                      <Title resid="btnAddNewData1.Title"/>
+                      <Description resid="btnAddNewData1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnCopySheetAndUpdateChartSource1">
+                    <Label resid="btnCopySheetAndUpdateChartSource1.label"/>
+                    <Supertip>
+                      <Title resid="btnCopySheetAndUpdateChartSource1.Title"/>
+                      <Description resid="btnCopySheetAndUpdateChartSource1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                    </Items>
               </Control>
               <Control xsi:type="Button" id="btnDeleteGroupOfSheets1">
                 <Label resid="btnDeleteGroupOfSheets1.label"/>
@@ -418,7 +1710,7 @@
                 <bt:Image size="32" resid="Icon.32x32"/>
                 <bt:Image size="80" resid="Icon.80x80"/>
               </Icon>
-              <Control xsi:type="Button" id="mnuECAMHelp1">
+              <Control xsi:type="Menu" id="mnuECAMHelp1">
                 <Label resid="mnuECAMHelp1.label"/>
                 <Supertip>
                   <Title resid="mnuECAMHelp1.Title"/>
@@ -429,9 +1721,38 @@
                   <bt:Image size="32" resid="IconSelectArea.32x32"/>
                   <bt:Image size="80" resid="IconSelectArea.80x80"/>
                 </Icon>
-                <Action>
-                  <FunctionName>OnAction_ECAM</FunctionName>
-                </Action>
+                </Items>
+                  <Item id="btnOpenOnlineHelp1">
+                    <Label resid="btnOpenOnlineHelp1.label"/>
+                    <Supertip>
+                      <Title resid="btnOpenOnlineHelp1.Title"/>
+                      <Description resid="btnOpenOnlineHelp1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                  <Item id="btnShowHelp1">
+                    <Label resid="btnShowHelp1.label"/>
+                    <Supertip>
+                      <Title resid="btnShowHelp1.Title"/>
+                      <Description resid="btnShowHelp1.Desc"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                    </Icon>
+                    <Action>
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                    </Action>
+                  </Item>
+                    </Items>
               </Control>
               <Control xsi:type="Button" id="btnAboutECAM1">
                 <Label resid="btnAboutECAM1.label"/>
