@@ -55,9 +55,9 @@
                   <Description resid="btnSelectBillingData1.Desc"/>
                 </Supertip>
                 <Icon>
-                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                  <bt:Image size="16" resid="CalendarToolSelectDate.16x16"/>
+                  <bt:Image size="32" resid="CalendarToolSelectDate.32x32"/>
+                  <bt:Image size="80" resid="CalendarToolSelectDate.80x80"/>
                 </Icon>
                 <Action>
                   <FunctionName>OnAction_ECAM</FunctionName>
@@ -78,9 +78,9 @@
                   <Description resid="btnDefinePoints1.Desc"/>
                 </Supertip>
                 <Icon>
-                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                  <bt:Image size="16" resid="Legend.16x16"/>
+                  <bt:Image size="32" resid="Legend.32x32"/>
+                  <bt:Image size="80" resid="Legend.80x80"/>
                 </Icon>
                 <Action>
                   <FunctionName>OnAction_ECAM</FunctionName>
@@ -93,9 +93,9 @@
                   <Description resid="btnCreateSchedules1.Desc"/>
                 </Supertip>
                 <Icon>
-                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                  <bt:Image size="16" resid="DataTypeTime.16x16"/>
+                  <bt:Image size="32" resid="DataTypeTime.32x32"/>
+                  <bt:Image size="80" resid="DataTypeTime.80x80"/>
                 </Icon>
                 <Action>
                   <FunctionName>OnAction_ECAM</FunctionName>
@@ -108,9 +108,9 @@
                   <Description resid="btnCreatePrePostDates1.Desc"/>
                 </Supertip>
                 <Icon>
-                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                  <bt:Image size="16" resid="CalendarMonthDetailsSplitButton.16x16"/>
+                  <bt:Image size="32" resid="CalendarMonthDetailsSplitButton.32x32"/>
+                  <bt:Image size="80" resid="CalendarMonthDetailsSplitButton.80x80"/>
                 </Icon>
                 <Action>
                   <FunctionName>OnAction_ECAM</FunctionName>
@@ -123,9 +123,9 @@
                   <Description resid="mnuWeather1.Desc"/>
                 </Supertip>
                 <Icon>
-                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                  <bt:Image size="16" resid="CreateQuickStep.16x16"/>
+                  <bt:Image size="32" resid="CreateQuickStep.32x32"/>
+                  <bt:Image size="80" resid="CreateQuickStep.80x80"/>
                 </Icon>
                 </Items>
                   <Item id="btnInputSiteWeatherName1">
@@ -134,11 +134,6 @@
                       <Title resid="btnInputSiteWeatherName1.Title"/>
                       <Description resid="btnInputSiteWeatherName1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -149,11 +144,6 @@
                       <Title resid="btnInputTMYWeatherName1.Title"/>
                       <Description resid="btnInputTMYWeatherName1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -164,11 +154,6 @@
                       <Title resid="btnDownloadData1.Title"/>
                       <Description resid="btnDownloadData1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -179,11 +164,6 @@
                       <Title resid="btnCheckWthrCoverageBase1.Title"/>
                       <Description resid="btnCheckWthrCoverageBase1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -194,11 +174,6 @@
                       <Title resid="btnCheckWthrCoveragePost1.Title"/>
                       <Description resid="btnCheckWthrCoveragePost1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -212,9 +187,9 @@
                   <Description resid="btnCustomizeHolidays1.Desc"/>
                 </Supertip>
                 <Icon>
-                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                  <bt:Image size="16" resid="CalendarConfigure.16x16"/>
+                  <bt:Image size="32" resid="CalendarConfigure.32x32"/>
+                  <bt:Image size="80" resid="CalendarConfigure.80x80"/>
                 </Icon>
                 <Action>
                   <FunctionName>OnAction_ECAM</FunctionName>
@@ -235,9 +210,9 @@
                   <Description resid="mnuTimeSeriesCharts1.Desc"/>
                 </Supertip>
                 <Icon>
-                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                  <bt:Image size="16" resid="ChartTypeLineInsertGallery.16x16"/>
+                  <bt:Image size="32" resid="ChartTypeLineInsertGallery.32x32"/>
+                  <bt:Image size="80" resid="ChartTypeLineInsertGallery.80x80"/>
                 </Icon>
                 </Items>
                   <Item id="btnCreateHistoryChart1">
@@ -246,11 +221,6 @@
                       <Title resid="btnCreateHistoryChart1.Title"/>
                       <Description resid="btnCreateHistoryChart1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -261,11 +231,6 @@
                       <Title resid="btnCreateLPbyDaytype1.Title"/>
                       <Description resid="btnCreateLPbyDaytype1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -276,11 +241,6 @@
                       <Title resid="btnCreateLPbyDayOfWeek1.Title"/>
                       <Description resid="btnCreateLPbyDayOfWeek1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -291,11 +251,6 @@
                       <Title resid="btnCreateLPbyMonthYr1.Title"/>
                       <Description resid="btnCreateLPbyMonthYr1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -306,11 +261,6 @@
                       <Title resid="btnCreateLPbyDateRng1.Title"/>
                       <Description resid="btnCreateLPbyDateRng1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -321,11 +271,6 @@
                       <Title resid="btnCreateLPbyYear1.Title"/>
                       <Description resid="btnCreateLPbyYear1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -336,11 +281,6 @@
                       <Title resid="btnCreateLPbyDay1.Title"/>
                       <Description resid="btnCreateLPbyDay1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -351,11 +291,6 @@
                       <Title resid="btnChart3dColoredDaytypes1.Title"/>
                       <Description resid="btnChart3dColoredDaytypes1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -366,11 +301,6 @@
                       <Title resid="btnContourChart1.Title"/>
                       <Description resid="btnContourChart1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -381,11 +311,6 @@
                       <Title resid="btnCreateCalendarLP1.Title"/>
                       <Description resid="btnCreateCalendarLP1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -396,11 +321,6 @@
                       <Title resid="btnBoxPlotLP1.Title"/>
                       <Description resid="btnBoxPlotLP1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -414,9 +334,9 @@
                   <Description resid="mnuScatterCharts1.Desc"/>
                 </Supertip>
                 <Icon>
-                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                  <bt:Image size="16" resid="ChartTypeXYScatterInsertGallery.16x16"/>
+                  <bt:Image size="32" resid="ChartTypeXYScatterInsertGallery.32x32"/>
+                  <bt:Image size="80" resid="ChartTypeXYScatterInsertGallery.80x80"/>
                 </Icon>
                 </Items>
                   <Item id="btnCreateScatterChartByOcc1">
@@ -425,11 +345,6 @@
                       <Title resid="btnCreateScatterChartByOcc1.Title"/>
                       <Description resid="btnCreateScatterChartByOcc1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -440,11 +355,6 @@
                       <Title resid="btnCreateScatterChartByDateRng1.Title"/>
                       <Description resid="btnCreateScatterChartByDateRng1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -455,11 +365,6 @@
                       <Title resid="btnPureScatter1.Title"/>
                       <Description resid="btnPureScatter1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -470,11 +375,6 @@
                       <Title resid="btnShowHighlightForm1.Title"/>
                       <Description resid="btnShowHighlightForm1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -485,11 +385,6 @@
                       <Title resid="btnUnHiLiteDays1.Title"/>
                       <Description resid="btnUnHiLiteDays1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -503,9 +398,9 @@
                   <Description resid="btnCreateLoadDurationChart1.Desc"/>
                 </Supertip>
                 <Icon>
-                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                  <bt:Image size="16" resid="ChartInsert.16x16"/>
+                  <bt:Image size="32" resid="ChartInsert.32x32"/>
+                  <bt:Image size="80" resid="ChartInsert.80x80"/>
                 </Icon>
                 <Action>
                   <FunctionName>OnAction_ECAM</FunctionName>
@@ -518,9 +413,9 @@
                   <Description resid="btnScheduleChart1.Desc"/>
                 </Supertip>
                 <Icon>
-                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                  <bt:Image size="16" resid="ChartEditDataSource.16x16"/>
+                  <bt:Image size="32" resid="ChartEditDataSource.32x32"/>
+                  <bt:Image size="80" resid="ChartEditDataSource.80x80"/>
                 </Icon>
                 <Action>
                   <FunctionName>OnAction_ECAM</FunctionName>
@@ -533,9 +428,9 @@
                   <Description resid="mnuMatrixCharts1.Desc"/>
                 </Supertip>
                 <Icon>
-                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                  <bt:Image size="16" resid="PivotChartMultiplePlots.16x16"/>
+                  <bt:Image size="32" resid="PivotChartMultiplePlots.32x32"/>
+                  <bt:Image size="80" resid="PivotChartMultiplePlots.80x80"/>
                 </Icon>
                 </Items>
                   <Item id="btnMatrixSelectedChartsInfo1">
@@ -544,11 +439,6 @@
                       <Title resid="btnMatrixSelectedChartsInfo1.Title"/>
                       <Description resid="btnMatrixSelectedChartsInfo1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -559,11 +449,6 @@
                       <Title resid="btnMatrixSelectedCharts1.Title"/>
                       <Description resid="btnMatrixSelectedCharts1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -574,11 +459,6 @@
                       <Title resid="btnMatrixAllCharts1.Title"/>
                       <Description resid="btnMatrixAllCharts1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -592,9 +472,9 @@
                   <Description resid="mnuChartUtilities1.Desc"/>
                 </Supertip>
                 <Icon>
-                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                  <bt:Image size="16" resid="ChartFormatAxis.16x16"/>
+                  <bt:Image size="32" resid="ChartFormatAxis.32x32"/>
+                  <bt:Image size="80" resid="ChartFormatAxis.80x80"/>
                 </Icon>
                 </Items>
                   <Item id="btnSetScalesSelectedCharts1">
@@ -603,11 +483,6 @@
                       <Title resid="btnSetScalesSelectedCharts1.Title"/>
                       <Description resid="btnSetScalesSelectedCharts1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -621,9 +496,9 @@
                   <Description resid="mnuMetricsandDataSummaries1.Desc"/>
                 </Supertip>
                 <Icon>
-                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                  <bt:Image size="16" resid="PageWidthGuideShowHide.16x16"/>
+                  <bt:Image size="32" resid="PageWidthGuideShowHide.32x32"/>
+                  <bt:Image size="80" resid="PageWidthGuideShowHide.80x80"/>
                 </Icon>
                 </Items>
                   <Item id="btnMetricsDaytypeOccupancySF1">
@@ -632,11 +507,6 @@
                       <Title resid="btnMetricsDaytypeOccupancySF1.Title"/>
                       <Description resid="btnMetricsDaytypeOccupancySF1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -647,11 +517,6 @@
                       <Title resid="btnMetricsDaytypeOccupancyR21.Title"/>
                       <Description resid="btnMetricsDaytypeOccupancyR21.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -662,11 +527,6 @@
                       <Title resid="btnMetricsOccupancyMonthYrB1.Title"/>
                       <Description resid="btnMetricsOccupancyMonthYrB1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -677,11 +537,6 @@
                       <Title resid="btnMetricsDaytypeMonthYrB1.Title"/>
                       <Description resid="btnMetricsDaytypeMonthYrB1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -692,11 +547,6 @@
                       <Title resid="btnDataSummaryInfo1.Title"/>
                       <Description resid="btnDataSummaryInfo1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -707,11 +557,6 @@
                       <Title resid="btnDataSummaryRawData1.Title"/>
                       <Description resid="btnDataSummaryRawData1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -722,11 +567,6 @@
                       <Title resid="btnDataSummaryPivotTable1.Title"/>
                       <Description resid="btnDataSummaryPivotTable1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -737,11 +577,6 @@
                       <Title resid="btnBenchmarks1.Title"/>
                       <Description resid="btnBenchmarks1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -763,9 +598,9 @@
                   <Description resid="mnuMeasurementandVerification1.Desc"/>
                 </Supertip>
                 <Icon>
-                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                  <bt:Image size="16" resid="DesignChecker.16x16"/>
+                  <bt:Image size="32" resid="DesignChecker.32x32"/>
+                  <bt:Image size="80" resid="DesignChecker.80x80"/>
                 </Icon>
                 </Items>
                   <Item id="btnInputExpectedSavings1">
@@ -774,11 +609,6 @@
                       <Title resid="btnInputExpectedSavings1.Title"/>
                       <Description resid="btnInputExpectedSavings1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -789,11 +619,6 @@
                       <Title resid="btnInputConfLevel1.Title"/>
                       <Description resid="btnInputConfLevel1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -804,11 +629,6 @@
                       <Title resid="btnFracSvgsInputs1.Title"/>
                       <Description resid="btnFracSvgsInputs1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -819,11 +639,6 @@
                       <Title resid="btnCombineCategories1.Title"/>
                       <Description resid="btnCombineCategories1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -834,11 +649,6 @@
                       <Title resid="btnSetNegativeEnergy1.Title"/>
                       <Description resid="btnSetNegativeEnergy1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -849,11 +659,6 @@
                       <Title resid="btnInputConfLevelOutlier1.Title"/>
                       <Description resid="btnInputConfLevelOutlier1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -864,11 +669,6 @@
                       <Title resid="btnOutliersHighlight1.Title"/>
                       <Description resid="btnOutliersHighlight1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -879,11 +679,6 @@
                       <Title resid="btnOutliersNoHighlight1.Title"/>
                       <Description resid="btnOutliersNoHighlight1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -894,11 +689,6 @@
                       <Title resid="btnOutliersEliminate1.Title"/>
                       <Description resid="btnOutliersEliminate1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -909,11 +699,6 @@
                       <Title resid="btnMAPEbase1.Title"/>
                       <Description resid="btnMAPEbase1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -924,11 +709,6 @@
                       <Title resid="btnMAPEpost1.Title"/>
                       <Description resid="btnMAPEpost1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -939,11 +719,6 @@
                       <Title resid="btnMatrixModelCharts1.Title"/>
                       <Description resid="btnMatrixModelCharts1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -954,11 +729,6 @@
                       <Title resid="btnChartsWithBaseAndPost1.Title"/>
                       <Description resid="btnChartsWithBaseAndPost1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -969,11 +739,6 @@
                       <Title resid="btnReadFilesForAutomation1.Title"/>
                       <Description resid="btnReadFilesForAutomation1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -987,9 +752,9 @@
                   <Description resid="mnuIntervalDataDrivenModelsandMandV1.Desc"/>
                 </Supertip>
                 <Icon>
-                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                  <bt:Image size="16" resid="CalendarHorizontal.16x16"/>
+                  <bt:Image size="32" resid="CalendarHorizontal.32x32"/>
+                  <bt:Image size="80" resid="CalendarHorizontal.80x80"/>
                 </Icon>
                 </Items>
                   <Item id="btnDaytypingControl1">
@@ -998,11 +763,6 @@
                       <Title resid="btnDaytypingControl1.Title"/>
                       <Description resid="btnDaytypingControl1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1013,11 +773,6 @@
                       <Title resid="btnDaytypingSemiAuto1.Title"/>
                       <Description resid="btnDaytypingSemiAuto1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1028,11 +783,6 @@
                       <Title resid="btnCheckBoxesCreation_a1.Title"/>
                       <Description resid="btnCheckBoxesCreation_a1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1043,11 +793,6 @@
                       <Title resid="btnMVbaseline1.Title"/>
                       <Description resid="btnMVbaseline1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1058,11 +803,6 @@
                       <Title resid="btnBaseSumry1.Title"/>
                       <Description resid="btnBaseSumry1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1073,11 +813,6 @@
                       <Title resid="btnMVpost1.Title"/>
                       <Description resid="btnMVpost1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1088,11 +823,6 @@
                       <Title resid="btnPostSumry1.Title"/>
                       <Description resid="btnPostSumry1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1103,11 +833,6 @@
                       <Title resid="btnMVbaseAndPost1.Title"/>
                       <Description resid="btnMVbaseAndPost1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1118,11 +843,6 @@
                       <Title resid="btnSavings1.Title"/>
                       <Description resid="btnSavings1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1133,11 +853,6 @@
                       <Title resid="btnPrepTMY3data1.Title"/>
                       <Description resid="btnPrepTMY3data1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1148,11 +863,6 @@
                       <Title resid="btnBaselineAnnual1.Title"/>
                       <Description resid="btnBaselineAnnual1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1163,11 +873,6 @@
                       <Title resid="btnPostAnnual1.Title"/>
                       <Description resid="btnPostAnnual1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1178,11 +883,6 @@
                       <Title resid="btnSavingsAnnual1.Title"/>
                       <Description resid="btnSavingsAnnual1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1193,11 +893,6 @@
                       <Title resid="btnGenerateModelXML1.Title"/>
                       <Description resid="btnGenerateModelXML1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1211,9 +906,9 @@
                   <Description resid="mnuMonthlyBillingDataModelsandMandV1.Desc"/>
                 </Supertip>
                 <Icon>
-                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                  <bt:Image size="16" resid="CalendarInsert.16x16"/>
+                  <bt:Image size="32" resid="CalendarInsert.32x32"/>
+                  <bt:Image size="80" resid="CalendarInsert.80x80"/>
                 </Icon>
                 </Items>
                   <Item id="btnMVbaselineMonthly1">
@@ -1222,11 +917,6 @@
                       <Title resid="btnMVbaselineMonthly1.Title"/>
                       <Description resid="btnMVbaselineMonthly1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1237,11 +927,6 @@
                       <Title resid="btnBaseSumry2.Title"/>
                       <Description resid="btnBaseSumry2.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1252,11 +937,6 @@
                       <Title resid="btnMVpostMonthly1.Title"/>
                       <Description resid="btnMVpostMonthly1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1267,11 +947,6 @@
                       <Title resid="btnPostSumry2.Title"/>
                       <Description resid="btnPostSumry2.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1282,11 +957,6 @@
                       <Title resid="btnMVcontrolMonthly1.Title"/>
                       <Description resid="btnMVcontrolMonthly1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1297,11 +967,6 @@
                       <Title resid="btnSavingsMonthly1.Title"/>
                       <Description resid="btnSavingsMonthly1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1312,11 +977,6 @@
                       <Title resid="btnTMY3monthlySheet1.Title"/>
                       <Description resid="btnTMY3monthlySheet1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1327,11 +987,6 @@
                       <Title resid="btnBaselineAnnualMonthly1.Title"/>
                       <Description resid="btnBaselineAnnualMonthly1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1342,11 +997,6 @@
                       <Title resid="btnPostAnnualMonthly1.Title"/>
                       <Description resid="btnPostAnnualMonthly1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1357,11 +1007,6 @@
                       <Title resid="btnSavingsAnnualMonthly1.Title"/>
                       <Description resid="btnSavingsAnnualMonthly1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1372,11 +1017,6 @@
                       <Title resid="btnGenerateModelXML2.Title"/>
                       <Description resid="btnGenerateModelXML2.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1390,9 +1030,9 @@
                   <Description resid="mnuStrategicEnergyManagementandMTR1.Desc"/>
                 </Supertip>
                 <Icon>
-                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                  <bt:Image size="16" resid="StyleExplorer.16x16"/>
+                  <bt:Image size="32" resid="StyleExplorer.32x32"/>
+                  <bt:Image size="80" resid="StyleExplorer.80x80"/>
                 </Icon>
                 </Items>
                   <Item id="btnSEMinterval1">
@@ -1401,11 +1041,6 @@
                       <Title resid="btnSEMinterval1.Title"/>
                       <Description resid="btnSEMinterval1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1416,11 +1051,6 @@
                       <Title resid="btnSEMmonthly1.Title"/>
                       <Description resid="btnSEMmonthly1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1431,11 +1061,6 @@
                       <Title resid="btnSEMtracking1.Title"/>
                       <Description resid="btnSEMtracking1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1446,11 +1071,6 @@
                       <Title resid="btnSaveModelsAndSavings1.Title"/>
                       <Description resid="btnSaveModelsAndSavings1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1464,9 +1084,9 @@
                   <Description resid="mnuPNNLReTuning1.Desc"/>
                 </Supertip>
                 <Icon>
-                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                  <bt:Image size="16" resid="ChartTypeLineInsertGallery.16x16"/>
+                  <bt:Image size="32" resid="ChartTypeLineInsertGallery.32x32"/>
+                  <bt:Image size="80" resid="ChartTypeLineInsertGallery.80x80"/>
                 </Icon>
                 </Items>
                   <Item id="btnReTuningCP1">
@@ -1475,11 +1095,6 @@
                       <Title resid="btnReTuningCP1.Title"/>
                       <Description resid="btnReTuningCP1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1490,11 +1105,6 @@
                       <Title resid="btnReTuningPNNLAirHandler1.Title"/>
                       <Description resid="btnReTuningPNNLAirHandler1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1505,11 +1115,6 @@
                       <Title resid="btnReTuningPNNLZone1.Title"/>
                       <Description resid="btnReTuningPNNLZone1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1520,11 +1125,6 @@
                       <Title resid="btnReTuningAHUxy1.Title"/>
                       <Description resid="btnReTuningAHUxy1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1535,11 +1135,6 @@
                       <Title resid="btnReTuningEcon1.Title"/>
                       <Description resid="btnReTuningEcon1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1550,11 +1145,6 @@
                       <Title resid="btnReTuningChartSummary1.Title"/>
                       <Description resid="btnReTuningChartSummary1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1576,9 +1166,9 @@
                   <Description resid="mnuResampling1.Desc"/>
                 </Supertip>
                 <Icon>
-                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                  <bt:Image size="16" resid="TracePrecedentsRemoveArrows.16x16"/>
+                  <bt:Image size="32" resid="TracePrecedentsRemoveArrows.32x32"/>
+                  <bt:Image size="80" resid="TracePrecedentsRemoveArrows.80x80"/>
                 </Icon>
                 </Items>
                   <Item id="btnResampleStart1">
@@ -1587,11 +1177,6 @@
                       <Title resid="btnResampleStart1.Title"/>
                       <Description resid="btnResampleStart1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1602,11 +1187,6 @@
                       <Title resid="btnResampleMonthlyStart1.Title"/>
                       <Description resid="btnResampleMonthlyStart1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1617,11 +1197,6 @@
                       <Title resid="btnCombineTableIntoList1.Title"/>
                       <Description resid="btnCombineTableIntoList1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1635,9 +1210,9 @@
                   <Description resid="mnuECAMUtilities1.Desc"/>
                 </Supertip>
                 <Icon>
-                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                  <bt:Image size="16" resid="ToolboxGallery.16x16"/>
+                  <bt:Image size="32" resid="ToolboxGallery.32x32"/>
+                  <bt:Image size="80" resid="ToolboxGallery.80x80"/>
                 </Icon>
                 </Items>
                   <Item id="btnAddBinTemps1">
@@ -1646,11 +1221,6 @@
                       <Title resid="btnAddBinTemps1.Title"/>
                       <Description resid="btnAddBinTemps1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1661,11 +1231,6 @@
                       <Title resid="btnAddNewData1.Title"/>
                       <Description resid="btnAddNewData1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1676,11 +1241,6 @@
                       <Title resid="btnCopySheetAndUpdateChartSource1.Title"/>
                       <Description resid="btnCopySheetAndUpdateChartSource1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1694,9 +1254,9 @@
                   <Description resid="btnDeleteGroupOfSheets1.Desc"/>
                 </Supertip>
                 <Icon>
-                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                  <bt:Image size="16" resid="FileDiscardCachedChanges.16x16"/>
+                  <bt:Image size="32" resid="FileDiscardCachedChanges.32x32"/>
+                  <bt:Image size="80" resid="FileDiscardCachedChanges.80x80"/>
                 </Icon>
                 <Action>
                   <FunctionName>OnAction_ECAM</FunctionName>
@@ -1717,9 +1277,9 @@
                   <Description resid="mnuECAMHelp1.Desc"/>
                 </Supertip>
                 <Icon>
-                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                  <bt:Image size="16" resid="Help.16x16"/>
+                  <bt:Image size="32" resid="Help.32x32"/>
+                  <bt:Image size="80" resid="Help.80x80"/>
                 </Icon>
                 </Items>
                   <Item id="btnOpenOnlineHelp1">
@@ -1728,11 +1288,6 @@
                       <Title resid="btnOpenOnlineHelp1.Title"/>
                       <Description resid="btnOpenOnlineHelp1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1743,11 +1298,6 @@
                       <Title resid="btnShowHelp1.Title"/>
                       <Description resid="btnShowHelp1.Desc"/>
                     </Supertip>
-                    <Icon>
-                      <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                      <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                      <bt:Image size="80" resid="IconSelectArea.80x80"/>
-                    </Icon>
                     <Action>
                       <FunctionName>OnAction_ECAM</FunctionName>
                     </Action>
@@ -1761,9 +1311,9 @@
                   <Description resid="btnAboutECAM1.Desc"/>
                 </Supertip>
                 <Icon>
-                  <bt:Image size="16" resid="IconSelectArea.16x16"/>
-                  <bt:Image size="32" resid="IconSelectArea.32x32"/>
-                  <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                  <bt:Image size="16" resid="ZoomOnePage.16x16"/>
+                  <bt:Image size="32" resid="ZoomOnePage.32x32"/>
+                  <bt:Image size="80" resid="ZoomOnePage.80x80"/>
                 </Icon>
                 <Action>
                   <FunctionName>OnAction_ECAM</FunctionName>
@@ -1780,15 +1330,201 @@
 
     <Resources>
       <bt:Images>
+        <bt:Image id="IconSelectArea.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="IconSelectArea.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="IconSelectArea.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="CalendarToolSelectDate.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="CalendarToolSelectDate.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="CalendarToolSelectDate.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="Legend.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="Legend.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="Legend.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="DataTypeTime.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="DataTypeTime.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="DataTypeTime.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="CalendarMonthDetailsSplitButton.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="CalendarMonthDetailsSplitButton.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="CalendarMonthDetailsSplitButton.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="CreateQuickStep.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="CreateQuickStep.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="CreateQuickStep.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="CalendarConfigure.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="CalendarConfigure.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="CalendarConfigure.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="ChartTypeLineInsertGallery.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="ChartTypeLineInsertGallery.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="ChartTypeLineInsertGallery.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="ChartTypeXYScatterInsertGallery.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="ChartTypeXYScatterInsertGallery.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="ChartTypeXYScatterInsertGallery.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="ChartInsert.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="ChartInsert.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="ChartInsert.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="ChartEditDataSource.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="ChartEditDataSource.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="ChartEditDataSource.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="PivotChartMultiplePlots.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="PivotChartMultiplePlots.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="PivotChartMultiplePlots.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="ChartFormatAxis.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="ChartFormatAxis.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="ChartFormatAxis.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="PageWidthGuideShowHide.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="PageWidthGuideShowHide.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="PageWidthGuideShowHide.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="DesignChecker.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="DesignChecker.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="DesignChecker.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="CalendarHorizontal.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="CalendarHorizontal.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="CalendarHorizontal.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="CalendarInsert.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="CalendarInsert.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="CalendarInsert.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="StyleExplorer.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="StyleExplorer.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="StyleExplorer.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="ChartTypeLineInsertGallery.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="ChartTypeLineInsertGallery.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="ChartTypeLineInsertGallery.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="TracePrecedentsRemoveArrows.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="TracePrecedentsRemoveArrows.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="TracePrecedentsRemoveArrows.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="ToolboxGallery.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="ToolboxGallery.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="ToolboxGallery.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="FileDiscardCachedChanges.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="FileDiscardCachedChanges.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="FileDiscardCachedChanges.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="Help.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="Help.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="Help.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="ZoomOnePage.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="ZoomOnePage.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="ZoomOnePage.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
       </bt:Images>
       <bt:Urls>
       </bt:Urls>
       <bt:ShortStrings>
+        <bt:String id="btnSelectIntervalData1.label" DefaultValue="Interval Data"/>
+        <bt:String id="btnSelectBillingData1.label" DefaultValue="Monthly Billing"/>
         <bt:String id="gpDataInputs.label" DefaultValue="Data Inputs"/>
+        <bt:String id="btnDefinePoints1.label" DefaultValue="Define Points"/>
+        <bt:String id="btnCreateSchedules1.label" DefaultValue="Create Schedules"/>
+        <bt:String id="btnCreatePrePostDates1.label" DefaultValue="Input Dates"/>
+        <bt:String id="mnuWeather1.label" DefaultValue="Weather"/>
+        <bt:String id="btnInputSiteWeatherName1.label" DefaultValue="Historical Weather Station"/>
+        <bt:String id="btnInputTMYWeatherName1.label" DefaultValue="Typical Weather Station"/>
+        <bt:String id="btnDownloadData1.label" DefaultValue="Download Weather Data"/>
+        <bt:String id="btnCheckWthrCoverageBase1.label" DefaultValue="Check Baseline Weather Coverage"/>
+        <bt:String id="btnCheckWthrCoveragePost1.label" DefaultValue="Check Post Period Weather Coverage"/>
+        <bt:String id="btnCustomizeHolidays1.label" DefaultValue="Holidays"/>
         <bt:String id="gpGeneralInputs.label" DefaultValue="General Inputs"/>
+        <bt:String id="mnuTimeSeriesCharts1.label" DefaultValue="Time Series"/>
+        <bt:String id="btnCreateHistoryChart1.label" DefaultValue="Point(s) History Chart"/>
+        <bt:String id="btnCreateLPbyDaytype1.label" DefaultValue="Load Profile by Daytype"/>
+        <bt:String id="btnCreateLPbyDayOfWeek1.label" DefaultValue="Load Profile by Day of Week"/>
+        <bt:String id="btnCreateLPbyMonthYr1.label" DefaultValue="Load Profile by Month-Year"/>
+        <bt:String id="btnCreateLPbyDateRng1.label" DefaultValue="Load Profile by Date Range (Pre/Post)"/>
+        <bt:String id="btnCreateLPbyYear1.label" DefaultValue="Load Profile by Year"/>
+        <bt:String id="btnCreateLPbyDay1.label" DefaultValue="Load Profile by Day"/>
+        <bt:String id="btnChart3dColoredDaytypes1.label" DefaultValue="Create 3d Load Profile"/>
+        <bt:String id="btnContourChart1.label" DefaultValue="Create Energy Colors (surface chart)"/>
+        <bt:String id="btnCreateCalendarLP1.label" DefaultValue="Load Profile Calendar"/>
+        <bt:String id="btnBoxPlotLP1.label" DefaultValue="Load Profile as Box Plots"/>
+        <bt:String id="mnuScatterCharts1.label" DefaultValue="Scatter Charts"/>
+        <bt:String id="btnCreateScatterChartByOcc1.label" DefaultValue="Scatter Chart by Occupancy"/>
+        <bt:String id="btnCreateScatterChartByDateRng1.label" DefaultValue="Scatter Chart by Date Range (Pre/Post)"/>
+        <bt:String id="btnPureScatter1.label" DefaultValue="Toggle Scatter between all timestamps and aggregated values"/>
+        <bt:String id="btnShowHighlightForm1.label" DefaultValue="Pick a number of days and highlight those points on the selected chart"/>
+        <bt:String id="btnUnHiLiteDays1.label" DefaultValue="Remove highlighting of recent days"/>
+        <bt:String id="btnCreateLoadDurationChart1.label" DefaultValue="Load Duration"/>
+        <bt:String id="btnScheduleChart1.label" DefaultValue="Check Input Schedule"/>
+        <bt:String id="mnuMatrixCharts1.label" DefaultValue="Matrix Charts"/>
+        <bt:String id="btnMatrixSelectedChartsInfo1.label" DefaultValue="Information about Matrix Charts"/>
+        <bt:String id="btnMatrixSelectedCharts1.label" DefaultValue="Matrix Selected Charts"/>
+        <bt:String id="btnMatrixAllCharts1.label" DefaultValue="Matrix All Charts"/>
+        <bt:String id="mnuChartUtilities1.label" DefaultValue="Chart Utilities"/>
+        <bt:String id="btnSetScalesSelectedCharts1.label" DefaultValue="Set Scales the Same for a Group of Charts"/>
+        <bt:String id="mnuMetricsandDataSummaries1.label" DefaultValue="Metrics and Data"/>
+        <bt:String id="btnMetricsDaytypeOccupancySF1.label" DefaultValue="Metrics for Points Normalized per Sq. Foot"/>
+        <bt:String id="btnMetricsDaytypeOccupancyR21.label" DefaultValue="Daytype and Occupancy Metrics"/>
+        <bt:String id="btnMetricsOccupancyMonthYrB1.label" DefaultValue="Occupancy and Month-Year Combined Metrics"/>
+        <bt:String id="btnMetricsDaytypeMonthYrB1.label" DefaultValue="Daytype and Month-Year Combined Metrics"/>
+        <bt:String id="btnDataSummaryInfo1.label" DefaultValue="Information about Data Summary"/>
+        <bt:String id="btnDataSummaryRawData1.label" DefaultValue="Summarize Data"/>
+        <bt:String id="btnDataSummaryPivotTable1.label" DefaultValue="Summarize Data from PivotTable"/>
+        <bt:String id="btnBenchmarks1.label" DefaultValue="EUI Benchmarks and Model Metrics"/>
         <bt:String id="gpCharts.label" DefaultValue="Charts and Metrics"/>
+        <bt:String id="mnuMeasurementandVerification1.label" DefaultValue="M and V Utilities"/>
+        <bt:String id="btnInputExpectedSavings1.label" DefaultValue="Input the planned savings for the project"/>
+        <bt:String id="btnInputConfLevel1.label" DefaultValue="Input Desired Model and Savings Confidence Level"/>
+        <bt:String id="btnFracSvgsInputs1.label" DefaultValue="Input Values For ASHRAE Fractional Savings Uncertainty"/>
+        <bt:String id="btnCombineCategories1.label" DefaultValue="Define New Model Categorical Variables"/>
+        <bt:String id="btnSetNegativeEnergy1.label" DefaultValue="Set Flag to Allow Negative Model Energy"/>
+        <bt:String id="btnInputConfLevelOutlier1.label" DefaultValue="Input Desired Model Confidence Level for Identifying Outliers"/>
+        <bt:String id="btnOutliersHighlight1.label" DefaultValue="Highlight Outliers"/>
+        <bt:String id="btnOutliersNoHighlight1.label" DefaultValue="Remove Outlier Highlighting"/>
+        <bt:String id="btnOutliersEliminate1.label" DefaultValue="Eliminate Outliers"/>
+        <bt:String id="btnMAPEbase1.label" DefaultValue="Calculate Baseline MAPE"/>
+        <bt:String id="btnMAPEpost1.label" DefaultValue="Calculate Post MAPE"/>
+        <bt:String id="btnMatrixModelCharts1.label" DefaultValue="Create Matrix of Scatter Charts with Models"/>
+        <bt:String id="btnChartsWithBaseAndPost1.label" DefaultValue="Create Chart Matrix of Base and Post Models"/>
+        <bt:String id="btnReadFilesForAutomation1.label" DefaultValue="Automated M and V Modeling"/>
+        <bt:String id="mnuIntervalDataDrivenModelsandMandV1.label" DefaultValue="Interval Models"/>
+        <bt:String id="btnDaytypingControl1.label" DefaultValue="Create Load Profile by Day of Week and Evaluate Daytypes"/>
+        <bt:String id="btnDaytypingSemiAuto1.label" DefaultValue="Create Load Profile by DOW with Automatic Daytyping"/>
+        <bt:String id="btnCheckBoxesCreation_a1.label" DefaultValue="Evaluate Daytypes (active sheet has LP by Day of Week)"/>
+        <bt:String id="btnMVbaseline1.label" DefaultValue="Create Baseline Models Only"/>
+        <bt:String id="btnBaseSumry1.label" DefaultValue="Summarize Baseline"/>
+        <bt:String id="btnMVpost1.label" DefaultValue="Create Post Models Only"/>
+        <bt:String id="btnPostSumry1.label" DefaultValue="Summarize Post"/>
+        <bt:String id="btnMVbaseAndPost1.label" DefaultValue="Create Baseline and Post Models"/>
+        <bt:String id="btnSavings1.label" DefaultValue="Evaluate Savings for Post Period"/>
+        <bt:String id="btnPrepTMY3data1.label" DefaultValue="Bring in TMY3 Weather for Annualization"/>
+        <bt:String id="btnBaselineAnnual1.label" DefaultValue="Annualize Baseline Using TMY3 Weather"/>
+        <bt:String id="btnPostAnnual1.label" DefaultValue="Annualize Post Using TMY3 Weather"/>
+        <bt:String id="btnSavingsAnnual1.label" DefaultValue="Annualize Pre, Post, and Savings Using TMY3"/>
+        <bt:String id="btnGenerateModelXML1.label" DefaultValue="Export XML of Models"/>
+        <bt:String id="mnuMonthlyBillingDataModelsandMandV1.label" DefaultValue="Monthly Models"/>
+        <bt:String id="btnMVbaselineMonthly1.label" DefaultValue="Create Baseline Monthly Models Only"/>
+        <bt:String id="btnBaseSumry2.label" DefaultValue="Summarize Baseline"/>
+        <bt:String id="btnMVpostMonthly1.label" DefaultValue="Create Post Monthly Models Only"/>
+        <bt:String id="btnPostSumry2.label" DefaultValue="Summarize Post"/>
+        <bt:String id="btnMVcontrolMonthly1.label" DefaultValue="Create Baseline and Post Monthly Models"/>
+        <bt:String id="btnSavingsMonthly1.label" DefaultValue="Evaluate Savings for Post Period Using Monthly Model"/>
+        <bt:String id="btnTMY3monthlySheet1.label" DefaultValue="Bring in Monthly TMY3 Weather for Annualization"/>
+        <bt:String id="btnBaselineAnnualMonthly1.label" DefaultValue="Annualize Baseline Using Monthly TMY3 Weather"/>
+        <bt:String id="btnPostAnnualMonthly1.label" DefaultValue="Annualize Post Using Monthly TMY3 Weather"/>
+        <bt:String id="btnSavingsAnnualMonthly1.label" DefaultValue="Annualize Pre, Post, and Savings Using Monthly TMY3"/>
+        <bt:String id="btnGenerateModelXML2.label" DefaultValue="Export XML of Models"/>
+        <bt:String id="mnuStrategicEnergyManagementandMTR1.label" DefaultValue="SEM"/>
+        <bt:String id="btnSEMinterval1.label" DefaultValue="SEM-MTR with Interval Data"/>
+        <bt:String id="btnSEMmonthly1.label" DefaultValue="SEM-MTR with Monthly Billing Data"/>
+        <bt:String id="btnSEMtracking1.label" DefaultValue="Heat Map for Tracking Performance"/>
+        <bt:String id="btnSaveModelsAndSavings1.label" DefaultValue="Models and Savings Report"/>
+        <bt:String id="mnuPNNLReTuning1.label" DefaultValue="PNNL Re-Tuning"/>
+        <bt:String id="btnReTuningCP1.label" DefaultValue="Central Plant Charts"/>
+        <bt:String id="btnReTuningPNNLAirHandler1.label" DefaultValue="AHU Charts"/>
+        <bt:String id="btnReTuningPNNLZone1.label" DefaultValue="Zone Charts"/>
+        <bt:String id="btnReTuningAHUxy1.label" DefaultValue="AHU Scatter Charts"/>
+        <bt:String id="btnReTuningEcon1.label" DefaultValue="Economizers for All AHUs"/>
+        <bt:String id="btnReTuningChartSummary1.label" DefaultValue="Information about Re-tuning Charts"/>
         <bt:String id="gpAnalysis.label" DefaultValue="Analyses"/>
+        <bt:String id="mnuResampling1.label" DefaultValue="Resample Data"/>
+        <bt:String id="btnResampleStart1.label" DefaultValue="Resample Data"/>
+        <bt:String id="btnResampleMonthlyStart1.label" DefaultValue="Resample To Get Avg Temp for Billing Data "/>
+        <bt:String id="btnCombineTableIntoList1.label" DefaultValue="Convert Table Format to ECAM List Format"/>
+        <bt:String id="mnuECAMUtilities1.label" DefaultValue="ECAM Utilities"/>
+        <bt:String id="btnAddBinTemps1.label" DefaultValue="Create Bin Data from Temperatures"/>
+        <bt:String id="btnAddNewData1.label" DefaultValue="Data worksheet was changed"/>
+        <bt:String id="btnCopySheetAndUpdateChartSource1.label" DefaultValue="Copy Worksheet and Update ECAM Chart Source"/>
+        <bt:String id="btnDeleteGroupOfSheets1.label" DefaultValue="Delete Sheet(s)"/>
         <bt:String id="gpUtilities.label" DefaultValue="Utilities"/>
+        <bt:String id="mnuECAMHelp1.label" DefaultValue="ECAM Help"/>
+        <bt:String id="btnOpenOnlineHelp1.label" DefaultValue="Online help"/>
+        <bt:String id="btnShowHelp1.label" DefaultValue="In Tool help (no longer updated)"/>
+        <bt:String id="btnAboutECAM1.label" DefaultValue="About ECAM"/>
         <bt:String id="gpECAM.label" DefaultValue="ECAM"/>
       </bt:ShortStrings>
       <bt:LongStrings>

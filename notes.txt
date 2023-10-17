@@ -1,3 +1,9 @@
+Next lesson
+    homework
+        understand the developer manifest, how is excel finding it
+        add screentip to title, then add click to to create description
+        add menu to manual manifest to test syntax
+
 1. copy .git funtion
 2. Get on_load function to work
 3. Get convertxml.py to work
