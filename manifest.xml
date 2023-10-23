@@ -79,6 +79,36 @@
                 
                 </Control>
 
+                <Control xsi:type="Menu" id="mnuWeather1">
+                  <Label resid="mnuWeather1.label"/>
+                  <Supertip>
+                    <Title resid="mnuWeather1.Title"/>
+                    <Description resid="mnuWeather1.Desc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="CreateQuickStep.16x16"/>
+                    <bt:Image size="32" resid="CreateQuickStep.32x32"/>
+                    <bt:Image size="80" resid="CreateQuickStep.80x80"/>
+                  </Icon>
+                  <Items>
+                    <Item id="btnInputSiteWeatherName1">
+                      <Label resid="btnInputSiteWeatherName1.label"/>
+                      <Supertip>
+                        <Title resid="btnInputSiteWeatherName1.Title"/>
+                        <Description resid="btnInputSiteWeatherName1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="CreateQuickStep.16x16"/>
+                        <bt:Image size="32" resid="CreateQuickStep.32x32"/>
+                        <bt:Image size="80" resid="CreateQuickStep.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                  </Items>
+                </Control>
+
               </Group>
 
               <Label resid="tbECAM_JS.label"/>
@@ -104,6 +134,10 @@
         <bt:Image id="CalendarToolSelectDate.32x32" DefaultValue="https://localhost:3000/assets/CalendarToolSelectDate_32.png"/>
         <bt:Image id="CalendarToolSelectDate.80x80" DefaultValue="https://localhost:3000/assets/CalendarToolSelectDate_80.png"/>
 
+        <bt:Image id="CreateQuickStep.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="CreateQuickStep.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="CreateQuickStep.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+
 
       </bt:Images>
 
@@ -124,6 +158,15 @@
         <bt:String id="btnSelectBillingData1.Label" DefaultValue="Monthly Billing"/>
         <bt:String id="btnSelectBillingData1.Title" DefaultValue="Select Monthly Billing Data"/>
 
+        <bt:String id="mnuWeather1.label" DefaultValue="Weather"/>
+
+        <bt:String id="btnInputSiteWeatherName1.label" DefaultValue="Historical Weather Station"/>
+        <bt:String id="btnInputSiteWeatherName1.title" DefaultValue="Historical Weather Station"/>
+
+        <bt:String id="mnuWeather1.title" DefaultValue="Download Weather or Input Station Name for Reports"/>
+        <bt:String id="mnuWeather1.desc" DefaultValue="Click to Download Weather or Input Station Name for Reports"/>
+
+
       </bt:ShortStrings>
 
       <bt:LongStrings>
@@ -134,6 +177,9 @@
         <bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded succesfully. Go to the HOME tab and click the 'Show Taskpane' button to get started."/>
         <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to Show a Taskpane"/>
         <bt:String id="ProtectionButtonToolTip" DefaultValue="Click to protect or unprotect the current worksheet." />
+
+        <bt:String id="btnInputSiteWeatherName1.desc" DefaultValue="Click to Historical Weather Station"/>
+        <bt:String id="mnuWeather1.desc" DefaultValue="Click to Download Weather or Input Station Name for Reports"/>
 
       </bt:LongStrings>
 

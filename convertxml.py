@@ -44,7 +44,7 @@ with open("manifest_bs4.xml", "w") as f:
                         group_xml.append(f'''      <bt:Image size="32" resid="{line['imageMso']}.32x32"/>''')
                         group_xml.append(f'''      <bt:Image size="80" resid="{line['imageMso']}.80x80"/>''')
                         group_xml.append( '''    </Icon>''')
-                        group_xml.append( '''    <Action>''')
+                        group_xml.append( '''    <Action xsi:type="ExecuteFunction">''')
                         group_xml.append( '''      <FunctionName>OnAction_ECAM</FunctionName>''')
                         group_xml.append( '''    </Action>''')
                         group_xml.append( '''  </Control>''')
@@ -56,6 +56,13 @@ with open("manifest_bs4.xml", "w") as f:
                         # res_xml['Images'].append(f'''<bt:Image id="{line['imageMso']}.80x80" DefaultValue="https://localhost:3000/assets/{line['imageMso']}_80.png"/>''')
 
                         res_xml['ShortStrings'].append(f'''<bt:String id="{line['id']}.label" DefaultValue="{line['label']}"/>''')
+                        if 'screentip' in line.attrs:
+                            res_xml['ShortStrings'].append(f'''<bt:String id="{line['id']}.title" DefaultValue="{line['screentip']}"/>''')
+                            res_xml['ShortStrings'].append(f'''<bt:String id="{line['id']}.desc" DefaultValue="Click to {line['screentip']}"/>''')
+                        else:
+                            res_xml['ShortStrings'].append(f'''<bt:String id="{line['id']}.title" DefaultValue="{line['label']}"/>''')
+                            res_xml['ShortStrings'].append(f'''<bt:String id="{line['id']}.desc" DefaultValue="Click to {line['label']}"/>''')
+
                     elif line.name == 'menu':
                         group_xml.append(f'''  <Control xsi:type="Menu" id="{line['id']}">''')
                         group_xml.append(f'''    <Label resid="{line['id']}.label"/>''')       
@@ -68,7 +75,7 @@ with open("manifest_bs4.xml", "w") as f:
                         group_xml.append(f'''      <bt:Image size="32" resid="{line['imageMso']}.32x32"/>''')
                         group_xml.append(f'''      <bt:Image size="80" resid="{line['imageMso']}.80x80"/>''')
                         group_xml.append( '''    </Icon>''')
-                        group_xml.append( '''    </Items>''')
+                        group_xml.append( '''    <Items>''')
 
                         res_xml['Images'].append(f'''<bt:Image id="{line['imageMso']}.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>''')
                         res_xml['Images'].append(f'''<bt:Image id="{line['imageMso']}.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>''')
@@ -78,6 +85,13 @@ with open("manifest_bs4.xml", "w") as f:
                         # res_xml['Images'].append(f'''<bt:Image id="{line['imageMso']}.80x80" DefaultValue="https://localhost:3000/assets/{line['imageMso']}_80.png"/>''')
 
                         res_xml['ShortStrings'].append(f'''<bt:String id="{line['id']}.label" DefaultValue="{line['label']}"/>''')
+                        if 'screentip' in line.attrs:
+                            res_xml['ShortStrings'].append(f'''<bt:String id="{line['id']}.title" DefaultValue="{line['screentip']}"/>''')
+                            res_xml['ShortStrings'].append(f'''<bt:String id="{line['id']}.desc" DefaultValue="Click to {line['screentip']}"/>''')
+                        else:
+                            res_xml['ShortStrings'].append(f'''<bt:String id="{line['id']}.title" DefaultValue="{line['label']}"/>''')
+                            res_xml['ShortStrings'].append(f'''<bt:String id="{line['id']}.desc" DefaultValue="Click to {line['label']}"/>''')
+
                         for item in line.contents:
                             if type(item) == Tag:
                                 group_xml.append(f'''      <Item id="{item['id']}">''')
@@ -86,13 +100,13 @@ with open("manifest_bs4.xml", "w") as f:
                                 group_xml.append(f'''          <Title resid="{item['id']}.Title"/>''')       
                                 group_xml.append(f'''          <Description resid="{item['id']}.Desc"/>''')       
                                 group_xml.append( '''        </Supertip>''')
-                                if 'imageMso' in item:
+                                if 'imageMso' in item.attrs:
                                     group_xml.append( '''        <Icon>''')
                                     group_xml.append(f'''          <bt:Image size="16" resid="{item['imageMso']}.16x16"/>''')
                                     group_xml.append(f'''          <bt:Image size="32" resid="{item['imageMso']}.32x32"/>''')
                                     group_xml.append(f'''          <bt:Image size="80" resid="{item['imageMso']}.80x80"/>''')
                                     group_xml.append( '''        </Icon>''')
-                                group_xml.append( '''        <Action>''')
+                                group_xml.append( '''        <Action xsi:type="ExecuteFunction">''')
                                 group_xml.append( '''          <FunctionName>OnAction_ECAM</FunctionName>''')
                                 group_xml.append( '''        </Action>''')
                                 group_xml.append( '''      </Item>''')
@@ -107,6 +121,8 @@ with open("manifest_bs4.xml", "w") as f:
                                 # else  an icon is required point each of these to the icon used for group that displays blank
 
                                 res_xml['ShortStrings'].append(f'''<bt:String id="{item['id']}.label" DefaultValue="{item['label']}"/>''')
+                                res_xml['ShortStrings'].append(f'''<bt:String id="{item['id']}.title" DefaultValue="{item['label']}"/>''')
+                                res_xml['LongStrings'].append(f'''<bt:String id="{item['id']}.desc" DefaultValue="Click to {item['label']}"/>''')
 
                         group_xml.append( '''        </Items>''')
                         group_xml.append( '''  </Control>''')
