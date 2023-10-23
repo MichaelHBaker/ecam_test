@@ -3,6 +3,27 @@ Next lesson
         understand the developer manifest, how is excel finding it
         add screentip to title, then add click to to create description
         add menu to manual manifest to test syntax
+        npm2.bat start/run/build, include copies
+
+
+get menu to work
+try to side load to shared foler manually
+look for guidance of using git as server and how to post rebuilt dist to git
+
+Local testing
+    npm run validate
+    npm start
+    npm stop
+
+Production testing
+    npm run build
+    #replaces entire content of \dist, Gina - what was the file we need to avoid overwriting
+
+
+
+
+https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#clear-the-office-cache-on-windows
+
 
 1. copy .git funtion
 2. Get on_load function to work
