@@ -26,3 +26,5 @@
           <FunctionFile resid="Commands.Url"/>
 
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <CustomTab id="TabECAM_JS">
+

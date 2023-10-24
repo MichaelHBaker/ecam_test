@@ -9,7 +9,7 @@
                     <bt:Image size="32" resid="CreateQuickStep.32x32"/>
                     <bt:Image size="80" resid="CreateQuickStep.80x80"/>
                   </Icon>
-                  </Items>
+                  <Items>
                     <Item id="btnInputSiteWeatherName1">
                       <Label resid="btnInputSiteWeatherName1.label"/>
                       <Supertip>
@@ -17,13 +17,14 @@
                         <Description resid="btnInputSiteWeatherName1.Desc"/>
                       </Supertip>
                       <Icon>
-                        <bt:Image size="16" resid="Icon.16x16"/>
-                        <bt:Image size="32" resid="Icon.32x32"/>
-                        <bt:Image size="80" resid="Icon.80x80"/>
+                        <bt:Image size="16" resid="CreateQuickStep.16x16"/>
+                        <bt:Image size="32" resid="CreateQuickStep.32x32"/>
+                        <bt:Image size="80" resid="CreateQuickStep.80x80"/>
                       </Icon>
-                      <Action>
+                      <Action xsi:type="ExecuteFunction">
                         <FunctionName>OnAction_ECAM</FunctionName>
                       </Action>
                     </Item>
                   </Items>
                 </Control>
+CalendarMonthDetailsSplitButton.16x16

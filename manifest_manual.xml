@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <Id>b4fb2a24-691a-4783-bc9f-117caf4a365d</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Contoso</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="ECAM JS"/>
+  <Description DefaultValue="Office.js version of ECAM."/>
+  <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-64.png"/>
+  <SupportUrl DefaultValue="https://www.contoso.com/help"/>
+  <AppDomains>
+    <AppDomain>https://www.contoso.com</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Workbook"/>
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://localhost:3000/taskpane.html"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <DesktopFormFactor>
+          <FunctionFile resid="Commands.Url"/>
+
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+
+            <CustomTab id="TabECAM_JS">
+
+              <Group id="gpDataInputs">
+                <Label resid="gpDataInputs.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+
+                <Control xsi:type="Button" id="btnSelectIntervalData1">
+
+                  <Label resid="btnSelectIntervalData1.Label"/>
+
+                  <Supertip>
+                    <Title resid="btnSelectIntervalData1.Title"/>
+                    <Description resid="btnSelectIntervalData1.Desc"/>
+                  </Supertip>
+
+                  <Icon>
+                    <bt:Image size="16" resid="IconSelectArea.16x16"/>
+                    <bt:Image size="32" resid="IconSelectArea.32x32"/>
+                    <bt:Image size="80" resid="IconSelectArea.80x80"/>
+                  </Icon>
+                  
+                  <Action xsi:type="ExecuteFunction">
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                  </Action>
+                
+                </Control>
+
+                <Control xsi:type="Button" id="btnSelectBillingData1">
+
+                  <Label resid="btnSelectBillingData1.Label"/>
+
+                  <Supertip>
+                    <Title resid="btnSelectBillingData1.Title"/>
+                    <Description resid="btnSelectBillingData1.Desc"/>
+                  </Supertip>
+
+                  <Icon>
+                    <bt:Image size="16" resid="CalendarToolSelectDate.16x16"/>
+                    <bt:Image size="32" resid="CalendarToolSelectDate.32x32"/>
+                    <bt:Image size="80" resid="CalendarToolSelectDate.80x80"/>
+                  </Icon>
+                  
+                  <Action xsi:type="ExecuteFunction">
+                      <FunctionName>OnAction_ECAM</FunctionName>
+                  </Action>
+                
+                </Control>
+
+                <Control xsi:type="Menu" id="mnuWeather1">
+                  <Label resid="mnuWeather1.Label"/>
+                  <Supertip>
+                    <Title resid="mnuWeather1.Title"/>
+                    <Description resid="mnuWeather1.Desc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="CreateQuickStep.16x16"/>
+                    <bt:Image size="32" resid="CreateQuickStep.32x32"/>
+                    <bt:Image size="80" resid="CreateQuickStep.80x80"/>
+                  </Icon>
+                  <Items>
+                    <Item id="btnInputSiteWeatherName1">
+                      <Label resid="btnInputSiteWeatherName1.Label"/>
+                      <Supertip>
+                        <Title resid="btnInputSiteWeatherName1.Title"/>
+                        <Description resid="btnInputSiteWeatherName1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="CreateQuickStep.16x16"/>
+                        <bt:Image size="32" resid="CreateQuickStep.32x32"/>
+                        <bt:Image size="80" resid="CreateQuickStep.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                  </Items>
+                </Control>
+
+              </Group>
+
+              <Label resid="tbECAM_JS.Label"/>
+            </CustomTab>
+
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images>
+
+        <bt:Image id="Icon.16x16" DefaultValue="https://localhost:3000/assets/icon-16.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://localhost:3000/assets/icon-32.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://localhost:3000/assets/icon-80.png"/>
+
+        <bt:Image id="IconSelectArea.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="IconSelectArea.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="IconSelectArea.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+
+        <bt:Image id="CalendarToolSelectDate.16x16" DefaultValue="https://localhost:3000/assets/CalendarToolSelectDate_16.png"/>
+        <bt:Image id="CalendarToolSelectDate.32x32" DefaultValue="https://localhost:3000/assets/CalendarToolSelectDate_32.png"/>
+        <bt:Image id="CalendarToolSelectDate.80x80" DefaultValue="https://localhost:3000/assets/CalendarToolSelectDate_80.png"/>
+
+        <bt:Image id="CreateQuickStep.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="CreateQuickStep.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="CreateQuickStep.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+
+
+      </bt:Images>
+
+      <bt:Urls>
+        <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
+      </bt:Urls>
+      
+      <bt:ShortStrings>
+
+        <bt:String id="tbECAM_JS.Label" DefaultValue="ECAM_JS" />
+        
+        <bt:String id="gpDataInputs.Label" DefaultValue="Data Inputs"/>
+
+        <bt:String id="btnSelectIntervalData1.Label" DefaultValue="Interval Data"/>
+        <bt:String id="btnSelectIntervalData1.Title" DefaultValue="Select Interval Data"/>
+
+        <bt:String id="btnSelectBillingData1.Label" DefaultValue="Monthly Billing"/>
+        <bt:String id="btnSelectBillingData1.Title" DefaultValue="Select Monthly Billing Data"/>
+
+        <bt:String id="mnuWeather1.Label" DefaultValue="Weather"/>
+
+        <bt:String id="btnInputSiteWeatherName1.Label" DefaultValue="Historical Weather Station"/>
+        <bt:String id="btnInputSiteWeatherName1.Title" DefaultValue="Historical Weather Station"/>
+
+        <bt:String id="mnuWeather1.Title" DefaultValue="Download Weather or Input Station Name for Reports"/>
+
+
+      </bt:ShortStrings>
+
+      <bt:LongStrings>
+
+        <bt:String id="btnSelectIntervalData1.Desc" DefaultValue="Click to Select Interval Data"/>
+        <bt:String id="btnSelectBillingData1.Desc" DefaultValue="Click to Select Monthly Billing Data"/>
+
+        <bt:String id="btnInputSiteWeatherName1.Desc" DefaultValue="Click to Historical Weather Station"/>
+        <bt:String id="mnuWeather1.Desc" DefaultValue="Click to Download Weather or Input Station Name for Reports"/>
+
+      </bt:LongStrings>
+
+    </Resources>
+
+  </VersionOverrides>
+
+</OfficeApp>

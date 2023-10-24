@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
   <Id>b4fb2a24-691a-4783-bc9f-117caf4a365d</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
@@ -26,61 +26,100 @@
           <FunctionFile resid="Commands.Url"/>
 
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
-
             <CustomTab id="TabECAM_JS">
 
               <Group id="gpDataInputs">
-                <Label resid="gpDataInputs.label"/>
+                <Label resid="gpDataInputs.Label"/>
                 <Icon>
                   <bt:Image size="16" resid="Icon.16x16"/>
                   <bt:Image size="32" resid="Icon.32x32"/>
                   <bt:Image size="80" resid="Icon.80x80"/>
                 </Icon>
-
                 <Control xsi:type="Button" id="btnSelectIntervalData1">
-
                   <Label resid="btnSelectIntervalData1.Label"/>
-
                   <Supertip>
                     <Title resid="btnSelectIntervalData1.Title"/>
                     <Description resid="btnSelectIntervalData1.Desc"/>
                   </Supertip>
-
                   <Icon>
                     <bt:Image size="16" resid="IconSelectArea.16x16"/>
                     <bt:Image size="32" resid="IconSelectArea.32x32"/>
                     <bt:Image size="80" resid="IconSelectArea.80x80"/>
                   </Icon>
-                  
                   <Action xsi:type="ExecuteFunction">
-                      <FunctionName>OnAction_ECAM</FunctionName>
+                    <FunctionName>OnAction_ECAM</FunctionName>
                   </Action>
-                
                 </Control>
-
                 <Control xsi:type="Button" id="btnSelectBillingData1">
-
                   <Label resid="btnSelectBillingData1.Label"/>
-
                   <Supertip>
                     <Title resid="btnSelectBillingData1.Title"/>
                     <Description resid="btnSelectBillingData1.Desc"/>
                   </Supertip>
-
                   <Icon>
                     <bt:Image size="16" resid="CalendarToolSelectDate.16x16"/>
                     <bt:Image size="32" resid="CalendarToolSelectDate.32x32"/>
                     <bt:Image size="80" resid="CalendarToolSelectDate.80x80"/>
                   </Icon>
-                  
                   <Action xsi:type="ExecuteFunction">
-                      <FunctionName>OnAction_ECAM</FunctionName>
+                    <FunctionName>OnAction_ECAM</FunctionName>
                   </Action>
-                
                 </Control>
-
+              </Group>
+              <Group id="gpGeneralInputs">
+                <Label resid="gpGeneralInputs.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                <Control xsi:type="Button" id="btnDefinePoints1">
+                  <Label resid="btnDefinePoints1.Label"/>
+                  <Supertip>
+                    <Title resid="btnDefinePoints1.Title"/>
+                    <Description resid="btnDefinePoints1.Desc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Legend.16x16"/>
+                    <bt:Image size="32" resid="Legend.32x32"/>
+                    <bt:Image size="80" resid="Legend.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>OnAction_ECAM</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="btnCreateSchedules1">
+                  <Label resid="btnCreateSchedules1.Label"/>
+                  <Supertip>
+                    <Title resid="btnCreateSchedules1.Title"/>
+                    <Description resid="btnCreateSchedules1.Desc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="DataTypeTime.16x16"/>
+                    <bt:Image size="32" resid="DataTypeTime.32x32"/>
+                    <bt:Image size="80" resid="DataTypeTime.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>OnAction_ECAM</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="btnCreatePrePostDates1">
+                  <Label resid="btnCreatePrePostDates1.Label"/>
+                  <Supertip>
+                    <Title resid="btnCreatePrePostDates1.Title"/>
+                    <Description resid="btnCreatePrePostDates1.Desc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="CalendarMonthDetailsSplitButton.16x16"/>
+                    <bt:Image size="32" resid="CalendarMonthDetailsSplitButton.32x32"/>
+                    <bt:Image size="80" resid="CalendarMonthDetailsSplitButton.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>OnAction_ECAM</FunctionName>
+                  </Action>
+                </Control>
                 <Control xsi:type="Menu" id="mnuWeather1">
-                  <Label resid="mnuWeather1.label"/>
+                  <Label resid="mnuWeather1.Label"/>
                   <Supertip>
                     <Title resid="mnuWeather1.Title"/>
                     <Description resid="mnuWeather1.Desc"/>
@@ -92,7 +131,7 @@
                   </Icon>
                   <Items>
                     <Item id="btnInputSiteWeatherName1">
-                      <Label resid="btnInputSiteWeatherName1.label"/>
+                      <Label resid="btnInputSiteWeatherName1.Label"/>
                       <Supertip>
                         <Title resid="btnInputSiteWeatherName1.Title"/>
                         <Description resid="btnInputSiteWeatherName1.Desc"/>
@@ -106,12 +145,1449 @@
                         <FunctionName>OnAction_ECAM</FunctionName>
                       </Action>
                     </Item>
-                  </Items>
+                    <Item id="btnInputTMYWeatherName1">
+                      <Label resid="btnInputTMYWeatherName1.Label"/>
+                      <Supertip>
+                        <Title resid="btnInputTMYWeatherName1.Title"/>
+                        <Description resid="btnInputTMYWeatherName1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ShapeLightningBolt.16x16"/>
+                        <bt:Image size="32" resid="ShapeLightningBolt.32x32"/>
+                        <bt:Image size="80" resid="ShapeLightningBolt.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnDownloadData1">
+                      <Label resid="btnDownloadData1.Label"/>
+                      <Supertip>
+                        <Title resid="btnDownloadData1.Title"/>
+                        <Description resid="btnDownloadData1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="TableAutoFormat.16x16"/>
+                        <bt:Image size="32" resid="TableAutoFormat.32x32"/>
+                        <bt:Image size="80" resid="TableAutoFormat.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnCheckWthrCoverageBase1">
+                      <Label resid="btnCheckWthrCoverageBase1.Label"/>
+                      <Supertip>
+                        <Title resid="btnCheckWthrCoverageBase1.Title"/>
+                        <Description resid="btnCheckWthrCoverageBase1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="DatabaseServerCompatibilityCheckDatabase.16x16"/>
+                        <bt:Image size="32" resid="DatabaseServerCompatibilityCheckDatabase.32x32"/>
+                        <bt:Image size="80" resid="DatabaseServerCompatibilityCheckDatabase.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnCheckWthrCoveragePost1">
+                      <Label resid="btnCheckWthrCoveragePost1.Label"/>
+                      <Supertip>
+                        <Title resid="btnCheckWthrCoveragePost1.Title"/>
+                        <Description resid="btnCheckWthrCoveragePost1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="DatabaseServerCompatibilityCheckDatabase.16x16"/>
+                        <bt:Image size="32" resid="DatabaseServerCompatibilityCheckDatabase.32x32"/>
+                        <bt:Image size="80" resid="DatabaseServerCompatibilityCheckDatabase.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                      </Items>
                 </Control>
-
+                <Control xsi:type="Button" id="btnCustomizeHolidays1">
+                  <Label resid="btnCustomizeHolidays1.Label"/>
+                  <Supertip>
+                    <Title resid="btnCustomizeHolidays1.Title"/>
+                    <Description resid="btnCustomizeHolidays1.Desc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="CalendarConfigure.16x16"/>
+                    <bt:Image size="32" resid="CalendarConfigure.32x32"/>
+                    <bt:Image size="80" resid="CalendarConfigure.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>OnAction_ECAM</FunctionName>
+                  </Action>
+                </Control>
               </Group>
-
-              <Label resid="tbECAM_JS.label"/>
+              <Group id="gpCharts">
+                <Label resid="gpCharts.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                <Control xsi:type="Menu" id="mnuTimeSeriesCharts1">
+                  <Label resid="mnuTimeSeriesCharts1.Label"/>
+                  <Supertip>
+                    <Title resid="mnuTimeSeriesCharts1.Title"/>
+                    <Description resid="mnuTimeSeriesCharts1.Desc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="ChartTypeLineInsertGallery.16x16"/>
+                    <bt:Image size="32" resid="ChartTypeLineInsertGallery.32x32"/>
+                    <bt:Image size="80" resid="ChartTypeLineInsertGallery.80x80"/>
+                  </Icon>
+                  <Items>
+                    <Item id="btnCreateHistoryChart1">
+                      <Label resid="btnCreateHistoryChart1.Label"/>
+                      <Supertip>
+                        <Title resid="btnCreateHistoryChart1.Title"/>
+                        <Description resid="btnCreateHistoryChart1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ChartTypeLineInsertGallery.16x16"/>
+                        <bt:Image size="32" resid="ChartTypeLineInsertGallery.32x32"/>
+                        <bt:Image size="80" resid="ChartTypeLineInsertGallery.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnCreateLPbyDaytype1">
+                      <Label resid="btnCreateLPbyDaytype1.Label"/>
+                      <Supertip>
+                        <Title resid="btnCreateLPbyDaytype1.Title"/>
+                        <Description resid="btnCreateLPbyDaytype1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ChartTypeLineInsertGallery.16x16"/>
+                        <bt:Image size="32" resid="ChartTypeLineInsertGallery.32x32"/>
+                        <bt:Image size="80" resid="ChartTypeLineInsertGallery.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnCreateLPbyDayOfWeek1">
+                      <Label resid="btnCreateLPbyDayOfWeek1.Label"/>
+                      <Supertip>
+                        <Title resid="btnCreateLPbyDayOfWeek1.Title"/>
+                        <Description resid="btnCreateLPbyDayOfWeek1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ChartTypeLineInsertGallery.16x16"/>
+                        <bt:Image size="32" resid="ChartTypeLineInsertGallery.32x32"/>
+                        <bt:Image size="80" resid="ChartTypeLineInsertGallery.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnCreateLPbyMonthYr1">
+                      <Label resid="btnCreateLPbyMonthYr1.Label"/>
+                      <Supertip>
+                        <Title resid="btnCreateLPbyMonthYr1.Title"/>
+                        <Description resid="btnCreateLPbyMonthYr1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ChartTypeLineInsertGallery.16x16"/>
+                        <bt:Image size="32" resid="ChartTypeLineInsertGallery.32x32"/>
+                        <bt:Image size="80" resid="ChartTypeLineInsertGallery.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnCreateLPbyDateRng1">
+                      <Label resid="btnCreateLPbyDateRng1.Label"/>
+                      <Supertip>
+                        <Title resid="btnCreateLPbyDateRng1.Title"/>
+                        <Description resid="btnCreateLPbyDateRng1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ChartTypeLineInsertGallery.16x16"/>
+                        <bt:Image size="32" resid="ChartTypeLineInsertGallery.32x32"/>
+                        <bt:Image size="80" resid="ChartTypeLineInsertGallery.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnCreateLPbyYear1">
+                      <Label resid="btnCreateLPbyYear1.Label"/>
+                      <Supertip>
+                        <Title resid="btnCreateLPbyYear1.Title"/>
+                        <Description resid="btnCreateLPbyYear1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ChartTypeLineInsertGallery.16x16"/>
+                        <bt:Image size="32" resid="ChartTypeLineInsertGallery.32x32"/>
+                        <bt:Image size="80" resid="ChartTypeLineInsertGallery.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnCreateLPbyDay1">
+                      <Label resid="btnCreateLPbyDay1.Label"/>
+                      <Supertip>
+                        <Title resid="btnCreateLPbyDay1.Title"/>
+                        <Description resid="btnCreateLPbyDay1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ChartTypeLineInsertGallery.16x16"/>
+                        <bt:Image size="32" resid="ChartTypeLineInsertGallery.32x32"/>
+                        <bt:Image size="80" resid="ChartTypeLineInsertGallery.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnChart3dColoredDaytypes1">
+                      <Label resid="btnChart3dColoredDaytypes1.Label"/>
+                      <Supertip>
+                        <Title resid="btnChart3dColoredDaytypes1.Title"/>
+                        <Description resid="btnChart3dColoredDaytypes1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ChartAreaChart.16x16"/>
+                        <bt:Image size="32" resid="ChartAreaChart.32x32"/>
+                        <bt:Image size="80" resid="ChartAreaChart.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnContourChart1">
+                      <Label resid="btnContourChart1.Label"/>
+                      <Supertip>
+                        <Title resid="btnContourChart1.Title"/>
+                        <Description resid="btnContourChart1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ConditionalFormattingColorScalesGallery.16x16"/>
+                        <bt:Image size="32" resid="ConditionalFormattingColorScalesGallery.32x32"/>
+                        <bt:Image size="80" resid="ConditionalFormattingColorScalesGallery.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnCreateCalendarLP1">
+                      <Label resid="btnCreateCalendarLP1.Label"/>
+                      <Supertip>
+                        <Title resid="btnCreateCalendarLP1.Title"/>
+                        <Description resid="btnCreateCalendarLP1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="CalendarMonthDetailsSplitButton.16x16"/>
+                        <bt:Image size="32" resid="CalendarMonthDetailsSplitButton.32x32"/>
+                        <bt:Image size="80" resid="CalendarMonthDetailsSplitButton.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnBoxPlotLP1">
+                      <Label resid="btnBoxPlotLP1.Label"/>
+                      <Supertip>
+                        <Title resid="btnBoxPlotLP1.Title"/>
+                        <Description resid="btnBoxPlotLP1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ChartErrorBars.16x16"/>
+                        <bt:Image size="32" resid="ChartErrorBars.32x32"/>
+                        <bt:Image size="80" resid="ChartErrorBars.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                      </Items>
+                </Control>
+                <Control xsi:type="Menu" id="mnuScatterCharts1">
+                  <Label resid="mnuScatterCharts1.Label"/>
+                  <Supertip>
+                    <Title resid="mnuScatterCharts1.Title"/>
+                    <Description resid="mnuScatterCharts1.Desc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="ChartTypeXYScatterInsertGallery.16x16"/>
+                    <bt:Image size="32" resid="ChartTypeXYScatterInsertGallery.32x32"/>
+                    <bt:Image size="80" resid="ChartTypeXYScatterInsertGallery.80x80"/>
+                  </Icon>
+                  <Items>
+                    <Item id="btnCreateScatterChartByOcc1">
+                      <Label resid="btnCreateScatterChartByOcc1.Label"/>
+                      <Supertip>
+                        <Title resid="btnCreateScatterChartByOcc1.Title"/>
+                        <Description resid="btnCreateScatterChartByOcc1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ChartTypeXYScatterInsertGallery.16x16"/>
+                        <bt:Image size="32" resid="ChartTypeXYScatterInsertGallery.32x32"/>
+                        <bt:Image size="80" resid="ChartTypeXYScatterInsertGallery.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnCreateScatterChartByDateRng1">
+                      <Label resid="btnCreateScatterChartByDateRng1.Label"/>
+                      <Supertip>
+                        <Title resid="btnCreateScatterChartByDateRng1.Title"/>
+                        <Description resid="btnCreateScatterChartByDateRng1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ChartTypeXYScatterInsertGallery.16x16"/>
+                        <bt:Image size="32" resid="ChartTypeXYScatterInsertGallery.32x32"/>
+                        <bt:Image size="80" resid="ChartTypeXYScatterInsertGallery.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnPureScatter1">
+                      <Label resid="btnPureScatter1.Label"/>
+                      <Supertip>
+                        <Title resid="btnPureScatter1.Title"/>
+                        <Description resid="btnPureScatter1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ChartTypeXYScatterInsertGallery.16x16"/>
+                        <bt:Image size="32" resid="ChartTypeXYScatterInsertGallery.32x32"/>
+                        <bt:Image size="80" resid="ChartTypeXYScatterInsertGallery.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnShowHighlightForm1">
+                      <Label resid="btnShowHighlightForm1.Label"/>
+                      <Supertip>
+                        <Title resid="btnShowHighlightForm1.Title"/>
+                        <Description resid="btnShowHighlightForm1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="SmartArtChangeColorsGallery.16x16"/>
+                        <bt:Image size="32" resid="SmartArtChangeColorsGallery.32x32"/>
+                        <bt:Image size="80" resid="SmartArtChangeColorsGallery.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnUnHiLiteDays1">
+                      <Label resid="btnUnHiLiteDays1.Label"/>
+                      <Supertip>
+                        <Title resid="btnUnHiLiteDays1.Title"/>
+                        <Description resid="btnUnHiLiteDays1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ChartResetToMatchStyle.16x16"/>
+                        <bt:Image size="32" resid="ChartResetToMatchStyle.32x32"/>
+                        <bt:Image size="80" resid="ChartResetToMatchStyle.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                      </Items>
+                </Control>
+                <Control xsi:type="Button" id="btnCreateLoadDurationChart1">
+                  <Label resid="btnCreateLoadDurationChart1.Label"/>
+                  <Supertip>
+                    <Title resid="btnCreateLoadDurationChart1.Title"/>
+                    <Description resid="btnCreateLoadDurationChart1.Desc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="ChartInsert.16x16"/>
+                    <bt:Image size="32" resid="ChartInsert.32x32"/>
+                    <bt:Image size="80" resid="ChartInsert.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>OnAction_ECAM</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="btnScheduleChart1">
+                  <Label resid="btnScheduleChart1.Label"/>
+                  <Supertip>
+                    <Title resid="btnScheduleChart1.Title"/>
+                    <Description resid="btnScheduleChart1.Desc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="ChartEditDataSource.16x16"/>
+                    <bt:Image size="32" resid="ChartEditDataSource.32x32"/>
+                    <bt:Image size="80" resid="ChartEditDataSource.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>OnAction_ECAM</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Menu" id="mnuMatrixCharts1">
+                  <Label resid="mnuMatrixCharts1.Label"/>
+                  <Supertip>
+                    <Title resid="mnuMatrixCharts1.Title"/>
+                    <Description resid="mnuMatrixCharts1.Desc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="PivotChartMultiplePlots.16x16"/>
+                    <bt:Image size="32" resid="PivotChartMultiplePlots.32x32"/>
+                    <bt:Image size="80" resid="PivotChartMultiplePlots.80x80"/>
+                  </Icon>
+                  <Items>
+                    <Item id="btnMatrixSelectedChartsInfo1">
+                      <Label resid="btnMatrixSelectedChartsInfo1.Label"/>
+                      <Supertip>
+                        <Title resid="btnMatrixSelectedChartsInfo1.Title"/>
+                        <Description resid="btnMatrixSelectedChartsInfo1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ZoomOnePage.16x16"/>
+                        <bt:Image size="32" resid="ZoomOnePage.32x32"/>
+                        <bt:Image size="80" resid="ZoomOnePage.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnMatrixSelectedCharts1">
+                      <Label resid="btnMatrixSelectedCharts1.Label"/>
+                      <Supertip>
+                        <Title resid="btnMatrixSelectedCharts1.Title"/>
+                        <Description resid="btnMatrixSelectedCharts1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="IconsOnly.16x16"/>
+                        <bt:Image size="32" resid="IconsOnly.32x32"/>
+                        <bt:Image size="80" resid="IconsOnly.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnMatrixAllCharts1">
+                      <Label resid="btnMatrixAllCharts1.Label"/>
+                      <Supertip>
+                        <Title resid="btnMatrixAllCharts1.Title"/>
+                        <Description resid="btnMatrixAllCharts1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="IconsOnly.16x16"/>
+                        <bt:Image size="32" resid="IconsOnly.32x32"/>
+                        <bt:Image size="80" resid="IconsOnly.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                      </Items>
+                </Control>
+                <Control xsi:type="Menu" id="mnuChartUtilities1">
+                  <Label resid="mnuChartUtilities1.Label"/>
+                  <Supertip>
+                    <Title resid="mnuChartUtilities1.Title"/>
+                    <Description resid="mnuChartUtilities1.Desc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="ChartFormatAxis.16x16"/>
+                    <bt:Image size="32" resid="ChartFormatAxis.32x32"/>
+                    <bt:Image size="80" resid="ChartFormatAxis.80x80"/>
+                  </Icon>
+                  <Items>
+                    <Item id="btnSetScalesSelectedCharts1">
+                      <Label resid="btnSetScalesSelectedCharts1.Label"/>
+                      <Supertip>
+                        <Title resid="btnSetScalesSelectedCharts1.Title"/>
+                        <Description resid="btnSetScalesSelectedCharts1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ChartPrimaryHorizontalGridlines.16x16"/>
+                        <bt:Image size="32" resid="ChartPrimaryHorizontalGridlines.32x32"/>
+                        <bt:Image size="80" resid="ChartPrimaryHorizontalGridlines.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                      </Items>
+                </Control>
+                <Control xsi:type="Menu" id="mnuMetricsandDataSummaries1">
+                  <Label resid="mnuMetricsandDataSummaries1.Label"/>
+                  <Supertip>
+                    <Title resid="mnuMetricsandDataSummaries1.Title"/>
+                    <Description resid="mnuMetricsandDataSummaries1.Desc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="PageWidthGuideShowHide.16x16"/>
+                    <bt:Image size="32" resid="PageWidthGuideShowHide.32x32"/>
+                    <bt:Image size="80" resid="PageWidthGuideShowHide.80x80"/>
+                  </Icon>
+                  <Items>
+                    <Item id="btnMetricsDaytypeOccupancySF1">
+                      <Label resid="btnMetricsDaytypeOccupancySF1.Label"/>
+                      <Supertip>
+                        <Title resid="btnMetricsDaytypeOccupancySF1.Title"/>
+                        <Description resid="btnMetricsDaytypeOccupancySF1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="DesignTemplate.16x16"/>
+                        <bt:Image size="32" resid="DesignTemplate.32x32"/>
+                        <bt:Image size="80" resid="DesignTemplate.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnMetricsDaytypeOccupancyR21">
+                      <Label resid="btnMetricsDaytypeOccupancyR21.Label"/>
+                      <Supertip>
+                        <Title resid="btnMetricsDaytypeOccupancyR21.Title"/>
+                        <Description resid="btnMetricsDaytypeOccupancyR21.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="DesignAForm.16x16"/>
+                        <bt:Image size="32" resid="DesignAForm.32x32"/>
+                        <bt:Image size="80" resid="DesignAForm.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnMetricsOccupancyMonthYrB1">
+                      <Label resid="btnMetricsOccupancyMonthYrB1.Label"/>
+                      <Supertip>
+                        <Title resid="btnMetricsOccupancyMonthYrB1.Title"/>
+                        <Description resid="btnMetricsOccupancyMonthYrB1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="DesignAForm.16x16"/>
+                        <bt:Image size="32" resid="DesignAForm.32x32"/>
+                        <bt:Image size="80" resid="DesignAForm.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnMetricsDaytypeMonthYrB1">
+                      <Label resid="btnMetricsDaytypeMonthYrB1.Label"/>
+                      <Supertip>
+                        <Title resid="btnMetricsDaytypeMonthYrB1.Title"/>
+                        <Description resid="btnMetricsDaytypeMonthYrB1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="DesignAForm.16x16"/>
+                        <bt:Image size="32" resid="DesignAForm.32x32"/>
+                        <bt:Image size="80" resid="DesignAForm.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnDataSummaryInfo1">
+                      <Label resid="btnDataSummaryInfo1.Label"/>
+                      <Supertip>
+                        <Title resid="btnDataSummaryInfo1.Title"/>
+                        <Description resid="btnDataSummaryInfo1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ZoomOnePage.16x16"/>
+                        <bt:Image size="32" resid="ZoomOnePage.32x32"/>
+                        <bt:Image size="80" resid="ZoomOnePage.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnDataSummaryRawData1">
+                      <Label resid="btnDataSummaryRawData1.Label"/>
+                      <Supertip>
+                        <Title resid="btnDataSummaryRawData1.Title"/>
+                        <Description resid="btnDataSummaryRawData1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="CreateFormMoreFormsGallery.16x16"/>
+                        <bt:Image size="32" resid="CreateFormMoreFormsGallery.32x32"/>
+                        <bt:Image size="80" resid="CreateFormMoreFormsGallery.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnDataSummaryPivotTable1">
+                      <Label resid="btnDataSummaryPivotTable1.Label"/>
+                      <Supertip>
+                        <Title resid="btnDataSummaryPivotTable1.Title"/>
+                        <Description resid="btnDataSummaryPivotTable1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="CreateFormMoreFormsGallery.16x16"/>
+                        <bt:Image size="32" resid="CreateFormMoreFormsGallery.32x32"/>
+                        <bt:Image size="80" resid="CreateFormMoreFormsGallery.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnBenchmarks1">
+                      <Label resid="btnBenchmarks1.Label"/>
+                      <Supertip>
+                        <Title resid="btnBenchmarks1.Title"/>
+                        <Description resid="btnBenchmarks1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="RulerShowHide.16x16"/>
+                        <bt:Image size="32" resid="RulerShowHide.32x32"/>
+                        <bt:Image size="80" resid="RulerShowHide.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                      </Items>
+                </Control>
+              </Group>
+              <Group id="gpAnalysis">
+                <Label resid="gpAnalysis.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                <Control xsi:type="Menu" id="mnuMeasurementandVerification1">
+                  <Label resid="mnuMeasurementandVerification1.Label"/>
+                  <Supertip>
+                    <Title resid="mnuMeasurementandVerification1.Title"/>
+                    <Description resid="mnuMeasurementandVerification1.Desc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="DesignChecker.16x16"/>
+                    <bt:Image size="32" resid="DesignChecker.32x32"/>
+                    <bt:Image size="80" resid="DesignChecker.80x80"/>
+                  </Icon>
+                  <Items>
+                    <Item id="btnInputExpectedSavings1">
+                      <Label resid="btnInputExpectedSavings1.Label"/>
+                      <Supertip>
+                        <Title resid="btnInputExpectedSavings1.Title"/>
+                        <Description resid="btnInputExpectedSavings1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ControlLayoutRemove.16x16"/>
+                        <bt:Image size="32" resid="ControlLayoutRemove.32x32"/>
+                        <bt:Image size="80" resid="ControlLayoutRemove.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnInputConfLevel1">
+                      <Label resid="btnInputConfLevel1.Label"/>
+                      <Supertip>
+                        <Title resid="btnInputConfLevel1.Title"/>
+                        <Description resid="btnInputConfLevel1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnFracSvgsInputs1">
+                      <Label resid="btnFracSvgsInputs1.Label"/>
+                      <Supertip>
+                        <Title resid="btnFracSvgsInputs1.Title"/>
+                        <Description resid="btnFracSvgsInputs1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnCombineCategories1">
+                      <Label resid="btnCombineCategories1.Label"/>
+                      <Supertip>
+                        <Title resid="btnCombineCategories1.Title"/>
+                        <Description resid="btnCombineCategories1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnSetNegativeEnergy1">
+                      <Label resid="btnSetNegativeEnergy1.Label"/>
+                      <Supertip>
+                        <Title resid="btnSetNegativeEnergy1.Title"/>
+                        <Description resid="btnSetNegativeEnergy1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnInputConfLevelOutlier1">
+                      <Label resid="btnInputConfLevelOutlier1.Label"/>
+                      <Supertip>
+                        <Title resid="btnInputConfLevelOutlier1.Title"/>
+                        <Description resid="btnInputConfLevelOutlier1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnOutliersHighlight1">
+                      <Label resid="btnOutliersHighlight1.Label"/>
+                      <Supertip>
+                        <Title resid="btnOutliersHighlight1.Title"/>
+                        <Description resid="btnOutliersHighlight1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnOutliersNoHighlight1">
+                      <Label resid="btnOutliersNoHighlight1.Label"/>
+                      <Supertip>
+                        <Title resid="btnOutliersNoHighlight1.Title"/>
+                        <Description resid="btnOutliersNoHighlight1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnOutliersEliminate1">
+                      <Label resid="btnOutliersEliminate1.Label"/>
+                      <Supertip>
+                        <Title resid="btnOutliersEliminate1.Title"/>
+                        <Description resid="btnOutliersEliminate1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnMAPEbase1">
+                      <Label resid="btnMAPEbase1.Label"/>
+                      <Supertip>
+                        <Title resid="btnMAPEbase1.Title"/>
+                        <Description resid="btnMAPEbase1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnMAPEpost1">
+                      <Label resid="btnMAPEpost1.Label"/>
+                      <Supertip>
+                        <Title resid="btnMAPEpost1.Title"/>
+                        <Description resid="btnMAPEpost1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnMatrixModelCharts1">
+                      <Label resid="btnMatrixModelCharts1.Label"/>
+                      <Supertip>
+                        <Title resid="btnMatrixModelCharts1.Title"/>
+                        <Description resid="btnMatrixModelCharts1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="IconsOnly.16x16"/>
+                        <bt:Image size="32" resid="IconsOnly.32x32"/>
+                        <bt:Image size="80" resid="IconsOnly.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnChartsWithBaseAndPost1">
+                      <Label resid="btnChartsWithBaseAndPost1.Label"/>
+                      <Supertip>
+                        <Title resid="btnChartsWithBaseAndPost1.Title"/>
+                        <Description resid="btnChartsWithBaseAndPost1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="IconsOnly.16x16"/>
+                        <bt:Image size="32" resid="IconsOnly.32x32"/>
+                        <bt:Image size="80" resid="IconsOnly.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnReadFilesForAutomation1">
+                      <Label resid="btnReadFilesForAutomation1.Label"/>
+                      <Supertip>
+                        <Title resid="btnReadFilesForAutomation1.Title"/>
+                        <Description resid="btnReadFilesForAutomation1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="CreateListWorkflowGallery.16x16"/>
+                        <bt:Image size="32" resid="CreateListWorkflowGallery.32x32"/>
+                        <bt:Image size="80" resid="CreateListWorkflowGallery.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                      </Items>
+                </Control>
+                <Control xsi:type="Menu" id="mnuIntervalDataDrivenModelsandMandV1">
+                  <Label resid="mnuIntervalDataDrivenModelsandMandV1.Label"/>
+                  <Supertip>
+                    <Title resid="mnuIntervalDataDrivenModelsandMandV1.Title"/>
+                    <Description resid="mnuIntervalDataDrivenModelsandMandV1.Desc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="CalendarHorizontal.16x16"/>
+                    <bt:Image size="32" resid="CalendarHorizontal.32x32"/>
+                    <bt:Image size="80" resid="CalendarHorizontal.80x80"/>
+                  </Icon>
+                  <Items>
+                    <Item id="btnDaytypingControl1">
+                      <Label resid="btnDaytypingControl1.Label"/>
+                      <Supertip>
+                        <Title resid="btnDaytypingControl1.Title"/>
+                        <Description resid="btnDaytypingControl1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnDaytypingSemiAuto1">
+                      <Label resid="btnDaytypingSemiAuto1.Label"/>
+                      <Supertip>
+                        <Title resid="btnDaytypingSemiAuto1.Title"/>
+                        <Description resid="btnDaytypingSemiAuto1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnCheckBoxesCreation_a1">
+                      <Label resid="btnCheckBoxesCreation_a1.Label"/>
+                      <Supertip>
+                        <Title resid="btnCheckBoxesCreation_a1.Title"/>
+                        <Description resid="btnCheckBoxesCreation_a1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnMVbaseline1">
+                      <Label resid="btnMVbaseline1.Label"/>
+                      <Supertip>
+                        <Title resid="btnMVbaseline1.Title"/>
+                        <Description resid="btnMVbaseline1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnBaseSumry1">
+                      <Label resid="btnBaseSumry1.Label"/>
+                      <Supertip>
+                        <Title resid="btnBaseSumry1.Title"/>
+                        <Description resid="btnBaseSumry1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnMVpost1">
+                      <Label resid="btnMVpost1.Label"/>
+                      <Supertip>
+                        <Title resid="btnMVpost1.Title"/>
+                        <Description resid="btnMVpost1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnPostSumry1">
+                      <Label resid="btnPostSumry1.Label"/>
+                      <Supertip>
+                        <Title resid="btnPostSumry1.Title"/>
+                        <Description resid="btnPostSumry1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnMVbaseAndPost1">
+                      <Label resid="btnMVbaseAndPost1.Label"/>
+                      <Supertip>
+                        <Title resid="btnMVbaseAndPost1.Title"/>
+                        <Description resid="btnMVbaseAndPost1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnSavings1">
+                      <Label resid="btnSavings1.Label"/>
+                      <Supertip>
+                        <Title resid="btnSavings1.Title"/>
+                        <Description resid="btnSavings1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnPrepTMY3data1">
+                      <Label resid="btnPrepTMY3data1.Label"/>
+                      <Supertip>
+                        <Title resid="btnPrepTMY3data1.Title"/>
+                        <Description resid="btnPrepTMY3data1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnBaselineAnnual1">
+                      <Label resid="btnBaselineAnnual1.Label"/>
+                      <Supertip>
+                        <Title resid="btnBaselineAnnual1.Title"/>
+                        <Description resid="btnBaselineAnnual1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnPostAnnual1">
+                      <Label resid="btnPostAnnual1.Label"/>
+                      <Supertip>
+                        <Title resid="btnPostAnnual1.Title"/>
+                        <Description resid="btnPostAnnual1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnSavingsAnnual1">
+                      <Label resid="btnSavingsAnnual1.Label"/>
+                      <Supertip>
+                        <Title resid="btnSavingsAnnual1.Title"/>
+                        <Description resid="btnSavingsAnnual1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnGenerateModelXML1">
+                      <Label resid="btnGenerateModelXML1.Label"/>
+                      <Supertip>
+                        <Title resid="btnGenerateModelXML1.Title"/>
+                        <Description resid="btnGenerateModelXML1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="SaveObjectAs.16x16"/>
+                        <bt:Image size="32" resid="SaveObjectAs.32x32"/>
+                        <bt:Image size="80" resid="SaveObjectAs.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                      </Items>
+                </Control>
+                <Control xsi:type="Menu" id="mnuMonthlyBillingDataModelsandMandV1">
+                  <Label resid="mnuMonthlyBillingDataModelsandMandV1.Label"/>
+                  <Supertip>
+                    <Title resid="mnuMonthlyBillingDataModelsandMandV1.Title"/>
+                    <Description resid="mnuMonthlyBillingDataModelsandMandV1.Desc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="CalendarInsert.16x16"/>
+                    <bt:Image size="32" resid="CalendarInsert.32x32"/>
+                    <bt:Image size="80" resid="CalendarInsert.80x80"/>
+                  </Icon>
+                  <Items>
+                    <Item id="btnMVbaselineMonthly1">
+                      <Label resid="btnMVbaselineMonthly1.Label"/>
+                      <Supertip>
+                        <Title resid="btnMVbaselineMonthly1.Title"/>
+                        <Description resid="btnMVbaselineMonthly1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnBaseSumry2">
+                      <Label resid="btnBaseSumry2.Label"/>
+                      <Supertip>
+                        <Title resid="btnBaseSumry2.Title"/>
+                        <Description resid="btnBaseSumry2.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnMVpostMonthly1">
+                      <Label resid="btnMVpostMonthly1.Label"/>
+                      <Supertip>
+                        <Title resid="btnMVpostMonthly1.Title"/>
+                        <Description resid="btnMVpostMonthly1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnPostSumry2">
+                      <Label resid="btnPostSumry2.Label"/>
+                      <Supertip>
+                        <Title resid="btnPostSumry2.Title"/>
+                        <Description resid="btnPostSumry2.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnMVcontrolMonthly1">
+                      <Label resid="btnMVcontrolMonthly1.Label"/>
+                      <Supertip>
+                        <Title resid="btnMVcontrolMonthly1.Title"/>
+                        <Description resid="btnMVcontrolMonthly1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnSavingsMonthly1">
+                      <Label resid="btnSavingsMonthly1.Label"/>
+                      <Supertip>
+                        <Title resid="btnSavingsMonthly1.Title"/>
+                        <Description resid="btnSavingsMonthly1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnTMY3monthlySheet1">
+                      <Label resid="btnTMY3monthlySheet1.Label"/>
+                      <Supertip>
+                        <Title resid="btnTMY3monthlySheet1.Title"/>
+                        <Description resid="btnTMY3monthlySheet1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnBaselineAnnualMonthly1">
+                      <Label resid="btnBaselineAnnualMonthly1.Label"/>
+                      <Supertip>
+                        <Title resid="btnBaselineAnnualMonthly1.Title"/>
+                        <Description resid="btnBaselineAnnualMonthly1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnPostAnnualMonthly1">
+                      <Label resid="btnPostAnnualMonthly1.Label"/>
+                      <Supertip>
+                        <Title resid="btnPostAnnualMonthly1.Title"/>
+                        <Description resid="btnPostAnnualMonthly1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnSavingsAnnualMonthly1">
+                      <Label resid="btnSavingsAnnualMonthly1.Label"/>
+                      <Supertip>
+                        <Title resid="btnSavingsAnnualMonthly1.Title"/>
+                        <Description resid="btnSavingsAnnualMonthly1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnGenerateModelXML2">
+                      <Label resid="btnGenerateModelXML2.Label"/>
+                      <Supertip>
+                        <Title resid="btnGenerateModelXML2.Title"/>
+                        <Description resid="btnGenerateModelXML2.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="SaveObjectAs.16x16"/>
+                        <bt:Image size="32" resid="SaveObjectAs.32x32"/>
+                        <bt:Image size="80" resid="SaveObjectAs.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                      </Items>
+                </Control>
+                <Control xsi:type="Menu" id="mnuStrategicEnergyManagementandMTR1">
+                  <Label resid="mnuStrategicEnergyManagementandMTR1.Label"/>
+                  <Supertip>
+                    <Title resid="mnuStrategicEnergyManagementandMTR1.Title"/>
+                    <Description resid="mnuStrategicEnergyManagementandMTR1.Desc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="StyleExplorer.16x16"/>
+                    <bt:Image size="32" resid="StyleExplorer.32x32"/>
+                    <bt:Image size="80" resid="StyleExplorer.80x80"/>
+                  </Icon>
+                  <Items>
+                    <Item id="btnSEMinterval1">
+                      <Label resid="btnSEMinterval1.Label"/>
+                      <Supertip>
+                        <Title resid="btnSEMinterval1.Title"/>
+                        <Description resid="btnSEMinterval1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnSEMmonthly1">
+                      <Label resid="btnSEMmonthly1.Label"/>
+                      <Supertip>
+                        <Title resid="btnSEMmonthly1.Title"/>
+                        <Description resid="btnSEMmonthly1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnSEMtracking1">
+                      <Label resid="btnSEMtracking1.Label"/>
+                      <Supertip>
+                        <Title resid="btnSEMtracking1.Title"/>
+                        <Description resid="btnSEMtracking1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnSaveModelsAndSavings1">
+                      <Label resid="btnSaveModelsAndSavings1.Label"/>
+                      <Supertip>
+                        <Title resid="btnSaveModelsAndSavings1.Title"/>
+                        <Description resid="btnSaveModelsAndSavings1.Desc"/>
+                      </Supertip>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                      </Items>
+                </Control>
+                <Control xsi:type="Menu" id="mnuPNNLReTuning1">
+                  <Label resid="mnuPNNLReTuning1.Label"/>
+                  <Supertip>
+                    <Title resid="mnuPNNLReTuning1.Title"/>
+                    <Description resid="mnuPNNLReTuning1.Desc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="ChartTypeLineInsertGallery.16x16"/>
+                    <bt:Image size="32" resid="ChartTypeLineInsertGallery.32x32"/>
+                    <bt:Image size="80" resid="ChartTypeLineInsertGallery.80x80"/>
+                  </Icon>
+                  <Items>
+                    <Item id="btnReTuningCP1">
+                      <Label resid="btnReTuningCP1.Label"/>
+                      <Supertip>
+                        <Title resid="btnReTuningCP1.Title"/>
+                        <Description resid="btnReTuningCP1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ChartTypeLineInsertGallery.16x16"/>
+                        <bt:Image size="32" resid="ChartTypeLineInsertGallery.32x32"/>
+                        <bt:Image size="80" resid="ChartTypeLineInsertGallery.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnReTuningPNNLAirHandler1">
+                      <Label resid="btnReTuningPNNLAirHandler1.Label"/>
+                      <Supertip>
+                        <Title resid="btnReTuningPNNLAirHandler1.Title"/>
+                        <Description resid="btnReTuningPNNLAirHandler1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ChartTypeLineInsertGallery.16x16"/>
+                        <bt:Image size="32" resid="ChartTypeLineInsertGallery.32x32"/>
+                        <bt:Image size="80" resid="ChartTypeLineInsertGallery.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnReTuningPNNLZone1">
+                      <Label resid="btnReTuningPNNLZone1.Label"/>
+                      <Supertip>
+                        <Title resid="btnReTuningPNNLZone1.Title"/>
+                        <Description resid="btnReTuningPNNLZone1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ChartTypeLineInsertGallery.16x16"/>
+                        <bt:Image size="32" resid="ChartTypeLineInsertGallery.32x32"/>
+                        <bt:Image size="80" resid="ChartTypeLineInsertGallery.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnReTuningAHUxy1">
+                      <Label resid="btnReTuningAHUxy1.Label"/>
+                      <Supertip>
+                        <Title resid="btnReTuningAHUxy1.Title"/>
+                        <Description resid="btnReTuningAHUxy1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ChartTypeXYScatterInsertGallery.16x16"/>
+                        <bt:Image size="32" resid="ChartTypeXYScatterInsertGallery.32x32"/>
+                        <bt:Image size="80" resid="ChartTypeXYScatterInsertGallery.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnReTuningEcon1">
+                      <Label resid="btnReTuningEcon1.Label"/>
+                      <Supertip>
+                        <Title resid="btnReTuningEcon1.Title"/>
+                        <Description resid="btnReTuningEcon1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ChartTypeLineInsertGallery.16x16"/>
+                        <bt:Image size="32" resid="ChartTypeLineInsertGallery.32x32"/>
+                        <bt:Image size="80" resid="ChartTypeLineInsertGallery.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnReTuningChartSummary1">
+                      <Label resid="btnReTuningChartSummary1.Label"/>
+                      <Supertip>
+                        <Title resid="btnReTuningChartSummary1.Title"/>
+                        <Description resid="btnReTuningChartSummary1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ZoomOnePage.16x16"/>
+                        <bt:Image size="32" resid="ZoomOnePage.32x32"/>
+                        <bt:Image size="80" resid="ZoomOnePage.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                      </Items>
+                </Control>
+              </Group>
+              <Group id="gpUtilities">
+                <Label resid="gpUtilities.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                <Control xsi:type="Menu" id="mnuResampling1">
+                  <Label resid="mnuResampling1.Label"/>
+                  <Supertip>
+                    <Title resid="mnuResampling1.Title"/>
+                    <Description resid="mnuResampling1.Desc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="TracePrecedentsRemoveArrows.16x16"/>
+                    <bt:Image size="32" resid="TracePrecedentsRemoveArrows.32x32"/>
+                    <bt:Image size="80" resid="TracePrecedentsRemoveArrows.80x80"/>
+                  </Icon>
+                  <Items>
+                    <Item id="btnResampleStart1">
+                      <Label resid="btnResampleStart1.Label"/>
+                      <Supertip>
+                        <Title resid="btnResampleStart1.Title"/>
+                        <Description resid="btnResampleStart1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="SynchronizeAll.16x16"/>
+                        <bt:Image size="32" resid="SynchronizeAll.32x32"/>
+                        <bt:Image size="80" resid="SynchronizeAll.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnResampleMonthlyStart1">
+                      <Label resid="btnResampleMonthlyStart1.Label"/>
+                      <Supertip>
+                        <Title resid="btnResampleMonthlyStart1.Title"/>
+                        <Description resid="btnResampleMonthlyStart1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="SynchronizeAll.16x16"/>
+                        <bt:Image size="32" resid="SynchronizeAll.32x32"/>
+                        <bt:Image size="80" resid="SynchronizeAll.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnCombineTableIntoList1">
+                      <Label resid="btnCombineTableIntoList1.Label"/>
+                      <Supertip>
+                        <Title resid="btnCombineTableIntoList1.Title"/>
+                        <Description resid="btnCombineTableIntoList1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ExportSharePointList.16x16"/>
+                        <bt:Image size="32" resid="ExportSharePointList.32x32"/>
+                        <bt:Image size="80" resid="ExportSharePointList.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                      </Items>
+                </Control>
+                <Control xsi:type="Menu" id="mnuECAMUtilities1">
+                  <Label resid="mnuECAMUtilities1.Label"/>
+                  <Supertip>
+                    <Title resid="mnuECAMUtilities1.Title"/>
+                    <Description resid="mnuECAMUtilities1.Desc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="ToolboxGallery.16x16"/>
+                    <bt:Image size="32" resid="ToolboxGallery.32x32"/>
+                    <bt:Image size="80" resid="ToolboxGallery.80x80"/>
+                  </Icon>
+                  <Items>
+                    <Item id="btnAddBinTemps1">
+                      <Label resid="btnAddBinTemps1.Label"/>
+                      <Supertip>
+                        <Title resid="btnAddBinTemps1.Title"/>
+                        <Description resid="btnAddBinTemps1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="FacilitiesAssignCategory.16x16"/>
+                        <bt:Image size="32" resid="FacilitiesAssignCategory.32x32"/>
+                        <bt:Image size="80" resid="FacilitiesAssignCategory.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnAddNewData1">
+                      <Label resid="btnAddNewData1.Label"/>
+                      <Supertip>
+                        <Title resid="btnAddNewData1.Title"/>
+                        <Description resid="btnAddNewData1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="CompareAndCombine.16x16"/>
+                        <bt:Image size="32" resid="CompareAndCombine.32x32"/>
+                        <bt:Image size="80" resid="CompareAndCombine.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnCopySheetAndUpdateChartSource1">
+                      <Label resid="btnCopySheetAndUpdateChartSource1.Label"/>
+                      <Supertip>
+                        <Title resid="btnCopySheetAndUpdateChartSource1.Title"/>
+                        <Description resid="btnCopySheetAndUpdateChartSource1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="ExportSharePointList.16x16"/>
+                        <bt:Image size="32" resid="ExportSharePointList.32x32"/>
+                        <bt:Image size="80" resid="ExportSharePointList.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                      </Items>
+                </Control>
+                <Control xsi:type="Button" id="btnDeleteGroupOfSheets1">
+                  <Label resid="btnDeleteGroupOfSheets1.Label"/>
+                  <Supertip>
+                    <Title resid="btnDeleteGroupOfSheets1.Title"/>
+                    <Description resid="btnDeleteGroupOfSheets1.Desc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="FileDiscardCachedChanges.16x16"/>
+                    <bt:Image size="32" resid="FileDiscardCachedChanges.32x32"/>
+                    <bt:Image size="80" resid="FileDiscardCachedChanges.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>OnAction_ECAM</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+              <Group id="gpECAM">
+                <Label resid="gpECAM.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                <Control xsi:type="Menu" id="mnuECAMHelp1">
+                  <Label resid="mnuECAMHelp1.Label"/>
+                  <Supertip>
+                    <Title resid="mnuECAMHelp1.Title"/>
+                    <Description resid="mnuECAMHelp1.Desc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Help.16x16"/>
+                    <bt:Image size="32" resid="Help.32x32"/>
+                    <bt:Image size="80" resid="Help.80x80"/>
+                  </Icon>
+                  <Items>
+                    <Item id="btnOpenOnlineHelp1">
+                      <Label resid="btnOpenOnlineHelp1.Label"/>
+                      <Supertip>
+                        <Title resid="btnOpenOnlineHelp1.Title"/>
+                        <Description resid="btnOpenOnlineHelp1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="HyperlinkControl.16x16"/>
+                        <bt:Image size="32" resid="HyperlinkControl.32x32"/>
+                        <bt:Image size="80" resid="HyperlinkControl.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="btnShowHelp1">
+                      <Label resid="btnShowHelp1.Label"/>
+                      <Supertip>
+                        <Title resid="btnShowHelp1.Title"/>
+                        <Description resid="btnShowHelp1.Desc"/>
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="Help.16x16"/>
+                        <bt:Image size="32" resid="Help.32x32"/>
+                        <bt:Image size="80" resid="Help.80x80"/>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>OnAction_ECAM</FunctionName>
+                      </Action>
+                    </Item>
+                      </Items>
+                </Control>
+                <Control xsi:type="Button" id="btnAboutECAM1">
+                  <Label resid="btnAboutECAM1.Label"/>
+                  <Supertip>
+                    <Title resid="btnAboutECAM1.Title"/>
+                    <Description resid="btnAboutECAM1.Desc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="ZoomOnePage.16x16"/>
+                    <bt:Image size="32" resid="ZoomOnePage.32x32"/>
+                    <bt:Image size="80" resid="ZoomOnePage.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>OnAction_ECAM</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+              <Label resid="tbECAM_JS.Label"/>
             </CustomTab>
 
           </ExtensionPoint>
@@ -121,70 +1597,434 @@
 
     <Resources>
       <bt:Images>
-
-        <bt:Image id="Icon.16x16" DefaultValue="https://localhost:3000/assets/icon-16.png"/>
-        <bt:Image id="Icon.32x32" DefaultValue="https://localhost:3000/assets/icon-32.png"/>
-        <bt:Image id="Icon.80x80" DefaultValue="https://localhost:3000/assets/icon-80.png"/>
-
         <bt:Image id="IconSelectArea.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
         <bt:Image id="IconSelectArea.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
         <bt:Image id="IconSelectArea.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
-
-        <bt:Image id="CalendarToolSelectDate.16x16" DefaultValue="https://localhost:3000/assets/CalendarToolSelectDate_16.png"/>
-        <bt:Image id="CalendarToolSelectDate.32x32" DefaultValue="https://localhost:3000/assets/CalendarToolSelectDate_32.png"/>
-        <bt:Image id="CalendarToolSelectDate.80x80" DefaultValue="https://localhost:3000/assets/CalendarToolSelectDate_80.png"/>
-
+        <bt:Image id="CalendarToolSelectDate.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="CalendarToolSelectDate.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="CalendarToolSelectDate.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="Legend.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="Legend.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="Legend.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="DataTypeTime.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="DataTypeTime.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="DataTypeTime.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="CalendarMonthDetailsSplitButton.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="CalendarMonthDetailsSplitButton.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="CalendarMonthDetailsSplitButton.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
         <bt:Image id="CreateQuickStep.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
         <bt:Image id="CreateQuickStep.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
         <bt:Image id="CreateQuickStep.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
-
-
+        <bt:Image id="CalendarConfigure.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="CalendarConfigure.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="CalendarConfigure.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="ChartTypeLineInsertGallery.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="ChartTypeLineInsertGallery.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="ChartTypeLineInsertGallery.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="ChartTypeXYScatterInsertGallery.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="ChartTypeXYScatterInsertGallery.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="ChartTypeXYScatterInsertGallery.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="ChartInsert.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="ChartInsert.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="ChartInsert.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="ChartEditDataSource.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="ChartEditDataSource.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="ChartEditDataSource.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="PivotChartMultiplePlots.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="PivotChartMultiplePlots.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="PivotChartMultiplePlots.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="ChartFormatAxis.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="ChartFormatAxis.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="ChartFormatAxis.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="PageWidthGuideShowHide.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="PageWidthGuideShowHide.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="PageWidthGuideShowHide.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="DesignChecker.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="DesignChecker.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="DesignChecker.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="CalendarHorizontal.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="CalendarHorizontal.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="CalendarHorizontal.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="CalendarInsert.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="CalendarInsert.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="CalendarInsert.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="StyleExplorer.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="StyleExplorer.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="StyleExplorer.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="ChartTypeLineInsertGallery.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="ChartTypeLineInsertGallery.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="ChartTypeLineInsertGallery.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="TracePrecedentsRemoveArrows.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="TracePrecedentsRemoveArrows.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="TracePrecedentsRemoveArrows.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="ToolboxGallery.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="ToolboxGallery.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="ToolboxGallery.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="FileDiscardCachedChanges.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="FileDiscardCachedChanges.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="FileDiscardCachedChanges.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="Help.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="Help.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="Help.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
+        <bt:Image id="ZoomOnePage.16x16" DefaultValue="https://localhost:3000/assets/IconSelectArea_16.png"/>
+        <bt:Image id="ZoomOnePage.32x32" DefaultValue="https://localhost:3000/assets/IconSelectArea_32.png"/>
+        <bt:Image id="ZoomOnePage.80x80" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
       </bt:Images>
-
       <bt:Urls>
-        <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html"/>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
       </bt:Urls>
-      
       <bt:ShortStrings>
-
-        <bt:String id="tbECAM_JS.label" DefaultValue="ECAM_JS" />
-        
-        <bt:String id="gpDataInputs.label" DefaultValue="Data Inputs"/>
-
         <bt:String id="btnSelectIntervalData1.Label" DefaultValue="Interval Data"/>
         <bt:String id="btnSelectIntervalData1.Title" DefaultValue="Select Interval Data"/>
-
+        <bt:String id="btnSelectIntervalData1.Desc" DefaultValue="Click to Select Interval Data"/>
         <bt:String id="btnSelectBillingData1.Label" DefaultValue="Monthly Billing"/>
         <bt:String id="btnSelectBillingData1.Title" DefaultValue="Select Monthly Billing Data"/>
-
-        <bt:String id="mnuWeather1.label" DefaultValue="Weather"/>
-
-        <bt:String id="btnInputSiteWeatherName1.label" DefaultValue="Historical Weather Station"/>
-        <bt:String id="btnInputSiteWeatherName1.title" DefaultValue="Historical Weather Station"/>
-
-        <bt:String id="mnuWeather1.title" DefaultValue="Download Weather or Input Station Name for Reports"/>
-        <bt:String id="mnuWeather1.desc" DefaultValue="Click to Download Weather or Input Station Name for Reports"/>
-
-
-      </bt:ShortStrings>
-
-      <bt:LongStrings>
-
-        <bt:String id="btnSelectIntervalData1.Desc" DefaultValue="Click to Select Interval Data"/>
         <bt:String id="btnSelectBillingData1.Desc" DefaultValue="Click to Select Monthly Billing Data"/>
-
-        <bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded succesfully. Go to the HOME tab and click the 'Show Taskpane' button to get started."/>
-        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to Show a Taskpane"/>
-        <bt:String id="ProtectionButtonToolTip" DefaultValue="Click to protect or unprotect the current worksheet." />
-
-        <bt:String id="btnInputSiteWeatherName1.desc" DefaultValue="Click to Historical Weather Station"/>
-        <bt:String id="mnuWeather1.desc" DefaultValue="Click to Download Weather or Input Station Name for Reports"/>
-
+        <bt:String id="gpDataInputs.Label" DefaultValue="Data Inputs"/>
+        <bt:String id="btnDefinePoints1.Label" DefaultValue="Define Points"/>
+        <bt:String id="btnDefinePoints1.Title" DefaultValue="Map Points to Allow Automation of Metrics and Re-tuning Charts"/>
+        <bt:String id="btnDefinePoints1.Desc" DefaultValue="Click to Map Points to Allow Automation of Metrics and Re-tuning Charts"/>
+        <bt:String id="btnCreateSchedules1.Label" DefaultValue="Create Schedules"/>
+        <bt:String id="btnCreateSchedules1.Title" DefaultValue="Input General Building Schedules Based on Data"/>
+        <bt:String id="btnCreateSchedules1.Desc" DefaultValue="Click to Input General Building Schedules Based on Data"/>
+        <bt:String id="btnCreatePrePostDates1.Label" DefaultValue="Input Dates"/>
+        <bt:String id="btnCreatePrePostDates1.Title" DefaultValue="Input Dates for Comparison of Pre and Post"/>
+        <bt:String id="btnCreatePrePostDates1.Desc" DefaultValue="Click to Input Dates for Comparison of Pre and Post"/>
+        <bt:String id="mnuWeather1.Label" DefaultValue="Weather"/>
+        <bt:String id="mnuWeather1.Title" DefaultValue="Download Weather or Input Station Name for Reports"/>
+        <bt:String id="mnuWeather1.Desc" DefaultValue="Click to Download Weather or Input Station Name for Reports"/>
+        <bt:String id="btnInputSiteWeatherName1.Label" DefaultValue="Historical Weather Station"/>
+        <bt:String id="btnInputSiteWeatherName1.Title" DefaultValue="Historical Weather Station"/>
+        <bt:String id="btnInputTMYWeatherName1.Label" DefaultValue="Typical Weather Station"/>
+        <bt:String id="btnInputTMYWeatherName1.Title" DefaultValue="Typical Weather Station"/>
+        <bt:String id="btnDownloadData1.Label" DefaultValue="Download Weather Data"/>
+        <bt:String id="btnDownloadData1.Title" DefaultValue="Download Weather Data"/>
+        <bt:String id="btnCheckWthrCoverageBase1.Label" DefaultValue="Check Baseline Weather Coverage"/>
+        <bt:String id="btnCheckWthrCoverageBase1.Title" DefaultValue="Check Baseline Weather Coverage"/>
+        <bt:String id="btnCheckWthrCoveragePost1.Label" DefaultValue="Check Post Period Weather Coverage"/>
+        <bt:String id="btnCheckWthrCoveragePost1.Title" DefaultValue="Check Post Period Weather Coverage"/>
+        <bt:String id="btnCustomizeHolidays1.Label" DefaultValue="Holidays"/>
+        <bt:String id="btnCustomizeHolidays1.Title" DefaultValue="Customize List of Holidays"/>
+        <bt:String id="btnCustomizeHolidays1.Desc" DefaultValue="Click to Customize List of Holidays"/>
+        <bt:String id="gpGeneralInputs.Label" DefaultValue="General Inputs"/>
+        <bt:String id="mnuTimeSeriesCharts1.Label" DefaultValue="Time Series"/>
+        <bt:String id="mnuTimeSeriesCharts1.Title" DefaultValue="Time Series"/>
+        <bt:String id="mnuTimeSeriesCharts1.Desc" DefaultValue="Click to Time Series"/>
+        <bt:String id="btnCreateHistoryChart1.Label" DefaultValue="Point(s) History Chart"/>
+        <bt:String id="btnCreateHistoryChart1.Title" DefaultValue="Point(s) History Chart"/>
+        <bt:String id="btnCreateLPbyDaytype1.Label" DefaultValue="Load Profile by Daytype"/>
+        <bt:String id="btnCreateLPbyDaytype1.Title" DefaultValue="Load Profile by Daytype"/>
+        <bt:String id="btnCreateLPbyDayOfWeek1.Label" DefaultValue="Load Profile by Day of Week"/>
+        <bt:String id="btnCreateLPbyDayOfWeek1.Title" DefaultValue="Load Profile by Day of Week"/>
+        <bt:String id="btnCreateLPbyMonthYr1.Label" DefaultValue="Load Profile by Month-Year"/>
+        <bt:String id="btnCreateLPbyMonthYr1.Title" DefaultValue="Load Profile by Month-Year"/>
+        <bt:String id="btnCreateLPbyDateRng1.Label" DefaultValue="Load Profile by Date Range (Pre/Post)"/>
+        <bt:String id="btnCreateLPbyDateRng1.Title" DefaultValue="Load Profile by Date Range (Pre/Post)"/>
+        <bt:String id="btnCreateLPbyYear1.Label" DefaultValue="Load Profile by Year"/>
+        <bt:String id="btnCreateLPbyYear1.Title" DefaultValue="Load Profile by Year"/>
+        <bt:String id="btnCreateLPbyDay1.Label" DefaultValue="Load Profile by Day"/>
+        <bt:String id="btnCreateLPbyDay1.Title" DefaultValue="Load Profile by Day"/>
+        <bt:String id="btnChart3dColoredDaytypes1.Label" DefaultValue="Create 3d Load Profile"/>
+        <bt:String id="btnChart3dColoredDaytypes1.Title" DefaultValue="Create 3d Load Profile"/>
+        <bt:String id="btnContourChart1.Label" DefaultValue="Create Energy Colors (surface chart)"/>
+        <bt:String id="btnContourChart1.Title" DefaultValue="Create Energy Colors (surface chart)"/>
+        <bt:String id="btnCreateCalendarLP1.Label" DefaultValue="Load Profile Calendar"/>
+        <bt:String id="btnCreateCalendarLP1.Title" DefaultValue="Load Profile Calendar"/>
+        <bt:String id="btnBoxPlotLP1.Label" DefaultValue="Load Profile as Box Plots"/>
+        <bt:String id="btnBoxPlotLP1.Title" DefaultValue="Load Profile as Box Plots"/>
+        <bt:String id="mnuScatterCharts1.Label" DefaultValue="Scatter Charts"/>
+        <bt:String id="mnuScatterCharts1.Title" DefaultValue="Scatter Charts"/>
+        <bt:String id="mnuScatterCharts1.Desc" DefaultValue="Click to Scatter Charts"/>
+        <bt:String id="btnCreateScatterChartByOcc1.Label" DefaultValue="Scatter Chart by Occupancy"/>
+        <bt:String id="btnCreateScatterChartByOcc1.Title" DefaultValue="Scatter Chart by Occupancy"/>
+        <bt:String id="btnCreateScatterChartByDateRng1.Label" DefaultValue="Scatter Chart by Date Range (Pre/Post)"/>
+        <bt:String id="btnCreateScatterChartByDateRng1.Title" DefaultValue="Scatter Chart by Date Range (Pre/Post)"/>
+        <bt:String id="btnPureScatter1.Label" DefaultValue="Toggle Scatter between all timestamps and aggregated values"/>
+        <bt:String id="btnPureScatter1.Title" DefaultValue="Toggle Scatter between all timestamps and aggregated values"/>
+        <bt:String id="btnShowHighlightForm1.Label" DefaultValue="Pick a number of days and highlight those points on the selected chart"/>
+        <bt:String id="btnShowHighlightForm1.Title" DefaultValue="Pick a number of days and highlight those points on the selected chart"/>
+        <bt:String id="btnUnHiLiteDays1.Label" DefaultValue="Remove highlighting of recent days"/>
+        <bt:String id="btnUnHiLiteDays1.Title" DefaultValue="Remove highlighting of recent days"/>
+        <bt:String id="btnCreateLoadDurationChart1.Label" DefaultValue="Load Duration"/>
+        <bt:String id="btnCreateLoadDurationChart1.Title" DefaultValue="Load Duration Chart (Point Frequency Distribution)"/>
+        <bt:String id="btnCreateLoadDurationChart1.Desc" DefaultValue="Click to Load Duration Chart (Point Frequency Distribution)"/>
+        <bt:String id="btnScheduleChart1.Label" DefaultValue="Check Input Schedule"/>
+        <bt:String id="btnScheduleChart1.Title" DefaultValue="Chart to Check Input Schedule"/>
+        <bt:String id="btnScheduleChart1.Desc" DefaultValue="Click to Chart to Check Input Schedule"/>
+        <bt:String id="mnuMatrixCharts1.Label" DefaultValue="Matrix Charts"/>
+        <bt:String id="mnuMatrixCharts1.Title" DefaultValue="Matrix Charts"/>
+        <bt:String id="mnuMatrixCharts1.Desc" DefaultValue="Click to Matrix Charts"/>
+        <bt:String id="btnMatrixSelectedChartsInfo1.Label" DefaultValue="Information about Matrix Charts"/>
+        <bt:String id="btnMatrixSelectedChartsInfo1.Title" DefaultValue="Information about Matrix Charts"/>
+        <bt:String id="btnMatrixSelectedCharts1.Label" DefaultValue="Matrix Selected Charts"/>
+        <bt:String id="btnMatrixSelectedCharts1.Title" DefaultValue="Matrix Selected Charts"/>
+        <bt:String id="btnMatrixAllCharts1.Label" DefaultValue="Matrix All Charts"/>
+        <bt:String id="btnMatrixAllCharts1.Title" DefaultValue="Matrix All Charts"/>
+        <bt:String id="mnuChartUtilities1.Label" DefaultValue="Chart Utilities"/>
+        <bt:String id="mnuChartUtilities1.Title" DefaultValue="Chart Utilities"/>
+        <bt:String id="mnuChartUtilities1.Desc" DefaultValue="Click to Chart Utilities"/>
+        <bt:String id="btnSetScalesSelectedCharts1.Label" DefaultValue="Set Scales the Same for a Group of Charts"/>
+        <bt:String id="btnSetScalesSelectedCharts1.Title" DefaultValue="Set Scales the Same for a Group of Charts"/>
+        <bt:String id="mnuMetricsandDataSummaries1.Label" DefaultValue="Metrics and Data"/>
+        <bt:String id="mnuMetricsandDataSummaries1.Title" DefaultValue="Metrics and Data Summaries"/>
+        <bt:String id="mnuMetricsandDataSummaries1.Desc" DefaultValue="Click to Metrics and Data Summaries"/>
+        <bt:String id="btnMetricsDaytypeOccupancySF1.Label" DefaultValue="Metrics for Points Normalized per Sq. Foot"/>
+        <bt:String id="btnMetricsDaytypeOccupancySF1.Title" DefaultValue="Metrics for Points Normalized per Sq. Foot"/>
+        <bt:String id="btnMetricsDaytypeOccupancyR21.Label" DefaultValue="Daytype and Occupancy Metrics"/>
+        <bt:String id="btnMetricsDaytypeOccupancyR21.Title" DefaultValue="Daytype and Occupancy Metrics"/>
+        <bt:String id="btnMetricsOccupancyMonthYrB1.Label" DefaultValue="Occupancy and Month-Year Combined Metrics"/>
+        <bt:String id="btnMetricsOccupancyMonthYrB1.Title" DefaultValue="Occupancy and Month-Year Combined Metrics"/>
+        <bt:String id="btnMetricsDaytypeMonthYrB1.Label" DefaultValue="Daytype and Month-Year Combined Metrics"/>
+        <bt:String id="btnMetricsDaytypeMonthYrB1.Title" DefaultValue="Daytype and Month-Year Combined Metrics"/>
+        <bt:String id="btnDataSummaryInfo1.Label" DefaultValue="Information about Data Summary"/>
+        <bt:String id="btnDataSummaryInfo1.Title" DefaultValue="Information about Data Summary"/>
+        <bt:String id="btnDataSummaryRawData1.Label" DefaultValue="Summarize Data"/>
+        <bt:String id="btnDataSummaryRawData1.Title" DefaultValue="Summarize Data"/>
+        <bt:String id="btnDataSummaryPivotTable1.Label" DefaultValue="Summarize Data from PivotTable"/>
+        <bt:String id="btnDataSummaryPivotTable1.Title" DefaultValue="Summarize Data from PivotTable"/>
+        <bt:String id="btnBenchmarks1.Label" DefaultValue="EUI Benchmarks and Model Metrics"/>
+        <bt:String id="btnBenchmarks1.Title" DefaultValue="EUI Benchmarks and Model Metrics"/>
+        <bt:String id="gpCharts.Label" DefaultValue="Charts and Metrics"/>
+        <bt:String id="mnuMeasurementandVerification1.Label" DefaultValue="M and V Utilities"/>
+        <bt:String id="mnuMeasurementandVerification1.Title" DefaultValue="Measurement and Verification General Inputs and Tasks"/>
+        <bt:String id="mnuMeasurementandVerification1.Desc" DefaultValue="Click to Measurement and Verification General Inputs and Tasks"/>
+        <bt:String id="btnInputExpectedSavings1.Label" DefaultValue="Input the planned savings for the project"/>
+        <bt:String id="btnInputExpectedSavings1.Title" DefaultValue="Input the planned savings for the project"/>
+        <bt:String id="btnInputConfLevel1.Label" DefaultValue="Input Desired Model and Savings Confidence Level"/>
+        <bt:String id="btnInputConfLevel1.Title" DefaultValue="Input Desired Model and Savings Confidence Level"/>
+        <bt:String id="btnFracSvgsInputs1.Label" DefaultValue="Input Values For ASHRAE Fractional Savings Uncertainty"/>
+        <bt:String id="btnFracSvgsInputs1.Title" DefaultValue="Input Values For ASHRAE Fractional Savings Uncertainty"/>
+        <bt:String id="btnCombineCategories1.Label" DefaultValue="Define New Model Categorical Variables"/>
+        <bt:String id="btnCombineCategories1.Title" DefaultValue="Define New Model Categorical Variables"/>
+        <bt:String id="btnSetNegativeEnergy1.Label" DefaultValue="Set Flag to Allow Negative Model Energy"/>
+        <bt:String id="btnSetNegativeEnergy1.Title" DefaultValue="Set Flag to Allow Negative Model Energy"/>
+        <bt:String id="btnInputConfLevelOutlier1.Label" DefaultValue="Input Desired Model Confidence Level for Identifying Outliers"/>
+        <bt:String id="btnInputConfLevelOutlier1.Title" DefaultValue="Input Desired Model Confidence Level for Identifying Outliers"/>
+        <bt:String id="btnOutliersHighlight1.Label" DefaultValue="Highlight Outliers"/>
+        <bt:String id="btnOutliersHighlight1.Title" DefaultValue="Highlight Outliers"/>
+        <bt:String id="btnOutliersNoHighlight1.Label" DefaultValue="Remove Outlier Highlighting"/>
+        <bt:String id="btnOutliersNoHighlight1.Title" DefaultValue="Remove Outlier Highlighting"/>
+        <bt:String id="btnOutliersEliminate1.Label" DefaultValue="Eliminate Outliers"/>
+        <bt:String id="btnOutliersEliminate1.Title" DefaultValue="Eliminate Outliers"/>
+        <bt:String id="btnMAPEbase1.Label" DefaultValue="Calculate Baseline MAPE"/>
+        <bt:String id="btnMAPEbase1.Title" DefaultValue="Calculate Baseline MAPE"/>
+        <bt:String id="btnMAPEpost1.Label" DefaultValue="Calculate Post MAPE"/>
+        <bt:String id="btnMAPEpost1.Title" DefaultValue="Calculate Post MAPE"/>
+        <bt:String id="btnMatrixModelCharts1.Label" DefaultValue="Create Matrix of Scatter Charts with Models"/>
+        <bt:String id="btnMatrixModelCharts1.Title" DefaultValue="Create Matrix of Scatter Charts with Models"/>
+        <bt:String id="btnChartsWithBaseAndPost1.Label" DefaultValue="Create Chart Matrix of Base and Post Models"/>
+        <bt:String id="btnChartsWithBaseAndPost1.Title" DefaultValue="Create Chart Matrix of Base and Post Models"/>
+        <bt:String id="btnReadFilesForAutomation1.Label" DefaultValue="Automated M and V Modeling"/>
+        <bt:String id="btnReadFilesForAutomation1.Title" DefaultValue="Automated M and V Modeling"/>
+        <bt:String id="mnuIntervalDataDrivenModelsandMandV1.Label" DefaultValue="Interval Models"/>
+        <bt:String id="mnuIntervalDataDrivenModelsandMandV1.Title" DefaultValue="Interval Data-Driven Models and M and V"/>
+        <bt:String id="mnuIntervalDataDrivenModelsandMandV1.Desc" DefaultValue="Click to Interval Data-Driven Models and M and V"/>
+        <bt:String id="btnDaytypingControl1.Label" DefaultValue="Create Load Profile by Day of Week and Evaluate Daytypes"/>
+        <bt:String id="btnDaytypingControl1.Title" DefaultValue="Create Load Profile by Day of Week and Evaluate Daytypes"/>
+        <bt:String id="btnDaytypingSemiAuto1.Label" DefaultValue="Create Load Profile by DOW with Automatic Daytyping"/>
+        <bt:String id="btnDaytypingSemiAuto1.Title" DefaultValue="Create Load Profile by DOW with Automatic Daytyping"/>
+        <bt:String id="btnCheckBoxesCreation_a1.Label" DefaultValue="Evaluate Daytypes (active sheet has LP by Day of Week)"/>
+        <bt:String id="btnCheckBoxesCreation_a1.Title" DefaultValue="Evaluate Daytypes (active sheet has LP by Day of Week)"/>
+        <bt:String id="btnMVbaseline1.Label" DefaultValue="Create Baseline Models Only"/>
+        <bt:String id="btnMVbaseline1.Title" DefaultValue="Create Baseline Models Only"/>
+        <bt:String id="btnBaseSumry1.Label" DefaultValue="Summarize Baseline"/>
+        <bt:String id="btnBaseSumry1.Title" DefaultValue="Summarize Baseline"/>
+        <bt:String id="btnMVpost1.Label" DefaultValue="Create Post Models Only"/>
+        <bt:String id="btnMVpost1.Title" DefaultValue="Create Post Models Only"/>
+        <bt:String id="btnPostSumry1.Label" DefaultValue="Summarize Post"/>
+        <bt:String id="btnPostSumry1.Title" DefaultValue="Summarize Post"/>
+        <bt:String id="btnMVbaseAndPost1.Label" DefaultValue="Create Baseline and Post Models"/>
+        <bt:String id="btnMVbaseAndPost1.Title" DefaultValue="Create Baseline and Post Models"/>
+        <bt:String id="btnSavings1.Label" DefaultValue="Evaluate Savings for Post Period"/>
+        <bt:String id="btnSavings1.Title" DefaultValue="Evaluate Savings for Post Period"/>
+        <bt:String id="btnPrepTMY3data1.Label" DefaultValue="Bring in TMY3 Weather for Annualization"/>
+        <bt:String id="btnPrepTMY3data1.Title" DefaultValue="Bring in TMY3 Weather for Annualization"/>
+        <bt:String id="btnBaselineAnnual1.Label" DefaultValue="Annualize Baseline Using TMY3 Weather"/>
+        <bt:String id="btnBaselineAnnual1.Title" DefaultValue="Annualize Baseline Using TMY3 Weather"/>
+        <bt:String id="btnPostAnnual1.Label" DefaultValue="Annualize Post Using TMY3 Weather"/>
+        <bt:String id="btnPostAnnual1.Title" DefaultValue="Annualize Post Using TMY3 Weather"/>
+        <bt:String id="btnSavingsAnnual1.Label" DefaultValue="Annualize Pre, Post, and Savings Using TMY3"/>
+        <bt:String id="btnSavingsAnnual1.Title" DefaultValue="Annualize Pre, Post, and Savings Using TMY3"/>
+        <bt:String id="btnGenerateModelXML1.Label" DefaultValue="Export XML of Models"/>
+        <bt:String id="btnGenerateModelXML1.Title" DefaultValue="Export XML of Models"/>
+        <bt:String id="mnuMonthlyBillingDataModelsandMandV1.Label" DefaultValue="Monthly Models"/>
+        <bt:String id="mnuMonthlyBillingDataModelsandMandV1.Title" DefaultValue="Monthly Billing Data Models and M and V"/>
+        <bt:String id="mnuMonthlyBillingDataModelsandMandV1.Desc" DefaultValue="Click to Monthly Billing Data Models and M and V"/>
+        <bt:String id="btnMVbaselineMonthly1.Label" DefaultValue="Create Baseline Monthly Models Only"/>
+        <bt:String id="btnMVbaselineMonthly1.Title" DefaultValue="Create Baseline Monthly Models Only"/>
+        <bt:String id="btnBaseSumry2.Label" DefaultValue="Summarize Baseline"/>
+        <bt:String id="btnBaseSumry2.Title" DefaultValue="Summarize Baseline"/>
+        <bt:String id="btnMVpostMonthly1.Label" DefaultValue="Create Post Monthly Models Only"/>
+        <bt:String id="btnMVpostMonthly1.Title" DefaultValue="Create Post Monthly Models Only"/>
+        <bt:String id="btnPostSumry2.Label" DefaultValue="Summarize Post"/>
+        <bt:String id="btnPostSumry2.Title" DefaultValue="Summarize Post"/>
+        <bt:String id="btnMVcontrolMonthly1.Label" DefaultValue="Create Baseline and Post Monthly Models"/>
+        <bt:String id="btnMVcontrolMonthly1.Title" DefaultValue="Create Baseline and Post Monthly Models"/>
+        <bt:String id="btnSavingsMonthly1.Label" DefaultValue="Evaluate Savings for Post Period Using Monthly Model"/>
+        <bt:String id="btnSavingsMonthly1.Title" DefaultValue="Evaluate Savings for Post Period Using Monthly Model"/>
+        <bt:String id="btnTMY3monthlySheet1.Label" DefaultValue="Bring in Monthly TMY3 Weather for Annualization"/>
+        <bt:String id="btnTMY3monthlySheet1.Title" DefaultValue="Bring in Monthly TMY3 Weather for Annualization"/>
+        <bt:String id="btnBaselineAnnualMonthly1.Label" DefaultValue="Annualize Baseline Using Monthly TMY3 Weather"/>
+        <bt:String id="btnBaselineAnnualMonthly1.Title" DefaultValue="Annualize Baseline Using Monthly TMY3 Weather"/>
+        <bt:String id="btnPostAnnualMonthly1.Label" DefaultValue="Annualize Post Using Monthly TMY3 Weather"/>
+        <bt:String id="btnPostAnnualMonthly1.Title" DefaultValue="Annualize Post Using Monthly TMY3 Weather"/>
+        <bt:String id="btnSavingsAnnualMonthly1.Label" DefaultValue="Annualize Pre, Post, and Savings Using Monthly TMY3"/>
+        <bt:String id="btnSavingsAnnualMonthly1.Title" DefaultValue="Annualize Pre, Post, and Savings Using Monthly TMY3"/>
+        <bt:String id="btnGenerateModelXML2.Label" DefaultValue="Export XML of Models"/>
+        <bt:String id="btnGenerateModelXML2.Title" DefaultValue="Export XML of Models"/>
+        <bt:String id="mnuStrategicEnergyManagementandMTR1.Label" DefaultValue="SEM"/>
+        <bt:String id="mnuStrategicEnergyManagementandMTR1.Title" DefaultValue="Strategic Energy Management and Monitoring, Targeting, and Reporting"/>
+        <bt:String id="mnuStrategicEnergyManagementandMTR1.Desc" DefaultValue="Click to Strategic Energy Management and Monitoring, Targeting, and Reporting"/>
+        <bt:String id="btnSEMinterval1.Label" DefaultValue="SEM-MTR with Interval Data"/>
+        <bt:String id="btnSEMinterval1.Title" DefaultValue="SEM-MTR with Interval Data"/>
+        <bt:String id="btnSEMmonthly1.Label" DefaultValue="SEM-MTR with Monthly Billing Data"/>
+        <bt:String id="btnSEMmonthly1.Title" DefaultValue="SEM-MTR with Monthly Billing Data"/>
+        <bt:String id="btnSEMtracking1.Label" DefaultValue="Heat Map for Tracking Performance"/>
+        <bt:String id="btnSEMtracking1.Title" DefaultValue="Heat Map for Tracking Performance"/>
+        <bt:String id="btnSaveModelsAndSavings1.Label" DefaultValue="Models and Savings Report"/>
+        <bt:String id="btnSaveModelsAndSavings1.Title" DefaultValue="Models and Savings Report"/>
+        <bt:String id="mnuPNNLReTuning1.Label" DefaultValue="PNNL Re-Tuning"/>
+        <bt:String id="mnuPNNLReTuning1.Title" DefaultValue="Automated Charting for PNNL Re-Tuning"/>
+        <bt:String id="mnuPNNLReTuning1.Desc" DefaultValue="Click to Automated Charting for PNNL Re-Tuning"/>
+        <bt:String id="btnReTuningCP1.Label" DefaultValue="Central Plant Charts"/>
+        <bt:String id="btnReTuningCP1.Title" DefaultValue="Central Plant Charts"/>
+        <bt:String id="btnReTuningPNNLAirHandler1.Label" DefaultValue="AHU Charts"/>
+        <bt:String id="btnReTuningPNNLAirHandler1.Title" DefaultValue="AHU Charts"/>
+        <bt:String id="btnReTuningPNNLZone1.Label" DefaultValue="Zone Charts"/>
+        <bt:String id="btnReTuningPNNLZone1.Title" DefaultValue="Zone Charts"/>
+        <bt:String id="btnReTuningAHUxy1.Label" DefaultValue="AHU Scatter Charts"/>
+        <bt:String id="btnReTuningAHUxy1.Title" DefaultValue="AHU Scatter Charts"/>
+        <bt:String id="btnReTuningEcon1.Label" DefaultValue="Economizers for All AHUs"/>
+        <bt:String id="btnReTuningEcon1.Title" DefaultValue="Economizers for All AHUs"/>
+        <bt:String id="btnReTuningChartSummary1.Label" DefaultValue="Information about Re-tuning Charts"/>
+        <bt:String id="btnReTuningChartSummary1.Title" DefaultValue="Information about Re-tuning Charts"/>
+        <bt:String id="gpAnalysis.Label" DefaultValue="Analyses"/>
+        <bt:String id="mnuResampling1.Label" DefaultValue="Resample Data"/>
+        <bt:String id="mnuResampling1.Title" DefaultValue="Resample Data to Common Timestamps"/>
+        <bt:String id="mnuResampling1.Desc" DefaultValue="Click to Resample Data to Common Timestamps"/>
+        <bt:String id="btnResampleStart1.Label" DefaultValue="Resample Data"/>
+        <bt:String id="btnResampleStart1.Title" DefaultValue="Resample Data"/>
+        <bt:String id="btnResampleMonthlyStart1.Label" DefaultValue="Resample To Get Avg Temp for Billing Data "/>
+        <bt:String id="btnResampleMonthlyStart1.Title" DefaultValue="Resample To Get Avg Temp for Billing Data "/>
+        <bt:String id="btnCombineTableIntoList1.Label" DefaultValue="Convert Table Format to ECAM List Format"/>
+        <bt:String id="btnCombineTableIntoList1.Title" DefaultValue="Convert Table Format to ECAM List Format"/>
+        <bt:String id="mnuECAMUtilities1.Label" DefaultValue="ECAM Utilities"/>
+        <bt:String id="mnuECAMUtilities1.Title" DefaultValue="ECAM Utilities"/>
+        <bt:String id="mnuECAMUtilities1.Desc" DefaultValue="Click to ECAM Utilities"/>
+        <bt:String id="btnAddBinTemps1.Label" DefaultValue="Create Bin Data from Temperatures"/>
+        <bt:String id="btnAddBinTemps1.Title" DefaultValue="Create Bin Data from Temperatures"/>
+        <bt:String id="btnAddNewData1.Label" DefaultValue="Data worksheet was changed"/>
+        <bt:String id="btnAddNewData1.Title" DefaultValue="Data worksheet was changed"/>
+        <bt:String id="btnCopySheetAndUpdateChartSource1.Label" DefaultValue="Copy Worksheet and Update ECAM Chart Source"/>
+        <bt:String id="btnCopySheetAndUpdateChartSource1.Title" DefaultValue="Copy Worksheet and Update ECAM Chart Source"/>
+        <bt:String id="btnDeleteGroupOfSheets1.Label" DefaultValue="Delete Sheet(s)"/>
+        <bt:String id="btnDeleteGroupOfSheets1.Title" DefaultValue="Delete Selected Sheet(s) and Clean Names"/>
+        <bt:String id="btnDeleteGroupOfSheets1.Desc" DefaultValue="Click to Delete Selected Sheet(s) and Clean Names"/>
+        <bt:String id="gpUtilities.Label" DefaultValue="Utilities"/>
+        <bt:String id="mnuECAMHelp1.Label" DefaultValue="ECAM Help"/>
+        <bt:String id="mnuECAMHelp1.Title" DefaultValue="ECAM Help"/>
+        <bt:String id="mnuECAMHelp1.Desc" DefaultValue="Click to ECAM Help"/>
+        <bt:String id="btnOpenOnlineHelp1.Label" DefaultValue="Online help"/>
+        <bt:String id="btnOpenOnlineHelp1.Title" DefaultValue="Online help"/>
+        <bt:String id="btnShowHelp1.Label" DefaultValue="In Tool help (no longer updated)"/>
+        <bt:String id="btnShowHelp1.Title" DefaultValue="In Tool help (no longer updated)"/>
+        <bt:String id="btnAboutECAM1.Label" DefaultValue="About ECAM"/>
+        <bt:String id="btnAboutECAM1.Title" DefaultValue="About ECAM"/>
+        <bt:String id="btnAboutECAM1.Desc" DefaultValue="Click to About ECAM"/>
+        <bt:String id="gpECAM.Label" DefaultValue="ECAM"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="btnInputSiteWeatherName1.Desc" DefaultValue="Click to Historical Weather Station"/>
+        <bt:String id="btnInputTMYWeatherName1.Desc" DefaultValue="Click to Typical Weather Station"/>
+        <bt:String id="btnDownloadData1.Desc" DefaultValue="Click to Download Weather Data"/>
+        <bt:String id="btnCheckWthrCoverageBase1.Desc" DefaultValue="Click to Check Baseline Weather Coverage"/>
+        <bt:String id="btnCheckWthrCoveragePost1.Desc" DefaultValue="Click to Check Post Period Weather Coverage"/>
+        <bt:String id="btnCreateHistoryChart1.Desc" DefaultValue="Click to Point(s) History Chart"/>
+        <bt:String id="btnCreateLPbyDaytype1.Desc" DefaultValue="Click to Load Profile by Daytype"/>
+        <bt:String id="btnCreateLPbyDayOfWeek1.Desc" DefaultValue="Click to Load Profile by Day of Week"/>
+        <bt:String id="btnCreateLPbyMonthYr1.Desc" DefaultValue="Click to Load Profile by Month-Year"/>
+        <bt:String id="btnCreateLPbyDateRng1.Desc" DefaultValue="Click to Load Profile by Date Range (Pre/Post)"/>
+        <bt:String id="btnCreateLPbyYear1.Desc" DefaultValue="Click to Load Profile by Year"/>
+        <bt:String id="btnCreateLPbyDay1.Desc" DefaultValue="Click to Load Profile by Day"/>
+        <bt:String id="btnChart3dColoredDaytypes1.Desc" DefaultValue="Click to Create 3d Load Profile"/>
+        <bt:String id="btnContourChart1.Desc" DefaultValue="Click to Create Energy Colors (surface chart)"/>
+        <bt:String id="btnCreateCalendarLP1.Desc" DefaultValue="Click to Load Profile Calendar"/>
+        <bt:String id="btnBoxPlotLP1.Desc" DefaultValue="Click to Load Profile as Box Plots"/>
+        <bt:String id="btnCreateScatterChartByOcc1.Desc" DefaultValue="Click to Scatter Chart by Occupancy"/>
+        <bt:String id="btnCreateScatterChartByDateRng1.Desc" DefaultValue="Click to Scatter Chart by Date Range (Pre/Post)"/>
+        <bt:String id="btnPureScatter1.Desc" DefaultValue="Click to Toggle Scatter between all timestamps and aggregated values"/>
+        <bt:String id="btnShowHighlightForm1.Desc" DefaultValue="Click to Pick a number of days and highlight those points on the selected chart"/>
+        <bt:String id="btnUnHiLiteDays1.Desc" DefaultValue="Click to Remove highlighting of recent days"/>
+        <bt:String id="btnMatrixSelectedChartsInfo1.Desc" DefaultValue="Click to Information about Matrix Charts"/>
+        <bt:String id="btnMatrixSelectedCharts1.Desc" DefaultValue="Click to Matrix Selected Charts"/>
+        <bt:String id="btnMatrixAllCharts1.Desc" DefaultValue="Click to Matrix All Charts"/>
+        <bt:String id="btnSetScalesSelectedCharts1.Desc" DefaultValue="Click to Set Scales the Same for a Group of Charts"/>
+        <bt:String id="btnMetricsDaytypeOccupancySF1.Desc" DefaultValue="Click to Metrics for Points Normalized per Sq. Foot"/>
+        <bt:String id="btnMetricsDaytypeOccupancyR21.Desc" DefaultValue="Click to Daytype and Occupancy Metrics"/>
+        <bt:String id="btnMetricsOccupancyMonthYrB1.Desc" DefaultValue="Click to Occupancy and Month-Year Combined Metrics"/>
+        <bt:String id="btnMetricsDaytypeMonthYrB1.Desc" DefaultValue="Click to Daytype and Month-Year Combined Metrics"/>
+        <bt:String id="btnDataSummaryInfo1.Desc" DefaultValue="Click to Information about Data Summary"/>
+        <bt:String id="btnDataSummaryRawData1.Desc" DefaultValue="Click to Summarize Data"/>
+        <bt:String id="btnDataSummaryPivotTable1.Desc" DefaultValue="Click to Summarize Data from PivotTable"/>
+        <bt:String id="btnBenchmarks1.Desc" DefaultValue="Click to EUI Benchmarks and Model Metrics"/>
+        <bt:String id="btnInputExpectedSavings1.Desc" DefaultValue="Click to Input the planned savings for the project"/>
+        <bt:String id="btnInputConfLevel1.Desc" DefaultValue="Click to Input Desired Model and Savings Confidence Level"/>
+        <bt:String id="btnFracSvgsInputs1.Desc" DefaultValue="Click to Input Values For ASHRAE Fractional Savings Uncertainty"/>
+        <bt:String id="btnCombineCategories1.Desc" DefaultValue="Click to Define New Model Categorical Variables"/>
+        <bt:String id="btnSetNegativeEnergy1.Desc" DefaultValue="Click to Set Flag to Allow Negative Model Energy"/>
+        <bt:String id="btnInputConfLevelOutlier1.Desc" DefaultValue="Click to Input Desired Model Confidence Level for Identifying Outliers"/>
+        <bt:String id="btnOutliersHighlight1.Desc" DefaultValue="Click to Highlight Outliers"/>
+        <bt:String id="btnOutliersNoHighlight1.Desc" DefaultValue="Click to Remove Outlier Highlighting"/>
+        <bt:String id="btnOutliersEliminate1.Desc" DefaultValue="Click to Eliminate Outliers"/>
+        <bt:String id="btnMAPEbase1.Desc" DefaultValue="Click to Calculate Baseline MAPE"/>
+        <bt:String id="btnMAPEpost1.Desc" DefaultValue="Click to Calculate Post MAPE"/>
+        <bt:String id="btnMatrixModelCharts1.Desc" DefaultValue="Click to Create Matrix of Scatter Charts with Models"/>
+        <bt:String id="btnChartsWithBaseAndPost1.Desc" DefaultValue="Click to Create Chart Matrix of Base and Post Models"/>
+        <bt:String id="btnReadFilesForAutomation1.Desc" DefaultValue="Click to Automated M and V Modeling"/>
+        <bt:String id="btnDaytypingControl1.Desc" DefaultValue="Click to Create Load Profile by Day of Week and Evaluate Daytypes"/>
+        <bt:String id="btnDaytypingSemiAuto1.Desc" DefaultValue="Click to Create Load Profile by DOW with Automatic Daytyping"/>
+        <bt:String id="btnCheckBoxesCreation_a1.Desc" DefaultValue="Click to Evaluate Daytypes (active sheet has LP by Day of Week)"/>
+        <bt:String id="btnMVbaseline1.Desc" DefaultValue="Click to Create Baseline Models Only"/>
+        <bt:String id="btnBaseSumry1.Desc" DefaultValue="Click to Summarize Baseline"/>
+        <bt:String id="btnMVpost1.Desc" DefaultValue="Click to Create Post Models Only"/>
+        <bt:String id="btnPostSumry1.Desc" DefaultValue="Click to Summarize Post"/>
+        <bt:String id="btnMVbaseAndPost1.Desc" DefaultValue="Click to Create Baseline and Post Models"/>
+        <bt:String id="btnSavings1.Desc" DefaultValue="Click to Evaluate Savings for Post Period"/>
+        <bt:String id="btnPrepTMY3data1.Desc" DefaultValue="Click to Bring in TMY3 Weather for Annualization"/>
+        <bt:String id="btnBaselineAnnual1.Desc" DefaultValue="Click to Annualize Baseline Using TMY3 Weather"/>
+        <bt:String id="btnPostAnnual1.Desc" DefaultValue="Click to Annualize Post Using TMY3 Weather"/>
+        <bt:String id="btnSavingsAnnual1.Desc" DefaultValue="Click to Annualize Pre, Post, and Savings Using TMY3"/>
+        <bt:String id="btnGenerateModelXML1.Desc" DefaultValue="Click to Export XML of Models"/>
+        <bt:String id="btnMVbaselineMonthly1.Desc" DefaultValue="Click to Create Baseline Monthly Models Only"/>
+        <bt:String id="btnBaseSumry2.Desc" DefaultValue="Click to Summarize Baseline"/>
+        <bt:String id="btnMVpostMonthly1.Desc" DefaultValue="Click to Create Post Monthly Models Only"/>
+        <bt:String id="btnPostSumry2.Desc" DefaultValue="Click to Summarize Post"/>
+        <bt:String id="btnMVcontrolMonthly1.Desc" DefaultValue="Click to Create Baseline and Post Monthly Models"/>
+        <bt:String id="btnSavingsMonthly1.Desc" DefaultValue="Click to Evaluate Savings for Post Period Using Monthly Model"/>
+        <bt:String id="btnTMY3monthlySheet1.Desc" DefaultValue="Click to Bring in Monthly TMY3 Weather for Annualization"/>
+        <bt:String id="btnBaselineAnnualMonthly1.Desc" DefaultValue="Click to Annualize Baseline Using Monthly TMY3 Weather"/>
+        <bt:String id="btnPostAnnualMonthly1.Desc" DefaultValue="Click to Annualize Post Using Monthly TMY3 Weather"/>
+        <bt:String id="btnSavingsAnnualMonthly1.Desc" DefaultValue="Click to Annualize Pre, Post, and Savings Using Monthly TMY3"/>
+        <bt:String id="btnGenerateModelXML2.Desc" DefaultValue="Click to Export XML of Models"/>
+        <bt:String id="btnSEMinterval1.Desc" DefaultValue="Click to SEM-MTR with Interval Data"/>
+        <bt:String id="btnSEMmonthly1.Desc" DefaultValue="Click to SEM-MTR with Monthly Billing Data"/>
+        <bt:String id="btnSEMtracking1.Desc" DefaultValue="Click to Heat Map for Tracking Performance"/>
+        <bt:String id="btnSaveModelsAndSavings1.Desc" DefaultValue="Click to Models and Savings Report"/>
+        <bt:String id="btnReTuningCP1.Desc" DefaultValue="Click to Central Plant Charts"/>
+        <bt:String id="btnReTuningPNNLAirHandler1.Desc" DefaultValue="Click to AHU Charts"/>
+        <bt:String id="btnReTuningPNNLZone1.Desc" DefaultValue="Click to Zone Charts"/>
+        <bt:String id="btnReTuningAHUxy1.Desc" DefaultValue="Click to AHU Scatter Charts"/>
+        <bt:String id="btnReTuningEcon1.Desc" DefaultValue="Click to Economizers for All AHUs"/>
+        <bt:String id="btnReTuningChartSummary1.Desc" DefaultValue="Click to Information about Re-tuning Charts"/>
+        <bt:String id="btnResampleStart1.Desc" DefaultValue="Click to Resample Data"/>
+        <bt:String id="btnResampleMonthlyStart1.Desc" DefaultValue="Click to Resample To Get Avg Temp for Billing Data "/>
+        <bt:String id="btnCombineTableIntoList1.Desc" DefaultValue="Click to Convert Table Format to ECAM List Format"/>
+        <bt:String id="btnAddBinTemps1.Desc" DefaultValue="Click to Create Bin Data from Temperatures"/>
+        <bt:String id="btnAddNewData1.Desc" DefaultValue="Click to Data worksheet was changed"/>
+        <bt:String id="btnCopySheetAndUpdateChartSource1.Desc" DefaultValue="Click to Copy Worksheet and Update ECAM Chart Source"/>
+        <bt:String id="btnOpenOnlineHelp1.Desc" DefaultValue="Click to Online help"/>
+        <bt:String id="btnShowHelp1.Desc" DefaultValue="Click to In Tool help (no longer updated)"/>
       </bt:LongStrings>
-
     </Resources>
-
   </VersionOverrides>
 
 </OfficeApp>

@@ -1,9 +1,6 @@
 Next lesson
     homework
-        understand the developer manifest, how is excel finding it
-        add screentip to title, then add click to to create description
-        add menu to manual manifest to test syntax
-        npm2.bat start/run/build, include copies
+        complete changes to limit length of resid
 
 
 get menu to work
