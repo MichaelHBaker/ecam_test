@@ -1,6 +1,5 @@
 Next lesson
-    homework
-        complete changes to limit length of resid
+    https://learn.microsoft.com/en-us/javascript/api/manifest/functionfile?view=common-js-preview
 
 
 get menu to work
