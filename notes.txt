@@ -6,6 +6,7 @@ https://learn.microsoft.com/en-us/office/dev/add-ins/testing/runtime-logging
 https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#clear-the-office-cache-on-windows
 Check that the checkbox is active, gets turned off by some process, probably a bug
 
+app.showNotification(title, text)
 
 
 Side load testing from git
