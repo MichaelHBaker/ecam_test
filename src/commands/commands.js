@@ -30,6 +30,7 @@ Office.actions.associate("OnAction_ECAM", OnAction_ECAM);
 function openDialog(message) {
   // URL of your dialog HTML page
   const dialogUrl = 'https://localhost:3000/messageDialog.html'; 
+  // const dialogUrl = 'https://localhost:3000/popup.html'; 
   Office.context.ui.displayDialogAsync(dialogUrl, { width: 20, height: 40 }, function (asyncResult) {
       if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
           var dialog = asyncResult.value;

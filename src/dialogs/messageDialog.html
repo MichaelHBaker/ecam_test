@@ -11,12 +11,18 @@
             margin: 20px;
         }
     </style>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
 </head>
-<body>
+<body style="display:flex;flex-direction:column;align-items:center;justify-content:center">
+    <p class="ms-font-xl">ENTER YOUR NAME</p>
+    <input id="name-box" type="text"/><br/><br/>
+    <button id="ok-button" class="ms-Button">OK</button>
+</body>
+
+<!-- <body>
     <div class="message-container">
         <p id="messageText">Loading...</p>
     </div>
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     <script>
         Office.onReady(function() {
             Office.context.ui.addHandlerAsync(Office.EventType.DialogParentMessageReceived, receiveMessageFromParent);
@@ -28,5 +34,5 @@
             }
         }
     </script>
-</body>
+</body> -->
 </html>
