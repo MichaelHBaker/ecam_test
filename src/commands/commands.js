@@ -13,6 +13,11 @@ async function OnAction_ECAM(event) {
     await Excel.run(async (context) => {
           const range = context.workbook.getSelectedRange();
           range.values = event.source['id'];
+
+          await context.sync();
+          console.log(event.source['id']);
+          console.log("hello world");
+
           openDialog(event.source['id']);
       });
   } catch (error) {
@@ -39,6 +44,7 @@ function openDialog(message) {
           // You can also send an initial message to your dialog here, if needed
           // dialog.messageChild({ type: "initialMessage", value: "Hello Dialog!" });
           dialog.messageChild("Hello Dialog!");
+          console.log("message sent");
       } else {
           console.error("Failed to open dialog: " + asyncResult.error.message);
       }

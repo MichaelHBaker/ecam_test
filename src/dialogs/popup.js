@@ -1,10 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-undef */
 /* eslint-disable prettier/prettier */
-Office.onReady((info) => {
-    document.getElementById("ok-button").onclick = () => tryCatch(sendStringToParentPage);
-});
-
+// Office.onReady((info) => {
+//     // document.getElementById("ok-button").onclick = () => tryCatch(sendStringToParentPage);
+// });
+Office.onReady(() => {
+    // If needed, Office.js is ready to be called
+    console.log("popup js office onready");
+  });
+  
 function sendStringToParentPage() {
     const userName = document.getElementById("name-box").value;
     Office.context.ui.messageParent(userName);

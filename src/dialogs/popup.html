@@ -21,14 +21,15 @@
     </div>
     <script>
         Office.onReady(function() {
-            Office.context.ui.addHandlerAsync(Office.EventType.DialogMessageReceived, receiveMessageFromParent);
+            Office.context.ui.addHandlerAsync(Office.EventType.DialogParentMessageReceived, receiveMessageFromParent);
         });
 
         function receiveMessageFromParent(arg) {
-            // if (arg.message && arg.message.type === "initialMessage") {
-            if (arg.message) {
-                document.getElementById("messageText").innerText = arg.message;
-            }
+            //if (arg.message && arg.message.type === "initialMessage") {
+                if (arg.message) {
+                    document.getElementById("messageText").innerText = arg.message;
+                }
+            //}
         }
     </script>
 </body>
