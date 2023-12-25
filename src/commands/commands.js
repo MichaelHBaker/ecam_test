@@ -43,7 +43,7 @@ async function OnAction_ECAM(event) {
           range.format.fill.color = "yellow";
           // range.values = "OnAction_ECAM";
           range.values = event.source['id'];
-          await context.sync();
+          // await context.sync();
           console.log("hello world");
           console.log(event);
       });
