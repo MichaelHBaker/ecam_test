@@ -8,25 +8,24 @@ Office.onReady(() => {
 
 // The command function.
 async function OnAction_ECAM(event) {
-
-  try {
-    await Excel.run(async (context) => {
-          OpenDialog("This is the message to display in the dialog box.");
-      });
-  } catch (error) {
-      console.error(error);
-  }
-
+  OpenDialog('ID of button clicked is:' + event.source['id']);
   event.completed();
 }
 
 
 function OpenDialog(message) {
-  const dialogUrl = 'https://localhost:3000/popup.html'; 
+  const dialogUrl = 'https://localhost:3000/popup.html';
+  console.log(message);
 
   Office.context.ui.displayDialogAsync(dialogUrl, { height: 30, width: 20 },
   (asyncResult) => {
       const dialog = asyncResult.value;
-      });
+
+      // Send the element ID to the dialog
+      const messageToSend = JSON.stringify({ message: message });
+      console.log("Sending message to dialog:", messageToSend);
+      dialog.messageChild(messageToSend);
+    }
+  );
   }
 
