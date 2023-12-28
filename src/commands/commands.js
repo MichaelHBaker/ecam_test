@@ -3,22 +3,27 @@
 /* eslint-disable prettier/prettier */
 
 let dialog;
-let ribbonState = {
-  lastEvent: null
-};
+let button_id;
 
-Office.onReady(() => {
-    
-  });
+Office.onReady((info) => {
+  //info can be used to customize UI
+  console.log(info.host.toString());
+  console.log(info.platform.toString());
+});
 
 async function OnAction_ECAM(event) {
 
-  ribbonState.lastEvent = {
-    controlId: event.source['id']
-  };
+  // if (typeof me.onChange === "function") { 
+  //   // safe to use the function
+  // }
+
+  button_id = event.source['id'];
+  
   openDialog();
+
   event.completed();
 }
+
 
 function openDialog() {
   const dialogUrl = 'https://localhost:3000/popup.html';
@@ -31,12 +36,14 @@ function openDialog() {
 
       dialog = asyncResult.value;
       dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessageFromDialog);
+
+      
   });
 }
 
 function processMessageFromDialog(arg) {
-  if (arg.message === "dialogReady" && ribbonState.lastEvent) {
-    dialog.messageChild(ribbonState.lastEvent.controlId);
+  if (arg.message === "dialogReady") {
+    dialog.messageChild(button_id);
   } else {
       console.log("arg message:" + arg.message);
   }

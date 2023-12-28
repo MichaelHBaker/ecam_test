@@ -10,8 +10,8 @@ Office.onReady(() => {
 
 function receiveMessageFromParent(arg) {
     const message = arg.message;
-    console.log("Message received from parent:", message);
     document.getElementById("messageText").innerText = "Button clicked: " + message;
+
     // Process the message...
 
 };

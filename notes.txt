@@ -16,13 +16,14 @@ Ribbon-based app
             taskpane.js must exist, but can be empty       
         All buttons
             <FunctionName>OnAction_ECAM</FunctionName>
+                it is not necessary to call Office.actions.associate("OnAction_ECAM", OnAction_ECAM); as this manifest makes this association
         <FunctionFile resid="Commands.Url"/>
             commands.html i.e., parent page
                 loads command.js
                     async function OnAction_ECAM(event)
     Click any ribbon button
         Office.onReady()
-            
+
         call OnAction_ECAM
             office.js passes an event parameter
                 event.source['id'] is the ribbon button's id
