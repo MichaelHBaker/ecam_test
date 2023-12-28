@@ -2,30 +2,47 @@
 /* eslint-disable no-undef */
 /* eslint-disable prettier/prettier */
 
-Office.onReady(() => {
-  // If needed, Office.js is ready to be called
-});
+let dialog;
+let ribbonState = {
+  lastEvent: null
+};
 
-// The command function.
+Office.onReady(() => {
+    
+  });
+
 async function OnAction_ECAM(event) {
-  OpenDialog('ID of button clicked is:' + event.source['id']);
+
+  ribbonState.lastEvent = {
+    controlId: event.source['id']
+  };
+  openDialog();
   event.completed();
 }
 
-
-function OpenDialog(message) {
+function openDialog() {
   const dialogUrl = 'https://localhost:3000/popup.html';
-  console.log(message);
 
-  Office.context.ui.displayDialogAsync(dialogUrl, { height: 30, width: 20 },
-  (asyncResult) => {
-      const dialog = asyncResult.value;
+  Office.context.ui.displayDialogAsync(dialogUrl, { height: 10, width: 20 }, function (asyncResult) {
+      if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+          console.error("Failed to open dialog: " + asyncResult.error.message);
+          return;
+      }
 
-      // Send the element ID to the dialog
-      const messageToSend = JSON.stringify({ message: message });
-      console.log("Sending message to dialog:", messageToSend);
-      dialog.messageChild(messageToSend);
-    }
-  );
+      dialog = asyncResult.value;
+      dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessageFromDialog);
+  });
+}
+
+function processMessageFromDialog(arg) {
+  if (arg.message === "dialogReady" && ribbonState.lastEvent) {
+    dialog.messageChild(ribbonState.lastEvent.controlId);
+  } else {
+      console.log("arg message:" + arg.message);
   }
+}
+
+
+// Other functions and logic...
+
 

@@ -9,6 +9,28 @@ Check that the checkbox is active, gets turned off by some process, probably a b
 app.showNotification(title, text)
 
 
+Ribbon-based app
+    Load manifest
+        <SourceLocation DefaultValue="https://localhost:3000/taskpane.html"/>
+            valid html but no contents, a blank taskpane flashes as the add-in loads
+            taskpane.js must exist, but can be empty       
+        All buttons
+            <FunctionName>OnAction_ECAM</FunctionName>
+        <FunctionFile resid="Commands.Url"/>
+            commands.html i.e., parent page
+                loads command.js
+                    async function OnAction_ECAM(event)
+    Click any ribbon button
+        Office.onReady()
+            
+        call OnAction_ECAM
+            office.js passes an event parameter
+                event.source['id'] is the ribbon button's id
+            
+
+
+    
+
 Side load testing from git
 github
     create repository
