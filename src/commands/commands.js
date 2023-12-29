@@ -14,25 +14,23 @@ Office.onReady((info) => {
 async function OnAction_ECAM(event) {
   var function_name;
 
-  // Dynamically call the function based on the button's ID
+  // Call function based on the button ID
   function_name = event.source['id'].replace(/^[a-z]+|\d+$/g, ''); //removes lower case prefix and numeric suffix
 
-  if (typeof window[function_name] === 'function') {
-      window[buttonId](event);
-  } else {
-      console.error('No function found for button ID:', buttonId);
-      event.completed();
-  }
-
   message_from_parent = "Button (" + function_name + ") not working yet!";
-  
+
+  if (typeof window[function_name] === 'function') {
+    message_from_parent = "Button clicked for (" + window[function_name]() + ")";
+    showTaskPane(event);
+  } 
+   
   openDialog();
 
   event.completed();
 }
 
-function IntervalData() {
-  return "IntervalData";  
+function SelectIntervalData() {
+  return "SelectIntervalData";  
 }
 
 function openDialog() {
@@ -59,7 +57,24 @@ function processMessageFromDialog(arg) {
   }
 }
 
+function showTaskPane(event) {
+  // Show the task pane
+  Office.addin.showAsTaskpane()
+      .then(function () {
+          // Handle successful showing of the task pane if necessary
+      })
+      .catch(function (error) {
+          // Handle errors if the task pane fails to open
+          console.error('Error showing task pane:', error);
+      })
+      .finally(function () {
+          // Signal to Office that the command has been executed
+          event.completed();
+      });
 
-// Other functions and logic...
+
+
+    }
+
 
 
