@@ -1,26 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Task Pane</title>
-    <style>
-        /* Add styles for hiding and showing instructions */
-        #instructions {
-            display: none;
-            margin-bottom: 10px;
-            color: #333;
-        }
-    </style>
+    <title>Taskpane</title>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+    <script src="taskpane.js"></script>
 </head>
 <body>
-    <div>
-        <!-- Instructional text -->
-        <div id="instructions">Navigate to the desired column in Excel and press Enter.</div>
-        
-        <!-- Input box for column address -->
-        <input type="text" id="columnInput" placeholder="Click here and select a column in Excel">
+    <div id="content">
+        <!-- Content will be loaded here based on the button clicked -->
     </div>
-
-    <script src="taskpane.js"></script>
 </body>
 </html>

@@ -19,9 +19,10 @@ async function OnAction_ECAM(event) {
 
   message_from_parent = "Button (" + function_name + ") not working yet!";
 
+  //add process message from taskpane, add a listner to taskpane and then modify taskpane based on the button id
+  //create this tutorial again https://learn.microsoft.com/en-us/office/dev/add-ins/quickstarts/excel-quickstart-jquery?tabs=yeomangenerator
   if (typeof window[function_name] === 'function') {
     message_from_parent = "Button clicked for (" + window[function_name]() + ")";
-    showTaskPane(event);
   } 
    
   openDialog();
@@ -56,25 +57,4 @@ function processMessageFromDialog(arg) {
       console.log("arg message:" + arg.message);
   }
 }
-
-function showTaskPane(event) {
-  // Show the task pane
-  Office.addin.showAsTaskpane()
-      .then(function () {
-          // Handle successful showing of the task pane if necessary
-      })
-      .catch(function (error) {
-          // Handle errors if the task pane fails to open
-          console.error('Error showing task pane:', error);
-      })
-      .finally(function () {
-          // Signal to Office that the command has been executed
-          event.completed();
-      });
-
-
-
-    }
-
-
 

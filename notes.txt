@@ -50,3 +50,5 @@ npm run build
     git push
     copy dist version of manifest to a trusted folder
     get addin from shared folder
+
+
