@@ -45,9 +45,8 @@
                     <bt:Image size="32" resid="IconSelectArea.3"/>
                     <bt:Image size="80" resid="IconSelectArea.8"/>
                   </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <TaskpaneId>TaskPaneId</TaskpaneId>
-                      <SourceLocation resid="Taskpane.Url"/>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>OnAction_ECAM</FunctionName>
                   </Action>
                 </Control>
                 <Control xsi:type="Button" id="btnSelectBillingData1">
@@ -1849,7 +1848,6 @@
       </bt:Images>
       <bt:Urls>
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html"/>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="tbECAM_JS.L" DefaultValue="ECAM_JS" />
