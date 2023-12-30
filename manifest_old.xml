@@ -24,6 +24,7 @@
       <Host xsi:type="Workbook">
         <DesktopFormFactor>
           <FunctionFile resid="Commands.Url"/>
+
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
             <CustomTab id="TabECAM_JS">
 
@@ -46,7 +47,7 @@
                     <bt:Image size="80" resid="IconSelectArea.8"/>
                   </Icon>
                   <Action xsi:type="ExecuteFunction">
-                    <FunctionName>OnAction_ECAM</FunctionName>
+                    <FunctionName>highlightSelection</FunctionName>
                   </Action>
                 </Control>
                 <Control xsi:type="Button" id="btnSelectBillingData1">

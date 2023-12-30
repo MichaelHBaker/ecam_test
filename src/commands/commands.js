@@ -1,62 +1,60 @@
-/* eslint-disable prettier/prettier */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-/*
- * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
- * See LICENSE in the project root for license information.
- */
+/* eslint-disable no-undef */
+/* eslint-disable prettier/prettier */
 
-/* global global, Office, self, window */
+let dialog;
+let message_from_parent;
 
-Office.onReady(() => {
-  // If needed, Office.js is ready to be called
+Office.onReady((info) => {
+  //info can be used to customize UI
+  console.log(info.host.toString());
+  console.log(info.platform.toString());
 });
 
-
-// The command function.
-async function highlightSelection(event) {
-  // Implement your custom code here. The following code is a simple Excel example.  
-  try {
-      await Excel.run(async (context) => {
-          const range = context.workbook.getSelectedRange();
-          range.format.fill.color = "yellow";
-          range.values = "ok";
-          await context.sync();
-      });
-  } catch (error) {
-      // Note: In a production add-in, notify the user through your add-in's UI.
-      console.error(error);
-  }
-
-  // Calling event.completed is required. event.completed lets the platform know that processing has completed.
-  event.completed();
-}
-
-// You must register the function with the following line.
-Office.actions.associate("highlightSelection", highlightSelection);
-
-// The command function.
 async function OnAction_ECAM(event) {
-  // Implement your custom code here. The following code is a simple Excel example.  
-  try {
-    await Excel.run(async (context) => {
-          const range = context.workbook.getSelectedRange();
-          range.format.fill.color = "yellow";
-          // range.values = "OnAction_ECAM";
-          range.values = event.source['id'];
-          // await context.sync();
-          console.log("hello world");
-          console.log(event);
-      });
-  } catch (error) {
-      // Note: In a production add-in, notify the user through your add-in's UI.
-      console.error(error);
-  }
+  var function_name;
 
-  // Calling event.completed is required. event.completed lets the platform know that processing has completed.
+  // Call function based on the button ID
+  function_name = event.source['id'].replace(/^[a-z]+|\d+$/g, ''); //removes lower case prefix and numeric suffix
+
+  message_from_parent = "Button (" + function_name + ") not working yet!";
+
+  //add process message from taskpane, add a listner to taskpane and then modify taskpane based on the button id
+  //create this tutorial again https://learn.microsoft.com/en-us/office/dev/add-ins/quickstarts/excel-quickstart-jquery?tabs=yeomangenerator
+  if (typeof window[function_name] === 'function') {
+    message_from_parent = "Button clicked for (" + window[function_name]() + ")";
+  } 
+   
+  openDialog();
+
   event.completed();
 }
 
-// You must register the function with the following line.
-Office.actions.associate("OnAction_ECAM", OnAction_ECAM);
+function SelectIntervalData() {
+  return "SelectIntervalData";  
+}
 
+function openDialog() {
+  const dialogUrl = 'https://localhost:3000/popup.html';
+
+  Office.context.ui.displayDialogAsync(dialogUrl, { height: 10, width: 20 }, function (asyncResult) {
+      if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+          console.error("Failed to open dialog: " + asyncResult.error.message);
+          return;
+      }
+
+      dialog = asyncResult.value;
+      dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessageFromDialog);
+
+      
+  });
+}
+
+function processMessageFromDialog(arg) {
+  if (arg.message === "dialogReady") {
+    dialog.messageChild(message_from_parent);
+  } else {
+      console.log("arg message:" + arg.message);
+  }
+}
 

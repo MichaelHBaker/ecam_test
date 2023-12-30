@@ -1,21 +1,17 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-undef */
 /* eslint-disable prettier/prettier */
-Office.onReady((info) => {
-    document.getElementById("ok-button").onclick = () => tryCatch(sendStringToParentPage);
-});
 
-function sendStringToParentPage() {
-    const userName = document.getElementById("name-box").value;
-    Office.context.ui.messageParent(userName);
-}
+Office.onReady(() => {
+   
+    Office.context.ui.messageParent("dialogReady");
+    Office.context.ui.addHandlerAsync(Office.EventType.DialogParentMessageReceived, receiveMessageFromParent);
+})
 
-/** Default helper for invoking an action and handling errors. */
-async function tryCatch(callback) {
-    try {
-        await callback();
-    } catch (error) {
-        // Note: In a production add-in, you'd want to notify the user through your add-in's UI.
-        console.error(error);
-    }
-}
+function receiveMessageFromParent(arg) {
+    const message = arg.message;
+    document.getElementById("messageText").innerText =  message;
+
+    // Process the message...
+
+};

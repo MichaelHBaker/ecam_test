@@ -2,12 +2,35 @@ Debugging
 https://learn.microsoft.com/en-us/office/dev/add-ins/testing/debug-with-vs-extension
 https://learn.microsoft.com/en-us/office/dev/add-ins/testing/runtime-logging
 
-
+https://learn.microsoft.com/en-us/office/dev/add-ins/develop/dialog-api-in-office-add-ins
 https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#clear-the-office-cache-on-windows
 Check that the checkbox is active, gets turned off by some process, probably a bug
 
 app.showNotification(title, text)
 
+
+Ribbon-based app
+    Load manifest
+        <SourceLocation DefaultValue="https://localhost:3000/taskpane.html"/>
+            valid html but no contents, a blank taskpane flashes as the add-in loads
+            taskpane.js must exist, but can be empty       
+        All buttons
+            <FunctionName>OnAction_ECAM</FunctionName>
+                it is not necessary to call Office.actions.associate("OnAction_ECAM", OnAction_ECAM); as this manifest makes this association
+        <FunctionFile resid="Commands.Url"/>
+            commands.html i.e., parent page
+                loads command.js
+                    async function OnAction_ECAM(event)
+    Click any ribbon button
+        Office.onReady()
+
+        call OnAction_ECAM
+            office.js passes an event parameter
+                event.source['id'] is the ribbon button's id
+            
+
+
+    
 
 Side load testing from git
 github
@@ -27,3 +50,5 @@ npm run build
     git push
     copy dist version of manifest to a trusted folder
     get addin from shared folder
+
+
