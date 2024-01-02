@@ -21,6 +21,7 @@ module.exports = async (env, options) => {
       taskpane: ["./src/taskpane/taskpane.js", "./src/taskpane/taskpane.html"],
       commands: "./src/commands/commands.js",
       popup: "./src/dialogs/popup.js",
+      learnmore: "./src/learnmore/learnmore.html",
     },
     output: {
       clean: true,
@@ -88,6 +89,11 @@ module.exports = async (env, options) => {
         filename: "popup.html",
         template: "./src/dialogs/popup.html",
         chunks: ["polyfill", "popup"],
+      }),
+      new HtmlWebpackPlugin({
+        filename: "learnmore.html",
+        template: "./src/learnmore/learnmore.html",
+        chunks: ["polyfill", "learnmore"],
       }),
     ],
     devServer: {

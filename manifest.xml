@@ -16,13 +16,19 @@
     <Host Name="Workbook"/>
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://localhost:3000/taskpane.html"/>
+    <SourceLocation DefaultValue="https://localhost:3000/commands.html"/>
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Hosts>
       <Host xsi:type="Workbook">
         <DesktopFormFactor>
+          <GetStarted>
+            <Title resid="GetStarted.Title"/>
+            <Description resid="GetStarted.Description"/>
+            <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
+          </GetStarted>
+
           <FunctionFile resid="Commands.Url"/>
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
             <CustomTab id="TabECAM_JS">
@@ -45,9 +51,11 @@
                     <bt:Image size="32" resid="IconSelectArea.3"/>
                     <bt:Image size="80" resid="IconSelectArea.8"/>
                   </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>OnAction_ECAM</FunctionName>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>TaskpaneId</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
                   </Action>
+
                 </Control>
                 <Control xsi:type="Button" id="btnSelectBillingData1">
                   <Label resid="btnSelectBillingData1.L"/>
@@ -1847,9 +1855,12 @@
         <bt:Image id="ZoomOnePage.8" DefaultValue="https://localhost:3000/assets/IconSelectArea_80.png"/>
       </bt:Images>
       <bt:Urls>
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://localhost:3000/learnmore.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html"/>
       </bt:Urls>
       <bt:ShortStrings>
+        <bt:String id="GetStarted.Title" DefaultValue="Get started with ECAM!"/>
         <bt:String id="tbECAM_JS.L" DefaultValue="ECAM_JS" />
         <bt:String id="gpDataInputs.L" DefaultValue="Data Inputs"/>
         <bt:String id="btnSelectIntervalData1.L" DefaultValue="Interval Data"/>
@@ -2087,6 +2098,8 @@
         <bt:String id="btnAboutECAM1.T" DefaultValue="About ECAM"/>
       </bt:ShortStrings>
       <bt:LongStrings>
+        <bt:String id="GetStarted.Description" DefaultValue="Click on the ECAM JS tab and select an operation."/>
+
         <bt:String id="btnSelectIntervalData1.D" DefaultValue="Click to Select Interval Data"/>
         <bt:String id="btnSelectBillingData1.D" DefaultValue="Click to Select Monthly Billing Data"/>
         <bt:String id="btnDefinePoints1.D" DefaultValue="Click to Map Points to Allow Automation of Metrics and Re-tuning Charts"/>

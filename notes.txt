@@ -1,3 +1,7 @@
+Next
+    IntervalSelectData. If action is taskpane, then have to figure out how to pass the function name to the taskpane
+        the dialog does not come up because it does not call OnAction_ECAM
+
 Debugging
 https://learn.microsoft.com/en-us/office/dev/add-ins/testing/debug-with-vs-extension
 https://learn.microsoft.com/en-us/office/dev/add-ins/testing/runtime-logging
