@@ -1,6 +1,28 @@
+runtimes
+    common.js with global variables
+
+executefuntion
+    event visible but no taskpane
+
+showtaskpane
+    event not visible
+
+Taskpane used like userforms (see the list of them)
+desired behaviour
+    click selectinterval
+    taskpane visible
+    click on select column
+    selection saved
+
+
+
+
 Next
     IntervalSelectData. If action is taskpane, then have to figure out how to pass the function name to the taskpane
         the dialog does not come up because it does not call OnAction_ECAM
+
+Training
+https://learn.microsoft.com/en-us/office/dev/add-ins/tutorials/excel-tutorial
 
 Debugging
 https://learn.microsoft.com/en-us/office/dev/add-ins/testing/debug-with-vs-extension
