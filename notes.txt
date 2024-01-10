@@ -23,6 +23,7 @@ Next
 
 Training
 https://learn.microsoft.com/en-us/office/dev/add-ins/tutorials/excel-tutorial
+https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/excel-tutorial
 
 Debugging
 https://learn.microsoft.com/en-us/office/dev/add-ins/testing/debug-with-vs-extension
