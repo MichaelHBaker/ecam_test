@@ -45,8 +45,9 @@
                     <bt:Image size="32" resid="IconSelectArea.3"/>
                     <bt:Image size="80" resid="IconSelectArea.8"/>
                   </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>OnAction_ECAM</FunctionName>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>ButtonId1</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
                   </Action>
 
                 </Control>
