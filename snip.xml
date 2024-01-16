@@ -1,30 +1,4 @@
-                <Control xsi:type="Menu" id="mnuWeather1">
-                  <Label resid="mnuWeather1.label"/>
-                  <Supertip>
-                    <Title resid="mnuWeather1.Title"/>
-                    <Description resid="mnuWeather1.Desc"/>
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="CreateQuickStep.16x16"/>
-                    <bt:Image size="32" resid="CreateQuickStep.32x32"/>
-                    <bt:Image size="80" resid="CreateQuickStep.80x80"/>
-                  </Icon>
-                  <Items>
-                    <Item id="btnInputSiteWeatherName1">
-                      <Label resid="btnInputSiteWeatherName1.label"/>
-                      <Supertip>
-                        <Title resid="btnInputSiteWeatherName1.Title"/>
-                        <Description resid="btnInputSiteWeatherName1.Desc"/>
-                      </Supertip>
-                      <Icon>
-                        <bt:Image size="16" resid="CreateQuickStep.16x16"/>
-                        <bt:Image size="32" resid="CreateQuickStep.32x32"/>
-                        <bt:Image size="80" resid="CreateQuickStep.80x80"/>
-                      </Icon>
-                      <Action xsi:type="ExecuteFunction">
-                        <FunctionName>OnAction_ECAM</FunctionName>
-                      </Action>
-                    </Item>
-                  </Items>
-                </Control>
-CalendarMonthDetailsSplitButton.16x16
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>ButtonId1</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>

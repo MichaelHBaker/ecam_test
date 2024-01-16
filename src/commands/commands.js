@@ -27,6 +27,23 @@ async function OnAction_ECAM(event) {
    
   openDialog();
 
+  try {
+    // Code to show the task pane
+    console.log("Line before showTaskPane()");
+    await showTaskPane();
+    console.log("Line after showTaskPane");
+
+    // Additional Excel.run can be placed here if needed
+    // await Excel.run(async (context) => {
+    //     // Asynchronous Excel operations here
+    //     ...
+    //     await context.sync();
+    // });
+  } catch (error) {
+    // Handle any errors here
+    console.error("Error: " + error);
+  }
+
   event.completed();
 }
 
@@ -58,3 +75,16 @@ function processMessageFromDialog(arg) {
   }
 }
 
+async function showTaskPane() {
+  try {
+      console.log("Line before Office.addin.showTaskPane()");
+      await Office.addin.showAsTaskpane();
+      console.log("Line after Office.addin.showTaskPane()");
+  } catch (error) {
+      console.error("Error showing task pane: " + error);
+      // Handle errors related to displaying the task pane here
+  }
+}
+
+// Associate the function with Office actions
+Office.actions.associate("OnAction_ECAM", OnAction_ECAM);
