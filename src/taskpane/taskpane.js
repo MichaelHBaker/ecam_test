@@ -8,6 +8,7 @@ Office.onReady((info) => {
 
     // Assign event handlers and other initialization logic.
     document.getElementById("range_add_id").onclick = getAddress;
+
   }
 
   });
@@ -19,6 +20,7 @@ async function getAddress(event){
       // Asynchronous Excel operations here
       const worksheet = context.workbook.worksheets.getActiveWorksheet();
   
+
       worksheet.onSelectionChanged.add(changeHandler);
       await context.sync();
       console.log("Event handler added");
@@ -33,12 +35,17 @@ async function getAddress(event){
 
 async function changeHandler(event){
   await Excel.run(async (context) => {
-    const worksheet = context.workbook.worksheets.getActiveWorksheet();
-    await context.sync();
-    
-    document.getElementById("range_add_id").value = worksheet.name + "!" + event.address;
 
-    console.log("event happended - address" + event.address);
-    console.log("event happended - source" + event.source);
+    let range = context.workbook.getSelectedRange();
+    range.load("address");    
+    await context.sync();
+    console.log(`The address of the selected range is "${range.address}"`);
+
+    // const worksheet = context.workbook.worksheets.getActiveWorksheet();
+    // await context.sync();
+    
+    // document.getElementById("range_add_id").value = worksheet.name + "!" + event.address;
+    document.getElementById("range_add_id").value = range.address;
+
   });
 }
