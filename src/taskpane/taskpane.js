@@ -37,15 +37,11 @@ async function changeHandler(event){
   await Excel.run(async (context) => {
 
     let range = context.workbook.getSelectedRange();
-    range.load("address");    
+    range.load("address");
     await context.sync();
-    console.log(`The address of the selected range is "${range.address}"`);
-
-    // const worksheet = context.workbook.worksheets.getActiveWorksheet();
-    // await context.sync();
-    
-    // document.getElementById("range_add_id").value = worksheet.name + "!" + event.address;
     document.getElementById("range_add_id").value = range.address;
+
+    console.log(`The address of the selected range is "${range.address}"`);
 
   });
 }

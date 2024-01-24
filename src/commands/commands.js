@@ -14,6 +14,8 @@ Office.onReady((info) => {
 async function OnAction_ECAM(event) {
   var function_name;
 
+  console.log("Got to OnAction_ECAM");
+
   // Call function based on the button ID
   function_name = event.source['id'].replace(/^[a-z]+|\d+$/g, ''); //removes lower case prefix and numeric suffix
 
