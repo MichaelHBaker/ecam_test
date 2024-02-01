@@ -1,18 +1,4 @@
-runtimes
-    common.js with global variables
-
-executefuntion
-    event visible but no taskpane
-
-showtaskpane
-    event not visible
-
-Taskpane used like userforms (see the list of them)
-desired behaviour
-    click selectinterval
-    taskpane visible
-    click on select column
-    selection saved
+How to do multiple pages for taskpane.html
 
 
 

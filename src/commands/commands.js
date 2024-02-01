@@ -35,6 +35,10 @@ async function OnAction_ECAM(event) {
     await showTaskPane();
     console.log("Line after showTaskPane");
 
+    if (function_name === 'SelectIntervalData'){
+      loadHtmlPage('UserForm4TimeStampCols');
+    }
+
     // Additional Excel.run can be placed here if needed
     // await Excel.run(async (context) => {
     //     // Asynchronous Excel operations here
@@ -90,3 +94,7 @@ async function showTaskPane() {
 
 // Associate the function with Office actions
 Office.actions.associate("OnAction_ECAM", OnAction_ECAM);
+
+function loadHtmlPage(pageName) {
+  document.getElementById('content-frame').src = pageName + '.html';
+}
