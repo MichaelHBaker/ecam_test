@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 
+const path = require("path");
 const devCerts = require("office-addin-dev-certs");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -75,6 +76,16 @@ module.exports = async (env, options) => {
               } else {
                 return content.toString().replace(new RegExp(urlDev, "g"), urlProd);
               }
+            },
+          },
+          {
+            from: "*.html", // Matches all HTML files in the specified context
+            context: "src/taskpane/", // Sets the context directory for the pattern
+            to: path.resolve(__dirname, "dist"), // Explicitly defines the output directory
+            globOptions: {
+              ignore: [
+                "**/taskpane.html", // Ignores taskpane.html
+              ],
             },
           },
         ],
