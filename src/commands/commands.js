@@ -95,6 +95,9 @@ async function showTaskPane() {
 // Associate the function with Office actions
 Office.actions.associate("OnAction_ECAM", OnAction_ECAM);
 
-function loadHtmlPage(pageName) {
+async function loadHtmlPage(pageName) {
   document.getElementById('content-frame').src = pageName + '.html';
+  // let htmlFile = await fetch(pageName + '.html');
+  // let htmlSrc = await htmlFile.text();
+  // document.getElementById('content-frame').innerHTML = htmlSrc;
 }
