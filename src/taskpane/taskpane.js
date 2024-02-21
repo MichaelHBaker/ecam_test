@@ -2,6 +2,8 @@
 /* eslint-disable no-undef */
 /* eslint-disable prettier/prettier */
 
+import * as test from "./testmodule.js";
+test.helloworld()
 
 Office.onReady((info) => {
   if (info.host === Office.HostType.Excel) {
@@ -19,7 +21,7 @@ async function getAddress(event){
     await Excel.run(async (context) => {
       // Asynchronous Excel operations here
       const worksheet = context.workbook.worksheets.getActiveWorksheet();
-  
+      
 
       worksheet.onSelectionChanged.add(changeHandler);
       await context.sync();
