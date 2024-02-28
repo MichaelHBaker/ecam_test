@@ -2,8 +2,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable prettier/prettier */
 
-import * as test from "./testmodule.js";
-test.helloworld()
 
 Office.onReady((info) => {
   if (info.host === Office.HostType.Excel) {

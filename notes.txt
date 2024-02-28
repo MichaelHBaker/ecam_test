@@ -1,15 +1,12 @@
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
-
-How to do multiple pages for taskpane.html
-
-
-
-
 Next
-    IntervalSelectData. If action is taskpane, then have to figure out how to pass the function name to the taskpane
-        the dialog does not come up because it does not call OnAction_ECAM
+    app-wide error handling
+        send message to user in dialog
+        log technical error messages - should this be in cloud database table
+
 
 Training
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
+
 https://learn.microsoft.com/en-us/office/dev/add-ins/tutorials/excel-tutorial
 https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/excel-tutorial
 
@@ -23,29 +20,7 @@ Check that the checkbox is active, gets turned off by some process, probably a b
 
 app.showNotification(title, text)
 
-
-Ribbon-based app
-    Load manifest
-        <SourceLocation DefaultValue="https://localhost:3000/taskpane.html"/>
-            valid html but no contents, a blank taskpane flashes as the add-in loads
-            taskpane.js must exist, but can be empty       
-        All buttons
-            <FunctionName>OnAction_ECAM</FunctionName>
-                it is not necessary to call Office.actions.associate("OnAction_ECAM", OnAction_ECAM); as this manifest makes this association
-        <FunctionFile resid="Commands.Url"/>
-            commands.html i.e., parent page
-                loads command.js
-                    async function OnAction_ECAM(event)
-    Click any ribbon button
-        Office.onReady()
-
-        call OnAction_ECAM
-            office.js passes an event parameter
-                event.source['id'] is the ribbon button's id
-            
-
-
-    
+   
 
 Side load testing from git
 github
