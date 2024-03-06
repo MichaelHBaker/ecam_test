@@ -25,24 +25,24 @@ export function openDialog() {
     });
   }
   
-  function processMessageFromDialog(arg) {
-    if (arg.message === "dialogReady") {
-      dialog.messageChild(message_from_parent);
-    } else {
-        console.log("arg message:" + arg.message);
-    }
+function processMessageFromDialog(arg) {
+  if (arg.message === "dialogReady") {
+    dialog.messageChild(message_from_parent);
+  } else {
+      console.log("arg message:" + arg.message);
   }
-  
-  export async function showTaskPane() {
-    try {
-        console.log("Line before Office.addin.showTaskPane()");
-        await Office.addin.showAsTaskpane();
-        console.log("Line after Office.addin.showTaskPane()");
-    } catch (error) {
-        console.error("Error showing task pane: " + error);
-        // Handle errors related to displaying the task pane here
-    }
+}
+
+export async function showTaskPane() {
+  try {
+      console.log("Line before Office.addin.showTaskPane()");
+      await Office.addin.showAsTaskpane();
+      console.log("Line after Office.addin.showTaskPane()");
+  } catch (error) {
+      console.error("Error showing task pane: " + error);
+      // Handle errors related to displaying the task pane here
   }
+}
 
 export async function loadHtmlPage(pageName) {
     // document.getElementById('content-frame').src = pageName + '.html';

@@ -3,6 +3,7 @@
 /* eslint-disable prettier/prettier */
 
 import * as ribbon from './M_JP_RibbonX.js';
+//import named functions from specific legacy like folders that are one to one with button clicks
 
 
 Office.onReady((info) => {

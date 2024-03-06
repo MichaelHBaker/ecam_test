@@ -1,4 +1,10 @@
+
+
 Next
+    research office.js create connection and run sql insert
+    See inspect errors related to submitForm
+
+
     app-wide error handling
         send message to user in dialog
         log technical error messages - should this be in cloud database table

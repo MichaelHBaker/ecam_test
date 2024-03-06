@@ -1,27 +1,37 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-    <title>Taskpane</title>
-    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
 
-    <script src="taskpane.js"></script>
-</head>
-<body> -->
-    <!-- <main id="app-body" > -->
-        Are the Time Stamps in 1 column or 2 columns?
-        (If 2 columns, it is assumed that the Date is in the first column and the time is in the second column)
-
-        <input type="text" name="range_addr" id="range_add_id" />
-        <button id="submit-addr">Submit</button><br/><br/>
+<h4>Time Stamp Definition</h4>
+<p>
+    Are the Time Stamps in 1 column or 2 columns?
+    (If 2 columns, it is assumed that the Date is in the first column and the time is in the second column)
+</p>
 <form>
-    <submit> call the js</submit>
-</form>
-        <input type="radio" name="number_of_columns" value="1">1 <br>
-        <input type="radio" name="number_of_columns" value="2">2 <br>
-        <script>
 
-        </script>
-        <!-- Content will be loaded here based on the button clicked -->
-    <!-- </main> -->
-<!-- </body>
-</html> -->
+    <input type="radio" id="one_column" name="time_stamp_cols" value="One Colum">
+    <label for="html">One Column</label><br>
+
+    <input type="radio" id="two" name="time_stamp_cols" value="Two">
+    <label for="css">Two</label><br>
+
+    <input type="button" onclick="submitForm()" value="Submit">
+    <input type="button" onclick="cancelForm()" value="Cancel">
+</form> 
+
+<script>
+    function submitForm() {
+        const radios = document.getElementsByName('time_stamp_cols');
+        let selectedValue;
+        for (const radio of radios) {
+            if (radio.checked) {
+                selectedValue = radio.value;
+                break;
+            }
+        }
+        setGlobal ('iTimeCols', selectedValue);
+        alert("Selected option: " + selectedValue);
+    }
+
+    function cancelForm() {
+
+    }
+
+</script>

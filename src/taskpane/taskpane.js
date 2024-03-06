@@ -2,6 +2,17 @@
 /* eslint-disable no-undef */
 /* eslint-disable prettier/prettier */
 
+var iTimeCols;
+
+export function setGlobal (var_name, value) {
+  if (var_name in window) {
+    eval(var_name + '=' + value);
+    console.log("setGlobal iTimeCols " + iTimeCols);
+  } else {
+    throw `${var_name} has not been defined as a global variable`;
+  }
+}
+
 
 Office.onReady((info) => {
   if (info.host === Office.HostType.Excel) {
