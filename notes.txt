@@ -2,6 +2,7 @@
 
 Next
     research office.js create connection and run sql insert
+    ask openai best practice for managing global vars across .js files, is eval the way to go.
     See inspect errors related to submitForm
 
 
