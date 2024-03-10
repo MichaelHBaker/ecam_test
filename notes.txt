@@ -1,3 +1,6 @@
+04eecbfc68f64215926221451240903
+
+https://stackoverflow.com/questions/55419670/connect-office-js-excel-add-in-to-sql-server
 
 
 Next

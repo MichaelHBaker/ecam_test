@@ -104,7 +104,16 @@ module.exports = async (env, options) => {
         type: "https",
         options: env.WEBPACK_BUILD || options.https !== undefined ? options.https : await getHttpsOptions(),
       },
-      port: process.env.npm_package_config_dev_server_port || 3000,
+      port: process.env.npm_package_config_dev_server_port || 3001,
+      proxy: {
+        // Add this proxy configuration
+        "/weatherdata": {
+          // Adjust '/weatherdata' to your actual API route
+          target: "http://localhost:3001", // Replace 3001 with your Node.js server's port
+          secure: false,
+          changeOrigin: true,
+        },
+      },
     },
   };
 
