@@ -70,7 +70,7 @@ app.get('/weatherdata', async (req, res) => {
 });
 
 // New Endpoint for SQL Insertion
-app.post('/insertWeatherData', async (req, res) => {
+app.post('/insertweatherdata', async (req, res) => {
   console.log('Post weather data on server');
   try {
     const { temperature } = req.body;

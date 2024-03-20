@@ -76,7 +76,7 @@ async function fetchData() {
     });
 
     // Send Request for SQL Insertion
-    const sqlResult = await fetch('https://localhost:3001/insertWeatherData', {
+    const sqlResult = await fetch('https://localhost:3001/insertweatherdata', {
         method: 'POST', 
         headers: { 'Content-Type': 'application/json'  }, 
         body: JSON.stringify({ temperature: maxTempF }) 
