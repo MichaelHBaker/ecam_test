@@ -20,6 +20,7 @@ Office.onReady((info) => {
     // Assign event handlers and other initialization logic.
     document.getElementById("range_add_id").onclick = getAddress;
     document.getElementById("fetchBtn").onclick = fetchData;
+    document.getElementById("writeBtn").onclick = writeData;
   }
 
   });
@@ -75,8 +76,29 @@ async function fetchData() {
       await context.sync(); 
     });
 
+  } catch (error) {
+    console.error("Error:", error); 
+    // Handle the error appropriately for your UI (display an error message, etc.)
+  }
+}
+
+async function writeData() {
+
+  var maxTempF;
+
+  // Read from Excel
+  await Excel.run(async (context) => {
+    const sheet = context.workbook.worksheets.getActiveWorksheet();
+    let range = sheet.getRange("B1"); 
+    range.load('values');
+    await context.sync(); 
+    maxTempF = range.values;
+  });
+  
+  try { 
+
     // Send Request for SQL Insertion
-    const sqlResult = await fetch('https://localhost:3001/insertweatherdata', {
+    const sqlResult = await fetch('http://127.0.0.1:8000/insertweatherdata', {
         method: 'POST', 
         headers: { 'Content-Type': 'application/json'  }, 
         body: JSON.stringify({ temperature: maxTempF }) 
@@ -85,8 +107,6 @@ async function fetchData() {
     if (!sqlResult.ok) {
         throw new Error('Error inserting into SQL');
     }
-
-    // Success! You could update the UI with a confirmation message if desired. 
 
   } catch (error) {
     console.error("Error:", error); 
