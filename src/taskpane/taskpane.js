@@ -97,12 +97,17 @@ async function writeData() {
   
   try { 
 
+    const weatherResponse = await fetch(`/insertweatherdata?max_temp_f=${maxTempF}`);
+    const jsonString = await weatherResponse.text();
+    const weather_response = JSON.parse(jsonString); 
+    console.log(weather_response);
+
     // Send Request for SQL Insertion
-    const sqlResult = await fetch('http://127.0.0.1:8000/insertweatherdata', {
-        method: 'POST', 
-        headers: { 'Content-Type': 'application/json'  }, 
-        body: JSON.stringify({ temperature: maxTempF }) 
-    });
+    // const sqlResult = await fetch('http://127.0.0.1:8000/insertweatherdata', {
+    //     method: 'POST', 
+    //     headers: { 'Content-Type': 'application/json'  }, 
+    //     body: JSON.stringify({ temperature: maxTempF }) 
+    // });
 
     if (!sqlResult.ok) {
         throw new Error('Error inserting into SQL');

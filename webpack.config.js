@@ -113,6 +113,12 @@ module.exports = async (env, options) => {
           secure: false,
           changeOrigin: true,
         },
+        "/insertweatherdata": {
+          // Adjust '/weatherdata' to your actual API route
+          target: "http://127.0.0.1:8000", // Replace 3001 with your Node.js server's port
+          secure: false,
+          changeOrigin: true,
+        },
       },
     },
   };
