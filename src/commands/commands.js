@@ -13,12 +13,14 @@ Office.onReady((info) => {
 
 });
 
+// function SelectIntervalData() {
+//   return "SelectIntervalData";  
+// }
 
-function SelectIntervalData() {
-  return "SelectIntervalData";  
-}
+
 
 
 // Associate the function with Office actions
 Office.actions.associate("OnAction_ECAM", ribbon.OnAction_ECAM);
 
+console.log("end of commands.js");

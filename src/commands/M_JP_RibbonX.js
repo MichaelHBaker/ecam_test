@@ -4,6 +4,10 @@
 
 import * as ui from './ui';
 
+// function SelectIntervalData() {
+//   return "SelectIntervalData";  
+// }
+
 export async function OnAction_ECAM(event) {
     var function_name;
   
@@ -16,6 +20,8 @@ export async function OnAction_ECAM(event) {
   
     //add process message from taskpane, add a listner to taskpane and then modify taskpane based on the button id
     //create this tutorial again https://learn.microsoft.com/en-us/office/dev/add-ins/quickstarts/excel-quickstart-jquery?tabs=yeomangenerator
+    console.log(function_name);
+    console.log(typeof window[function_name]);
     if (typeof window[function_name] === 'function') {
       ui.setMessage("Button clicked for (" + window[function_name]() + ")");
     } 
@@ -28,7 +34,7 @@ export async function OnAction_ECAM(event) {
       await ui.showTaskPane();
       console.log("Line after showTaskPane");
   
-      if (function_name === 'SelectIntervalData'){
+      if (function_name == 'SelectIntervalData'){
         ui.loadHtmlPage('UserForm4TimeStampCols');
       }
   

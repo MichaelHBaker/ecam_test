@@ -4,7 +4,7 @@
 
 var iTimeCols;
 
-export function setGlobal (var_name, value) {
+function setGlobal (var_name, value) {
   if (var_name in window) {
     eval(var_name + '=' + value);
     console.log("setGlobal iTimeCols " + iTimeCols);
@@ -142,3 +142,11 @@ async function writeData() {
 //     // Handle the error appropriately for your UI 
 //   }
 // }
+
+function SelectIntervalData() {
+  // ui load
+  // form button clicks
+  // other business code
+  return "SelectIntervalData";  
+
+}
