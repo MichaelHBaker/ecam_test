@@ -143,10 +143,10 @@ async function writeData() {
 //   }
 // }
 
-function SelectIntervalData() {
-  // ui load
-  // form button clicks
-  // other business code
-  return "SelectIntervalData";  
+// function SelectIntervalData() {
+//   // ui load
+//   // form button clicks
+//   // other business code
+//   return "SelectIntervalData";  
 
-}
+// }
