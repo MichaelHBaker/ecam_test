@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 
-const path = require("path");
 const devCerts = require("office-addin-dev-certs");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -21,7 +20,6 @@ module.exports = async (env, options) => {
       polyfill: ["core-js/stable", "regenerator-runtime/runtime"],
       taskpane: ["./src/taskpane/taskpane.js", "./src/taskpane/taskpane.html"],
       commands: "./src/commands/commands.js",
-      popup: "./src/dialogs/popup.js",
     },
     output: {
       clean: true,
@@ -59,7 +57,7 @@ module.exports = async (env, options) => {
       new HtmlWebpackPlugin({
         filename: "taskpane.html",
         template: "./src/taskpane/taskpane.html",
-        chunks: ["polyfill", "taskpane", "commands"],
+        chunks: ["polyfill", "taskpane"],
       }),
       new CopyWebpackPlugin({
         patterns: [
@@ -78,28 +76,12 @@ module.exports = async (env, options) => {
               }
             },
           },
-          {
-            from: "forms/*.html", // Matches all HTML files in the specified context
-            context: "src/taskpane/", // Sets the context directory for the pattern
-            to: path.resolve(__dirname, "dist", "forms"), // Explicitly defines the output directory
-            // noErrorOnMissing: true,
-            globOptions: {
-              ignore: [
-                "**/taskpane.html", // Ignores taskpane.html
-              ],
-            },
-          },
         ],
       }),
       new HtmlWebpackPlugin({
         filename: "commands.html",
         template: "./src/commands/commands.html",
         chunks: ["polyfill", "commands"],
-      }),
-      new HtmlWebpackPlugin({
-        filename: "popup.html",
-        template: "./src/dialogs/popup.html",
-        chunks: ["polyfill", "popup"],
       }),
     ],
     devServer: {
@@ -111,23 +93,8 @@ module.exports = async (env, options) => {
         options: env.WEBPACK_BUILD || options.https !== undefined ? options.https : await getHttpsOptions(),
       },
       port: process.env.npm_package_config_dev_server_port || 3000,
-      proxy: {
-        // Add this proxy configuration
-        "/weatherdata": {
-          // Adjust '/weatherdata' to your actual API route
-          target: "http://127.0.0.1:8000", // Replace 3001 with your Node.js server's port
-          secure: false,
-          changeOrigin: true,
-        },
-        "/insertweatherdata": {
-          // Adjust '/weatherdata' to your actual API route
-          target: "http://127.0.0.1:8000", // Replace 3001 with your Node.js server's port
-          secure: false,
-          changeOrigin: true,
-        },
-      },
     },
   };
-  
+
   return config;
 };

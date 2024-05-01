@@ -6,7 +6,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const urlDev = "https://localhost:3000/";
-const urlProd = "https://www.contoso.com/"; // CHANGE THIS TO YOUR PRODUCTION DEPLOYMENT LOCATION
+const urlProd = "https://michaelhbaker.github.io/ecam_dist/"; // CHANGE THIS TO YOUR PRODUCTION DEPLOYMENT LOCATION
 
 async function getHttpsOptions() {
   const httpsOptions = await devCerts.getHttpsServerOptions();
@@ -78,10 +78,15 @@ module.exports = async (env, options) => {
               }
             },
           },
+          // {
+          //   from: "forms/*.html", // Matches all HTML files in the specified context
+          //   context: "src/taskpane/", // Sets the context directory for the pattern
+          //   to: path.resolve(__dirname, "dist"), // Explicitly defines the output directory
+          // },
           {
-            from: "forms/*.html", // Matches all HTML files in the specified context
+            from: "*.html", // Matches all HTML files in the specified context
             context: "src/taskpane/", // Sets the context directory for the pattern
-            to: path.resolve(__dirname, "dist", "forms"), // Explicitly defines the output directory
+            to: path.resolve(__dirname, "dist"), // Explicitly defines the output directory
             // noErrorOnMissing: true,
             globOptions: {
               ignore: [
@@ -90,11 +95,6 @@ module.exports = async (env, options) => {
             },
           },
         ],
-      }),
-      new HtmlWebpackPlugin({
-        filename: "commands.html",
-        template: "./src/commands/commands.html",
-        chunks: ["polyfill", "commands"],
       }),
       new HtmlWebpackPlugin({
         filename: "popup.html",
@@ -128,6 +128,6 @@ module.exports = async (env, options) => {
       },
     },
   };
-  
+
   return config;
 };
