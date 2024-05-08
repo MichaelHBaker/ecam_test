@@ -1,3 +1,25 @@
+<script> // TODO Add id so we can execute just this script after it is inserted with innerhtml, via appendchild or eval()
+    console.log('HTML fragment loaded, script executed');
+
+    function submitForm() {
+        console.log('loaded submitForm function');
+        const radios = document.getElementsByName('time_stamp_cols');
+        let selectedValue;
+        for (const radio of radios) {
+            if (radio.checked) {
+                selectedValue = radio.value;
+                break;
+            }
+        }
+        setGlobal ('iTimeCols', selectedValue);
+        console.log("Selected option: " + selectedValue);
+    }
+
+    function cancelForm() {
+
+    }
+
+</script>
 
 <h4>Time Stamp Definition</h4>
 <p>
@@ -13,25 +35,7 @@
     <label for="css">Two</label><br>
 
     <input type="button" onclick="submitForm()" value="Submit">
-    <input type="button" onclick="cancelForm()" value="Cancel">
+    <input type="button" onclick="console.log('Hello from alert')" value="Cancel">
+    <!-- <input type="button" onclick="cancelForm()" value="Cancel"> -->
 </form> 
 
-<script>
-    function submitForm() {
-        const radios = document.getElementsByName('time_stamp_cols');
-        let selectedValue;
-        for (const radio of radios) {
-            if (radio.checked) {
-                selectedValue = radio.value;
-                break;
-            }
-        }
-        setGlobal ('iTimeCols', selectedValue);
-        alert("Selected option: " + selectedValue);
-    }
-
-    function cancelForm() {
-
-    }
-
-</script>

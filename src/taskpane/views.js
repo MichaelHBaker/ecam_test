@@ -12,4 +12,4 @@ function SelectIntervalData() {
     console.log("got to selectintervaldata in views.js");
     return "SelectIntervalData";  
   
-  }
+}

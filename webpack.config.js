@@ -81,7 +81,7 @@ module.exports = async (env, options) => {
           {
             from: "forms/*.html", // Matches all HTML files in the specified context
             context: "src/taskpane/", // Sets the context directory for the pattern
-            to: path.resolve(__dirname, "dist", "forms"), // Explicitly defines the output directory
+            to: path.resolve(__dirname, "dist"), // Explicitly defines the output directory
             // noErrorOnMissing: true,
             globOptions: {
               ignore: [
