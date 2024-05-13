@@ -4,12 +4,21 @@
 
 var iTimeCols;
 
-function setGlobal (var_name, value) {
+// function setGlobal (var_name, value) {
+//   if (var_name in window) {
+//     eval(var_name + '=' + value);
+//     console.log("setGlobal iTimeCols " + iTimeCols);
+//   } else {
+//     throw `${var_name} has not been defined as a global variable`;
+//   }
+// }
+
+function setGlobal(var_name, value) {
   if (var_name in window) {
-    eval(var_name + '=' + value);
-    console.log("setGlobal iTimeCols " + iTimeCols);
+    window[var_name] = value;
+    console.log(`setGlobal ${var_name} = ${window[var_name]}`);
   } else {
-    throw `${var_name} has not been defined as a global variable`;
+    throw new Error(`${var_name} has not been defined as a global variable`);
   }
 }
 
