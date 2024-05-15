@@ -4,12 +4,20 @@
 
 
 function SelectIntervalData() {
-    document.getElementById("fetchBtn").onclick = fetchData;
 
-    // ui load
-    // form button clicks
-    // other business code
-    console.log("got to selectintervaldata in views.js");
+    setGlobal ("strNrmlzBillingData", "No");
+    SelectData();
+
     return "SelectIntervalData";  
   
 }
+function SelectData() {
+
+    // getglobal strmrlz
+    // based on the value ex
+    ui.loadHtmlPage(name of the fragment);
+  
+    return "";  
+  
+}
+

@@ -16,15 +16,17 @@ export async function OnAction_ECAM(event) {
     // Call function based on the button ID
     function_name = event.source['id'].replace(/^[a-z]+|\d+$/g, ''); //removes lower case prefix and numeric suffix
   
-    ui.setMessage("Button (" + function_name + ") not working yet!");
-  
+    
     //add process message from taskpane, add a listner to taskpane and then modify taskpane based on the button id
     //create this tutorial again https://learn.microsoft.com/en-us/office/dev/add-ins/quickstarts/excel-quickstart-jquery?tabs=yeomangenerator
     console.log(function_name);
     console.log(typeof window[function_name]);
     if (typeof window[function_name] === 'function') {
-      ui.setMessage("Button clicked for (" + window[function_name]() + ")");
-    } 
+      let result = window[function_name]();
+      ui.setMessage("Button clicked for (" + result + ")");
+    } else {
+      ui.setMessage("Button (" + function_name + ") not working yet!");
+    }
     
     ui.openDialog()
   
@@ -34,7 +36,7 @@ export async function OnAction_ECAM(event) {
       await ui.showTaskPane();
       console.log("Line after showTaskPane");
   
-      ui.loadHtmlPage(button_to_form[function_name]);
+      // ui.loadHtmlPage(button_to_form[function_name]);
   
       // Additional Excel.run can be placed here if needed
       // await Excel.run(async (context) => {
