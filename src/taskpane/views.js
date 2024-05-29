@@ -15,7 +15,8 @@ function SelectData() {
 
     // getglobal strmrlz
     // based on the value ex
-    ui.loadHtmlPage(name of the fragment);
+    // ui.loadHtmlPage(name of the fragment);
+    console.log("views.SelectData !!!");
   
     return "";  
   

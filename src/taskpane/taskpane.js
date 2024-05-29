@@ -3,6 +3,7 @@
 /* eslint-disable prettier/prettier */
 
 var iTimeCols;
+var strNrmlzBillingData;
 
 // function setGlobal (var_name, value) {
 //   if (var_name in window) {
