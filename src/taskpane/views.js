@@ -2,7 +2,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable prettier/prettier */
 
-import { loadHtmlPage } from "./ui";
+import { loadHtmlPage } from "../commands/ui";
 
 export function SelectIntervalData() {
     
