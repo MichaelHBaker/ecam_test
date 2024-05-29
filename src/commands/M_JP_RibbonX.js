@@ -36,7 +36,7 @@ export async function OnAction_ECAM(event) {
       await ui.showTaskPane();
       console.log("Line after showTaskPane");
   
-      // ui.loadHtmlPage(button_to_form[function_name]);
+      ui.loadHtmlPage(button_to_form[function_name]);
   
       // Additional Excel.run can be placed here if needed
       // await Excel.run(async (context) => {
