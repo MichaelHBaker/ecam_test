@@ -2,9 +2,9 @@
 /* eslint-disable no-undef */
 /* eslint-disable prettier/prettier */
 
-import { loadHtmlPage } from "../commands/ui";
+// import { loadHtmlPage } from "../commands/ui";
 
-export function SelectIntervalData() {
+function SelectIntervalData() {
     
     setGlobal ("strNrmlzBillingData", "No");
     SelectData();
@@ -17,7 +17,7 @@ function SelectData() {
     // getglobal strmrlz
     // based on the value ex
     // ui.loadHtmlPage(name of the fragment);
-    loadHtmlPage('UserForm3InputDataRng');
+    // loadHtmlPage('UserForm3InputDataRng');
     console.log("views.SelectData !!!");
   
     return "";  
