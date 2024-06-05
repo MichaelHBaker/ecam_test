@@ -2,14 +2,15 @@
 /* eslint-disable no-undef */
 /* eslint-disable prettier/prettier */
 
+// import { loadHtmlPage } from "../commands/ui";
 
 function SelectIntervalData() {
-
+    
     setGlobal ("strNrmlzBillingData", "No");
     SelectData();
-
+    
     return "SelectIntervalData";  
-  
+    
 }
 function SelectData() {
 
