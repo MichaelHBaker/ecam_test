@@ -23,9 +23,22 @@ function setGlobal(var_name, value) {
   }
 }
 
+async function showTaskPane() {
+  try {
+      console.log("Line before Office.addin.showTaskPane()");
+      await Office.addin.showAsTaskpane();
+      console.log("Line after Office.addin.showTaskPane()");
+  } catch (error) {
+      console.error("Error showing task pane: " + error);
+      // Handle errors related to displaying the task pane here
+  }
+}
 
 Office.onReady((info) => {
   if (info.host === Office.HostType.Excel) {
+
+    console.log("Office.onReady in Taskpane run");
+    showTaskPane();
 
     // Assign event handlers and other initialization logic.
     document.getElementById("range_add_id").onclick = getAddress;
@@ -160,3 +173,52 @@ async function writeData() {
 //   return "SelectIntervalData";  
 
 // }
+
+async function loadHtmlPage(pageName) {
+  try {
+    // Fetch the HTML content
+    let response = await fetch(`/forms/${pageName}.html`);
+    if (!response.ok) {
+      throw new Error(`Failed to load the HTML page: ${response.statusText}`);
+    }
+
+    let htmlContent = await response.text();
+    console.log(`Formed address of body page: ${htmlContent}`);
+    
+    // Create a temporary container to parse the fetched HTML
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = htmlContent;
+
+    // Extract script tags and their content
+    const scripts = tempDiv.getElementsByTagName('script');
+    const scriptContents = [];
+    for (const script of scripts) {
+      scriptContents.push(script.innerText);
+      script.parentNode.removeChild(script); // Remove script tag from tempDiv
+    }
+
+    // Clear existing content and event listeners
+    const contentFrame = document.getElementById('content-frame');
+    const newContentFrame = contentFrame.cloneNode(false); // Clone without children to remove event listeners
+    contentFrame.parentNode.replaceChild(newContentFrame, contentFrame);
+
+    // Replace the body's content with the fetched HTML content (without script tags)
+    newContentFrame.innerHTML = tempDiv.innerHTML;
+
+    // Dynamically create and append script elements to the body
+    for (const scriptContent of scriptContents) {
+      const scriptElement = document.createElement('script');
+      scriptElement.type = 'text/javascript';
+      scriptElement.text = scriptContent;
+      document.body.appendChild(scriptElement); // Append to body to execute the script
+      console.log('Executed script:', scriptContent);
+    }
+
+    console.log("Loaded HTML content successfully");
+  } catch (error) {
+    console.error('Error loading HTML content:', error);
+  }
+}
+
+  
+  

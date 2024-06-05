@@ -16,6 +16,8 @@ function SelectData() {
     // getglobal strmrlz
     // based on the value ex
     // ui.loadHtmlPage(name of the fragment);
+
+    loadHtmlPage("UserForm3InputDataRng");
     console.log("views.SelectData !!!");
   
     return "";  

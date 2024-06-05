@@ -3,7 +3,7 @@
 /* eslint-disable prettier/prettier */
 
 Office.onReady(() => {
-   
+    console.log("office.onready from popup.js");
     Office.context.ui.messageParent("dialogReady");
     Office.context.ui.addHandlerAsync(Office.EventType.DialogParentMessageReceived, receiveMessageFromParent);
 })
