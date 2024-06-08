@@ -5,35 +5,11 @@
 
 var iTimeCols;
 var strNrmlzBillingData;
+let dialog;
+let message_from_parent;
 
-// function setGlobal (var_name, value) {
-//   if (var_name in window) {
-//     eval(var_name + '=' + value);
-//     console.log("setGlobal iTimeCols " + iTimeCols);
-//   } else {
-//     throw `${var_name} has not been defined as a global variable`;
-//   }
-// }
 
-function setGlobal(var_name, value) {
-  if (var_name in window) {
-    window[var_name] = value;
-    console.log(`setGlobal ${var_name} = ${window[var_name]}`);
-  } else {
-    throw new Error(`${var_name} has not been defined as a global variable`);
-  }
-}
 
-async function showTaskPane() {
-  try {
-      console.log("Line before Office.addin.showTaskPane()");
-      await Office.addin.showAsTaskpane();
-      console.log("Line after Office.addin.showTaskPane()");
-  } catch (error) {
-      console.error("Error showing task pane: " + error);
-      // Handle errors related to displaying the task pane here
-  }
-}
 
 Office.onReady((info) => {
   if (info.host === Office.HostType.Excel) {
@@ -48,6 +24,28 @@ Office.onReady((info) => {
   }
 
   });
+
+function setGlobal(var_name, value) {
+  if (var_name in window) {
+    window[var_name] = value;
+    console.log(`setGlobal ${var_name} = ${window[var_name]}`);
+  } else {
+    throw new Error(`${var_name} has not been defined as a global variable`);
+  }
+}
+  
+
+async function showTaskPane() {
+try {
+    console.log("Line before Office.addin.showTaskPane()");
+    await Office.addin.showAsTaskpane();
+    console.log("Line after Office.addin.showTaskPane()");
+} catch (error) {
+    console.error("Error showing task pane: " + error);
+    // Handle errors related to displaying the task pane here
+}
+}
+
 
 async function getAddress(event){
   // Additional Excel.run can be placed here if needed
@@ -126,12 +124,6 @@ async function writeData() {
     const weather_response = JSON.parse(jsonString); 
     console.log(weather_response);
 
-    // Send Request for SQL Insertion
-    // const sqlResult = await fetch('http://127.0.0.1:8000/insertweatherdata', {
-    //     method: 'POST', 
-    //     headers: { 'Content-Type': 'application/json'  }, 
-    //     body: JSON.stringify({ temperature: maxTempF }) 
-    // });
 
     if (!sqlResult.ok) {
         throw new Error('Error inserting into SQL');
@@ -142,38 +134,6 @@ async function writeData() {
     // Handle the error appropriately for your UI (display an error message, etc.)
   }
 }
-
-// async function fetchData() {
-//   try {
-//     const response = await fetch('/weatherdata'); 
-//     const jsonString = await response.text(); // Get raw JSON text
-//     const weatherData = JSON.parse(jsonString); 
-
-//     // Extract max temperature
-//     const maxTempF = weatherData.forecast.forecastday[0].day.maxtemp_f;
-
-//     // Using Office.js to write into Excel 
-//     await Excel.run(async (context) => {
-//       const sheet = context.workbook.worksheets.getActiveWorksheet();
-//       const range = sheet.getRange("B1"); // Example: Place max temp in cell B1
-//       range.values = maxTempF.toString();  
-
-//       await context.sync(); 
-//     });
-
-//   } catch (error) {
-//     console.error("Error fetching or processing data:", error); 
-//     // Handle the error appropriately for your UI 
-//   }
-// }
-
-// function SelectIntervalData() {
-//   // ui load
-//   // form button clicks
-//   // other business code
-//   return "SelectIntervalData";  
-
-// }
 
 async function loadHtmlPage(pageName) {
   try {
@@ -221,5 +181,87 @@ async function loadHtmlPage(pageName) {
   }
 }
 
+
+function setMessage (message) {
+    message_from_parent = message;
+}
+
+function openDialog() {
+    const dialogUrl = 'https://localhost:3000/popup.html';
   
+    Office.context.ui.displayDialogAsync(dialogUrl, { height: 10, width: 20 }, function (asyncResult) {
+        if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+            console.error("Failed to open dialog: " + asyncResult.error.message);
+            return;
+        }
   
+        dialog = asyncResult.value;
+        dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessageFromDialog);
+  
+        
+    });
+  }
+  
+function processMessageFromDialog(arg) {
+  if (arg.message === "dialogReady") {
+    dialog.messageChild(message_from_parent);
+  } else {
+      console.log("arg message:" + arg.message);
+  }
+}
+
+const button_to_form = {
+  'SelectIntervalData': 'UserForm4TimeStampCols',
+}
+
+
+function SelectIntervalData() {
+  
+  setGlobal ("strNrmlzBillingData", "No");
+  SelectData();
+  
+  return "SelectIntervalData";  
+  
+}
+function SelectData() {
+
+  // getglobal strmrlz
+  // based on the value ex
+  // ui.loadHtmlPage(name of the fragment);
+
+
+  loadHtmlPage("UserForm4TimeStampCols");
+  // loadHtmlPage("UserForm3InputDataRng");
+  console.log("views.SelectData !!!");
+
+  return "";  
+
+}
+
+async function OnAction_ECAM(event) {
+  var function_name;
+
+  console.log("Got to OnAction_ECAM");
+
+  // Call function based on the button ID
+  function_name = event.source['id'].replace(/^[a-z]+|\d+$/g, ''); //removes lower case prefix and numeric suffix
+  
+  //add process message from taskpane, add a listner to taskpane and then modify taskpane based on the button id
+  //create this tutorial again https://learn.microsoft.com/en-us/office/dev/add-ins/quickstarts/excel-quickstart-jquery?tabs=yeomangenerator
+  console.log(function_name);
+  console.log(typeof window[function_name]);
+  if (typeof window[function_name] === 'function') {
+  let result = window[function_name]();
+  setMessage("Button clicked for (" + result + ")");
+  } else {
+  setMessage("Button (" + function_name + ") not working yet!");
+  }
+  
+  openDialog()
+
+
+  event.completed();
+}
+  
+Office.actions.associate("OnAction_ECAM", ribbon.OnAction_ECAM);
+
