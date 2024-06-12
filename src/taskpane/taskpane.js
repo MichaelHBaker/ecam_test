@@ -3,18 +3,13 @@
 /* eslint-disable prettier/prettier */
 
 
-var iTimeCols;
-var strNrmlzBillingData;
-let dialog;
-let message_from_parent;
 
-
-
+import state from './state.js';
 
 Office.onReady((info) => {
   if (info.host === Office.HostType.Excel) {
 
-    console.log("Office.onReady in Taskpane run");
+    // console.log("Office.onReady in Taskpane run");
     showTaskPane();
 
     // Assign event handlers and other initialization logic.
@@ -25,15 +20,25 @@ Office.onReady((info) => {
 
   });
 
-function setGlobal(var_name, value) {
-  if (var_name in window) {
-    window[var_name] = value;
-    console.log(`setGlobal ${var_name} = ${window[var_name]}`);
-  } else {
-    throw new Error(`${var_name} has not been defined as a global variable`);
-  }
+// export function setGlobal(var_name, value) {
+//   if (var_name in window) {
+//     window[var_name] = value;
+//     console.log(`setGlobal ${var_name} = ${window[var_name]}`);
+//   } else {
+//     throw new Error(`${var_name} has not been defined as a global variable`);
+//   }
+// }
+
+function setGlobal(key, value) {
+  state.set(key, value);
 }
-  
+function getGlobal(key, value) {
+  state.get(key, value);
+}
+
+window.setGlobal = setGlobal;
+window.getGlobal = getGlobal;
+
 
 async function showTaskPane() {
 try {
@@ -182,86 +187,35 @@ async function loadHtmlPage(pageName) {
 }
 
 
-function setMessage (message) {
-    message_from_parent = message;
-}
 
-function openDialog() {
-    const dialogUrl = 'https://localhost:3000/popup.html';
-  
-    Office.context.ui.displayDialogAsync(dialogUrl, { height: 10, width: 20 }, function (asyncResult) {
-        if (asyncResult.status === Office.AsyncResultStatus.Failed) {
-            console.error("Failed to open dialog: " + asyncResult.error.message);
-            return;
-        }
-  
-        dialog = asyncResult.value;
-        dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessageFromDialog);
-  
-        
-    });
-  }
-  
-function processMessageFromDialog(arg) {
-  if (arg.message === "dialogReady") {
-    dialog.messageChild(message_from_parent);
-  } else {
-      console.log("arg message:" + arg.message);
-  }
-}
-
-const button_to_form = {
-  'SelectIntervalData': 'UserForm4TimeStampCols',
-}
-
-
+// Define your functions
 function SelectIntervalData() {
+
+  console.log("SelectIntervalData called");
   
-  setGlobal ("strNrmlzBillingData", "No");
+  state.set("strNrmlzBillingData", "No");
   SelectData();
   
   return "SelectIntervalData";  
   
 }
+
+// Create a map of button IDs to functions
+const functionMap = {
+  'SelectIntervalData': SelectIntervalData,
+  // Add all other button ID-function pairs here
+};
+
+export default functionMap;
+
+
+
 function SelectData() {
-
-  // getglobal strmrlz
-  // based on the value ex
-  // ui.loadHtmlPage(name of the fragment);
-
-
+  
   loadHtmlPage("UserForm4TimeStampCols");
-  // loadHtmlPage("UserForm3InputDataRng");
-  console.log("views.SelectData !!!");
+  loadHtmlPage("UserForm3InputDataRng");
+  console.log("SelectData !!!");
 
   return "";  
 
 }
-
-async function OnAction_ECAM(event) {
-  var function_name;
-
-  console.log("Got to OnAction_ECAM");
-
-  // Call function based on the button ID
-  function_name = event.source['id'].replace(/^[a-z]+|\d+$/g, ''); //removes lower case prefix and numeric suffix
-  
-  //add process message from taskpane, add a listner to taskpane and then modify taskpane based on the button id
-  //create this tutorial again https://learn.microsoft.com/en-us/office/dev/add-ins/quickstarts/excel-quickstart-jquery?tabs=yeomangenerator
-  console.log(function_name);
-  console.log(typeof window[function_name]);
-  if (typeof window[function_name] === 'function') {
-  let result = window[function_name]();
-  setMessage("Button clicked for (" + result + ")");
-  } else {
-  setMessage("Button (" + function_name + ") not working yet!");
-  }
-  
-  openDialog()
-
-
-  event.completed();
-}
-  
-Office.actions.associate("OnAction_ECAM", ribbon.OnAction_ECAM);
-

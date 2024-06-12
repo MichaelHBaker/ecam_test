@@ -10,6 +10,7 @@ Office.onReady(() => {
 
 function receiveMessageFromParent(arg) {
     const message = arg.message;
+    console.log(message);
     document.getElementById("messageText").innerText =  message;
 
     // Process the message...
