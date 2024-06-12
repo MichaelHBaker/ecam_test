@@ -22,6 +22,7 @@ async function OnAction_ECAM(event) {
   console.log("Got to OnAction_ECAM");
   console.log(functionName);
 
+
   const functionToCall = functionMap[functionName];
   if (typeof functionToCall === 'function') {
     let result = functionToCall();
@@ -35,8 +36,7 @@ async function OnAction_ECAM(event) {
   event.completed();
 }
 
-// Ensure functions available globally
-window.OnAction_ECAM = OnAction_ECAM;
+Office.actions.associate("OnAction_ECAM", OnAction_ECAM);
 
 function setMessage (message) {
   message_from_parent = message;

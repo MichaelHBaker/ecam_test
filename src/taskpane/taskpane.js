@@ -10,7 +10,7 @@ Office.onReady((info) => {
   if (info.host === Office.HostType.Excel) {
 
     // console.log("Office.onReady in Taskpane run");
-    showTaskPane();
+    // showTaskPane();
 
     // Assign event handlers and other initialization logic.
     document.getElementById("range_add_id").onclick = getAddress;
@@ -20,14 +20,6 @@ Office.onReady((info) => {
 
   });
 
-// export function setGlobal(var_name, value) {
-//   if (var_name in window) {
-//     window[var_name] = value;
-//     console.log(`setGlobal ${var_name} = ${window[var_name]}`);
-//   } else {
-//     throw new Error(`${var_name} has not been defined as a global variable`);
-//   }
-// }
 
 function setGlobal(key, value) {
   state.set(key, value);
@@ -38,7 +30,6 @@ function getGlobal(key, value) {
 
 window.setGlobal = setGlobal;
 window.getGlobal = getGlobal;
-
 
 async function showTaskPane() {
 try {
@@ -191,6 +182,8 @@ async function loadHtmlPage(pageName) {
 // Define your functions
 function SelectIntervalData() {
 
+  showTaskPane();
+
   console.log("SelectIntervalData called");
   
   state.set("strNrmlzBillingData", "No");
@@ -209,13 +202,25 @@ const functionMap = {
 export default functionMap;
 
 
+// Function to wait for submit button click
+function waitForSubmit(buttonId) {
+  return new Promise((resolve) => {
+    const button = document.getElementById(buttonId);
+    button.addEventListener('click', () => {
+      resolve();
+    }, { once: true });
+  });
+}
 
-function SelectData() {
+async function SelectData() {
+  await loadHtmlPage("UserForm4TimeStampCols");
   
-  loadHtmlPage("UserForm4TimeStampCols");
-  loadHtmlPage("UserForm3InputDataRng");
+  console.log("Waiting for submit...");
+  await waitForSubmit('submit-button-id'); 
+
+  await loadHtmlPage("UserForm3InputDataRng");
   console.log("SelectData !!!");
 
   return "";  
-
 }
+
