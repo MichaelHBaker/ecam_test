@@ -9,8 +9,7 @@ import state from './state.js';
 Office.onReady((info) => {
   if (info.host === Office.HostType.Excel) {
 
-    // console.log("Office.onReady in Taskpane run");
-    // showTaskPane();
+    console.log("Office.onReady in Taskpane run");
 
     // Assign event handlers and other initialization logic.
     document.getElementById("range_add_id").onclick = getAddress;
@@ -177,6 +176,47 @@ async function loadHtmlPage(pageName) {
   }
 }
 
+async function handleFormSubmission() {
+  const submitButton = document.getElementById("submit-button-id");
+  const cancelButton = document.getElementById("cancel-button-id");
+
+  try {
+    const clickedButton = await Promise.race([
+      new Promise(resolve => submitButton.addEventListener("click", () => resolve(submitButton))),
+      new Promise(resolve => cancelButton.addEventListener("click", () => resolve(cancelButton))),
+    ]);
+
+    // if (clickedButton === submitButton) {
+    //   // Handle form submission logic here
+    //   console.log("Form submitted!");
+    //   // ... your submission code
+    // } else {
+    //   // Handle cancellation logic here
+    //   console.log("Form cancelled.");
+    //   // ... your cancellation code (e.g., clear form, navigate away)
+    // }
+  } catch (error) {
+    console.error("Error handling button clicks:", error);
+    // Handle potential errors (e.g., button not found)
+  }
+}
+
+
+// function waitForSubmit(buttonId) {
+//   return new Promise((resolve) => {
+//     const button = document.getElementById(buttonId);
+//     button.addEventListener('click', () => {
+//       resolve();
+//     }, { once: true });
+//   });
+// }
+// Create a map of button IDs to functions
+const functionMap = {
+  'SelectIntervalData': SelectIntervalData,
+  // Add all other button ID-function pairs here
+};
+
+export default functionMap;
 
 
 // Define your functions
@@ -193,33 +233,21 @@ function SelectIntervalData() {
   
 }
 
-// Create a map of button IDs to functions
-const functionMap = {
-  'SelectIntervalData': SelectIntervalData,
-  // Add all other button ID-function pairs here
-};
-
-export default functionMap;
 
 
-// Function to wait for submit button click
-function waitForSubmit(buttonId) {
-  return new Promise((resolve) => {
-    const button = document.getElementById(buttonId);
-    button.addEventListener('click', () => {
-      resolve();
-    }, { once: true });
-  });
-}
 
-async function SelectData() {
-  await loadHtmlPage("UserForm4TimeStampCols");
-  
-  console.log("Waiting for submit...");
-  await waitForSubmit('submit-button-id'); 
-
-  await loadHtmlPage("UserForm3InputDataRng");
-  console.log("SelectData !!!");
+async function SelectData(strAutomate='Manual') {
+  let strNrmlzBillingData = state.get("strNrmlzBillingData");
+  if (strAutomate != "Automate") {
+    if (strNrmlzBillingData == "No") {
+      await loadHtmlPage("UserForm4TimeStampCols");
+      // await waitForSubmit('submit-button-id'); 
+      await handleFormSubmission();
+      // If iTimeCols = 5 Then GoTo FormTerminated
+      await loadHtmlPage("UserForm3InputDataRng");
+      console.log("SelectData !!!");
+    }
+  }
 
   return "";  
 }
