@@ -2,8 +2,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable prettier/prettier */
 
-
-
 import state from './state.js';
 
 Office.onReady((info) => {
@@ -11,45 +9,12 @@ Office.onReady((info) => {
 
     console.log("Office.onReady in Taskpane run");
 
-    // Assign event handlers and other initialization logic.
-    document.getElementById("range_add_id").onclick = getAddress;
-    document.getElementById("fetchBtn").onclick = fetchData;
-    document.getElementById("writeBtn").onclick = writeData;
-  }
+ }
 
   });
 
-
-function setGlobal(key, value) {
-  state.set(key, value);
-}
-function getGlobal(key, value) {
-  state.get(key, value);
-}
-
-window.setGlobal = setGlobal;
-window.getGlobal = getGlobal;
-
-async function showTaskPane() {
-try {
-    console.log("Line before Office.addin.showTaskPane()");
-    await Office.addin.showAsTaskpane();
-    console.log("Line after Office.addin.showTaskPane()");
-} catch (error) {
-    console.error("Error showing task pane: " + error);
-    // Handle errors related to displaying the task pane here
-}
-}
-
-async function closeTaskPane() {
-  try {
-      await Office.addin.closeTaskPane();
-      console.log("Line after Office.addin.closeTaskPane()");
-  } catch (error) {
-      console.error("Error closing task pane: " + error);
-      // Handle errors related to displaying the task pane here
-  }
-  }
+window.stateSet = state.set;
+window.stateGet = state.get;
   
 async function getAddress(event){
   // Additional Excel.run can be placed here if needed
@@ -148,7 +113,7 @@ async function loadHtmlPage(pageName) {
     }
 
     let htmlContent = await response.text();
-    console.log(`Formed address of body page: ${htmlContent}`);
+    // console.log(`Formed address of body page: ${htmlContent}`);
     
     // Create a temporary container to parse the fetched HTML
     const tempDiv = document.createElement('div');
@@ -176,7 +141,7 @@ async function loadHtmlPage(pageName) {
       scriptElement.type = 'text/javascript';
       scriptElement.text = scriptContent;
       document.body.appendChild(scriptElement); // Append to body to execute the script
-      console.log('Executed script:', scriptContent);
+      // console.log('Executed script:', scriptContent);
     }
 
     console.log("Loaded HTML content successfully");
@@ -186,8 +151,8 @@ async function loadHtmlPage(pageName) {
 }
 
 async function handleFormSubmission() {
-  const submitButton = document.getElementById("submit-button-id");
-  const cancelButton = document.getElementById("cancel-button-id");
+  const submitButton = document.getElementById("submit_button_id");
+  const cancelButton = document.getElementById("cancel_button_id");
 
   try {
     const clickedButton = await Promise.race([
@@ -195,15 +160,8 @@ async function handleFormSubmission() {
       new Promise(resolve => cancelButton.addEventListener("click", () => resolve(cancelButton))),
     ]);
 
-    // if (clickedButton === submitButton) {
-    //   // Handle form submission logic here
-    //   console.log("Form submitted!");
-    //   // ... your submission code
-    // } else {
-    //   // Handle cancellation logic here
-    //   console.log("Form cancelled.");
-    //   // ... your cancellation code (e.g., clear form, navigate away)
-    // }
+    // look for id attribute of clickebutton
+    console.log("clicked button value:" + clickedButton + " type of:" + typeof clickedButton)
   } catch (error) {
     console.error("Error handling button clicks:", error);
     // Handle potential errors (e.g., button not found)
@@ -231,7 +189,7 @@ export default functionMap;
 // Define your functions
 function SelectIntervalData() {
 
-  showTaskPane();
+  Office.addin.showAsTaskpane();
 
   console.log("SelectIntervalData called");
   
@@ -253,7 +211,7 @@ async function SelectData(strAutomate='Manual') {
       // await waitForSubmit('submit-button-id'); 
       await handleFormSubmission();
       // If iTimeCols = 5 Then GoTo FormTerminated
-      if (iTimeCols != 5) {
+      if (state.get("iTimeCols") != 5) {
         await loadHtmlPage("UserForm3InputDataRng");
 
         // what do we do if cancel
@@ -261,7 +219,7 @@ async function SelectData(strAutomate='Manual') {
         console.log("SelectData !!!");
       }
       else {
-        closeTaskPane();
+        Office.addin.hide();
       }
       }
     }

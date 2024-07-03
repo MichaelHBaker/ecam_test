@@ -1,4 +1,4 @@
-<script> // TODO Add id so we can execute just this script after it is inserted with innerhtml, via appendchild or eval()
+<script> 
     console.log('HTML fragment loaded, UserForm4TimeStampCols script executed');
 
     function submitForm() {
@@ -11,33 +11,29 @@
                 break;
             }
         }
-        window.setGlobal ('iTimeCols', selectedValue);
+        window.stateSet ('iTimeCols', Number(selectedValue));
         console.log("Selected option: " + selectedValue);
+        console.log(typeof selectedValue);
     }
     
     function cancelForm() {
         console.log('loaded cancelForm function');
-        selectedValue = 5
-        window.setGlobal ('iTimeCols', selectedValue);
+        selectedValue = 5;
+        window.stateSet ('iTimeCols', selectedValue);
         console.log("Selected option: " + selectedValue);
     }
-
 </script>
 
 <h4>Time Stamp Definition</h4>
-<p>
-    Are the Time Stamps in 1 column or 2 columns?
-    (If 2 columns, it is assumed that the Date is in the first column and the time is in the second column)
-</p>
+<p>Are the Time Stamps in 1 column or 2 columns?</p>
+<p>(If 2 columns, it is assumed that the Date is in the first column and the time is in the second column)</p>
+
 <form>
-
-    <input type="radio" id="one_column" name="time_stamp_cols" value="One Colum">
-    <label for="html">One Column</label><br>
-
-    <input type="radio" id="two" name="time_stamp_cols" value="Two">
-    <label for="css">Two</label><br>
-
-    <input type="button" id="submit-button-id" onclick="submitForm()" value="Submit">
-    <input type="button" id="cancel-button-id" onclick="cancelForm()" value="Cancel">
+    <input type="radio" id="one_column_id" name="time_stamp_cols" value="1">
+    <label for="one_column_id">One Column</label><br>
+    <input type="radio" id="two_column_id" name="time_stamp_cols" value="2">
+    <label for="two_column_id">Two Column</label><br>
+    <input type="button" id="submit_button_id" onclick="submitForm()" value="Submit">
+    <input type="button" id="cancel_button_id" onclick="cancelForm()" value="Cancel">
 </form> 
 
