@@ -1,1 +1,41 @@
-<h1>Hello world</h1>
+
+<script> // TODO Add id so we can execute just this script after it is inserted with innerhtml, via appendchild or eval()
+    console.log('HTML fragment loaded, UserForm3InputDataRng script executed');
+
+    function submitForm() {
+        console.log('loaded submitForm function');
+        const radios = document.getElementsByName('time_stamp_cols');
+        let selectedValue;
+        for (const radio of radios) {
+            if (radio.checked) {
+                selectedValue = radio.value;
+                break;
+            }
+        }
+        window.setGlobal ('iTimeCols', selectedValue);
+        console.log("Selected option: " + selectedValue);
+    }
+
+    function cancelForm() {
+        console.log('loaded cancelForm function');
+        window.setGlobal ('iTimeCols', 5);
+        console.log("Selected option: 5 for Cancel");
+    }
+
+</script>
+
+<h4>Input Data Range</h4>
+<p>
+    Select the range of cells with your data. 
+
+    You should select the full range (both rows and columns), including the headers (Point Names), and all the records (time stamps) you want to include.
+    
+    The Point Names will be assumed to be in the first row of the selected range.
+    </p>
+<form>
+    <label for="data-range-id"></label>
+    <input type="text" id="data-range-id" name="data-range">
+
+    <input type="button" id="submit-button-id" onclick="submitForm()" value="Submit">
+    <input type="button" id="cancel-button-id" onclick="cancelForm()" value="Cancel">
+</form> 

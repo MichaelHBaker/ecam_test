@@ -41,7 +41,16 @@ try {
 }
 }
 
-
+async function closeTaskPane() {
+  try {
+      await Office.addin.closeTaskPane();
+      console.log("Line after Office.addin.closeTaskPane()");
+  } catch (error) {
+      console.error("Error closing task pane: " + error);
+      // Handle errors related to displaying the task pane here
+  }
+  }
+  
 async function getAddress(event){
   // Additional Excel.run can be placed here if needed
   try {
@@ -244,11 +253,19 @@ async function SelectData(strAutomate='Manual') {
       // await waitForSubmit('submit-button-id'); 
       await handleFormSubmission();
       // If iTimeCols = 5 Then GoTo FormTerminated
-      await loadHtmlPage("UserForm3InputDataRng");
-      console.log("SelectData !!!");
+      if (iTimeCols != 5) {
+        await loadHtmlPage("UserForm3InputDataRng");
+
+        // what do we do if cancel
+
+        console.log("SelectData !!!");
+      }
+      else {
+        closeTaskPane();
+      }
+      }
     }
+    return "";  
   }
 
-  return "";  
-}
 

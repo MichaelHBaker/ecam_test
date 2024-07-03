@@ -1,5 +1,5 @@
 <script> // TODO Add id so we can execute just this script after it is inserted with innerhtml, via appendchild or eval()
-    console.log('HTML fragment loaded, script executed');
+    console.log('HTML fragment loaded, UserForm4TimeStampCols script executed');
 
     function submitForm() {
         console.log('loaded submitForm function');
@@ -14,10 +14,12 @@
         window.setGlobal ('iTimeCols', selectedValue);
         console.log("Selected option: " + selectedValue);
     }
-
+    
     function cancelForm() {
-        console.log('Cancel Clicke');
-
+        console.log('loaded cancelForm function');
+        selectedValue = 5
+        window.setGlobal ('iTimeCols', selectedValue);
+        console.log("Selected option: " + selectedValue);
     }
 
 </script>
@@ -36,7 +38,6 @@
     <label for="css">Two</label><br>
 
     <input type="button" id="submit-button-id" onclick="submitForm()" value="Submit">
-    <input type="button" id="cancel-button-id" onclick="console.log('Hello from alert')" value="Cancel">
-    <!-- <input type="button" onclick="cancelForm()" value="Cancel"> -->
+    <input type="button" id="cancel-button-id" onclick="cancelForm()" value="Cancel">
 </form> 
 
