@@ -1,24 +1,36 @@
-<script> 
-    console.log('HTML fragment loaded, UserForm3InputDataRng script executed');
+<script>
+    function clickDataRange() {
+        Excel.run(async context => {
+            const rangeDialog = context.workbook.rangeSelectionDialog;
+            rangeDialog.prompt("Select Data Range", true /* Restrict to single range */);
 
-    function submitForm() {
-        console.log('loaded submitForm function');
-        const radios = document.getElementsByName('time_stamp_cols');
-        let selectedValue;
-        for (const radio of radios) {
-            if (radio.checked) {
-                selectedValue = radio.value;
-                break;
-            }
-        }
-        window.stateSet ('iTimeCols', selectedValue);
-        console.log("Selected option: " + selectedValue);
+            rangeDialog.onClose = async (rangeDialogResult) => {
+                if (rangeDialogResult.status === "Succeeded") {
+                    const selectedRange = rangeDialogResult.values[0];
+                    
+                    // Check if selection is a single range (optional)
+                    if (selectedRange.length === 1) {
+                        selectedRange.load("address"); // Get the range address
+                        await context.sync();
+                        
+                        document.getElementById("data_range_id").value = selectedRange.address;
+                        document.getElementById("submit_button_id").disabled = false;
+                    } else {
+                        // Handle multiple ranges or incorrect selections
+                        console.log("Please select a single range.");
+                        document.getElementById("data_range_id").value = ""; 
+                    }
+                }
+            };
+        });
     }
 
-    function cancelForm() {
-        console.log('loaded cancelForm function');
-        window.stateSet ('iTimeCols', 5);
-        console.log("Selected option: 5 for Cancel");
+    function submitForm() {
+        console.log('loaded submitForm function Form3');
+        const dataRange = document.getElementById("data_range_id").value;
+        console.log("Selected range:", dataRange);
+
+        // ... (further processing of dataRange)
     }
 </script>
 
@@ -30,7 +42,7 @@ You should select the full range (both rows and columns), including the headers 
 <p>The Point Names will be assumed to be in the first row of the selected range.</p>
 
 <form>
-    <input type="text" id="data_range_id" name="data_range">
-    <input type="button" id="submit_button_id" onclick="submitForm()" value="Submit">
-    <input type="button" id="cancel_button_id" onclick="cancelForm()" value="Cancel">
-</form> 
+    <input type="text" id="data_range_id" onclick="clickDataRange()">
+    <input type="button" id="submit_button_id" onclick="submitForm()" value="Submit" disabled>
+    <input type="button" id="cancel_button_id" value="Cancel">
+</form>

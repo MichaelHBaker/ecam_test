@@ -1,5 +1,4 @@
 <script> 
-    console.log('HTML fragment loaded, UserForm4TimeStampCols script executed');
 
     function submitForm() {
         console.log('loaded submitForm function');
@@ -13,15 +12,10 @@
         }
         window.stateSet ('iTimeCols', Number(selectedValue));
         console.log("Selected option: " + selectedValue);
-        console.log(typeof selectedValue);
     }
     
-    function cancelForm() {
-        console.log('loaded cancelForm function');
-        selectedValue = 5;
-        window.stateSet ('iTimeCols', selectedValue);
-        console.log("Selected option: " + selectedValue);
-    }
+    // function cancelForm() {
+    // }
 </script>
 
 <h4>Time Stamp Definition</h4>
@@ -34,6 +28,7 @@
     <input type="radio" id="two_column_id" name="time_stamp_cols" value="2">
     <label for="two_column_id">Two Column</label><br>
     <input type="button" id="submit_button_id" onclick="submitForm()" value="Submit">
-    <input type="button" id="cancel_button_id" onclick="cancelForm()" value="Cancel">
+    <!-- <input type="button" id="cancel_button_id" onclick="cancelForm()" value="Cancel"> -->
+    <input type="button" id="cancel_button_id" value="Cancel">
 </form> 
 

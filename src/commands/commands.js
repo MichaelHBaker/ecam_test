@@ -15,32 +15,34 @@ Office.onReady((info) => {
 
 });
 
-async function OnAction_ECAM(event) {
+function OnAction_ECAM(event) {
   const buttonId = event.source.id;
   const functionName = buttonId.replace(/^[a-z]+|\d+$/g, ''); // removes lower case prefix and numeric suffix
 
   console.log("Got to OnAction_ECAM");
   console.log(functionName);
 
-
   const functionToCall = functionMap[functionName];
-  if (typeof functionToCall === 'function') {
-    let result = functionToCall();
-    setMessage("Button clicked for (" + result + ")");
-  } else {
-    setMessage("Button (" + functionName + ") not working yet!");
+
+  try {
+    if (typeof functionToCall !== 'function') {
+      message_from_parent = "Button (" + functionName + ") not working yet!";
+    } else {
+      functionToCall();
+    }
+  } catch (error) {
+    console.error("Error in OnAction_ECAM:", error);
+    message_from_parent = `Error: ${error.message}`;
   }
 
-  openDialog();
+  if (message_from_parent) {
+    openDialog(message_from_parent);
+  }
 
   event.completed();
 }
 
 Office.actions.associate("OnAction_ECAM", OnAction_ECAM);
-
-function setMessage (message) {
-  message_from_parent = message;
-}
 
 function openDialog() {
   const dialogUrl = 'https://localhost:3000/popup.html';

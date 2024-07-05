@@ -4,18 +4,14 @@
 
 import state from './state.js';
 
-Office.onReady((info) => {
-  if (info.host === Office.HostType.Excel) {
-
-    console.log("Office.onReady in Taskpane run");
-
- }
-
-  });
-
 window.stateSet = state.set;
 window.stateGet = state.get;
   
+Office.onReady(info => {
+  if (info.host === Office.HostType.Excel) {
+    console.log("Host is Excel");
+  }});
+
 async function getAddress(event){
   // Additional Excel.run can be placed here if needed
   try {
@@ -150,33 +146,27 @@ async function loadHtmlPage(pageName) {
   }
 }
 
-async function handleFormSubmission() {
-  const submitButton = document.getElementById("submit_button_id");
-  const cancelButton = document.getElementById("cancel_button_id");
+async function waitForButtonClick() {
+  return new Promise((resolve) => {
+    const submitButton = document.getElementById("submit_button_id");
+    const cancelButton = document.getElementById("cancel_button_id");
 
-  try {
-    const clickedButton = await Promise.race([
-      new Promise(resolve => submitButton.addEventListener("click", () => resolve(submitButton))),
-      new Promise(resolve => cancelButton.addEventListener("click", () => resolve(cancelButton))),
-    ]);
+    function handleClick(event) {
+      cleanup();
+      resolve(event.target === submitButton); 
+    }
 
-    // look for id attribute of clickebutton
-    console.log("clicked button value:" + clickedButton + " type of:" + typeof clickedButton)
-  } catch (error) {
-    console.error("Error handling button clicks:", error);
-    // Handle potential errors (e.g., button not found)
-  }
+    function cleanup() {
+      submitButton.removeEventListener("click", handleClick);
+      cancelButton.removeEventListener("click", handleClick);
+    }
+
+    submitButton.addEventListener("click", handleClick);
+    cancelButton.addEventListener("click", handleClick);
+  });
 }
 
 
-// function waitForSubmit(buttonId) {
-//   return new Promise((resolve) => {
-//     const button = document.getElementById(buttonId);
-//     button.addEventListener('click', () => {
-//       resolve();
-//     }, { once: true });
-//   });
-// }
 // Create a map of button IDs to functions
 const functionMap = {
   'SelectIntervalData': SelectIntervalData,
@@ -200,30 +190,39 @@ function SelectIntervalData() {
   
 }
 
-
-
-
-async function SelectData(strAutomate='Manual') {
+async function SelectData(strAutomate = 'Manual') {
   let strNrmlzBillingData = state.get("strNrmlzBillingData");
   if (strAutomate != "Automate") {
-    if (strNrmlzBillingData == "No") {
-      await loadHtmlPage("UserForm4TimeStampCols");
-      // await waitForSubmit('submit-button-id'); 
-      await handleFormSubmission();
-      // If iTimeCols = 5 Then GoTo FormTerminated
-      if (state.get("iTimeCols") != 5) {
-        await loadHtmlPage("UserForm3InputDataRng");
-
-        // what do we do if cancel
-
-        console.log("SelectData !!!");
+    try {
+      if (strNrmlzBillingData == "No") {
+        await loadHtmlPage("UserForm4TimeStampCols");
+        const firstSubmitButton = await waitForButtonClick();       
+        if (firstSubmitButton) {
+          await loadHtmlPage("UserForm3InputDataRng");
+          const secondSubmitButton = await waitForButtonClick();
+          if (secondSubmitButton) {
+            const dataRange = document.getElementsByName('data_range_id');
+            console.log("data range" + dataRange);
+            // Process the data range as needed
+          }
+        }
+      } else if (strNrmlzBillingData == "Yes") {
+        console.log("Manual process with normalized billing data initiated");
+        // Add specific logic for this case here, e.g., loading different forms
       }
-      else {
-        Office.addin.hide();
-      }
-      }
+    } catch (error) {
+      console.error("Error in SelectData:", error);
+    } finally {
+      // Always hide the add-in after non-automated processes, regardless of outcome
+      Office.addin.hide();
     }
-    return "";  
+  } else {
+    if (strNrmlzBillingData == "No") {
+      console.log("Automated process without normalized billing data initiated");
+      // Add specific logic for this case here
+    } else if (strNrmlzBillingData == "Yes") {
+      console.log("Automated process with normalized billing data initiated");
+      // Add specific logic for this case here
+    }
   }
-
-
+}
