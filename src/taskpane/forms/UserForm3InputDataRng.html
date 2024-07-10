@@ -1,29 +1,40 @@
 <script>
-    function clickDataRange() {
-        Excel.run(async context => {
+    async function clickDataRange() {
+    try {
+        await Office.onReady(); // Wait for Office.js to be ready
+
+        await Excel.run(async context => {
             const rangeDialog = context.workbook.rangeSelectionDialog;
             rangeDialog.prompt("Select Data Range", true /* Restrict to single range */);
 
             rangeDialog.onClose = async (rangeDialogResult) => {
                 if (rangeDialogResult.status === "Succeeded") {
                     const selectedRange = rangeDialogResult.values[0];
-                    
-                    // Check if selection is a single range (optional)
+
                     if (selectedRange.length === 1) {
-                        selectedRange.load("address"); // Get the range address
+                        selectedRange.load("address");
                         await context.sync();
-                        
                         document.getElementById("data_range_id").value = selectedRange.address;
                         document.getElementById("submit_button_id").disabled = false;
                     } else {
-                        // Handle multiple ranges or incorrect selections
-                        console.log("Please select a single range.");
-                        document.getElementById("data_range_id").value = ""; 
+                        // Improved error message
+                        document.getElementById("data_range_id").value = "Invalid Selection. Please select a single range.";
+                        document.getElementById("submit_button_id").disabled = true;
                     }
+                } else if (rangeDialogResult.status === "Failed") {
+                    // Handle cancellation or errors during selection
+                    document.getElementById("data_range_id").value = "Selection Cancelled or Error";
+                    document.getElementById("submit_button_id").disabled = true;
                 }
             };
         });
+    } catch (error) {
+        // General error handling
+        console.error("Error in clickDataRange:", error);
+        document.getElementById("data_range_id").value = "An Error Occurred";
+        document.getElementById("submit_button_id").disabled = true;
     }
+}
 
     function submitForm() {
         console.log('loaded submitForm function Form3');
