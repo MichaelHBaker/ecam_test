@@ -7,10 +7,12 @@ import state from './state.js';
 window.stateSet = state.set;
 window.stateGet = state.get;
   
-Office.onReady(info => {
+Office.onReady(info => { 
   if (info.host === Office.HostType.Excel) {
     console.log("Host is Excel");
-  }});
+  }
+  console.log ("end of office onready in taskpane.js");
+});
 
 async function getAddress(event){
   // Additional Excel.run can be placed here if needed
@@ -38,7 +40,7 @@ async function changeHandler(event){
     let range = context.workbook.getSelectedRange();
     range.load("address");
     await context.sync();
-    document.getElementById("range_add_id").value = range.address;
+    document.getElementById("range_address_id").value = range.address;
 
     console.log(`The address of the selected range is "${range.address}"`);
 

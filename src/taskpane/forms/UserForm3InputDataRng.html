@@ -1,44 +1,54 @@
 <script>
     async function clickDataRange() {
-    try {
+
         await Office.onReady(); // Wait for Office.js to be ready
-
         await Excel.run(async context => {
-            const rangeDialog = context.workbook.rangeSelectionDialog;
-            rangeDialog.prompt("Select Data Range", true /* Restrict to single range */);
-
-            rangeDialog.onClose = async (rangeDialogResult) => {
-                if (rangeDialogResult.status === "Succeeded") {
-                    const selectedRange = rangeDialogResult.values[0];
-
-                    if (selectedRange.length === 1) {
-                        selectedRange.load("address");
-                        await context.sync();
-                        document.getElementById("data_range_id").value = selectedRange.address;
-                        document.getElementById("submit_button_id").disabled = false;
-                    } else {
-                        // Improved error message
-                        document.getElementById("data_range_id").value = "Invalid Selection. Please select a single range.";
-                        document.getElementById("submit_button_id").disabled = true;
-                    }
-                } else if (rangeDialogResult.status === "Failed") {
-                    // Handle cancellation or errors during selection
-                    document.getElementById("data_range_id").value = "Selection Cancelled or Error";
-                    document.getElementById("submit_button_id").disabled = true;
-                }
-            };
+            await getAddress(null);
+            
         });
-    } catch (error) {
-        // General error handling
-        console.error("Error in clickDataRange:", error);
-        document.getElementById("data_range_id").value = "An Error Occurred";
-        document.getElementById("submit_button_id").disabled = true;
-    }
+    // try {
+    //     await Office.onReady(); // Wait for Office.js to be ready
+
+    //     await Excel.run(async context => {
+    //         const rangeDialog = context.workbook.;
+    //         console.log("context:" + Object.getOwnPropertyNames(context));
+    //         console.log("context.workbook:" + Object.getOwnPropertyNames(context.workbook.));
+    //         console.log("rangeDialog:" + rangeDialog);
+
+    //         rangeDialog.prompt("Select Data Range", true /* Restrict to single range */);
+
+    //         rangeDialog.onClose = async (rangeDialogResult) => {
+    //             if (rangeDialogResult.status === "Succeeded") {
+    //                 const selectedRange = rangeDialogResult.values[0];
+
+    //                 if (selectedRange.length === 1) {
+    //                     selectedRange.load("address");
+    //                     await context.sync();
+    //                     document.getElementById("data_range_id").value = selectedRange.address;
+    //                     document.getElementById("submit_button_id").disabled = false;
+    //                 } else {
+    //                     // Improved error message
+    //                     document.getElementById("data_range_id").value = "Invalid Selection. Please select a single range.";
+    //                     document.getElementById("submit_button_id").disabled = true;
+    //                 }
+    //             } else if (rangeDialogResult.status === "Failed") {
+    //                 // Handle cancellation or errors during selection
+    //                 document.getElementById("data_range_id").value = "Selection Cancelled or Error";
+    //                 document.getElementById("submit_button_id").disabled = true;
+    //             }
+    //         };
+    //     });
+    // } catch (error) {
+    //     // General error handling
+    //     console.error("Error in clickDataRange:", error);
+    //     document.getElementById("data_range_id").value = "An Error Occurred";
+    //     document.getElementById("submit_button_id").disabled = true;
+    // }
 }
 
     function submitForm() {
         console.log('loaded submitForm function Form3');
-        const dataRange = document.getElementById("data_range_id").value;
+        const dataRange = document.getElementById("range_address_id").value;
         console.log("Selected range:", dataRange);
 
         // ... (further processing of dataRange)
@@ -53,7 +63,7 @@ You should select the full range (both rows and columns), including the headers 
 <p>The Point Names will be assumed to be in the first row of the selected range.</p>
 
 <form>
-    <input type="text" id="data_range_id" onclick="clickDataRange()">
+    <input type="text" id="range_address_id" onclick="getAddress()">
     <input type="button" id="submit_button_id" onclick="submitForm()" value="Submit" disabled>
     <input type="button" id="cancel_button_id" value="Cancel">
 </form>
