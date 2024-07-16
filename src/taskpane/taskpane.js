@@ -6,6 +6,7 @@ import state from './state.js';
 
 window.stateSet = state.set;
 window.stateGet = state.get;
+window.getAddress = getAddress;
   
 Office.onReady(info => { 
   if (info.host === Office.HostType.Excel) {
@@ -102,51 +103,89 @@ async function writeData() {
   }
 }
 
+// new version from chatgpt - simpler - also works
 async function loadHtmlPage(pageName) {
   try {
-    // Fetch the HTML content
     let response = await fetch(`/forms/${pageName}.html`);
     if (!response.ok) {
       throw new Error(`Failed to load the HTML page: ${response.statusText}`);
     }
 
     let htmlContent = await response.text();
-    // console.log(`Formed address of body page: ${htmlContent}`);
     
-    // Create a temporary container to parse the fetched HTML
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = htmlContent;
 
-    // Extract script tags and their content
-    const scripts = tempDiv.getElementsByTagName('script');
-    const scriptContents = [];
-    for (const script of scripts) {
-      scriptContents.push(script.innerText);
-      script.parentNode.removeChild(script); // Remove script tag from tempDiv
-    }
+    const scripts = tempDiv.querySelectorAll('script');
 
-    // Clear existing content and event listeners
+    // Clear and replace the content frame
     const contentFrame = document.getElementById('content-frame');
-    const newContentFrame = contentFrame.cloneNode(false); // Clone without children to remove event listeners
-    contentFrame.parentNode.replaceChild(newContentFrame, contentFrame);
+    contentFrame.innerHTML = tempDiv.innerHTML; // Includes innerHTML without <script> tags
 
-    // Replace the body's content with the fetched HTML content (without script tags)
-    newContentFrame.innerHTML = tempDiv.innerHTML;
-
-    // Dynamically create and append script elements to the body
-    for (const scriptContent of scriptContents) {
+    // Execute scripts
+    scripts.forEach(script => {
       const scriptElement = document.createElement('script');
       scriptElement.type = 'text/javascript';
-      scriptElement.text = scriptContent;
-      document.body.appendChild(scriptElement); // Append to body to execute the script
-      // console.log('Executed script:', scriptContent);
-    }
+      // Check if it's a module and adjust accordingly
+      if (script.type === 'module') {
+        scriptElement.type = 'module';
+      }
+      scriptElement.textContent = script.textContent;
+      document.body.appendChild(scriptElement); // Append to body to ensure global scope
+    });
 
     console.log("Loaded HTML content successfully");
   } catch (error) {
     console.error('Error loading HTML content:', error);
   }
 }
+
+// Prior version -- this works
+// async function loadHtmlPage(pageName) {
+//   try {
+//     // Fetch the HTML content
+//     let response = await fetch(`/forms/${pageName}.html`);
+//     if (!response.ok) {
+//       throw new Error(`Failed to load the HTML page: ${response.statusText}`);
+//     }
+
+//     let htmlContent = await response.text();
+//     // console.log(`Formed address of body page: ${htmlContent}`);
+    
+//     // Create a temporary container to parse the fetched HTML
+//     const tempDiv = document.createElement('div');
+//     tempDiv.innerHTML = htmlContent;
+
+//     // Extract script tags and their content
+//     const scripts = tempDiv.getElementsByTagName('script');
+//     const scriptContents = [];
+//     for (const script of scripts) {
+//       scriptContents.push(script.innerText);
+//       script.parentNode.removeChild(script); // Remove script tag from tempDiv
+//     }
+
+//     // Clear existing content and event listeners
+//     const contentFrame = document.getElementById('content-frame');
+//     const newContentFrame = contentFrame.cloneNode(false); // Clone without children to remove event listeners
+//     contentFrame.parentNode.replaceChild(newContentFrame, contentFrame);
+
+//     // Replace the body's content with the fetched HTML content (without script tags)
+//     newContentFrame.innerHTML = tempDiv.innerHTML;
+
+//     // Dynamically create and append script elements to the body
+//     for (const scriptContent of scriptContents) {
+//       const scriptElement = document.createElement('script');
+//       scriptElement.type = 'text/javascript';
+//       scriptElement.text = scriptContent;
+//       document.body.appendChild(scriptElement); // Append to body to execute the script
+//       // console.log('Executed script:', scriptContent);
+//     }
+
+//     console.log("Loaded HTML content successfully");
+//   } catch (error) {
+//     console.error('Error loading HTML content:', error);
+//   }
+// }
 
 async function waitForButtonClick() {
   return new Promise((resolve) => {
