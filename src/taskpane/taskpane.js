@@ -7,6 +7,7 @@ import state from './state.js';
 window.stateSet = state.set;
 window.stateGet = state.get;
 window.getAddress = getAddress;
+
   
 Office.onReady(info => { 
   if (info.host === Office.HostType.Excel) {
@@ -15,33 +16,23 @@ Office.onReady(info => {
   console.log ("end of office onready in taskpane.js");
 });
 
-async function getAddress(event){
-  // Additional Excel.run can be placed here if needed
-  try {
-    await Excel.run(async (context) => {
-      // Asynchronous Excel operations here
-      const worksheet = context.workbook.worksheets.getActiveWorksheet();
-      
-
-      worksheet.onSelectionChanged.add(changeHandler);
-      await context.sync();
-      console.log("Event handler added");
-    }); 
-  }
-  catch(error){
-    // need to figure out how to display dialogs on all catches
-    console.error(error);
-  }
-
+async function getAddress(){
+  await Excel.run(async (context) => {
+    const worksheet = context.workbook.worksheets.getActiveWorksheet();     
+    worksheet.onSelectionChanged.add(rangeSelectionHandler);
+    await context.sync();
+  }); 
 }
 
-async function changeHandler(event){
+async function rangeSelectionHandler(event){
   await Excel.run(async (context) => {
 
     let range = context.workbook.getSelectedRange();
     range.load("address");
     await context.sync();
     document.getElementById("range_address_id").value = range.address;
+    document.getElementById("submit_button_id").disabled = false;
+    
 
     console.log(`The address of the selected range is "${range.address}"`);
 
@@ -103,103 +94,41 @@ async function writeData() {
   }
 }
 
-// new version from chatgpt - simpler - also works
 async function loadHtmlPage(pageName) {
   try {
     let response = await fetch(`/forms/${pageName}.html`);
     if (!response.ok) {
       throw new Error(`Failed to load the HTML page: ${response.statusText}`);
     }
-
     let htmlContent = await response.text();
-    
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = htmlContent;
-
     const scripts = tempDiv.querySelectorAll('script');
-
-    // Clear and replace the content frame
     const contentFrame = document.getElementById('content-frame');
     contentFrame.innerHTML = tempDiv.innerHTML; // Includes innerHTML without <script> tags
-
-    // Execute scripts
-    scripts.forEach(script => {
+    for (const script of scripts){
       const scriptElement = document.createElement('script');
       scriptElement.type = 'text/javascript';
-      // Check if it's a module and adjust accordingly
       if (script.type === 'module') {
         scriptElement.type = 'module';
       }
       scriptElement.textContent = script.textContent;
-      document.body.appendChild(scriptElement); // Append to body to ensure global scope
-    });
-
+      document.body.appendChild(scriptElement); // Append to body and execute
+    }
     console.log("Loaded HTML content successfully");
   } catch (error) {
     console.error('Error loading HTML content:', error);
   }
 }
 
-// Prior version -- this works
-// async function loadHtmlPage(pageName) {
-//   try {
-//     // Fetch the HTML content
-//     let response = await fetch(`/forms/${pageName}.html`);
-//     if (!response.ok) {
-//       throw new Error(`Failed to load the HTML page: ${response.statusText}`);
-//     }
 
-//     let htmlContent = await response.text();
-//     // console.log(`Formed address of body page: ${htmlContent}`);
-    
-//     // Create a temporary container to parse the fetched HTML
-//     const tempDiv = document.createElement('div');
-//     tempDiv.innerHTML = htmlContent;
-
-//     // Extract script tags and their content
-//     const scripts = tempDiv.getElementsByTagName('script');
-//     const scriptContents = [];
-//     for (const script of scripts) {
-//       scriptContents.push(script.innerText);
-//       script.parentNode.removeChild(script); // Remove script tag from tempDiv
-//     }
-
-//     // Clear existing content and event listeners
-//     const contentFrame = document.getElementById('content-frame');
-//     const newContentFrame = contentFrame.cloneNode(false); // Clone without children to remove event listeners
-//     contentFrame.parentNode.replaceChild(newContentFrame, contentFrame);
-
-//     // Replace the body's content with the fetched HTML content (without script tags)
-//     newContentFrame.innerHTML = tempDiv.innerHTML;
-
-//     // Dynamically create and append script elements to the body
-//     for (const scriptContent of scriptContents) {
-//       const scriptElement = document.createElement('script');
-//       scriptElement.type = 'text/javascript';
-//       scriptElement.text = scriptContent;
-//       document.body.appendChild(scriptElement); // Append to body to execute the script
-//       // console.log('Executed script:', scriptContent);
-//     }
-
-//     console.log("Loaded HTML content successfully");
-//   } catch (error) {
-//     console.error('Error loading HTML content:', error);
-//   }
-// }
-
-async function waitForButtonClick() {
+async function isSubmitClicked() {
   return new Promise((resolve) => {
     const submitButton = document.getElementById("submit_button_id");
     const cancelButton = document.getElementById("cancel_button_id");
 
     function handleClick(event) {
-      cleanup();
-      resolve(event.target === submitButton); 
-    }
-
-    function cleanup() {
-      submitButton.removeEventListener("click", handleClick);
-      cancelButton.removeEventListener("click", handleClick);
+      resolve(event.target === submitButton); //return value for Promise
     }
 
     submitButton.addEventListener("click", handleClick);
@@ -237,11 +166,11 @@ async function SelectData(strAutomate = 'Manual') {
     try {
       if (strNrmlzBillingData == "No") {
         await loadHtmlPage("UserForm4TimeStampCols");
-        const firstSubmitButton = await waitForButtonClick();       
-        if (firstSubmitButton) {
+        let isSubmit = await isSubmitClicked();
+        if (isSubmit) {
           await loadHtmlPage("UserForm3InputDataRng");
-          const secondSubmitButton = await waitForButtonClick();
-          if (secondSubmitButton) {
+          isSubmit = await isSubmitClicked();
+          if (isSubmit) {
             const dataRange = document.getElementsByName('data_range_id');
             console.log("data range" + dataRange);
             // Process the data range as needed
