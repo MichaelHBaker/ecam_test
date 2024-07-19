@@ -14,8 +14,6 @@
         console.log("Selected option: " + selectedValue);
     }
     
-    // function cancelForm() {
-    // }
 </script>
 
 <h4>Time Stamp Definition</h4>
@@ -23,12 +21,11 @@
 <p>(If 2 columns, it is assumed that the Date is in the first column and the time is in the second column)</p>
 
 <form>
-    <input type="radio" id="one_column_id" name="time_stamp_cols" value="1">
+    <input type="radio" id="one_column_id" name="time_stamp_cols" value="1" checked>
     <label for="one_column_id">One Column</label><br>
     <input type="radio" id="two_column_id" name="time_stamp_cols" value="2">
     <label for="two_column_id">Two Column</label><br>
     <input type="button" id="submit_button_id" onclick="submitForm()" value="Submit">
-    <!-- <input type="button" id="cancel_button_id" onclick="cancelForm()" value="Cancel"> -->
     <input type="button" id="cancel_button_id" value="Cancel">
 </form> 
 
