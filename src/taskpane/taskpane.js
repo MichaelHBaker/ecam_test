@@ -146,26 +146,24 @@ async function detectTaskpaneUnloadAction() {
   return new Promise((resolve) => {
     const submitButton = document.getElementById("submit_button_id");
     const cancelButton = document.getElementById("cancel_button_id");
-
+    const backButton = document.getElementById("back_button_id");
     async function handleClick(event) {
       if (event.target === submitButton) {
         resolve('submit');
       } else if (event.target === cancelButton) {
         resolve('cancel');
-        await selectRangeStart(); // Ensure the range start is selected
-        Office.addin.hide(); // Hide the task pane
+      } else if (event.target === backButton) {
+        resolve('back');
       }
     }
-
-    async function handleClose() {
-      resolve('close');
-      await selectRangeStart(); // Ensure the range start is selected
-      Office.addin.hide(); // Hide the task pane
-    }
-
+    // Special event handler for click on taskpane close
+    Office.addin.onVisibilityModeChanged(function(args) {
+      if (args.visibilityMode == "Hidden") {
+        resolve('close');
+      }
+    });
     submitButton.addEventListener("click", handleClick);
     cancelButton.addEventListener("click", handleClick);
-    window.onunload = handleClose;
   });
 }
 
@@ -192,7 +190,6 @@ async function selectData(strAutomate = 'Manual') {
     } catch (error) {
       console.error("Error in selectData:", error);
     } finally {
-      // Always clear selection and hide the add-in after non-automated processes, regardless of outcome
       await selectRangeStart();
       Office.addin.hide();
     }
@@ -208,24 +205,17 @@ async function selectData(strAutomate = 'Manual') {
 }
 
 async function selectRangeStart() {
-  try {
-    await Excel.run(async (context) => {
-      const sheet = context.workbook.worksheets.getActiveWorksheet();
-      const rangeAddressInput = document.getElementById("range_address_id").value;
-
-      // Extract the initial cell address from the input value
+  await Excel.run(async (context) => {
+    const sheet = context.workbook.worksheets.getActiveWorksheet();
+    let rangeAddressInput = document.getElementById("range_address_id");
+    if (rangeAddressInput) {
+      rangeAddressInput = rangeAddressInput.value;
       const initialCellAddress = rangeAddressInput.split(':')[0];
-
-      // Select the initial cell
       const initialCell = sheet.getRange(initialCellAddress);
       initialCell.select();
-
-      // Synchronize the state between the Excel host and the Office add-in
       await context.sync();
-    });
-  } catch (error) {
-    console.error("Error selecting the range start:", error);
-  }
+    }
+  });
 }
 
 async function populateTestData() {
