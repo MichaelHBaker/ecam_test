@@ -218,6 +218,7 @@ async function selectRangeStart() {
   });
 }
 
+
 async function populateTestData() {
   await Excel.run(async (context) => {
       const sheet = context.workbook.worksheets.getActiveWorksheet();
@@ -242,7 +243,8 @@ async function populateTestData() {
       const range1Data = [];
       for (let i = 0; i < 10; i++) {
           const dateTime = new Date(startDate.getTime() + i * 15 * 60000);
-          range1Data.push([dateTime.toISOString(), randomBetween(10, 100)]);
+          range1Data.push([dateTime.toISOString().replace('T', ' ').replace('Z', ''), randomBetween(10, 100)]);
+
       }
 
       // Range 2: Similar to Range 1, but one value in column one is not a valid datetime
