@@ -134,12 +134,33 @@ export default functionMap;
 
 
 // Define your functions
-function SelectIntervalData() {
+// function SelectIntervalData() {
+async function SelectIntervalData() {
   console.log("SelectIntervalData called");
   Office.addin.showAsTaskpane(); 
   state.set("strNrmlzBillingData", "No");
-  selectData();
-  return "SelectIntervalData";  
+  // selectData();
+
+  await loadHtmlPage("UserForm3InputDataRng");
+  let action = await detectTaskpaneUnloadAction();
+  if (action === 'submit') {
+    const dataRange = document.getElementsByName('data_range_id');
+    console.log("data range" + dataRange);
+    copyRangeToNewWorkbook()
+    // Process the data range as needed
+    // copy range
+    // open new workbook
+    // create sheet data
+    // paste range in sheet data
+    // create sheet dictionary
+    // write headings Field_Name Units Description
+    // write field names
+    // set validation list to units column DateTime, Date, Time, kWh
+    // close the first workbook
+    // open the taskpane in the new workbook
+  }
+
+  return "SelectIntervalData"; 
 }
 
 async function detectTaskpaneUnloadAction() {
@@ -180,8 +201,8 @@ async function selectData(strAutomate = 'Manual') {
           if (action === 'submit') {
             const dataRange = document.getElementsByName('data_range_id');
             console.log("data range" + dataRange);
-            // Process the data range as needed
-          }
+            copyRangeToNewWorkbook()
+                      }
         }
       } else if (strNrmlzBillingData == "Yes") {
         console.log("Manual process with normalized billing data initiated");
@@ -226,51 +247,52 @@ async function populateTestData() {
       // Helper function to generate random number between min and max
       const randomBetween = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-      // Helper function to safely format date
-      const formatDate = (date) => {
-          if (isNaN(date.getTime())) return "Invalid Date";
-          return date.toISOString().split('T')[0];
-      };
+      // // Helper function to safely format date
+      // const formatDate = (date) => {
+      //     if (isNaN(date.getTime())) return "Invalid Date";
+      //     return date.toISOString().split('T')[0];
+      // };
 
-      // Helper function to safely format time
-      const formatTime = (date) => {
-          if (isNaN(date.getTime())) return "Invalid Time";
-          return date.toTimeString().split(' ')[0].substring(0, 5);
-      };
+      // // Helper function to safely format time
+      // const formatTime = (date) => {
+      //     if (isNaN(date.getTime())) return "Invalid Time";
+      //     return date.toTimeString().split(' ')[0].substring(0, 5);
+      // };
 
       // Range 1: 15 minute interval data, 10 intervals, first column valid datetime, second column random kWh
       const startDate = new Date();
       const range1Data = [];
+      range1Data.push(['DateTime', 'kWh']);
       for (let i = 0; i < 10; i++) {
-          const dateTime = new Date(startDate.getTime() + i * 15 * 60000);
-          range1Data.push([dateTime.toISOString().replace('T', ' ').replace('Z', ''), randomBetween(10, 100)]);
+        const dateTime = new Date(startDate.getTime() + i * 15 * 60000);
+        range1Data.push([dateTime.toISOString().replace('T', ' ').replace('Z', ''), randomBetween(10, 100)]);
 
       }
 
-      // Range 2: Similar to Range 1, but one value in column one is not a valid datetime
-      const range2Data = range1Data.map((row, index) => index === 5 ? ["Invalid DateTime", randomBetween(10, 100)] : row);
+      // // Range 2: Similar to Range 1, but one value in column one is not a valid datetime
+      // const range2Data = range1Data.map((row, index) => index === 5 ? ["Invalid DateTime", randomBetween(10, 100)] : row);
 
-      // Range 3: Similar to Range 1, but uses two columns for date and time, all valid
-      const range3Data = range1Data.map(row => {
-          const date = new Date(row[0]);
-          return [formatDate(date), formatTime(date), row[1]];
-      });
+      // // Range 3: Similar to Range 1, but uses two columns for date and time, all valid
+      // const range3Data = range1Data.map(row => {
+      //     const date = new Date(row[0]);
+      //     return [formatDate(date), formatTime(date), row[1]];
+      // });
 
-      // Range 4: Similar to Range 3, but one value in the date column is invalid
-      const range4Data = range3Data.map((row, index) => index === 5 ? ["Invalid Date", row[1], row[2]] : row);
+      // // Range 4: Similar to Range 3, but one value in the date column is invalid
+      // const range4Data = range3Data.map((row, index) => index === 5 ? ["Invalid Date", row[1], row[2]] : row);
 
       // Fill the ranges with data
-      const range1 = sheet.getRange("A1:B10");
+      const range1 = sheet.getRange("A1:B11");
       range1.values = range1Data;
 
-      const range2 = sheet.getRange("A12:B21");
-      range2.values = range2Data;
+      // const range2 = sheet.getRange("A13:B23");
+      // range2.values = range2Data;
 
-      const range3 = sheet.getRange("A23:C32");
-      range3.values = range3Data;
+      // const range3 = sheet.getRange("A25:C35");
+      // range3.values = range3Data;
 
-      const range4 = sheet.getRange("A34:C43");
-      range4.values = range4Data;
+      // const range4 = sheet.getRange("A37:C47");
+      // range4.values = range4Data;
 
       await context.sync();
   });
@@ -320,5 +342,58 @@ async function validTimeSeriesRange(range) {
   } catch (error) {
       console.error(error);
       return false;
+  }
+}
+
+async function copyRangeToNewWorkbook() {
+  try {
+    const rangeElement = document.getElementById("range_address_id");
+    if (!rangeElement) {
+      throw new Error("Element with id 'range_address_id' not found");
+    }
+    const dataRange = rangeElement.value;
+    if (!dataRange) {
+      throw new Error("No value found in 'range_address_id' element");
+    }
+
+    console.log("Selected range:", dataRange);
+
+    let rangeValues, rangeFormat;
+
+    await Excel.run(async (context) => {
+      let sourceRange = context.workbook.worksheets.getActiveWorksheet().getRange(dataRange);
+      sourceRange.load(["values", "format"]);
+      await context.sync();
+
+      rangeValues = sourceRange.values;
+      rangeFormat = sourceRange.format;
+
+      console.log("Source values:", rangeValues);
+    });
+
+    let newWorkbook = await Excel.createWorkbook();
+    
+    await Excel.run(newWorkbook, async (newContext) => {
+      let newSheet = newContext.workbook.worksheets.getItem("Sheet1");
+      let newRange = newSheet.getRange(dataRange);
+      
+      newRange.values = rangeValues;
+      newRange.format.fill.color = rangeFormat.fill.color;
+      newRange.format.font.color = rangeFormat.font.color;
+      newRange.format.font.bold = rangeFormat.font.bold;
+
+      await newContext.sync();
+      
+      console.log("Range pasted to new workbook");
+
+      // Force Excel to recalculate the new workbook
+      newContext.application.calculate(Excel.CalculationType.full);
+      await newContext.sync();
+    });
+
+    console.log("Operation completed successfully");
+
+  } catch (error) {
+    console.error("Error:", error);
   }
 }
