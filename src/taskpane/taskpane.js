@@ -3,13 +3,14 @@
 /* eslint-disable prettier/prettier */
 
 import state from './state.js';
+import dialogs from '../dialogs/dialogs.js';
 
 window.stateSet = state.set;
 window.stateGet = state.get;
 window.getAddress = getAddress;
 window.selectData = selectData;
 
-  
+
 Office.onReady(async (info) => {
   if (info.host === Office.HostType.Excel) {
     console.log("Host is Excel");
@@ -96,32 +97,33 @@ async function writeData() {
   }
 }
 
-async function loadHtmlPage(pageName) {
-  try {
-    let response = await fetch(`/forms/${pageName}.html`);
-    if (!response.ok) {
-      throw new Error(`Failed to load the HTML page: ${response.statusText}`);
-    }
-    let htmlContent = await response.text();
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = htmlContent;
-    const scripts = tempDiv.querySelectorAll('script');
-    const contentFrame = document.getElementById('content-frame');
-    contentFrame.innerHTML = tempDiv.innerHTML; // Includes innerHTML without <script> tags
-    for (const script of scripts){
-      const scriptElement = document.createElement('script');
-      scriptElement.type = 'text/javascript';
-      if (script.type === 'module') {
-        scriptElement.type = 'module';
-      }
-      scriptElement.textContent = script.textContent;
-      document.body.appendChild(scriptElement); // Append to body and execute
-    }
-    console.log("Loaded HTML content successfully");
-  } catch (error) {
-    console.error('Error loading HTML content:', error);
-  }
-}
+
+// async function loadHtmlPage(pageName) {
+//   try {
+//     let response = await fetch(`/forms/${pageName}.html`);
+//     if (!response.ok) {
+//       throw new Error(`Failed to load the HTML page: ${response.statusText}`);
+//     }
+//     let htmlContent = await response.text();
+//     const tempDiv = document.createElement('div');
+//     tempDiv.innerHTML = htmlContent;
+//     const scripts = tempDiv.querySelectorAll('script');
+//     const contentFrame = document.getElementById('content-frame');
+//     contentFrame.innerHTML = tempDiv.innerHTML; // Includes innerHTML without <script> tags
+//     for (const script of scripts){
+//       const scriptElement = document.createElement('script');
+//       scriptElement.type = 'text/javascript';
+//       if (script.type === 'module') {
+//         scriptElement.type = 'module';
+//       }
+//       scriptElement.textContent = script.textContent;
+//       document.body.appendChild(scriptElement); // Append to body and execute
+//     }
+//     console.log("Loaded HTML content successfully");
+//   } catch (error) {
+//     console.error('Error loading HTML content:', error);
+//   }
+// }
 
 
 // Create a map of button IDs to functions
@@ -137,6 +139,17 @@ export default functionMap;
 // function SelectIntervalData() {
 async function SelectIntervalData() {
   console.log("SelectIntervalData called");
+  
+  dialogs.openDialog("SelectIntervalData called");
+  
+
+  
+  return "SelectIntervalData"; 
+}
+
+async function SelectIntervalData_old() {
+  console.log("SelectIntervalData called");
+
   Office.addin.showAsTaskpane(); 
   state.set("strNrmlzBillingData", "No");
   // selectData();

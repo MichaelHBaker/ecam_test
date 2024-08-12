@@ -2,10 +2,8 @@
 /* eslint-disable no-undef */
 /* eslint-disable prettier/prettier */
 
-let dialog;
-let message_from_parent;
-
 import functionMap from '../taskpane/taskpane.js';
+import dialogs from '../dialogs/dialogs.js';
 
 Office.onReady((info) => {
   //info can be used to customize UI
@@ -17,26 +15,27 @@ Office.onReady((info) => {
 
 function OnAction_ECAM(event) {
   const buttonId = event.source.id;
-  const functionName = buttonId.replace(/^[a-z]+|\d+$/g, ''); // removes lower case prefix and numeric suffix
+  const functionName = buttonId.replace(/^[a-z]+|\d+$/g, '');
 
   console.log("Got to OnAction_ECAM");
   console.log(functionName);
 
   const functionToCall = functionMap[functionName];
 
+  let message;
   try {
     if (typeof functionToCall !== 'function') {
-      message_from_parent = "Button (" + functionName + ") not working yet!";
+      message = `Button (${functionName}) not working yet!`;
     } else {
       functionToCall();
     }
   } catch (error) {
     console.error("Error in OnAction_ECAM:", error);
-    message_from_parent = `Error: ${error.message}`;
+    message = `Error: ${error.message}`;
   }
 
-  if (message_from_parent) {
-    openDialog(message_from_parent);
+  if (message) {
+    dialogs.openDialog(message);
   }
 
   event.completed();
@@ -44,30 +43,41 @@ function OnAction_ECAM(event) {
 
 Office.actions.associate("OnAction_ECAM", OnAction_ECAM);
 
-function openDialog() {
-  const dialogUrl = 'https://localhost:3000/popup.html';
+// function openDialog(message) {
+//   const dialogUrl = 'https://localhost:3000/popup.html';
 
-  Office.context.ui.displayDialogAsync(dialogUrl, { height: 10, width: 20 }, function (asyncResult) {
-      if (asyncResult.status === Office.AsyncResultStatus.Failed) {
-          console.error("Failed to open dialog: " + asyncResult.error.message);
-          return;
-      }
+//   Office.context.ui.displayDialogAsync(dialogUrl, { height: 10, width: 20 }, function (asyncResult) {
+//     if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+//       console.error("Failed to open dialog: " + asyncResult.error.message);
+//       return;
+//     }
 
-      dialog = asyncResult.value;
-      dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessageFromDialog);
+//     const dialog = asyncResult.value;
+//     console.log("Dialog opened:", dialog);
+//     dialog.addEventHandler(Office.EventType.DialogMessageReceived, (arg) => processMessageFromDialog(arg, dialog, message));
+//   });
+// }
 
-      
-  });
-}
+// function processMessageFromDialog(arg, dialog, message) {
+//   if (arg.message === "dialogReady") {
+//     console.log("Dialog is ready");
+//     // Wait for "eventHandlerReady"
+//   } else if (arg.message === "eventHandlerReady") {
+//     console.log("Event handler is ready, sending message to dialog");
+//     dialog.messageChild(message);
+//   } else {
+//     console.log("Received message from dialog:", arg.message);
+//     // Handle other messages if needed
+//   }
+// }
 
-function processMessageFromDialog(arg) {
-if (arg.message === "dialogReady") {
-  dialog.messageChild(message_from_parent);
-} else {
-    console.log("arg message:" + arg.message);
-}
-}
 
 
+// const commands = {
+//   openDialog,
+//   processMessageFromDialog
+// };
+
+// export default commands;
 
 console.log("end of commands.js");

@@ -23,6 +23,7 @@ module.exports = async (env, options) => {
       taskpane: "./src/taskpane/taskpane.html",
       commands: "./src/commands/commands.js",
       popup: "./src/dialogs/popup.js",
+      common: "./src/common/common.js",
     },
     output: {
       clean: true,
@@ -60,7 +61,7 @@ module.exports = async (env, options) => {
       new HtmlWebpackPlugin({
         filename: "taskpane.html",
         template: "./src/taskpane/taskpane.html",
-        chunks: ["polyfill", "taskpane", "commands"],
+        chunks: ["polyfill", "taskpane"],
       }),
       new CopyWebpackPlugin({
         patterns: [
@@ -87,6 +88,17 @@ module.exports = async (env, options) => {
             globOptions: {
               ignore: [
                 "**/taskpane.html", // Ignores taskpane.html
+              ],
+            },
+          },
+          {
+            from: "forms/*.html", // Matches all HTML files in the specified context
+            context: "src/dialogs/", // Sets the context directory for the pattern
+            to: path.resolve(__dirname, "dist"), // Explicitly defines the output directory
+            // noErrorOnMissing: true,
+            globOptions: {
+              ignore: [
+                "**/popup.html", // Ignores popup.html
               ],
             },
           },
