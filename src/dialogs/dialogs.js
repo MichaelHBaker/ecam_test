@@ -67,5 +67,5 @@ const dialogs = {
     receiveMessageFromParent
   };
   
-  export default dialogs;
+export default dialogs;
   

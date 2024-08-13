@@ -28,3 +28,9 @@ async function loadHtmlPage(pageName) {
       console.error('Error loading HTML content:', error);
     }
   }
+
+const common = {
+  loadHtmlPage
+};
+  
+export default common;

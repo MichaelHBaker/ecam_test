@@ -4,6 +4,7 @@
 
 import state from './state.js';
 import dialogs from '../dialogs/dialogs.js';
+import common from '../common/common.js';
 
 window.stateSet = state.set;
 window.stateGet = state.get;
@@ -129,6 +130,7 @@ async function writeData() {
 // Create a map of button IDs to functions
 const functionMap = {
   'SelectIntervalData': SelectIntervalData,
+  'SelectBillingData': SelectBillingData,
   // Add all other button ID-function pairs here
 };
 
@@ -137,17 +139,17 @@ export default functionMap;
 
 // Define your functions
 // function SelectIntervalData() {
-async function SelectIntervalData() {
-  console.log("SelectIntervalData called");
+async function SelectBillingData() {
+  console.log("SelectBillingData called");
   
-  dialogs.openDialog("SelectIntervalData called");
+  dialogs.openDialog("SelectBillingData called");
   
 
   
-  return "SelectIntervalData"; 
+  return "SelectBillingData"; 
 }
 
-async function SelectIntervalData_old() {
+async function SelectIntervalData() {
   console.log("SelectIntervalData called");
 
   Office.addin.showAsTaskpane(); 
@@ -206,10 +208,10 @@ async function selectData(strAutomate = 'Manual') {
   if (strAutomate != "Automate") {
     try {
       if (strNrmlzBillingData == "No") {
-        await loadHtmlPage("UserForm4TimeStampCols");
+        await common.loadHtmlPage("UserForm4TimeStampCols");
         let action = await detectTaskpaneUnloadAction();
         if (action === 'submit') {
-          await loadHtmlPage("UserForm3InputDataRng");
+          await common.loadHtmlPage("UserForm3InputDataRng");
           action = await detectTaskpaneUnloadAction();
           if (action === 'submit') {
             const dataRange = document.getElementsByName('data_range_id');
