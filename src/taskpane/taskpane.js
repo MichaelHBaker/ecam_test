@@ -3,13 +3,15 @@
 /* eslint-disable prettier/prettier */
 
 import state from './state.js';
+import dialogs from '../dialogs/dialogs.js';
+import utils from '../common/utils.js';
 
 window.stateSet = state.set;
 window.stateGet = state.get;
 window.getAddress = getAddress;
 window.selectData = selectData;
 
-  
+
 Office.onReady(async (info) => {
   if (info.host === Office.HostType.Excel) {
     console.log("Host is Excel");
@@ -96,37 +98,39 @@ async function writeData() {
   }
 }
 
-async function loadHtmlPage(pageName) {
-  try {
-    let response = await fetch(`/forms/${pageName}.html`);
-    if (!response.ok) {
-      throw new Error(`Failed to load the HTML page: ${response.statusText}`);
-    }
-    let htmlContent = await response.text();
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = htmlContent;
-    const scripts = tempDiv.querySelectorAll('script');
-    const contentFrame = document.getElementById('content-frame');
-    contentFrame.innerHTML = tempDiv.innerHTML; // Includes innerHTML without <script> tags
-    for (const script of scripts){
-      const scriptElement = document.createElement('script');
-      scriptElement.type = 'text/javascript';
-      if (script.type === 'module') {
-        scriptElement.type = 'module';
-      }
-      scriptElement.textContent = script.textContent;
-      document.body.appendChild(scriptElement); // Append to body and execute
-    }
-    console.log("Loaded HTML content successfully");
-  } catch (error) {
-    console.error('Error loading HTML content:', error);
-  }
-}
+
+// async function loadHtmlPage(pageName) {
+//   try {
+//     let response = await fetch(`/forms/${pageName}.html`);
+//     if (!response.ok) {
+//       throw new Error(`Failed to load the HTML page: ${response.statusText}`);
+//     }
+//     let htmlContent = await response.text();
+//     const tempDiv = document.createElement('div');
+//     tempDiv.innerHTML = htmlContent;
+//     const scripts = tempDiv.querySelectorAll('script');
+//     const contentFrame = document.getElementById('content-frame');
+//     contentFrame.innerHTML = tempDiv.innerHTML; // Includes innerHTML without <script> tags
+//     for (const script of scripts){
+//       const scriptElement = document.createElement('script');
+//       scriptElement.type = 'text/javascript';
+//       if (script.type === 'module') {
+//         scriptElement.type = 'module';
+//       }
+//       scriptElement.textContent = script.textContent;
+//       document.body.appendChild(scriptElement); // Append to body and execute
+//     }
+//     console.log("Loaded HTML content successfully");
+//   } catch (error) {
+//     console.error('Error loading HTML content:', error);
+//   }
+// }
 
 
 // Create a map of button IDs to functions
 const functionMap = {
   'SelectIntervalData': SelectIntervalData,
+  'SelectBillingData': SelectBillingData,
   // Add all other button ID-function pairs here
 };
 
@@ -134,54 +138,87 @@ export default functionMap;
 
 
 // Define your functions
-function SelectIntervalData() {
-  console.log("SelectIntervalData called");
-  Office.addin.showAsTaskpane(); 
-  state.set("strNrmlzBillingData", "No");
-  selectData();
-  return "SelectIntervalData";  
+// function SelectIntervalData() {
+async function SelectBillingData() {
+  console.log("SelectBillingData called");
+  
+  dialogs.openDialog("SelectBillingData called", false);
+  
+
+  
+  return "SelectBillingData"; 
 }
 
-async function detectTaskpaneUnloadAction() {
-  return new Promise((resolve) => {
-    const submitButton = document.getElementById("submit_button_id");
-    const cancelButton = document.getElementById("cancel_button_id");
-    const backButton = document.getElementById("back_button_id");
-    async function handleClick(event) {
-      if (event.target === submitButton) {
-        resolve('submit');
-      } else if (event.target === cancelButton) {
-        resolve('cancel');
-      } else if (event.target === backButton) {
-        resolve('back');
-      }
-    }
-    // Special event handler for click on taskpane close
-    Office.addin.onVisibilityModeChanged(function(args) {
-      if (args.visibilityMode == "Hidden") {
-        resolve('close');
-      }
-    });
-    submitButton.addEventListener("click", handleClick);
-    cancelButton.addEventListener("click", handleClick);
-  });
+async function SelectIntervalData() {
+  console.log("SelectIntervalData called");
+
+  Office.addin.showAsTaskpane(); 
+  state.set("strNrmlzBillingData", "No");
+  // selectData();
+
+  await utils.loadHtmlPage("UserForm3InputDataRng");
+  let action = await utils.detectUnloadAction();
+  if (action === 'submit') {
+    const dataRange = document.getElementsByName('data_range_id');
+    console.log("data range" + dataRange);
+    await selectRangeStart();
+    copyRangeToNewWorkbook()
+    // Process the data range as needed
+    // copy range
+    // open new workbook
+    // create sheet data
+    // paste range in sheet data
+    // create sheet dictionary
+    // write headings Field_Name Units Description
+    // write field names
+    // set validation list to units column DateTime, Date, Time, kWh
+    // close the first workbook
+    // open the taskpane in the new workbook
+  }
+
+  return "SelectIntervalData"; 
 }
+
+// async function detectTaskpaneUnloadAction() {
+//   return new Promise((resolve) => {
+//     const submitButton = document.getElementById("submit_button_id");
+//     const cancelButton = document.getElementById("cancel_button_id");
+//     const backButton = document.getElementById("back_button_id");
+//     async function handleClick(event) {
+//       if (event.target === submitButton) {
+//         resolve('submit');
+//       } else if (event.target === cancelButton) {
+//         resolve('cancel');
+//       } else if (event.target === backButton) {
+//         resolve('back');
+//       }
+//     }
+//     // Special event handler for click on taskpane close
+//     Office.addin.onVisibilityModeChanged(function(args) {
+//       if (args.visibilityMode == "Hidden") {
+//         resolve('close');
+//       }
+//     });
+//     submitButton.addEventListener("click", handleClick);
+//     cancelButton.addEventListener("click", handleClick);
+//   });
+// }
 
 async function selectData(strAutomate = 'Manual') {
   let strNrmlzBillingData = state.get("strNrmlzBillingData");
   if (strAutomate != "Automate") {
     try {
       if (strNrmlzBillingData == "No") {
-        await loadHtmlPage("UserForm4TimeStampCols");
-        let action = await detectTaskpaneUnloadAction();
+        await utils.loadHtmlPage("UserForm4TimeStampCols");
+        let action = await utils.detectUnloadAction();
         if (action === 'submit') {
-          await loadHtmlPage("UserForm3InputDataRng");
-          action = await detectTaskpaneUnloadAction();
+          await utils.loadHtmlPage("UserForm3InputDataRng");
+          action = await utils.detectUnloadAction();
           if (action === 'submit') {
             const dataRange = document.getElementsByName('data_range_id');
             console.log("data range" + dataRange);
-            // Process the data range as needed
-          }
+            copyRangeToNewWorkbook()
+                      }
         }
       } else if (strNrmlzBillingData == "Yes") {
         console.log("Manual process with normalized billing data initiated");
@@ -218,6 +255,7 @@ async function selectRangeStart() {
   });
 }
 
+
 async function populateTestData() {
   await Excel.run(async (context) => {
       const sheet = context.workbook.worksheets.getActiveWorksheet();
@@ -225,50 +263,52 @@ async function populateTestData() {
       // Helper function to generate random number between min and max
       const randomBetween = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-      // Helper function to safely format date
-      const formatDate = (date) => {
-          if (isNaN(date.getTime())) return "Invalid Date";
-          return date.toISOString().split('T')[0];
-      };
+      // // Helper function to safely format date
+      // const formatDate = (date) => {
+      //     if (isNaN(date.getTime())) return "Invalid Date";
+      //     return date.toISOString().split('T')[0];
+      // };
 
-      // Helper function to safely format time
-      const formatTime = (date) => {
-          if (isNaN(date.getTime())) return "Invalid Time";
-          return date.toTimeString().split(' ')[0].substring(0, 5);
-      };
+      // // Helper function to safely format time
+      // const formatTime = (date) => {
+      //     if (isNaN(date.getTime())) return "Invalid Time";
+      //     return date.toTimeString().split(' ')[0].substring(0, 5);
+      // };
 
       // Range 1: 15 minute interval data, 10 intervals, first column valid datetime, second column random kWh
       const startDate = new Date();
       const range1Data = [];
+      range1Data.push(['DateTime', 'kWh']);
       for (let i = 0; i < 10; i++) {
-          const dateTime = new Date(startDate.getTime() + i * 15 * 60000);
-          range1Data.push([dateTime.toISOString(), randomBetween(10, 100)]);
+        const dateTime = new Date(startDate.getTime() + i * 15 * 60000);
+        range1Data.push([dateTime.toISOString().replace('T', ' ').replace('Z', ''), randomBetween(10, 100)]);
+
       }
 
-      // Range 2: Similar to Range 1, but one value in column one is not a valid datetime
-      const range2Data = range1Data.map((row, index) => index === 5 ? ["Invalid DateTime", randomBetween(10, 100)] : row);
+      // // Range 2: Similar to Range 1, but one value in column one is not a valid datetime
+      // const range2Data = range1Data.map((row, index) => index === 5 ? ["Invalid DateTime", randomBetween(10, 100)] : row);
 
-      // Range 3: Similar to Range 1, but uses two columns for date and time, all valid
-      const range3Data = range1Data.map(row => {
-          const date = new Date(row[0]);
-          return [formatDate(date), formatTime(date), row[1]];
-      });
+      // // Range 3: Similar to Range 1, but uses two columns for date and time, all valid
+      // const range3Data = range1Data.map(row => {
+      //     const date = new Date(row[0]);
+      //     return [formatDate(date), formatTime(date), row[1]];
+      // });
 
-      // Range 4: Similar to Range 3, but one value in the date column is invalid
-      const range4Data = range3Data.map((row, index) => index === 5 ? ["Invalid Date", row[1], row[2]] : row);
+      // // Range 4: Similar to Range 3, but one value in the date column is invalid
+      // const range4Data = range3Data.map((row, index) => index === 5 ? ["Invalid Date", row[1], row[2]] : row);
 
       // Fill the ranges with data
-      const range1 = sheet.getRange("A1:B10");
+      const range1 = sheet.getRange("A1:B11");
       range1.values = range1Data;
 
-      const range2 = sheet.getRange("A12:B21");
-      range2.values = range2Data;
+      // const range2 = sheet.getRange("A13:B23");
+      // range2.values = range2Data;
 
-      const range3 = sheet.getRange("A23:C32");
-      range3.values = range3Data;
+      // const range3 = sheet.getRange("A25:C35");
+      // range3.values = range3Data;
 
-      const range4 = sheet.getRange("A34:C43");
-      range4.values = range4Data;
+      // const range4 = sheet.getRange("A37:C47");
+      // range4.values = range4Data;
 
       await context.sync();
   });
@@ -318,5 +358,58 @@ async function validTimeSeriesRange(range) {
   } catch (error) {
       console.error(error);
       return false;
+  }
+}
+
+async function copyRangeToNewWorkbook() {
+  try {
+    const rangeElement = document.getElementById("range_address_id");
+    if (!rangeElement) {
+      throw new Error("Element with id 'range_address_id' not found");
+    }
+    const dataRange = rangeElement.value;
+    if (!dataRange) {
+      throw new Error("No value found in 'range_address_id' element");
+    }
+
+    console.log("Selected range:", dataRange);
+
+    let rangeValues, rangeFormat;
+
+    await Excel.run(async (context) => {
+      let sourceRange = context.workbook.worksheets.getActiveWorksheet().getRange(dataRange);
+      sourceRange.load(["values", "format"]);
+      await context.sync();
+
+      rangeValues = sourceRange.values;
+      rangeFormat = sourceRange.format;
+
+      console.log("Source values:", rangeValues);
+    });
+
+    let newWorkbook = await Excel.createWorkbook();
+    
+    await Excel.run(newWorkbook, async (newContext) => {
+      let newSheet = newContext.workbook.worksheets.getItem("Sheet1");
+      let newRange = newSheet.getRange(dataRange);
+      
+      newRange.values = rangeValues;
+      newRange.format.fill.color = rangeFormat.fill.color;
+      newRange.format.font.color = rangeFormat.font.color;
+      newRange.format.font.bold = rangeFormat.font.bold;
+
+      await newContext.sync();
+      
+      console.log("Range pasted to new workbook");
+
+      // Force Excel to recalculate the new workbook
+      newContext.application.calculate(Excel.CalculationType.full);
+      await newContext.sync();
+    });
+
+    console.log("Operation completed successfully");
+
+  } catch (error) {
+    console.error("Error:", error);
   }
 }
