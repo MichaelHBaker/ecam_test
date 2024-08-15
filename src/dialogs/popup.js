@@ -8,22 +8,28 @@ Office.onReady(() => {
     console.log("Office.onReady from popup.js");
 
     // Notify that the dialog is ready
-    Office.context.ui.messageParent("dialogReady");
+    // Office.context.ui.messageParent("dialogReady");
 
-    // Set up the event handler for receiving messages
-    Office.context.ui.addHandlerAsync(Office.EventType.DialogParentMessageReceived, dialogs.receiveMessageFromParent, function(result) {
-        if (result.status === Office.AsyncResultStatus.Succeeded) {
-            console.log("Event handler was successfully added.");
-            // Only now do we notify that the event handler is ready
-            Office.context.ui.messageParent("eventHandlerReady");
-        } else {
-            console.error("Failed to set event handler: " + result.error.message);
-        }
-    });
+    // // Set up the event handler for receiving messages
+    // Office.context.ui.addHandlerAsync(Office.EventType.DialogParentMessageReceived, dialogs.receiveMessageFromParent, function(result) {
+    //     if (result.status === Office.AsyncResultStatus.Succeeded) {
+    //         console.log("Event handler was successfully added.");
+    //         // Only now do we notify that the event handler is ready
+    //         Office.context.ui.messageParent("eventHandlerReady");
+    //     } else {
+    //         console.error("Failed to set event handler: " + result.error.message);
+    //     }
+    // });
 });
 
-
-
+const queryString = window.location.search;
+console.log('queryString=' + queryString);
+const urlParams = new URLSearchParams(queryString);
+console.log('contentFile = ' + urlParams.get('contentFile'));
+let message = urlParams.get('message');
+if (message) {
+    document.getElementById('message').innerHTML = message;
+}
   
  
 

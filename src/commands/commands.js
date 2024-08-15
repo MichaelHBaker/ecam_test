@@ -35,7 +35,7 @@ function OnAction_ECAM(event) {
   }
 
   if (message) {
-    dialogs.openDialog(message, false);
+    dialogs.openDialog(message);
   }
 
   event.completed();
