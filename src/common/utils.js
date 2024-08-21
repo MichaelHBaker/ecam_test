@@ -53,9 +53,36 @@ async function detectUnloadAction() {
     cancelButton.addEventListener("click", handleClick);
   });
 }
+
+async function loadRangeAddressHandler(){
+  await Excel.run(async (context) => {
+    const worksheet = context.workbook.worksheets.getActiveWorksheet();     
+    worksheet.onSelectionChanged.add(rangeSelectionHandler);
+    await context.sync();
+  }); 
+}
+
+async function rangeSelectionHandler(event){
+await Excel.run(async (context) => {
+
+  let range = context.workbook.getSelectedRange();
+  range.load("address");
+  await context.sync();
+  document.getElementById("range_address_id").value = range.address;
+  document.getElementById("submit_button_id").disabled = false;
+  
+
+  console.log(`The address of the selected range is "${range.address}"`);
+
+});
+}
+
+
 const utils = {
   loadHtmlPage,
-  detectUnloadAction
+  detectUnloadAction,
+  loadRangeAddressHandler,
+  rangeSelectionHandler
 };
   
 export default utils;

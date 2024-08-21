@@ -23,15 +23,20 @@ Office.onReady(() => {
     // });
 });
 
+window.loadRangeAddressHandler = utils.loadRangeAddressHandler;
 const queryString = window.location.search;
 console.log('queryString=' + queryString);
 const urlParams = new URLSearchParams(queryString);
 console.log('contentFile = ' + urlParams.get('contentFile'));
 let message = urlParams.get('message');
+let contentFile = urlParams.get('contentFile');
 if (message) {
     document.getElementById('message').innerHTML = message;
+} else if (contentFile) {
+    utils.loadHtmlPage(contentFile);
 }
-// window.getAddress = getAddress;
+    
+
 // await utils.loadHtmlPage("UserForm3InputDataRng");
 // let action = await utils.detectUnloadAction();
 // if (action === 'submit') {
@@ -56,28 +61,28 @@ if (message) {
 
 // };
 
-async function getAddress(){
-    await Excel.run(async (context) => {
-      const worksheet = context.workbook.worksheets.getActiveWorksheet();     
-      worksheet.onSelectionChanged.add(rangeSelectionHandler);
-      await context.sync();
-    }); 
-  }
+// async function loadRangeAddressHandler(){
+//     await Excel.run(async (context) => {
+//       const worksheet = context.workbook.worksheets.getActiveWorksheet();     
+//       worksheet.onSelectionChanged.add(rangeSelectionHandler);
+//       await context.sync();
+//     }); 
+//   }
   
-async function rangeSelectionHandler(event){
-await Excel.run(async (context) => {
+// async function rangeSelectionHandler(event){
+// await Excel.run(async (context) => {
 
-    let range = context.workbook.getSelectedRange();
-    range.load("address");
-    await context.sync();
-    document.getElementById("range_address_id").value = range.address;
-    document.getElementById("submit_button_id").disabled = false;
+//     let range = context.workbook.getSelectedRange();
+//     range.load("address");
+//     await context.sync();
+//     document.getElementById("range_address_id").value = range.address;
+//     document.getElementById("submit_button_id").disabled = false;
     
 
-    console.log(`The address of the selected range is "${range.address}"`);
+//     console.log(`The address of the selected range is "${range.address}"`);
 
-});
-}
+// });
+// }
 
 async function selectRangeStart() {
 await Excel.run(async (context) => {
