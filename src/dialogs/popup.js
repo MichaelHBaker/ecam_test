@@ -3,6 +3,7 @@
 /* eslint-disable prettier/prettier */
 
 import dialogs from '../dialogs/dialogs.js';
+import utils from '../common/utils.js';
 
 Office.onReady(() => {
     console.log("Office.onReady from popup.js");
@@ -30,8 +31,15 @@ let message = urlParams.get('message');
 if (message) {
     document.getElementById('message').innerHTML = message;
 }
-  
- 
+// window.getAddress = getAddress;
+// await utils.loadHtmlPage("UserForm3InputDataRng");
+// let action = await utils.detectUnloadAction();
+// if (action === 'submit') {
+//   const dataRange = document.getElementsByName('data_range_id');
+//   console.log("data range" + dataRange);
+//   await selectRangeStart();
+//   copyRangeToNewWorkbook();
+// }
 
 // Office.onReady(() => {
 //     console.log("office.onready from popup.js");
@@ -47,3 +55,92 @@ if (message) {
 //     // Process the message...
 
 // };
+
+async function getAddress(){
+    await Excel.run(async (context) => {
+      const worksheet = context.workbook.worksheets.getActiveWorksheet();     
+      worksheet.onSelectionChanged.add(rangeSelectionHandler);
+      await context.sync();
+    }); 
+  }
+  
+async function rangeSelectionHandler(event){
+await Excel.run(async (context) => {
+
+    let range = context.workbook.getSelectedRange();
+    range.load("address");
+    await context.sync();
+    document.getElementById("range_address_id").value = range.address;
+    document.getElementById("submit_button_id").disabled = false;
+    
+
+    console.log(`The address of the selected range is "${range.address}"`);
+
+});
+}
+
+async function selectRangeStart() {
+await Excel.run(async (context) => {
+    const sheet = context.workbook.worksheets.getActiveWorksheet();
+    let rangeAddressInput = document.getElementById("range_address_id");
+    if (rangeAddressInput) {
+    rangeAddressInput = rangeAddressInput.value;
+    const initialCellAddress = rangeAddressInput.split(':')[0];
+    const initialCell = sheet.getRange(initialCellAddress);
+    initialCell.select();
+    await context.sync();
+    }
+});
+}
+async function copyRangeToNewWorkbook() {
+try {
+    const rangeElement = document.getElementById("range_address_id");
+    if (!rangeElement) {
+    throw new Error("Element with id 'range_address_id' not found");
+    }
+    const dataRange = rangeElement.value;
+    if (!dataRange) {
+    throw new Error("No value found in 'range_address_id' element");
+    }
+
+    console.log("Selected range:", dataRange);
+
+    let rangeValues, rangeFormat;
+
+    await Excel.run(async (context) => {
+    let sourceRange = context.workbook.worksheets.getActiveWorksheet().getRange(dataRange);
+    sourceRange.load(["values", "format"]);
+    await context.sync();
+
+    rangeValues = sourceRange.values;
+    rangeFormat = sourceRange.format;
+
+    console.log("Source values:", rangeValues);
+    });
+
+    let newWorkbook = await Excel.createWorkbook();
+    
+    await Excel.run(newWorkbook, async (newContext) => {
+    let newSheet = newContext.workbook.worksheets.getItem("Sheet1");
+    let newRange = newSheet.getRange(dataRange);
+    
+    newRange.values = rangeValues;
+    newRange.format.fill.color = rangeFormat.fill.color;
+    newRange.format.font.color = rangeFormat.font.color;
+    newRange.format.font.bold = rangeFormat.font.bold;
+
+    await newContext.sync();
+    
+    console.log("Range pasted to new workbook");
+
+    // Force Excel to recalculate the new workbook
+    newContext.application.calculate(Excel.CalculationType.full);
+    await newContext.sync();
+    });
+
+    console.log("Operation completed successfully");
+
+} catch (error) {
+    console.error("Error:", error);
+}
+}
