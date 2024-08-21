@@ -22,7 +22,7 @@ Office.onReady(() => {
     //     }
     // });
 });
-
+// https://stackoverflow.com/questions/58136833/how-to-show-range-selection-input-dialog-in-excel-using-officejs
 window.loadRangeAddressHandler = utils.loadRangeAddressHandler;
 const queryString = window.location.search;
 console.log('queryString=' + queryString);
@@ -149,3 +149,57 @@ try {
     console.error("Error:", error);
 }
 }
+
+// Create a map of button IDs to functions
+const functionMap = {
+    'SelectIntervalData': SelectIntervalData,
+    'SelectBillingData': SelectBillingData,
+    // Add all other button ID-function pairs here
+  };
+  
+  export default functionMap;
+  
+  
+  // Define your functions
+  // function SelectIntervalData() {
+  async function SelectBillingData() {
+    console.log("SelectBillingData called");
+    
+    // dialogs.openDialog("SelectBillingData called !!!!!!!");
+    dialogs.openDialog("UserForm3InputDataRng", true);
+    
+  
+    
+    return "SelectBillingData"; 
+  }
+
+  async function SelectIntervalData() {
+    console.log("SelectIntervalData called");
+  
+    Office.addin.showAsTaskpane(); 
+    state.set("strNrmlzBillingData", "No");
+    // selectData();
+  
+    await utils.loadHtmlPage("UserForm3InputDataRng");
+    let action = await utils.detectUnloadAction();
+    if (action === 'submit') {
+      const dataRange = document.getElementsByName('data_range_id');
+      console.log("data range" + dataRange);
+      await selectRangeStart();
+      copyRangeToNewWorkbook();
+      // Process the data range as needed
+      // copy range
+      // open new workbook
+      // create sheet data
+      // paste range in sheet data
+      // create sheet dictionary
+      // write headings Field_Name Units Description
+      // write field names
+      // set validation list to units column DateTime, Date, Time, kWh
+      // close the first workbook
+      // open the taskpane in the new workbook
+    }
+  
+    return "SelectIntervalData"; 
+  }
+  

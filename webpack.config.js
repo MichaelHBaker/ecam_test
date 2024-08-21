@@ -81,12 +81,12 @@ module.exports = async (env, options) => {
           },
           {
             from: "forms/*.html", // Matches all HTML files in the specified context
-            context: "src/taskpane/", // Sets the context directory for the pattern
+            context: "src/dialogs/", // Sets the context directory for the pattern
             to: path.resolve(__dirname, "dist"), // Explicitly defines the output directory
             // noErrorOnMissing: true,
             globOptions: {
               ignore: [
-                "**/taskpane.html", // Ignores taskpane.html
+                "**/dialogs.html", // Ignores taskpane.html
               ],
             },
           },

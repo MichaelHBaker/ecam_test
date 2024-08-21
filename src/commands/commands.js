@@ -2,8 +2,9 @@
 /* eslint-disable no-undef */
 /* eslint-disable prettier/prettier */
 
-import functionMap from '../taskpane/taskpane.js';
+// import functionMap from '../taskpane/taskpane.js';
 import dialogs from '../dialogs/dialogs.js';
+import functionMap from '../dialogs/popup.js';
 
 Office.onReady((info) => {
   //info can be used to customize UI

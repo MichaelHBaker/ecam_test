@@ -55,11 +55,13 @@ async function detectUnloadAction() {
 }
 
 async function loadRangeAddressHandler(){
+  console.log("Start of loadRangeAddressHandle:");
   await Excel.run(async (context) => {
     const worksheet = context.workbook.worksheets.getActiveWorksheet();     
     worksheet.onSelectionChanged.add(rangeSelectionHandler);
     await context.sync();
   }); 
+  console.log("End of loadRangeAddressHandle:");
 }
 
 async function rangeSelectionHandler(event){
