@@ -80,11 +80,65 @@ await Excel.run(async (context) => {
 }
 
 
+
+//from stackoverflow - converted to javascript by chatgpt
+const promptForRangeBindingId = () => {
+  return new Promise((resolve, reject) => {
+      const handleResult = (result) => {
+          if (result.status === Office.AsyncResultStatus.Succeeded) {
+              resolve(result.value.id);
+          } else {
+              reject(result.error.message);
+          }
+      };
+      Office.context.document.bindings.addFromPromptAsync(
+          Office.BindingType.Matrix,
+          handleResult
+      );
+  });
+};
+
+const getAddressesByBindingId = (bindingId) => {
+  return new Promise((resolve, reject) => {
+      Excel.run((ctx) => {
+          const binding = ctx.workbook.bindings.getItem(bindingId);
+          const range = binding.getRange();
+          range.load('address');
+          return ctx.sync().then(() => {
+              resolve(range.address);
+          });
+      }).catch((error) => {
+          reject(error);
+      }).finally(() => {
+          Office.context.document.bindings.releaseByIdAsync(bindingId);
+      });
+  });
+};
+
+const promptForAddressRange = async () => {
+  try {
+      const bindingId = await promptForRangeBindingId();
+      const address = await getAddressesByBindingId(bindingId);
+      return address;
+  } catch (error) {
+      throw new Error(error.message);
+  }
+};
+
+// export {
+//   promptForAddressRange,
+//   promptForRangeBindingId,
+//   getAddressesByBindingId,
+// };
+
 const utils = {
   loadHtmlPage,
   detectUnloadAction,
   loadRangeAddressHandler,
-  rangeSelectionHandler
+  rangeSelectionHandler,
+  promptForAddressRange,
+  promptForRangeBindingId,
+  getAddressesByBindingId,
 };
   
 export default utils;

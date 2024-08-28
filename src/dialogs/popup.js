@@ -23,7 +23,9 @@ Office.onReady(() => {
     // });
 });
 // https://stackoverflow.com/questions/58136833/how-to-show-range-selection-input-dialog-in-excel-using-officejs
-window.loadRangeAddressHandler = utils.loadRangeAddressHandler;
+// window.loadRangeAddressHandler = utils.loadRangeAddressHandler;
+window.promptForAddressRange = utils.promptForAddressRange;
+
 const queryString = window.location.search;
 console.log('queryString=' + queryString);
 const urlParams = new URLSearchParams(queryString);
@@ -34,7 +36,8 @@ if (message) {
     document.getElementById('message').innerHTML = message;
 } else if (contentFile) {
     utils.loadHtmlPage(contentFile);
-}
+    
+  }
     
 
 // await utils.loadHtmlPage("UserForm3InputDataRng");
