@@ -7,6 +7,10 @@ import utils from '../common/utils.js';
 
 Office.onReady(() => {
     console.log("Office.onReady from popup.js");
+    console.log("1 promptForRangeBindingId: before bindings: " + Office);
+    console.log("2 promptForRangeBindingId: before bindings: " + Office.context);
+    console.log("3 promptForRangeBindingId: before bindings: " + Office.context.document);
+    console.log("4 promptForRangeBindingId: before bindings: " + Office.context.document.bindings);
 
     // Notify that the dialog is ready
     // Office.context.ui.messageParent("dialogReady");

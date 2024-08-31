@@ -91,22 +91,27 @@ const promptForRangeBindingId = () => {
               reject(result.error.message);
           }
       };
+      console.log("1 promptForRangeBindingId: before bindings: " + Office);
+      console.log("2 promptForRangeBindingId: before bindings: " + Office.context);
+      console.log("3 promptForRangeBindingId: before bindings: " + Office.context.document);
+      console.log("4 promptForRangeBindingId: before bindings: " + Office.context.document.bindings);
       Office.context.document.bindings.addFromPromptAsync(
-          Office.BindingType.Matrix,
-          handleResult
+        Office.BindingType.Matrix,
+        handleResult
       );
+      console.log("promptForRangeBindingId: after bindings");
   });
 };
 
 const getAddressesByBindingId = (bindingId) => {
   return new Promise((resolve, reject) => {
-      Excel.run((ctx) => {
-          const binding = ctx.workbook.bindings.getItem(bindingId);
+      Excel.run((context) => {
+          const binding = context.workbook.bindings.getItem(bindingId);
           const range = binding.getRange();
           range.load('address');
-          return ctx.sync().then(() => {
-              resolve(range.address);
-          });
+          context.sync();
+          return resolve(range.address);
+          
       }).catch((error) => {
           reject(error);
       }).finally(() => {
@@ -118,10 +123,12 @@ const getAddressesByBindingId = (bindingId) => {
 const promptForAddressRange = async () => {
   try {
       const bindingId = await promptForRangeBindingId();
+      console.log("After promptForRangeBindingId: " + bindingId);
       const address = await getAddressesByBindingId(bindingId);
       return address;
   } catch (error) {
-      throw new Error(error.message);
+      console.log("Error from promptForAddressRange: " + error.message);
+      // throw new Error(error.message);
   }
 };
 

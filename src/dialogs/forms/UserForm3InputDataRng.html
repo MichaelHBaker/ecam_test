@@ -7,9 +7,12 @@
 
         // ... (further processing of dataRange)
     }
-
+    async function getAddresses() {
+        // make sure to wrap in try/catch
+        return await promptForAddressRange();
+    }
+    
     // loadRangeAddressHandler();S
-    await promptForAddressRange();
 </script>
 <div id="back_button_id" onclick="(async () => { await selectData('Manual'); })()">&#8592; Back</div>
 <h4>Input Data Range</h4>
@@ -20,7 +23,7 @@ You should select the full range (both rows and columns), including the headers 
 <p>The Point Names will be assumed to be in the first row of the selected range.</p>
 
 <form>
-    <input type="text" id="range_address_id" readonly>
+    <input type="text" id="range_address_id" onclick="getAddresses()" readonly>
     <input type="button" id="submit_button_id" onclick="submitForm()" value="Submit" disabled>
     <input type="button" id="cancel_button_id" value="Cancel">
 </form>
